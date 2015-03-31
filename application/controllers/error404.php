@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Showroom extends CI_Controller {
+class Error404 extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,7 +19,7 @@ class Showroom extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('showroom');
+		$this->load->view('error404');
 	}
 }
 
