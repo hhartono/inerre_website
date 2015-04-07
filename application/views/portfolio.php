@@ -36,13 +36,13 @@
         <div class="page" id="top">
             
         <!-- Navigation panel -->
-            <div id="undefined-sticky-wrapper" class="sticky-wrapper" style="height: 75px;">
+            <div id="undefined-sticky-wrapper" class="sticky-wrapper" style="height: 75px; background:#666;">
             <nav class="main-nav dark stick-fixed">
                 <div class="full-wrapper relative clearfix">
                     <!-- Logo ( * your text or image into link tag *) -->
                     <div class="nav-logo-wrap local-scroll">
                         <a href="/home" class="logo">
-                            <img src="/assets/images/logo-white.png" width="177" height="40.5" alt="" />
+                            <img src="/assets/images/logo-white-2.png" width="177" height="40.5" alt="" />
                         </a>
                     </div>
                     <div class="mobile-nav">
@@ -61,15 +61,13 @@
 
                             <!-- Showroom -->
                             <li>
-                                <a href="#" class="">Showroom</a>
+                                <a href="/showroom" class="">Showroom</a>
                             </li>
                             <!-- End Showroom -->
                             
                             <!-- Portfolio - Item With Sub -->
                             <li>
                                 <a href="#" class="active">Portfolio</a>
-                                
-                                
                             </li>
                             
                             <!-- About Us -->
@@ -167,7 +165,7 @@
                         <div class="col-md-6 col-lg-6 mb-md-10">
                             
                             <div class="post-prev-img">
-                                <a href="/assets/images/portfolio/full-project-1.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio/projects-1.jpg" alt="" /></a>
+                                <a href="/assets/images/portfolio-inerre/015532-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/015532-650.jpg" alt="" /></a>
                             </div>
 
                         </div>
@@ -177,7 +175,7 @@
                         <div class="col-md-6 col-lg-6 mb-md-10">
                             
                             <div class="post-prev-img">
-                                <a href="/assets/images/portfolio/full-project-2.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio/projects-2.jpg" alt="" /></a>
+                                <a href="/assets/images/portfolio-inerre/025053-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/025053-650.jpg" alt="" /></a>
                             </div>
 
                         </div>
@@ -187,7 +185,7 @@
                         <div class="col-md-6 col-lg-6 mb-md-10">
                             
                             <div class="post-prev-img">
-                                <a href="/assets/images/portfolio/full-project-3.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio/projects-3.jpg" alt="" /></a>
+                                <a href="/assets/images/portfolio-inerre/034836-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/034836-650.jpg" alt="" /></a>
                             </div>
 
                         </div>
@@ -197,7 +195,39 @@
                         <div class="col-md-6 col-lg-6 mb-md-10">
                             
                             <div class="post-prev-img">
-                                <a href="/assets/images/portfolio/full-project-4.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio/projects-4.jpg" alt="" /></a>
+                                <a href="/assets/images/portfolio-inerre/034909-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/034909-650.jpg" alt="" /></a>
+                            </div>
+
+                        </div>
+                        <!-- End Photo Item -->
+                        
+
+                        <!-- Photo Item -->
+                        <div class="col-md-6 col-lg-6 mb-md-10">
+                            
+                            <div class="post-prev-img">
+                                <a href="/assets/images/portfolio-inerre/045216-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/045216-650.jpg" alt="" /></a>
+                            </div>
+
+                        </div>
+                        <!-- End Photo Item -->
+
+                        <!-- Photo Item -->
+                        <div class="col-md-6 col-lg-6 mb-md-10">
+                            
+                            <div class="post-prev-img">
+                                <a href="/assets/images/portfolio-inerre/051453-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/051453-650.jpg" alt="" /></a>
+                            </div>
+
+                        </div>
+                        <!-- End Photo Item -->
+                        
+                        
+                        <!-- Photo Item -->
+                        <div class="col-md-6 col-lg-6 mb-md-10">
+                            
+                            <div class="post-prev-img">
+                                <a href="/assets/images/portfolio-inerre/052712-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/052712-650.jpg" alt="" /></a>
                             </div>
 
                         </div>
@@ -207,7 +237,7 @@
                         <div class="col-md-6 col-lg-6 mb-md-10">
                             
                             <div class="post-prev-img">
-                                <a href="/assets/images/portfolio/full-project-5.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio/projects-5.jpg" alt="" /></a>
+                                <a href="/assets/images/portfolio-inerre/052786-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/052786-650.jpg" alt="" /></a>
                             </div>
 
                         </div>
@@ -217,7 +247,7 @@
                         <div class="col-md-6 col-lg-6 mb-md-10">
                             
                             <div class="post-prev-img">
-                                <a href="/assets/images/portfolio/full-project-6.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio/projects-6.jpg" alt="" /></a>
+                                <a href="/assets/images/portfolio-inerre/059594-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/059594-650.jpg" alt="" /></a>
                             </div>
 
                         </div>
@@ -227,22 +257,11 @@
                         <div class="col-md-6 col-lg-6 mb-md-10">
                             
                             <div class="post-prev-img">
-                                <a href="/assets/images/portfolio/full-project-1.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio/projects-7.jpg" alt="" /></a>
+                                <a href="/assets/images/portfolio-inerre/059982-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/059982-650.jpg" alt="" /></a>
                             </div>
 
                         </div>
                         <!-- End Photo Item -->
-                        
-                        <!-- Photo Item -->
-                        <div class="col-md-6 col-lg-6 mb-md-10">
-                            
-                            <div class="post-prev-img">
-                                <a href="/assets/images/portfolio/full-project-2.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio/projects-8.jpg" alt="" /></a>
-                            </div>
-
-                        </div>
-                        <!-- End Photo Item -->
-                        
                     </div>
                     <!-- End Photo Grid -->
                     
@@ -273,7 +292,7 @@
                                             Call Us
                                         </div>
                                         <div class="ci-text">
-                                            +61 3 8376 6284
+                                            +62 22 423 2200
                                         </div>
                                     </div>
                                 </div>
@@ -289,7 +308,9 @@
                                             Address
                                         </div>
                                         <div class="ci-text">
-                                            Pasteur 11, Bandung, West Java, Indonesia
+                                            Jl. Pasteur 11<br>
+                                            Bandung<br>
+                                            INDONESIA
                                         </div>
                                     </div>
                                 </div>
@@ -305,7 +326,7 @@
                                             Email
                                         </div>
                                         <div class="ci-text">
-                                            <a href="mailto:support@bestlooker.pro">contact@inerre.com</a>
+                                            <a href="mailto:info@inerre.com">info@inerre.com</a>
                                         </div>
                                     </div>
                                 </div>

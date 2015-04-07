@@ -681,19 +681,46 @@ function init_map(){
         
             var gmCenterAddress = gmMapDiv.attr("data-address");
             var gmMarkerAddress = gmMapDiv.attr("data-address");
-            
+            var gmDataLat = gmMapDiv.attr("data-address-lat");
+            var gmDataLong = gmMapDiv.attr("data-address-long");
             
             gmMapDiv.gmap3({
                 action: "init",
                 marker: {
-                    address: gmMarkerAddress,
+                    //address: gmMarkerAddress,
+                    latLng:[gmDataLat, gmDataLong],
+                    data: "INERRE Interior</br>Jl Pasteur 11 Bandung, Indonesia",
                     options: {
-                        icon: "images/map-marker.png"
+                        icon: "assets/images/map-marker.png"
+                    },
+                    clickable:true,
+                    events:{
+                        mouseover:function(marker, event, context){
+                            var map = $(this).gmap3("get"),
+                              infowindow = $(this).gmap3({get:{name:"infowindow"}});
+                            if (infowindow){
+                              infowindow.open(map, marker);
+                              infowindow.setContent(context.data);
+                            } else {
+                              $(this).gmap3({
+                                infowindow:{
+                                  anchor:marker, 
+                                  options:{content: context.data}
+                                }
+                              });
+                            }
+                        },
+                        mouseout: function(){
+                            var infowindow = $(this).gmap3({get:{name:"infowindow"}});
+                            if (infowindow){
+                              infowindow.close();
+                            }
+                        }
                     }
                 },
                 map: {
                     options: {
-                        zoom: 14,
+                        zoom: 17,
                         zoomControl: true,
                         zoomControlOptions: {
                             style: google.maps.ZoomControlStyle.SMALL

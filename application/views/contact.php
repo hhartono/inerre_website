@@ -23,6 +23,14 @@
         <link rel="stylesheet" href="/assets/css/vertical-rhythm.min.css">
         <link rel="stylesheet" href="/assets/css/owl.carousel.css">
         <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+        <style>
+        @media screen and (max-width: 1279px){
+            #undefined-sticky-wrapper{
+                height:0px;
+            }
+        }
+        </style>
+
     </head>
     <body class="appear-animate">
         
@@ -42,7 +50,7 @@
                     <!-- Logo ( * your text or image into link tag *) -->
                     <div class="nav-logo-wrap local-scroll">
                         <a href="/home" class="logo">
-                            <img src="/assets/images/logo-white.png" width="177" height="40.5" alt="" />
+                            <img src="/assets/images/logo-white-2.png" width="177" height="40.5" alt="" />
                         </a>
                     </div>
                     <div class="mobile-nav">
@@ -209,7 +217,7 @@
                                             Email
                                         </div>
                                         <div class="ci-text">
-                                            <a href="mailto:support@bestlooker.pro">info@inerre.com</a>
+                                            <a href="mailto:info@inerre.com">info@inerre.com</a>
                                         </div>
                                     </div>
                                 </div>
@@ -219,7 +227,7 @@
                         </div>
                     </div>
 
-                                       <!-- Contact Form -->                            
+                    <!-- Contact Form -->                            
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
                             
@@ -286,11 +294,9 @@
             
              <!-- Google Map -->
             <div class="google-map">
-                
-                <div data-address="INERRE Interior, Bandung, West Java" id="map-canvas"></div>
-                
+                <!--div data-address="INERRE Interior, Jl. Pasteur No. 11, Bandung, Jawa Barat 40116" id="map-canvas"></div-->
+                <div data-address="INERRE Interior, Jl. Pasteur No. 11, Bandung, Jawa Barat 40116" data-address-lat="-6.900460" data-address-long="107.603326" id="map-canvas"></div>
                 <div class="map-section">
-                    
                     <div class="map-toggle">
                         <div class="mt-icon">
                             <i class="fa fa-map-marker"></i>
@@ -300,12 +306,25 @@
                             <div class="mt-close">Close the map <i class="fa fa-angle-up"></i></div>
                         </div>
                     </div>
-                    
                 </div>
-                
             </div>
             <!-- End Google Map -->
 
+            <!-- Section button visit maps -->
+            <section class="page-section hidden-lg hidden-md hidden-sm" id="section-button-visit">
+            <div class="row">
+                
+                <div class="col-xs-12 text-center" >
+                    <div>
+                        <a target="_blank" class="btn btn-mod btn-border btn-large" href="https://www.google.co.id/maps/dir//INERRE+Interior,+Jl.+Pasteur+No.+11,+Bandung,+Jawa+Barat+40116/@-6.9003664,107.5663282,13z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x2e68e64383f4eda3:0x420267de73972b84!2m2!1d107.603322!2d-6.900453!3e0?hl=en">
+                            Visit Inerre
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            </section>
+            <!-- END Section button visit maps -->
             
             <!-- Footer -->
             <footer class="page-section bg-gray-lighter footer pb-60">
@@ -384,6 +403,9 @@
         <script type="text/javascript" src="/assets/js/contact-form.js"></script>
         <script type="text/javascript" src="/assets/js/jquery.ajaxchimp.min.js"></script>
         <!--[if lt IE 10]><script type="text/javascript" src="/assets/js/placeholder.js"></script><![endif]-->
+        <!-- add mediaqueries css -->
         
+        <!-- end add mediaqueries css -->
+
     </body>
 </html>
