@@ -212,11 +212,11 @@
                             </li>
                             <!-- End About Us -->
 
-                            <!-- Contact Us -->
+                            <!-- Contact -->
                             <li>
                                 <a href="/contact">Contact</a>
                             </li>
-                            <!-- End Contact Us -->
+                            <!-- End Contact -->
 
                             <!-- Divider -->
                             <li><a>&nbsp;</a></li>
@@ -304,7 +304,7 @@
                 <div class="container relative">
                     
                     <h2 class="section-title font-alt mb-70 mb-sm-40">
-                        Find Us
+                        Find Inerre
                     </h2>
                     
                     <div class="row">
