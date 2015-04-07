@@ -183,7 +183,7 @@
                     <div class="mobile-nav">
                         <i class="fa fa-bars"></i>
                     </div>
-                    
+
                     <!-- Main Menu -->
                     <div class="inner-nav desktop-nav">
                         <ul class="clearlist">
@@ -199,19 +199,19 @@
                                 <a href="#" class="active">Showroom</a>
                             </li>
                             <!-- End Showroom -->
-                            
-                            <!-- Portfolio - Item With Sub -->
+
+                            <!-- Portfolio -->
                             <li>
-                                <a href="/portfolio" class="">Portfolio</a>
+                                <a href="/portfolio">Portfolio</a>
                             </li>
-                            <!-- End Item With Sub -->
-                            
+                            <!-- End Portfolio -->
+
                             <!-- About Us -->
                             <li>
-                                <a href="/about">About Us</a>
+                                <a href="/about">About</a>
                             </li>
                             <!-- End About Us -->
-                            
+
                             <!-- Contact -->
                             <li>
                                 <a href="/contact">Contact</a>
@@ -221,14 +221,14 @@
                             <!-- Divider -->
                             <li><a>&nbsp;</a></li>
                             <!-- End Divider -->
-                            
+
                             <!-- Search -->
                             <!--
                             <li>
                                 <a href="#" class="mn-has-sub"><i class="fa fa-search"></i> Search</a>
-                                
+
                                 <ul class="mn-sub">
-                                    
+
                                     <li>
                                         <div class="mn-wrap">
                                             <form method="post" class="form">
@@ -241,12 +241,12 @@
                                             </form>
                                         </div>
                                     </li>
-                                    
+
                                 </ul>
                             </li>
                             -->
                             <!-- End Search -->
-                            
+
                             <!-- Cart -->
                             <!--
                             <li>
@@ -338,7 +338,7 @@
                                             Address
                                         </div>
                                         <div class="ci-text">
-                                            Jl. Pasteur 11<br>
+                                            Jl. Pasteur No 11<br>
                                             Bandung<br>
                                             INDONESIA
                                         </div>
@@ -377,7 +377,7 @@
                     
                     <!-- Footer Logo -->
                     <div class="local-scroll mb-30 wow fadeInUp" data-wow-duration="1.5s">
-                        <a href="#top"><img src="/assets/images/logo-footer.png" width="78" height="36" alt="" /></a>
+                        <a href="#top"><img src="/assets/images/logo-footer.png" width="50" height="80" alt="" /></a>
                     </div>
                     <!-- End Footer Logo -->
                     
