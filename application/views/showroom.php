@@ -177,7 +177,7 @@
                     <!-- Logo ( * your text or image into link tag *) -->
                     <div class="nav-logo-wrap local-scroll">
                         <a href="/home" class="logo">
-                            <img src="/assets/images/logo-white.png" width="177" height="40.5" alt="" />
+                            <img src="/assets/images/logo-white-2.png" width="177" height="40.5" alt="" />
                         </a>
                     </div>
                     <div class="mobile-nav">

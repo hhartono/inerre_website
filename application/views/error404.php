@@ -80,7 +80,7 @@
                     <!-- Logo ( * your text or image into link tag *) -->
                     <div class="nav-logo-wrap local-scroll">
                         <a href="/home" class="logo">
-                            <img src="/assets/images/logo-white.png" width="177" height="40.5" alt="" />
+                            <img src="/assets/images/logo-white-2.png" width="177" height="40.5" alt="" />
                         </a>
                     </div>
                     <div class="mobile-nav">
@@ -105,7 +105,7 @@
                     
                     <!-- Footer Logo -->
                     <div class="local-scroll mb-30 wow fadeInUp" data-wow-duration="1.5s">
-                        <a href="#top"><img src="images/logo-footer.png" width="78" height="36" alt="" /></a>
+                        <a href="#top"><img src="/assets/images/logo-footer.png" width="50" height="80" alt="" /></a>
                     </div>
                     <!-- End Footer Logo -->
                     
