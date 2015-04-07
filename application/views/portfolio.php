@@ -35,9 +35,8 @@
         <!-- Page Wrap -->
         <div class="page" id="top">
             
-        <!-- Navigation panel -->
-            <div id="undefined-sticky-wrapper" class="sticky-wrapper" style="height: 75px; background:#666;">
-            <nav class="main-nav dark stick-fixed">
+            <!-- Navigation panel -->
+            <nav class="main-nav dark js-stick">
                 <div class="full-wrapper relative clearfix">
                     <!-- Logo ( * your text or image into link tag *) -->
                     <div class="nav-logo-wrap local-scroll">
@@ -72,7 +71,7 @@
                             
                             <!-- About Us -->
                             <li>
-                                <a href="/about">About Us</a>
+                                <a href="/about">About</a>
                             </li>
                             <!-- End About Us -->
 
@@ -125,25 +124,24 @@
 
                 </div>
             </nav>
-            </div>
             <!-- End Navigation panel -->
             
             <!-- Head Section -->
-            <section class="page-section bg-dark-alfa-70 parallax-3" data-background="/assets/images/full-width-images/section-bg-25.jpg" style="">
+            <section class="page-section bg-dark-alfa-60 parallax-3" data-background="/assets/images/full-width-images/test-bg.jpg" style="">
                 <div class="relative container align-left">
                     
                     <div class="row">
                         
                         <div class="col-md-8">
-                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Portfolio</h1>
-                            <div class="hs-line-4 font-alt black">
+                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0 inerre-brown">Portfolio</h1>
+                            <div class="hs-line-4 font-alt">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing
                             </div>
                         </div>
                         
                         <div class="col-md-4 mt-30">
                             <div class="mod-breadcrumbs font-alt align-right">
-                                <a href="#">Home</a>&nbsp;/&nbsp;<span>Portfolio</span>
+                                <a href="/home">Home</a>&nbsp;<i class="inerre-brown">//</i>&nbsp;<span>Portfolio</span>
                             </div>
                             
                         </div>

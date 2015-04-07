@@ -37,7 +37,7 @@
         <div class="page" id="top">
             
             <!-- Home Section -->
-            <section class="home-section bg-dark-alfa-30 parallax-2" data-background="/assets/images/full-width-images/section-bg-1.jpg" id="home">
+            <section class="home-section bg-dark-alfa-50 parallax-2" data-background="/assets/images/full-width-images/test-bg.jpg" id="home">
                 <div class="js-height-full">
                     
                     <!-- Hero Content -->
@@ -586,21 +586,20 @@
                 </div>
             </section>
             <!-- End Newsletter Section -->
-            
-            
+
             <!-- Contact Section -->
             <section class="page-section" id="contact">
                 <div class="container relative">
-                    
+
                     <h2 class="section-title font-alt mb-70 mb-sm-40">
-                        Find Us
+                        Find Inerre
                     </h2>
-                    
+
                     <div class="row">
-                        
+
                         <div class="col-md-8 col-md-offset-2">
                             <div class="row">
-                                
+
                                 <!-- Phone -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -611,12 +610,12 @@
                                             Call Us
                                         </div>
                                         <div class="ci-text">
-                                            +61 3 8376 6284
+                                            +62 22 423 2200
                                         </div>
                                     </div>
                                 </div>
                                 <!-- End Phone -->
-                                
+
                                 <!-- Address -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -627,12 +626,14 @@
                                             Address
                                         </div>
                                         <div class="ci-text">
-                                            245 Quigley Blvd, Ste K
+                                            Jl. Pasteur No 11<br>
+                                            Bandung<br>
+                                            INDONESIA
                                         </div>
                                     </div>
                                 </div>
                                 <!-- End Address -->
-                                
+
                                 <!-- Email -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -643,17 +644,17 @@
                                             Email
                                         </div>
                                         <div class="ci-text">
-                                            <a href="mailto:support@bestlooker.pro">support@bestlooker.pro</a>
+                                            <a href="mailto:support@bestlooker.pro">info@inerre.com</a>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- End Email -->
-                                
+
                             </div>
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
             </section>
             <!-- End Contact Section -->
