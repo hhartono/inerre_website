@@ -2119,6 +2119,7 @@ a.logo:hover{
     text-align: center;
     letter-spacing: 0.5em;
     line-height: 1.4;
+    color: #111;
 }
 .section-more{
     margin-top: 7px;
@@ -2543,7 +2544,7 @@ a.logo:hover{
     margin-top: 70px;
 }
 .alt-features-icon{
-    padding-top: 10px;
+    padding-top: 40px;
     font-size: 48px;
     line-height: 1.3;
     color: #111;
@@ -2553,7 +2554,7 @@ a.logo:hover{
 }
 .alt-features-title{
     margin-bottom: 21px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.4em;
@@ -3566,7 +3567,7 @@ a.logo:hover{
     margin: 0 6px;
     text-align: center;
     display: inline-block;
-    color: #111;
+    color: #888;
     
     -webkit-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);  
     -moz-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000); 
@@ -3588,8 +3589,8 @@ a.logo:hover{
     position: absolute;
     top: 0;
     left: 0;
-    border: 1px solid #111;
-    
+    border: 1px solid #c87f28;
+
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
@@ -3611,7 +3612,7 @@ a.logo:hover{
     color: #fff;
 }
 .footer-social-links a:hover:before{
-    background: #111;
+    background: #c87f28;
 }
 
 a.link-to-top{

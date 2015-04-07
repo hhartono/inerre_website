@@ -183,7 +183,7 @@
                     <div class="mobile-nav">
                         <i class="fa fa-bars"></i>
                     </div>
-                    
+
                     <!-- Main Menu -->
                     <div class="inner-nav desktop-nav">
                         <ul class="clearlist">
@@ -199,221 +199,36 @@
                                 <a href="#" class="active">Showroom</a>
                             </li>
                             <!-- End Showroom -->
-                            
-                            <!-- Portfolio - Item With Sub -->
+
+                            <!-- Portfolio -->
                             <li>
-                                <a href="#" class="mn-has-sub">Portfolio <i class="fa fa-angle-down"></i></a>
-                                
-                                <!-- Sub -->
-                                <ul class="mn-sub">
-                                    
-                                    <li>
-                                        <a href="#" class="mn-has-sub">Boxed <i class="fa fa-angle-right right"></i></a>
-                                    
-                                        <ul class="mn-sub">
-                                            <li>
-                                                <a href="portfolio-boxed-2col.html">2 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-boxed-3col.html">3 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-boxed-4col.html">4 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-boxed-5col.html">5 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-boxed-blackhover.html">Black Hovers</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="#" class="mn-has-sub">Boxed (Gutter) <i class="fa fa-angle-right right"></i></a>
-                                    
-                                        <ul class="mn-sub">
-                                            <li>
-                                                <a href="portfolio-boxed-gutter-2col.html">2 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-boxed-gutter-3col.html">3 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-boxed-gutter-4col.html">4 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-boxed-gutter-5col.html">5 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-boxed-gutter-blackhover.html">Black Hovers</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="#" class="mn-has-sub">Boxed (Titles) <i class="fa fa-angle-right right"></i></a>
-                                    
-                                        <ul class="mn-sub">
-                                            <li>
-                                                <a href="portfolio-boxed-titles-2col.html">2 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-boxed-titles-3col.html">3 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-boxed-titles-4col.html">4 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-boxed-titles-5col.html">5 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-boxed-titles-blackhover.html">Black Hovers</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="#" class="mn-has-sub">Wide <i class="fa fa-angle-right right"></i></a>
-                                    
-                                        <ul class="mn-sub">
-                                            <li>
-                                                <a href="portfolio-wide-2col.html">2 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-wide-3col.html">3 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-wide-4col.html">4 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-wide-5col.html">5 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-wide-blackhover.html">Black Hovers</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="#" class="mn-has-sub">Wide (Gutter) <i class="fa fa-angle-right right"></i></a>
-                                    
-                                        <ul class="mn-sub">
-                                            <li>
-                                                <a href="portfolio-wide-gutter-2col.html">2 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-wide-gutter-3col.html">3 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-wide-gutter-4col.html">4 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-wide-gutter-5col.html">5 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-wide-gutter-blackhover.html">Black Hovers</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="#" class="mn-has-sub">Wide (Titles) <i class="fa fa-angle-right right"></i></a>
-                                    
-                                        <ul class="mn-sub">
-                                            <li>
-                                                <a href="portfolio-wide-titles-2col.html">2 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-wide-titles-3col.html">3 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-wide-titles-4col.html">4 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-wide-titles-5col.html">5 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-wide-titles-blackhover.html">Black Hovers</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="#" class="mn-has-sub">Masonry <i class="fa fa-angle-right right"></i></a>
-                                    
-                                        <ul class="mn-sub">
-                                            <li>
-                                                <a href="portfolio-masonry-2col.html">2 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-masonry-3col.html">3 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-masonry-4col.html">4 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-masonry-5col.html">5 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-masonry-blackhover.html">Black Hovers</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="#" class="mn-has-sub">Single <i class="fa fa-angle-right right"></i></a>
-                                    
-                                        <ul class="mn-sub">
-                                            <li>
-                                                <a href="portfolio-single-1.html">Single 1</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-single-2.html">Single 2</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-single-3.html">Single 3</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-single-4.html">Single 4</a>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio-single-5.html">Single 5</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="portfolio-parallax.html">Parallax</a>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="portfolio-promo.html">Promo</a>
-                                    </li>
-                                    
-                                </ul>
-                                <!-- End Sub -->
-                                
+                                <a href="/portfolio">Portfolio</a>
                             </li>
-                            <!-- End Item With Sub -->
-                            
+                            <!-- End Portfolio -->
+
                             <!-- About Us -->
                             <li>
-                                <a href="/about">About Us</a>
+                                <a href="/about">About</a>
                             </li>
                             <!-- End About Us -->
-                            
+
+                            <!-- Contact Us -->
+                            <li>
+                                <a href="/contact">Contact</a>
+                            </li>
+                            <!-- End Contact Us -->
+
                             <!-- Divider -->
                             <li><a>&nbsp;</a></li>
                             <!-- End Divider -->
-                            
+
                             <!-- Search -->
                             <!--
                             <li>
                                 <a href="#" class="mn-has-sub"><i class="fa fa-search"></i> Search</a>
-                                
+
                                 <ul class="mn-sub">
-                                    
+
                                     <li>
                                         <div class="mn-wrap">
                                             <form method="post" class="form">
@@ -426,12 +241,12 @@
                                             </form>
                                         </div>
                                     </li>
-                                    
+
                                 </ul>
                             </li>
                             -->
                             <!-- End Search -->
-                            
+
                             <!-- Cart -->
                             <!--
                             <li>
@@ -523,7 +338,7 @@
                                             Address
                                         </div>
                                         <div class="ci-text">
-                                            Jl. Pasteur 11<br>
+                                            Jl. Pasteur No 11<br>
                                             Bandung<br>
                                             INDONESIA
                                         </div>
@@ -562,7 +377,7 @@
                     
                     <!-- Footer Logo -->
                     <div class="local-scroll mb-30 wow fadeInUp" data-wow-duration="1.5s">
-                        <a href="#top"><img src="/assets/images/logo-footer.png" width="78" height="36" alt="" /></a>
+                        <a href="#top"><img src="/assets/images/logo-footer.png" width="50" height="80" alt="" /></a>
                     </div>
                     <!-- End Footer Logo -->
                     
