@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>INERRE interior &mdash; Showroom</title>
+        <title>INERRE interior &mdash; Portfolio</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
         <meta charset="utf-8">
@@ -348,7 +348,7 @@
                     
                     <!-- Footer Logo -->
                     <div class="local-scroll mb-30 wow fadeInUp" data-wow-duration="1.5s">
-                        <a href="#top"><img src="/assets/images/logo-footer.png" width="78" height="36" alt="" /></a>
+                        <a href="#top"><img src="/assets/images/logo-footer.png" width="50" height="80" alt="" /></a>
                     </div>
                     <!-- End Footer Logo -->
                     
@@ -367,13 +367,9 @@
                         
                         <!-- Copyright -->
                         <div class="footer-copy font-alt">
-                            <a href="http://themeforest.net/user/theme-guru/portfolio" target="_blank">&copy; Rhythm 2014</a>.
+                            <a href="/home" target="_blank">&copy; INERRE 2014</a>.
                         </div>
                         <!-- End Copyright -->
-                        
-                        <div class="footer-made">
-                            Made with love for great people.
-                        </div>
                         
                     </div>
                     <!-- End Footer Text --> 
