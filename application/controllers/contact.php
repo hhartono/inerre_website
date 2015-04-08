@@ -13,7 +13,11 @@ class Contact extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('contact');
+		$data = array(
+				'title' => '&mdash; Contact',
+				'contactactive' => 'active'
+			);
+		$this->load->view('contact', $data);
 	}
 
 	/*

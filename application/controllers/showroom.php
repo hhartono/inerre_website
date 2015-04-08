@@ -19,7 +19,11 @@ class Showroom extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('showroom');
+		$data = array(
+				'title' => '&mdash; Showroom',
+				'showroomactive' => 'active'
+			);
+		$this->load->view('showroom', $data);
 	}
 }
 
