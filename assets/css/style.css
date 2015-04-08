@@ -2233,13 +2233,15 @@ a.logo:hover{
 }
 .mod-breadcrumbs span{
     opacity: .65;
+    color:#fff;
 }
 .mod-breadcrumbs a{
     text-decoration: none;
-
+    color: #fff;
 }
 .mod-breadcrumbs a:hover{
     text-decoration: none; 
+    color:#ccc;
 }
 .mod-breadcrumbs .fa{
     font-size: 12px;
