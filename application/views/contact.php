@@ -23,14 +23,7 @@
         <link rel="stylesheet" href="/assets/css/vertical-rhythm.min.css">
         <link rel="stylesheet" href="/assets/css/owl.carousel.css">
         <link rel="stylesheet" href="/assets/css/magnific-popup.css">
-        <style>
-        @media screen and (max-width: 1279px){
-            #undefined-sticky-wrapper{
-                height:0px;
-            }
-        }
-        </style>
-
+       
     </head>
     <body class="appear-animate">
         
@@ -44,7 +37,7 @@
         <div class="page" id="top">
             
         <!-- Navigation panel -->
-            <div id="undefined-sticky-wrapper" class="sticky-wrapper" style="height: 75px; background:#666;">
+            <div id="undefined-sticky-wrapper" class="sticky-wrapper" style="height: 75px; background:rgba(10, 10, 10, 0.95);">
             <nav class="main-nav dark stick-fixed">
                 <div class="full-wrapper relative clearfix">
                     <!-- Logo ( * your text or image into link tag *) -->
@@ -231,56 +224,40 @@
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
                             
-                            <form class="form contact-form" id="contact_form" autocomplete="off">
+                            <form method="POST" class="form contact-form" id="contact_form" autocomplete="off">
                                 <div class="clearfix">
-                                    
                                     <div class="cf-left-col">
-                                        
                                         <!-- Name -->
                                         <div class="form-group">
                                             <input type="text" name="name" id="name" class="input-md round form-control" placeholder="Name" pattern=".{3,100}" required>
                                         </div>
-                                        
                                         <!-- Email -->
                                         <div class="form-group">
                                             <input type="email" name="email" id="email" class="input-md round form-control" placeholder="Email" pattern=".{5,100}" required>
                                         </div>
-                                        
                                     </div>
-                                    
                                     <div class="cf-right-col">
-                                        
                                         <!-- Message -->
                                         <div class="form-group">                                            
                                             <textarea name="message" id="message" class="input-md round form-control" style="height: 84px;" placeholder="Message"></textarea>
                                         </div>
-                                        
                                     </div>
-                                    
                                 </div>
                                 
                                 <div class="clearfix">
-                                    
                                     <div class="cf-left-col">
-                                        
                                         <!-- Inform Tip -->                                        
                                         <div class="form-tip pt-20">
                                             <i class="fa fa-info-circle"></i> All the fields are required
                                         </div>
-                                        
                                     </div>
-                                    
                                     <div class="cf-right-col">
-                                        
                                         <!-- Send Button -->
                                         <div class="align-right pt-10">
                                             <button class="submit_btn btn btn-mod btn-medium btn-round" id="submit_btn">Submit Message</button>
                                         </div>
-                                        
                                     </div>
-                                    
                                 </div>
-                                
                                 <div id="result"></div>
                             </form>
                             
@@ -312,17 +289,15 @@
 
             <!-- Section button visit maps -->
             <section class="page-section hidden-lg hidden-md hidden-sm" id="section-button-visit">
-            <div class="row">
-                
-                <div class="col-xs-12 text-center" >
-                    <div>
-                        <a target="_blank" class="btn btn-mod btn-border btn-large" href="https://www.google.co.id/maps/dir//INERRE+Interior,+Jl.+Pasteur+No.+11,+Bandung,+Jawa+Barat+40116/@-6.9003664,107.5663282,13z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x2e68e64383f4eda3:0x420267de73972b84!2m2!1d107.603322!2d-6.900453!3e0?hl=en">
-                            Visit Inerre
-                        </a>
+                <div class="row">
+                    <div class="col-xs-12 text-center" >
+                        <div>
+                            <a target="_blank" class="btn btn-mod btn-border btn-large" href="https://www.google.co.id/maps/dir//INERRE+Interior,+Jl.+Pasteur+No.+11,+Bandung,+Jawa+Barat+40116/@-6.9003664,107.5663282,13z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x2e68e64383f4eda3:0x420267de73972b84!2m2!1d107.603322!2d-6.900453!3e0?hl=en">
+                                Visit Inerre
+                            </a>
+                        </div>
                     </div>
                 </div>
-                
-            </div>
             </section>
             <!-- END Section button visit maps -->
             
@@ -399,9 +374,31 @@
         <script type="text/javascript" src="/assets/js/contact-form.js"></script>
         <script type="text/javascript" src="/assets/js/jquery.ajaxchimp.min.js"></script>
         <!--[if lt IE 10]><script type="text/javascript" src="/assets/js/placeholder.js"></script><![endif]-->
-        <!-- add mediaqueries css -->
-        
-        <!-- end add mediaqueries css -->
+        <script type="text/javascript">
+        /*
+        $(document).ready(function(){
+            submitContact();
+        });
 
+        function submitContact(){
+            $('button#submit_btn').click(function(e){
+                var nameContact = $('input#name').val();
+                var emailContact = $('input#email').val();
+                var messageContact = $('textarea#message').val();
+                $.ajax({
+                    url: "/contact/submitMessage/",
+                    type: "POST",
+                    data:{name: nameContact, email: emailContact, message: messageContact},
+                    success:function(data){
+                        $('#resultsubmit').append(data);
+                        $('input#name').val('');
+                        $('input#email').val('');
+                        $('textarea#message').val('');
+                    }
+                });
+            })
+        }
+        */
+        </script>
     </body>
 </html>

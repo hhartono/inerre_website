@@ -36,7 +36,7 @@
         <div class="page" id="top">
             
         <!-- Navigation panel -->
-            <div id="undefined-sticky-wrapper" class="sticky-wrapper" style="height: 75px; background:#666;">
+            <div id="undefined-sticky-wrapper" class="sticky-wrapper" style="height: 75px; background:rgba(10, 10, 10, 0.95);">
             <nav class="main-nav dark stick-fixed">
                 <div class="full-wrapper relative clearfix">
                     <!-- Logo ( * your text or image into link tag *) -->

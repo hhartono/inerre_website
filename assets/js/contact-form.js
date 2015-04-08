@@ -36,7 +36,8 @@ $(document).ready(function(){
             };
             
             //Ajax post data to server
-            $.post('contact_me.php', post_data, function(response){
+            //$.post('contact_me.php', post_data, function(response){
+            $.post('contact/submitMessage', post_data, function(response){
             
                 //load json data from server and output message     
                 if (response.type == 'error') {
