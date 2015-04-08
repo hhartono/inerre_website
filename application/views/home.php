@@ -44,11 +44,11 @@
                     <div class="home-content">
                         <div class="home-text">
                             
-                            <h1 class="hs-line-1 font-alt mb-80 mb-xs-30 mt-50 mt-sm-0">
+                            <h1 class="hs-line-1 font-alt mb-50 mb-xs-50 mt-50 mt-sm-0 inerre-brown">
                                 INERRE
                             </h1>
                             
-                            <div class="hs-line-6">
+                            <div class="hs-line-6 mb-120 mb-xs-120">
                                 Extraordinary art studio &&nbsp;creative minimalism lovers
                             </div>
                             
@@ -168,10 +168,17 @@
 
                             <div class="col-md-4 mb-md-40 mb-xs-30">
                                 <blockquote class="mb-0">
+                                    <!--
                                     <p>
                                         A&nbsp;brand for a&nbsp;company is&nbsp;like a&nbsp;reputation
                                         for a&nbsp;person. You earn reputation by&nbsp;trying to&nbsp;do&nbsp;hard
                                         things well.
+                                    </p>
+                                    -->
+                                    <p>
+                                        At INERRE, we distinguish our work with a fanatical and
+                                        meticulous attention to detail and a commitment to the
+                                        highest quality standards.
                                     </p>
                                     <footer>
                                         Nessa Phoeng
@@ -180,11 +187,11 @@
                             </div>
 
                             <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In maximus ligula semper metus pellentesque mattis. Maecenas  volutpat, diam enim sagittis quam, id porta quam. Sed id dolor consectetur fermentum nibh volutpat, accumsan purus. 
+                                INERRE is an interior design firm capturing each client’s personality and reflecting it through a unified and well tailored interior design according to their lifestyles and needs.
                             </div>
                             
                             <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                Etiam sit amet fringilla lacus. Pellentesque suscipit ante at ullamcorper pulvinar neque porttitor. Integer lectus. Praesent sed nisi eleifend, fermentum orci amet, iaculis libero. Donec vel ultricies purus. Nam dictum sem, eu aliquam.
+                                INERRE wants to create a space that speaks a luxuriously livable language with a dialect that embodies a unique, custom design and personality.
                             </div>
                             
                         </div>
@@ -210,9 +217,7 @@
                             <div class="alt-features-item align-center">
                                 <div class="alt-features-descr align-left">
                                     <h2 class="section-title mt-0 font-alt align-left">Work process</h2>
-                                    Lorem ipsum dolor sit amet, c-r adipiscing elit.
-                                    In maximus ligula semper metus pellentesque mattis.
-                                    Maecenas  volutpat, diam enim.
+                                    Our goal is to have a proud portrait of INERRE’s dedication and one that ultimately illuminates a deep understanding of the homeowner’s personality and lifestyle.
                                 </div>
                             </div>
                         </div>
@@ -281,8 +286,7 @@
                                 <div class="banner-content">
                                     <h3 class="banner-heading font-alt">Looking for personalized interior design?</h3>
                                     <div class="banner-decription">
-                                        Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. 
-                                        Integer non dapibus diam, ac eleifend lectus.
+                                        Our employees have worked on a range of project types, including boutique hotels, restaurants, retail stores, and residentials.
                                     </div>
                                     <div class="local-scroll">
                                         <a href="/contact" class="btn btn-mod btn-w btn-medium btn-round">Lets talk</a>
