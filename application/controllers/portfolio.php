@@ -4,7 +4,11 @@ class Portfolio extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('portfolio');
+		$data = array(
+				'title' => '&mdash; Portfolio',
+				'portfolioactive' => 'active'
+			);
+		$this->load->view('portfolio', $data);
 	}
 	
 }
