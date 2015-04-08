@@ -40,7 +40,7 @@
             <div class="home-section fullwidth-slider bg-dark" id="home">
                 
                 <!-- Slide Item -->
-                <section class="home-section bg-scroll bg-dark-alfa-30" data-background="/assets/images/full-width-images/test-bg.jpg">
+                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/full-width-images/test-bg.jpg">
                     <div class="js-height-full container">
                         
                         <!-- Hero Content -->
@@ -73,7 +73,7 @@
                 <!-- End Slide Item -->
                 
                 <!-- Slide Item -->
-                <section class="home-section bg-scroll bg-dark-alfa-50" data-background="/assets/images/full-width-images/section-bg-10.jpg">
+                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/full-width-images/section-bg-10.jpg">
                     <div class="js-height-full container">
                         
                         <!-- Hero Content -->
@@ -106,7 +106,7 @@
                 <!-- End Slide Item -->
                 
                 <!-- Slide Item -->
-                <section class="home-section bg-scroll bg-dark-alfa-30" data-background="/assets/images/full-width-images/section-bg-9.jpg">
+                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/full-width-images/section-bg-9.jpg">
                     <div class="js-height-full container">
                         
                         <!-- Hero Content -->
@@ -137,7 +137,7 @@
                 <!-- End Slide Item -->
             
                 <!-- Slide Item -->
-                <section class="home-section bg-scroll bg-dark-alfa-30" data-background="/assets/images/full-width-images/section-bg-8.jpg">
+                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/full-width-images/section-bg-8.jpg">
                     <div class="js-height-full container">
                         
                         <!-- Hero Content -->

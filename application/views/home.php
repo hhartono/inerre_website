@@ -37,7 +37,7 @@
         <div class="page" id="top">
             
             <!-- Home Section -->
-            <section class="home-section bg-dark-alfa-30 parallax-2" data-background="/assets/images/full-width-images/section-bg-1.jpg" id="home">
+            <section class="home-section bg-dark-alfa-50 parallax-2" data-background="/assets/images/full-width-images/test-bg.jpg" id="home">
                 <div class="js-height-full">
                     
                     <!-- Hero Content -->
@@ -285,7 +285,7 @@
                                         Integer non dapibus diam, ac eleifend lectus.
                                     </div>
                                     <div class="local-scroll">
-                                        <a href="pages-contact-1.html" class="btn btn-mod btn-w btn-medium btn-round">Lets talk</a>
+                                        <a href="/contact" class="btn btn-mod btn-w btn-medium btn-round">Lets talk</a>
                                     </div>
                                 </div>
                             </div>
@@ -298,18 +298,60 @@
             </section>
             <!-- End Call Action Section -->
 
+            <!-- Section -->
+            <section class="page-section">
+                <div class="container relative">
+
+                    <div class="row">
+
+                        <div class="col-md-7 mb-sm-40">
+
+                            <!-- Gallery -->
+                            <div class="work-full-media mt-0 white-shadow wow fadeInUp">
+                                <ul class="clearlist work-full-slider owl-carousel">
+                                    <li>
+                                        <img src="/assets/images/promo-3.png" alt="" />
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End Gallery -->
+
+                        </div>
+
+                        <div class="col-md-5 col-lg-4 col-lg-offset-1">
+
+                            <!-- About Project -->
+                            <div class="text">
+
+                                <h3 class="font-alt mb-30 mb-xxs-10">Our Showroom</h3>
+
+                                <p>
+                                    Phasellus facilisis mauris vel velit molestie pellentesque. Donec rutrum, tortor ut elementum venenatis, purus magna bibendum nisl, ut accumsan ipsum erat eu sapien.
+                                </p>
+
+                                <div class="mt-40">
+                                    <a href="/showroom" class="btn btn-mod btn-border btn-round btn-medium">Visit Our Showroom</a>
+                                </div>
+
+                            </div>
+                            <!-- End About Project -->
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Section -->
 
             <!-- Divider -->
             <hr class="mt-0 mb-0"/>
             <!-- End Divider -->
 
-            
             <!-- Portfolio Section -->
             <section class="page-section pb-0" id="portfolio">
                 <div class="relative">
                     
                     <h2 class="section-title font-alt mb-70 mb-sm-40">
-                        Latest Works
+                        Our Portfolio
                     </h2>
                     
                     <div class="container">
@@ -331,7 +373,7 @@
                         <li class="work-item">
                             <a href="portfolio-single-1.html" class="work-ext-link">
                                 <div class="work-img">
-                                    <img class="work-img" src="images/portfolio/projects-13.jpg" alt="Work" />
+                                    <img class="work-img" src="/assets/images/portfolio/projects-13.jpg" alt="Work" />
                                 </div>
                                 <div class="work-intro">
                                     <h3 class="work-title">Man</h3>
@@ -347,7 +389,7 @@
                         <li class="work-item">
                             <a href="portfolio-single-1.html" class="work-ext-link">
                                 <div class="work-img">
-                                    <img class="work-img" src="images/portfolio/projects-14.jpg" alt="Work" />
+                                    <img class="work-img" src="/assets/images/portfolio/projects-14.jpg" alt="Work" />
                                 </div>
                                 <div class="work-intro">
                                     <h3 class="work-title">Woman</h3>
@@ -363,7 +405,7 @@
                         <li class="work-item">
                             <a href="portfolio-single-1.html" class="work-ext-link">
                                 <div class="work-img">
-                                    <img class="work-img" src="images/portfolio/projects-6.jpg" alt="Work" />
+                                    <img class="work-img" src="/assets/images/portfolio/projects-6.jpg" alt="Work" />
                                 </div>
                                 <div class="work-intro">
                                     <h3 class="work-title">Man with bag</h3>
@@ -381,8 +423,7 @@
                 </div>
             </section>
             <!-- End Portfolio Section -->
-            
-            
+
             <!-- Call Action Section -->
             <section class="small-section bg-dark">
                 <div class="container relative">
@@ -390,246 +431,13 @@
                     <div class="align-center">
                         <h3 class="banner-heading font-alt">Want to see more works?</h3>
                         <div class="local-scroll">
-                            <a href="portfolio-wide-gutter-3col.html" class="btn btn-mod btn-w btn-medium btn-round">Lets view portfolio</a>
+                            <a href="/portfolio" class="btn btn-mod btn-w btn-medium btn-round">Lets view portfolio</a>
                         </div>
                     </div>
                     
                 </div>
             </section>
             <!-- End Call Action Section -->
-
-            <!-- Services Section -->
-            <section class="page-section" id="services">
-            <div class="container relative">
-
-            <h2 class="section-title font-alt align-left mb-70 mb-sm-40">
-                Work Process
-
-                <!--
-                <a href="/about" class="section-more right">View all services <i class="fa fa-angle-right"></i></a>
-                -->
-
-            </h2>
-
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs tpl-alt-tabs font-alt pt-30 pt-sm-0 pb-30 pb-sm-0">
-                <li class="active">
-                    <a href="#service-branding" data-toggle="tab">
-
-                        <div class="alt-tabs-icon">
-                            <span class="icon-strategy"></span>
-                        </div>
-
-                        Branding
-                    </a>
-                </li>
-                <li>
-                    <a href="#service-web-design" data-toggle="tab">
-
-                        <div class="alt-tabs-icon">
-                            <span class="icon-desktop"></span>
-                        </div>
-
-                        Web Design
-                    </a>
-                </li>
-                <li>
-                    <a href="#service-graphic" data-toggle="tab">
-
-                        <div class="alt-tabs-icon">
-                            <span class="icon-tools"></span>
-                        </div>
-
-                        Graphic Design
-                    </a>
-                </li>
-                <li>
-                    <a href="#service-development" data-toggle="tab">
-
-                        <div class="alt-tabs-icon">
-                            <span class="icon-gears"></span>
-                        </div>
-
-                        Development
-                    </a>
-                </li>
-                <li>
-                    <a href="#service-photography" data-toggle="tab">
-
-                        <div class="alt-tabs-icon">
-                            <span class="icon-camera"></span>
-                        </div>
-
-                        Photography
-                    </a>
-                </li>
-            </ul>
-            <!-- End Nav tabs -->
-
-            <!-- Tab panes -->
-            <div class="tab-content tpl-tabs-cont">
-
-                <!-- Service Item -->
-                <div class="tab-pane fade in active" id="service-branding">
-
-                    <div class="section-text">
-                        <div class="row">
-
-                            <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                Maecenas  volutpat, diam enim sagittis quam, id porta quam. Sed id dolor consectetur fermentum
-                                volutpat nibh, accumsan purus. Lorem ipsum dolor sit semper amet, consectetur adipiscing elit.
-                                In maximus ligula metus pellentesque mattis.
-                            </div>
-                            <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                Donec vel ultricies purus. Nam dictum sem, ipsum aliquam . Etiam sit amet fringilla lacus.
-                                Pellentesque suscipit ante at ullamcorper pulvinar neque porttitor. Integer lectus.
-                                Praesent sed nisi eleifend, fermentum orci amet, iaculis libero.
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- End Service Item -->
-
-                <!-- Service Item -->
-                <div class="tab-pane fade" id="service-web-design">
-
-                    <div class="section-text">
-                        <div class="row">
-                            <div class="col-md-4 mb-md-40 mb-xs-30">
-                                <blockquote class="mb-0">
-                                    <p>
-                                        It&nbsp;doesn&rsquo;t matter how many times&nbsp;I have to&nbsp;click, as&nbsp;long
-                                        as&nbsp;each click is&nbsp;a&nbsp;mindless, unambiguous choice.
-                                    </p>
-                                    <footer>
-                                        Steve Krug
-                                    </footer>
-                                </blockquote>
-                            </div>
-                            <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                Cras mi tortor, laoreet id ornare et, accumsan non magna. Maecenas vulputate accumsan velit.
-                                Curabitur a nulla ex. Nam a tincidunt ante. Vitae gravida turpis. Vestibulum varius
-                                nulla non nulla scelerisque tristique.
-                            </div>
-                            <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                Mauris id viverra augue, eu porttitor diam. Praesent faucibus est a interdum elementum.
-                                Nam varius at ipsum id dignissim. Nam a tincidunt ante lorem. Pellentesque suscipit ante
-                                at ullamcorper pulvinar neque porttitor.
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- End Service Item -->
-
-                <!-- Service Item -->
-                <div class="tab-pane fade" id="service-graphic">
-
-                    <div class="section-text">
-                        <div class="row">
-                            <div class="col-md-4 mb-md-40 mb-xs-30">
-                                <blockquote class="mb-0">
-                                    <p>
-                                        Never fall in&nbsp;love with an&nbsp;idea. They&rsquo;re whores. If&nbsp;the one you&rsquo;re with isn&rsquo;t doing the job, there&rsquo;s always another.
-                                    </p>
-                                    <footer>
-                                        Chip Kidd
-                                    </footer>
-                                </blockquote>
-                            </div>
-                            <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                Lorem ipsum dolor sit semper amet, consectetur adipiscing elit. In maximus ligula metus pellentesque
-                                mattis. Donec vel ultricies purus. Nam dictum sem, ipsum aliquam . Praesent sed nisi eleifend,
-                                fermentum orci amet, iaculis libero.
-                            </div>
-                            <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-
-                                Pellentesque suscipit ante at ullamcorper pulvinar neque porttitor. Integer lectus. Etiam sit amet
-                                fringilla lacus. Maecenas  volutpat, diam enim sagittis quam, id porta quam. Sed id&nbsp;dolor
-                                consectetur fermentum volutpat nibh, accumsan purus.
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- End Service Item -->
-
-                <!-- Service Item -->
-                <div class="tab-pane fade" id="service-development">
-
-                    <div class="section-text">
-                        <div class="row">
-                            <div class="col-md-4 mb-md-40 mb-xs-30">
-                                <blockquote class="mb-0">
-                                    <p>
-                                        All that is&nbsp;valuable in&nbsp;human society depends upon the opportunity for development accorded the individual.
-                                    </p>
-                                    <footer>
-                                        Albert Einstein
-                                    </footer>
-                                </blockquote>
-                            </div>
-                            <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                Fusce hendrerit vitae nunc id gravida. Donec euismod quis ante at mattis. Mauris dictum ante sit
-                                amet enim interdum semper. Vestibulum odio justo, faucibus et dictum eu, malesuada nec neque.
-                                Maecenas  volutpat, diam enim sagittis.
-                            </div>
-                            <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                Pellentesque suscipit ante at ullamcorper pulvinar neque porttitor. Sed id dolor consectetur fermentum
-                                volutpat nibh, accumsan purus. Lorem ipsum dolor sit semper amet, consectetur adipiscing elit.
-                                Inmed maximus ligula metus pellentesque.
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- End Service Item -->
-
-                <!-- Service Item -->
-                <div class="tab-pane fade" id="service-photography">
-
-                    <div class="section-text">
-                        <div class="row">
-                            <div class="col-md-4 mb-md-40 mb-xs-30">
-                                <blockquote class="mb-0">
-                                    <p>
-                                        Photography is&nbsp;the simplest thing in&nbsp;the world, but it&nbsp;is&nbsp;incredibly
-                                        complicated to&nbsp;make it&nbsp;really work.
-                                    </p>
-                                    <footer>
-                                        Martin Parr
-                                    </footer>
-                                </blockquote>
-                            </div>
-                            <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                Donec vel ultricies purus. Nam dictum sem, ipsum aliquam . Etiam sit amet fringilla lacus.
-                                Pellentesque suscipit ante at ullamcorper pulvinar neque porttitor. Integer lectus.
-                                Praesent sed nisi eleifend, fermentum orci amet, iaculis libero.
-                            </div>
-                            <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                Maecenas  volutpat, diam enim sagittis quam, id porta quam. Sed id dolor consectetur fermentum
-                                volutpat nibh, accumsan purus. Lorem ipsum dolor sit semper amet, consectetur adipiscing elit.
-                                In maximus ligula metus pellentesque mattis.
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- End Service Item -->
-
-            </div>
-            <!-- End Tab panes -->
-
-            <!--
-            <div class="align-center">
-                <a href="pages-services-1.html" class="section-more font-alt">View all services <i class="fa fa-angle-right"></i></a>
-            </div>
-            -->
-
-            </div>
-            </section>
-            <!-- End Services Section -->
             
             <!-- Features Section -->
             <section class="page-section">
@@ -745,532 +553,6 @@
             </section>
             <!-- End Features Section -->
             
-            
-            <!-- Testimonials Section -->
-            <section class="page-section bg-dark bg-dark-alfa-90 fullwidth-slider" data-background="images/full-width-images/section-bg-3.jpg">
-                
-                <!-- Slide Item -->
-                <div>
-                    <div class="container relative">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2 align-center">
-                                <!-- Section Icon -->
-                                <div class="section-icon">
-                                    <span class="icon-quote"></span>
-                                </div>
-                                <!-- Section Title --><h3 class="small-title font-alt">What people say?</h3>
-                                <blockquote class="testimonial white">
-                                    <p>
-                                        Phasellus luctus commodo ullamcorper a posuere rhoncus commodo elit. Aenean congue,
-                                        risus utaliquam dapibus. Thanks!
-                                    </p>
-                                    <footer class="testimonial-author">
-                                        John Doe, doodle inc.
-                                    </footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Slide Item -->
-                
-                <!-- Slide Item -->
-                <div>
-                    <div class="container relative">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2 align-center">
-                                <!-- Section Icon -->
-                                <div class="section-icon">
-                                    <span class="icon-quote"></span>
-                                </div>
-                                <!-- Section Title --><h3 class="small-title font-alt">What people say?</h3>
-                                <blockquote class="testimonial white">
-                                    <p>
-                                        Phasellus luctus commodo ullamcorper a posuere rhoncus commodo elit. Aenean congue,
-                                        risus utaliquam dapibus. Thanks!
-                                    </p>
-                                    <footer class="testimonial-author">
-                                        John Doe, doodle inc.
-                                    </footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Slide Item -->
-                
-                <!-- Slide Item -->
-                <div>
-                    <div class="container relative">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2 align-center">
-                                <!-- Section Icon -->
-                                <div class="section-icon">
-                                    <span class="icon-quote"></span>
-                                </div>
-                                <!-- Section Title --><h3 class="small-title font-alt">What people say?</h3>
-                                <blockquote class="testimonial white">
-                                    <p>
-                                        Phasellus luctus commodo ullamcorper a posuere rhoncus commodo elit. Aenean congue,
-                                        risus utaliquam dapibus. Thanks!
-                                    </p>
-                                    <footer class="testimonial-author">
-                                        John Doe, doodle inc.
-                                    </footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Slide Item -->
-                
-            </section>
-            <!-- End Testimonials Section -->
-            
-            
-            <!-- Shop Section -->
-            <section class="page-section">
-                <div class="container relative">
-                    
-                    <h2 class="section-title font-alt align-left mb-70 mb-sm-40">
-                        Bestsellers
-                        
-                        <a href="shop-columns-3col.html" class="section-more right">Our Shop <i class="fa fa-angle-right"></i></a>
-                        
-                    </h2>
-                    
-                    <div class="row multi-columns-row">
-                    
-                        <!-- Shop Item -->
-                        <div class="col-md-3 col-lg-3 mb-60 mb-xs-40 wow fadeIn" data-wow-delay="0.1s" data-wow-duration="2s">
-                            <div class="post-prev-img">
-                                <a href="shop-single.html"><img src="images/shop/shop-prev-1.jpg" alt="" /></a>
-                                <div class="intro-label">
-                                    <span class="label label-danger bg-red">Sale</span>
-                                </div>
-                            </div>
-                            <div class="post-prev-title font-alt align-center">
-                                <a href="shop-single.html">G-Star Polo Applique Jersey</a>
-                            </div>
-                            <div class="post-prev-text align-center">
-                                <del>
-                                    $150.00
-                                </del>
-                                &nbsp;<strong>$94.75</strong>
-                            </div>
-                            <div class="post-prev-more align-center">
-                                <a href="#" class="btn btn-mod btn-gray btn-round"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                            </div>
-                        </div>
-                        <!-- End Shop Item -->
-                        
-                        <!-- Shop Item -->
-                        <div class="col-md-3 col-lg-3 mb-60 mb-xs-40 wow fadeIn" data-wow-delay="0.2s" data-wow-duration="2s">
-                            <div class="post-prev-img">
-                                <a href="shop-single.html"><img src="images/shop/shop-prev-2.jpg" alt="" /></a>
-                            </div>
-                            <div class="post-prev-title font-alt align-center">
-                                <a href="shop-single.html">Only & Sons Pique Polo Shirt</a>
-                            </div>
-                            <div class="post-prev-text align-center">
-                                <strong>$28.99</strong>
-                            </div>
-                            <div class="post-prev-more align-center">
-                                <a href="#" class="btn btn-mod btn-gray btn-round"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                            </div>
-                        </div>
-                        <!-- End Shop Item -->
-                        
-                        <!-- Shop Item -->
-                        <div class="col-md-3 col-lg-3 mb-60 mb-xs-40 wow fadeIn" data-wow-delay="0.3s" data-wow-duration="2s">
-                            <div class="post-prev-img">
-                                <a href="shop-single.html"><img src="images/shop/shop-prev-3.jpg" alt="" /></a>
-                            </div>
-                            <div class="post-prev-title font-alt align-center">
-                                <a href="shop-single.html">Longline Long Sleeve</a>
-                            </div>
-                            <div class="post-prev-text align-center">
-                                <strong>$39.99</strong>
-                            </div>
-                            <div class="post-prev-more align-center">
-                                <a href="#" class="btn btn-mod btn-gray btn-round"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                            </div>
-                        </div>
-                        <!-- End Shop Item -->
-                        
-                        <!-- Shop Item -->
-                        <div class="col-md-3 col-lg-3 mb-60 mb-xs-40 wow fadeIn" data-wow-delay="0.4s" data-wow-duration="2s">
-                            <div class="post-prev-img">
-                                <a href="shop-single.html"><img src="images/shop/shop-prev-4.jpg" alt="" /></a>
-                            </div>
-                            <div class="post-prev-title font-alt align-center">
-                                <a href="shop-single.html">Polo Shirt With Floral Sleeves</a>
-                            </div>
-                            <div class="post-prev-text align-center">
-                                <strong>$85.99</strong>
-                            </div>
-                            <div class="post-prev-more align-center">
-                                <a href="#" class="btn btn-mod btn-gray btn-round"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                            </div>
-                        </div>
-                        <!-- End Shop Item -->
-                    
-                    </div>
-                    
-                </div>
-            </section>
-            <!-- End Shop Section -->
-            
-            
-            <!-- Divider -->
-            <hr class="mt-0 mb-0 "/>
-            <!-- End Divider -->
-            
-            
-            <!-- Section -->
-            <section class="page-section">
-                <div class="container relative">
-                    
-                    <div class="row">
-                        
-                        <div class="col-md-7 mb-sm-40">
-                            
-                            <!-- Gallery -->
-                            <div class="work-full-media mt-0 white-shadow wow fadeInUp">
-                                <ul class="clearlist work-full-slider owl-carousel">
-                                    <li>
-                                        <img src="images/promo-3.png" alt="" />
-                                    </li>
-                                    <li>
-                                        <img src="images/portfolio/full-project-2.jpg" alt="" />
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- End Gallery -->
-                            
-                        </div>
-                        
-                        <div class="col-md-5 col-lg-4 col-lg-offset-1">
-                            
-                            <!-- About Project -->
-                            <div class="text">
-                                
-                                <h3 class="font-alt mb-30 mb-xxs-10">Awesome Template</h3>
-                                
-                                <p>
-                                    Phasellus facilisis mauris vel velit molestie pellentesque. Donec rutrum, tortor ut elementum venenatis, purus magna bibendum nisl, ut accumsan ipsum erat eu sapien. 
-                                </p>
-                                
-                                <div class="mt-40">
-                                    <a href="http://themeforest.net/user/theme-guru/portfolio" class="btn btn-mod btn-border btn-round btn-medium" target="_blank">Buy Now</a>
-                                </div>
-                                
-                            </div>
-                            <!-- End About Project -->
-                            
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- End Section -->
-            
-            
-            <!-- Divider -->
-            <hr class="mt-0 mb-0 "/>
-            <!-- End Divider -->
-            
-            
-            <!-- Section -->
-            <section class="page-section">
-                <div class="container relative">
-                    
-                    <div class="row">
-                        
-                        <div class="col-md-5 col-lg-4 mb-sm-40">
-                            
-                            <!-- About Project -->
-                            <div class="text">
-                                
-                                <h3 class="font-alt mb-30 mb-xxs-10">Clear Design</h3>
-                                <p>
-                                    Phasellus facilisis mauris vel velit molestie pellentesque. Donec rutrum, tortor ut elementum venenatis, purus magna bibendum nisl, ut accumsan ipsum erat eu sapien. 
-                                </p>
-                                
-                                <div class="mt-40">
-                                    <a href="http://themeforest.net/user/theme-guru/portfolio" class="btn btn-mod btn-border btn-round btn-medium" target="_blank">Buy Now</a>
-                                </div>
-                                
-                            </div>
-                            <!-- End About Project -->
-                            
-                        </div>
-                        
-                        <div class="col-md-7 col-lg-offset-1">
-                            
-                            <!-- Work Gallery -->
-                            <div class="work-full-media mt-0 white-shadow wow fadeInUp">
-                                <ul class="clearlist work-full-slider owl-carousel">
-                                    <li>
-                                        <img src="images/promo-4.png" alt="" />
-                                    </li>
-                                    <li>
-                                        <img src="images/portfolio/full-project-4.jpg" alt="" />
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- End Work Gallery -->
-                            
-                        </div>
-                        
-                     </div>
-                    
-                </div>
-            </section>
-            <!-- End Section -->
-            
-            
-            <!-- Section -->
-            <section class="page-section bg-dark-alfa-70 bg-scroll" data-background="images/full-width-images/section-bg-16.jpg">
-                <div class="container relative">
-                    
-                    <!-- Features Grid -->
-                    <div class="item-carousel owl-carousel">
-                        
-                        <!-- Features Item -->
-                        <div class="features-item">
-                            <div class="features-icon">
-                                <span class=" icon-hotairballoon"></span>
-                            </div>
-                            <div class="features-title font-alt">
-                                We're Creative
-                            </div>
-                            <div class="features-descr">
-                                We find the best ideas for you
-                            </div>
-                        </div>
-                        <!-- End Features Item -->
-                        
-                        <!-- Features Item -->
-                        <div class="features-item">
-                            <div class="features-icon">
-                                <span class="icon-clock"></span>
-                            </div>
-                            <div class="features-title font-alt">
-                                We’re Punctual
-                            </div>
-                            <div class="features-descr">
-                                We always do your tasks on time
-                            </div>
-                        </div>
-                        <!-- End Features Item -->
-                        
-                        <!-- Features Item -->
-                        <div class="features-item">
-                            <div class="features-icon">
-                                <span class="icon-lightbulb"></span>
-                            </div>
-                            <div class="features-title font-alt">
-                                We have magic
-                            </div>
-                            <div class="features-descr">
-                                You will be delighted
-                            </div>
-                        </div>
-                        <!-- End Features Item -->
-                        
-                        <!-- Features Item -->
-                        <div class="features-item">
-                            <div class="features-icon">
-                                <span class="icon-wine"></span>
-                            </div>
-                            <div class="features-title font-alt">
-                                We're Creative
-                            </div>
-                            <div class="features-descr">
-                                We find the best ideas for you
-                            </div>
-                        </div>
-                        <!-- End Features Item -->
-                        
-                        <!-- Features Item -->
-                        <div class="features-item">
-                            <div class="features-icon">
-                                <span class="icon-tools"></span>
-                            </div>
-                            <div class="features-title font-alt">
-                                We’re Punctual
-                            </div>
-                            <div class="features-descr">
-                                We always do your tasks on time
-                            </div>
-                        </div>
-                        <!-- End Features Item -->
-                        
-                        <!-- Features Item -->
-                        <div class="features-item">
-                            <div class="features-icon">
-                                <span class="icon-gears"></span>
-                            </div>
-                            <div class="features-title font-alt">
-                                We have magic
-                            </div>
-                            <div class="features-descr">
-                                You will be delighted
-                            </div>
-                        </div>
-                        <!-- End Features Item -->
-                        
-                        <!-- Features Item -->
-                        <div class="features-item">
-                            <div class="features-icon">
-                                <span class="icon-browser"></span>
-                            </div>
-                            <div class="features-title font-alt">
-                                We're Creative
-                            </div>
-                            <div class="features-descr">
-                                We find the best ideas for you
-                            </div>
-                        </div>
-                        <!-- End Features Item -->
-                        
-                        <!-- Features Item -->
-                        <div class="features-item">
-                            <div class="features-icon">
-                                <span class="icon-wallet"></span>
-                            </div>
-                            <div class="features-title font-alt">
-                                We’re Punctual
-                            </div>
-                            <div class="features-descr">
-                                We always do your tasks on time
-                            </div>
-                        </div>
-                        <!-- End Features Item -->
-                        
-                        <!-- Features Item -->
-                        <div class="features-item">
-                            <div class="features-icon">
-                                <span class="icon-document"></span>
-                            </div>
-                            <div class="features-title font-alt">
-                                We have magic
-                            </div>
-                            <div class="features-descr">
-                                You will be delighted
-                            </div>
-                        </div>
-                        <!-- End Features Item -->
-                        
-                    </div>
-                    <!-- Features Grid -->
-                
-                </div>
-            </section>
-            <!-- End Section -->
-            
-            
-            <!-- Blog Section -->
-            <section class="page-section" id="news">
-                <div class="container relative">
-                    
-                    <h2 class="section-title font-alt align-left mb-70 mb-sm-40">
-                        Latest News
-                        
-                        <a href="blog-classic-sidebar-right.html" class="section-more right">All News in our blog <i class="fa fa-angle-right"></i></a>
-                        
-                    </h2>
-                    
-                    <div class="row multi-columns-row">
-                        
-                        <!-- Post Item -->
-                        <div class="col-sm-6 col-md-4 col-lg-4 mb-md-50 wow fadeIn" data-wow-delay="0.1s" data-wow-duration="2s">
-                            
-                            <div class="post-prev-img">
-                                <a href="blog-single-sidebar-right.html"><img src="images/blog/post-prev-1.jpg" alt="" /></a>
-                            </div>
-                            
-                            <div class="post-prev-title font-alt">
-                                <a href="">New Web Design Trends</a>
-                            </div>
-                            
-                            <div class="post-prev-info font-alt">
-                                <a href="">John Doe</a> | 10 December
-                            </div>
-                            
-                            <div class="post-prev-text">
-                                Maecenas  volutpat, diam enim sagittis quam, id porta quam. Sed id dolor 
-                                consectetur fermentum nibh volutpat, accumsan purus. 
-                            </div>
-                            
-                            <div class="post-prev-more">
-                                <a href="" class="btn btn-mod btn-gray btn-round">Read More <i class="fa fa-angle-right"></i></a>
-                            </div>
-                            
-                        </div>
-                        <!-- End Post Item -->
-                        
-                        <!-- Post Item -->
-                        <div class="col-sm-6 col-md-4 col-lg-4 mb-md-50 wow fadeIn" data-wow-delay="0.2s" data-wow-duration="2s">
-                            
-                            <div class="post-prev-img">
-                                <a href="blog-single-sidebar-right.html"><img src="images/blog/post-prev-2.jpg" alt="" /></a>
-                            </div>
-                            
-                            <div class="post-prev-title font-alt">
-                                <a href="">Minimalistic Design Forever</a>
-                            </div>
-                            
-                            <div class="post-prev-info font-alt">
-                                <a href="">John Doe</a> | 9 December
-                            </div>
-                            
-                            <div class="post-prev-text">
-                                Maecenas  volutpat, diam enim sagittis quam, id porta quam. Sed id dolor 
-                                consectetur fermentum nibh volutpat, accumsan purus. 
-                            </div>
-                            
-                            <div class="post-prev-more">
-                                <a href="" class="btn btn-mod btn-gray btn-round">Read More <i class="fa fa-angle-right"></i></a>
-                            </div>
-                            
-                        </div>
-                        <!-- End Post Item -->
-                        
-                        <!-- Post Item -->
-                        <div class="col-sm-6 col-md-4 col-lg-4 mb-md-50 wow fadeIn" data-wow-delay="0.3s" data-wow-duration="2s">
-                            
-                            <div class="post-prev-img">
-                                <a href="blog-single-sidebar-right.html"><img src="images/blog/post-prev-3.jpg" alt="" /></a>
-                            </div>
-                            
-                            <div class="post-prev-title font-alt">
-                                <a href="">Hipster&rsquo;s Style in&nbsp;Web</a>
-                            </div>
-                            
-                            <div class="post-prev-info font-alt">
-                                <a href="">John Doe</a> | 7 December
-                            </div>
-                            
-                            <div class="post-prev-text">
-                                Maecenas  volutpat, diam enim sagittis quam, id porta quam. Sed id dolor 
-                                consectetur fermentum nibh volutpat, accumsan purus. 
-                            </div>
-                            
-                            <div class="post-prev-more">
-                                <a href="" class="btn btn-mod btn-gray btn-round">Read More <i class="fa fa-angle-right"></i></a>
-                            </div>
-                            
-                        </div>
-                        <!-- End Post Item -->
-                        
-                    </div>
-                    
-                </div>
-            </section>
-            <!-- End Blog Section -->
-            
-            
             <!-- Newsletter Section -->
             <section class="small-section bg-gray-lighter">
                 <div class="container relative">
@@ -1304,21 +586,20 @@
                 </div>
             </section>
             <!-- End Newsletter Section -->
-            
-            
+
             <!-- Contact Section -->
             <section class="page-section" id="contact">
                 <div class="container relative">
-                    
+
                     <h2 class="section-title font-alt mb-70 mb-sm-40">
-                        Find Us
+                        Find Inerre
                     </h2>
-                    
+
                     <div class="row">
-                        
+
                         <div class="col-md-8 col-md-offset-2">
                             <div class="row">
-                                
+
                                 <!-- Phone -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -1329,12 +610,12 @@
                                             Call Us
                                         </div>
                                         <div class="ci-text">
-                                            +61 3 8376 6284
+                                            +62 22 423 2200
                                         </div>
                                     </div>
                                 </div>
                                 <!-- End Phone -->
-                                
+
                                 <!-- Address -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -1345,12 +626,14 @@
                                             Address
                                         </div>
                                         <div class="ci-text">
-                                            245 Quigley Blvd, Ste K
+                                            Jl. Pasteur No 11<br>
+                                            Bandung<br>
+                                            INDONESIA
                                         </div>
                                     </div>
                                 </div>
                                 <!-- End Address -->
-                                
+
                                 <!-- Email -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -1361,48 +644,31 @@
                                             Email
                                         </div>
                                         <div class="ci-text">
-                                            <a href="mailto:support@bestlooker.pro">support@bestlooker.pro</a>
+                                            <a href="mailto:support@bestlooker.pro">info@inerre.com</a>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- End Email -->
-                                
+
                             </div>
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
             </section>
             <!-- End Contact Section -->
-            
-            
-            <!-- Call Action Section -->
-            <section class="small-section bg-dark">
-                <div class="container relative">
-                    
-                    <div class="align-center">
-                        <h3 class="banner-heading font-alt">Want to discuss your new project?</h3>
-                        <div>
-                            <a href="" class="btn btn-mod btn-w btn-medium btn-round">Lets tallk</a>
-                        </div>
-                    </div>
-                    
-                </div>
-            </section>
-            <!-- End Call Action Section -->
-            
-            
-            <!-- Foter -->
+
+            <!-- Footer -->
             <footer class="page-section bg-gray-lighter footer pb-60">
                 <div class="container">
-                    
+
                     <!-- Footer Logo -->
                     <div class="local-scroll mb-30 wow fadeInUp" data-wow-duration="1.5s">
                         <a href="#top"><img src="/assets/images/logo-footer.png" width="50" height="80" alt="" /></a>
                     </div>
                     <!-- End Footer Logo -->
-                    
+
                     <!-- Social Links -->
                     <div class="footer-social-links mb-110 mb-xs-60">
                         <a href="#" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
@@ -1411,32 +677,30 @@
                         <a href="#" title="LinkedIn+" target="_blank"><i class="fa fa-linkedin"></i></a>
                         <a href="#" title="Pinterest" target="_blank"><i class="fa fa-pinterest"></i></a>
                     </div>
-                    <!-- End Social Links -->  
-                    
+                    <!-- End Social Links -->
+
                     <!-- Footer Text -->
                     <div class="footer-text">
-                        
+
                         <!-- Copyright -->
                         <div class="footer-copy font-alt">
                             <a href="/home" target="_blank">&copy; INERRE 2014</a>.
                         </div>
                         <!-- End Copyright -->
-                        
-                        
+
                     </div>
-                    <!-- End Footer Text --> 
-                    
-                 </div>
-                 
-                 
-                 <!-- Top Link -->
-                 <div class="local-scroll">
-                     <a href="#top" class="link-to-top"><i class="fa fa-caret-up"></i></a>
-                 </div>
-                 <!-- End Top Link -->
-                 
+                    <!-- End Footer Text -->
+
+                </div>
+
+                <!-- Top Link -->
+                <div class="local-scroll">
+                    <a href="#top" class="link-to-top"><i class="fa fa-caret-up"></i></a>
+                </div>
+                <!-- End Top Link -->
+
             </footer>
-            <!-- End Foter -->
+            <!-- End Footer -->
         
         
         </div>
