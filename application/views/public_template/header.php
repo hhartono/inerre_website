@@ -23,7 +23,8 @@
         <link rel="stylesheet" href="/assets/css/vertical-rhythm.min.css">
         <link rel="stylesheet" href="/assets/css/owl.carousel.css">
         <link rel="stylesheet" href="/assets/css/magnific-popup.css">
-        <?php $this->load->view('public_template/analyticstracking');?>
+        <!-- Load Google Analytic Code -->
+        <?php //$this->load->view('public_template/analyticstracking');?>
     </head>
 
     <body class="appear-animate">
