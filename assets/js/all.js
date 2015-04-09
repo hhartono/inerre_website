@@ -689,7 +689,7 @@ function init_map(){
                 marker: {
                     //address: gmMarkerAddress,
                     latLng:[gmDataLat, gmDataLong],
-                    data: "INERRE Interior</br>Jl Pasteur 11 Bandung, Indonesia",
+                    data: gmMarkerAddress,
                     options: {
                         icon: "assets/images/map-marker.png"
                     },

@@ -144,8 +144,7 @@
             
              <!-- Google Map -->
             <div class="google-map">
-                <!--div data-address="INERRE Interior, Jl. Pasteur No. 11, Bandung, Jawa Barat 40116" id="map-canvas"></div-->
-                <div data-address="INERRE Interior, Jl. Pasteur No. 11, Bandung, Jawa Barat 40116" data-address-lat="-6.900460" data-address-long="107.603326" id="map-canvas"></div>
+                <div data-address="INERRE Interior <br> Jl. Pasteur No. 11 <br>Bandung <br>Indonesia" data-address-lat="-6.900460" data-address-long="107.603326" id="map-canvas"></div>
                 <div class="map-section">
                     <div class="map-toggle">
                         <div class="mt-icon">

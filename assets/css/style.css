@@ -3248,14 +3248,26 @@ a.logo:hover{
     position: relative;
 }
 .post-prev-img a{
+    /*
     -webkit-transition: all 0.2s cubic-bezier(0.300, 0.100, 0.580, 1.000);  
     -moz-transition: all 0.2s cubic-bezier(0.300, 0.100, 0.580, 1.000); 
     -o-transition: all 0.2s cubic-bezier(0.300, 0.100, 0.580, 1.000);
     -ms-transition: all 0.2s cubic-bezier(0.300, 0.100, 0.580, 1.000); 
     transition: all 0.2s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    */
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    filter: gray;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition:all 0.2s ease-in;
 }
 .post-prev-img a:hover{
-    opacity: .85;
+    /*opacity: .85;*/
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    filter: none;
 }
 .post-prev-img img{
     width: 100%;

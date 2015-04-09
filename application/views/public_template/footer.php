@@ -11,11 +11,12 @@
                     
                     <!-- Social Links -->
                     <div class="footer-social-links mb-110 mb-xs-60">
-                        <a href="#" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a href="#" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/inerre.interior" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="http://twitter.com/inerre_interior" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
                         <a href="#" title="Behance" target="_blank"><i class="fa fa-behance"></i></a>
                         <a href="#" title="LinkedIn+" target="_blank"><i class="fa fa-linkedin"></i></a>
-                        <a href="#" title="Pinterest" target="_blank"><i class="fa fa-pinterest"></i></a>
+                        <a href="http://pinterest.com/inerre_interior" title="Pinterest" target="_blank"><i class="fa fa-pinterest"></i></a>
+                        <a href="http://www.instagram.com/inerre_interior" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
                     </div>
                     <!-- End Social Links -->  
                     
