@@ -5,7 +5,7 @@
             <!-- Fullwidth Slider -->
             <div class="home-section fullwidth-slider bg-dark" id="home">
                 <!-- Slide Item -->
-                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/full-width-images/test-bg.jpg">
+                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/full-width-images/resize2.jpg">
                     <div class="js-height-full container">
                         
                         <!-- Hero Content -->

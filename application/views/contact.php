@@ -3,24 +3,23 @@
     $this->load->view('public_template/header');
 ?>          
             <!-- Head Section -->
-            <section class="page-section bg-dark-alfa-60 parallax-3" data-background="/assets/images/full-width-images/test-bg.jpg" style="">
+            <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/full-width-images/new-crop-flip.jpg">
                 <div class="relative container align-left">
                     
                     <div class="row">
                         
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             <h1 class="hs-line-11 font-alt mb-20 mb-xs-0 inerre-brown">Contact</h1>
                             <div class="hs-line-4 font-alt">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing
                             </div>
                         </div>
                         
-                        <div class="col-md-4 mt-30">
+                        <!--div class="col-md-4 mt-30">
                             <div class="mod-breadcrumbs font-alt align-right">
                                 <a href="/home">Home</a>&nbsp;<i class="inerre-brown">//</i>&nbsp;<span>Contact</span>
                             </div>
-                            
-                        </div>
+                        </div-->
                     </div>
                     
                 </div>

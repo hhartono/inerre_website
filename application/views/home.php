@@ -3,14 +3,14 @@
     $this->load->view('public_template/header');
 ?>
             <!-- Home Section -->
-            <section class="home-section bg-dark-alfa-50 parallax-2" data-background="/assets/images/full-width-images/test-bg.jpg" id="home">
+            <section class="home-section bg-color-lighter parallax-2" data-background="/assets/images/full-width-images/resize1.jpg" id="home">
                 <div class="js-height-full">
                     
                     <!-- Hero Content -->
                     <div class="home-content">
                         <div class="home-text">
                             
-                            <h1 class="hs-line-1 font-alt mb-50 mb-xs-50 mt-50 mt-sm-0 inerre-brown">
+                            <h1 class="hs-line-1 font-alt mb-50 mb-xs-50 mt-50 mb-xs-0 inerre-brown">
                                 INERRE
                             </h1>
                             
@@ -154,7 +154,7 @@
             <!-- End Process Section -->
             
             <!-- Call Action Section -->
-            <section class="page-section pt-0 pb-0 banner-section bg-dark" data-background="/assets/images/full-width-images/section-bg-2.jpg">
+            <section class="page-section pt-0 pb-0 banner-section bg-dark" data-background="/assets/images/full-width-images/4UKDT5ZCUC-crop.jpg">
                 <div class="container relative">
                     
                     <div class="row">
@@ -193,7 +193,7 @@
                             <div class="work-full-media mt-0 white-shadow wow fadeInUp">
                                 <ul class="clearlist work-full-slider owl-carousel">
                                     <li>
-                                        <img src="/assets/images/promo-3.png" alt="" />
+                                        <img src="/assets/images/full-width-images/DeathtoStock_Objects4-crop.jpg" alt="" />
                                     </li>
                                 </ul>
                             </div>
@@ -256,10 +256,10 @@
                         <li class="work-item">
                             <a href="portfolio-single-1.html" class="work-ext-link">
                                 <div class="work-img">
-                                    <img class="work-img" src="/assets/images/portfolio/projects-13.jpg" alt="Work" />
+                                    <img class="work-img" src="/assets/images/portfolio-inerre/015532-650.jpg" alt="Work" />
                                 </div>
                                 <div class="work-intro">
-                                    <h3 class="work-title">Man</h3>
+                                    <h3 class="work-title">Portfolio #10</h3>
                                     <div class="work-descr">
                                         External Page
                                     </div>
@@ -272,10 +272,10 @@
                         <li class="work-item">
                             <a href="portfolio-single-1.html" class="work-ext-link">
                                 <div class="work-img">
-                                    <img class="work-img" src="/assets/images/portfolio/projects-14.jpg" alt="Work" />
+                                    <img class="work-img" src="/assets/images/portfolio-inerre/025053-650.jpg" alt="Work" />
                                 </div>
                                 <div class="work-intro">
-                                    <h3 class="work-title">Woman</h3>
+                                    <h3 class="work-title">Portfolio #9</h3>
                                     <div class="work-descr">
                                         External Page
                                     </div>
@@ -288,10 +288,10 @@
                         <li class="work-item">
                             <a href="portfolio-single-1.html" class="work-ext-link">
                                 <div class="work-img">
-                                    <img class="work-img" src="/assets/images/portfolio/projects-6.jpg" alt="Work" />
+                                    <img class="work-img" src="/assets/images/portfolio-inerre/034836-650.jpg" alt="Work" />
                                 </div>
                                 <div class="work-intro">
-                                    <h3 class="work-title">Man with bag</h3>
+                                    <h3 class="work-title">Portfolio #8</h3>
                                     <div class="work-descr">
                                         External Page
                                     </div>
@@ -308,7 +308,7 @@
             <!-- End Portfolio Section -->
 
             <!-- Call Action Section -->
-            <section class="small-section bg-dark">
+            <section class="small-section" style="background:#ccc;">
                 <div class="container relative">
                     
                     <div class="align-center">

@@ -1121,14 +1121,16 @@ a.btn-mod:focus{
 }
 
 .hs-line-1{
-    margin-top: 0;
-	position: relative;
-    text-transform: uppercase;
-	font-size: 30px;
-    font-weight: 400;
+  margin-top: 0;
+  position: relative;
+  text-transform: uppercase;
+	/* font-size: 30px; */
+  font-size: 80px;
+  font-weight: 400;
 	letter-spacing: 51px;
 	color: #fff;
-    opacity: .9;
+  opacity: .9;
+  margin-right:-51px;
 }
 .hs-line-2{
     margin-top: 0;
@@ -1175,7 +1177,7 @@ a.btn-mod:focus{
 	font-size: 19px;
 	font-weight: 300;
     line-height: 1.2;
-    opacity: .35;
+    opacity: .85;
 }
 .hs-line-6.no-transp{
     opacity: 1;
@@ -1774,7 +1776,9 @@ a.logo:hover{
  */
 
 .main-nav.transparent{
-    background: transparent !important;
+    
+    background: rgba(255,255,255, 0.2) !important;
+
 }
 .main-nav.js-transparent{
     -webkit-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);  
@@ -1984,7 +1988,8 @@ a.logo:hover{
 	top: 0;
 	left: 0;
 	/*background: rgba(34,34,34, .3);*/
-    background: rgba(0,1,12, .3);
+  background: rgba(0,1,12, .3);
+  
 }
 .bg-dark-alfa-50:before,
 .bg-dark-alfa-50 .YTPOverlay:before{
@@ -3255,8 +3260,8 @@ a.logo:hover{
     -ms-transition: all 0.2s cubic-bezier(0.300, 0.100, 0.580, 1.000); 
     transition: all 0.2s cubic-bezier(0.300, 0.100, 0.580, 1.000);
     */
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
+    filter: grayscale(50%);
+    -webkit-filter: grayscale(50%);
     filter: gray;
     -moz-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;

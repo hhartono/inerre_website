@@ -50,7 +50,16 @@
                          * munculkan logo
                          */
                         if((isset($homeactive)) || ($uri_satu=="")){
+
                             // echo nothing
+                        ?>
+                            <!-- Logo ( * your text or image into link tag *) -->
+                            <div class="hidden-lg hidden-md nav-logo-wrap local-scroll">
+                                <a href="/home" class="logo">
+                                    <img src="/assets/images/logo-white-2.png" width="177" height="40.5" alt="" />
+                                </a>
+                            </div>
+                        <?php
                         }else{
                     ?>
                             <!-- Logo ( * your text or image into link tag *) -->
