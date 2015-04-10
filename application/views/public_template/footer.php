@@ -1,40 +1,31 @@
-            
             <!-- Footer -->
             <footer class="page-section bg-gray-lighter footer pb-60">
                 <div class="container">
-                    
                     <!-- Footer Logo -->
                     <div class="local-scroll mb-30 wow fadeInUp" data-wow-duration="1.5s">
                         <a href="#top"><img src="/assets/images/logo-footer.png" width="50" height="80" alt="" /></a>
                     </div>
                     <!-- End Footer Logo -->
-                    
                     <!-- Social Links -->
                     <div class="footer-social-links mb-110 mb-xs-60">
                         <a href="https://www.facebook.com/inerre.interior" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a href="http://twitter.com/inerre_interior" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
-                        <a href="#" title="Behance" target="_blank"><i class="fa fa-behance"></i></a>
-                        <a href="#" title="LinkedIn+" target="_blank"><i class="fa fa-linkedin"></i></a>
-                        <a href="http://pinterest.com/inerre_interior" title="Pinterest" target="_blank"><i class="fa fa-pinterest"></i></a>
-                        <a href="http://www.instagram.com/inerre_interior" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="https://twitter.com/inerre_interior" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.behance.net/inerre_interior" title="Behance" target="_blank"><i class="fa fa-behance"></i></a>
+                        <a href="https://www.linkedin.com/company/inerre-interior" title="LinkedIn+" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://pinterest.com/inerre_interior" title="Pinterest" target="_blank"><i class="fa fa-pinterest"></i></a>
+                        <a href="https://www.instagram.com/inerre_interior" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
                     </div>
-                    <!-- End Social Links -->  
-                    
+                    <!-- End Social Links -->
                     <!-- Footer Text -->
                     <div class="footer-text">
-                        
                         <!-- Copyright -->
                         <div class="footer-copy font-alt">
                             <a href="/home" target="_blank">&copy; INERRE 2014</a>.
                         </div>
                         <!-- End Copyright -->
-                        
                     </div>
-                    <!-- End Footer Text --> 
-                    
+                    <!-- End Footer Text -->
                  </div>
-                 
-                 
                  <!-- Top Link -->
                  <div class="local-scroll">
                      <a href="#top" class="link-to-top"><i class="fa fa-caret-up"></i></a>
@@ -42,11 +33,8 @@
                  <!-- End Top Link -->
             </footer>
             <!-- End Footer -->
-        
         </div>
         <!-- End Page Wrap -->
-        
-        
         <!-- JS -->
         <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="/assets/js/jquery.easing.1.3.js"></script>
