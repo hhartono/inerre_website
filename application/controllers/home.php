@@ -23,7 +23,7 @@ class Home extends CI_Controller {
 				'title' => '',
 				'homeactive' => 'active'
 			);
-		$this->load->view('home', $data);
+		$this->load->view('public/home', $data);
 	}
 }
 

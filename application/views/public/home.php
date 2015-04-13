@@ -1,6 +1,6 @@
 <?php 
     // load view header from template
-    $this->load->view('public_template/header');
+    $this->load->view('public/public_template/header');
 ?>
             <!-- Home Section -->
             <section class="home-section bg-color-lighter parallax-2" data-background="/assets/images/full-width-images/resize1.jpg" id="home">
@@ -10,7 +10,7 @@
                     <div class="home-content">
                         <div class="home-text">
                             
-                            <h1 class="hs-line-1 font-alt mb-50 mb-xs-50 mt-50 mb-xs-0 inerre-brown">
+                            <h1 class=" hs-line-1 font-alt mb-50 mb-xs-50 mt-50 mb-xs-0 inerre-brown">
                                 INERRE
                             </h1>
                             
@@ -81,17 +81,15 @@
             <!-- End About Section -->
             
             <!-- Divider -->
-            <hr class="mt-0 mb-0 "/>
+            <!--hr class="mt-0 mb-0 "/-->
             <!-- End Divider -->
 
             <!-- Process Section -->
             <section class="page-section">
                 <div class="container relative">
-
                     <!-- Features Grid -->
                     <div class="row alt-features-grid">
-
-                        <!-- Text Item -->
+                         <!-- Text Item -->
                         <div class="col-sm-4">
                             <div class="alt-features-item align-center">
                                 <div class="alt-features-descr align-left">
@@ -145,7 +143,6 @@
                             </div>
                         </div>
                         <!-- End Features Item -->
-
                     </div>
                     <!-- End Features Grid -->
 
@@ -154,7 +151,7 @@
             <!-- End Process Section -->
             
             <!-- Call Action Section -->
-            <section class="page-section pt-0 pb-0 banner-section bg-dark" data-background="/assets/images/full-width-images/4UKDT5ZCUC-crop.jpg">
+            <section class="page-section pt-0 pb-0 banner-section bg-dark" data-background="/assets/images/full-width-images/unsplashdotcom4-crop.jpg">
                 <div class="container relative">
                     
                     <div class="row">
@@ -163,8 +160,8 @@
                             
                             <div class="mt-140 mt-lg-80 mb-140 mb-lg-80">
                                 <div class="banner-content">
-                                    <h3 class="banner-heading font-alt">Looking for personalized interior design?</h3>
-                                    <div class="banner-decription">
+                                    <h3 class="textshadow banner-heading font-alt">Looking for personalized interior design?</h3>
+                                    <div class="textshadow banner-decription">
                                         Our employees have worked on a range of project types, including boutique hotels, restaurants, retail stores, and residentials.
                                     </div>
                                     <div class="local-scroll">
@@ -312,7 +309,7 @@
                 <div class="container relative">
                     
                     <div class="align-center">
-                        <h3 class="banner-heading font-alt">Want to see more works?</h3>
+                        <h3 class="banner-heading font-alt textshadow ">Want to see more works?</h3>
                         <div class="local-scroll">
                             <a href="/portfolio" class="btn btn-mod btn-w btn-medium btn-round">Lets view portfolio</a>
                         </div>
@@ -541,8 +538,7 @@
                 </div>
             </section>
             <!-- End Contact Section -->
-
-<?php
+<?php 
     // load view footer from template
-    $this->load->view('public_template/footer');
+    $this->load->view('public/public_template/footer');
 ?>

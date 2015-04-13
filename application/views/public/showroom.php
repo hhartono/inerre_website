@@ -1,6 +1,6 @@
 <?php 
     // load view header from template
-    $this->load->view('public_template/header');
+    $this->load->view('public/public_template/header');
 ?>          
             <!-- Fullwidth Slider -->
             <div class="home-section fullwidth-slider bg-dark" id="home">
@@ -246,6 +246,6 @@
 
 <?php
     // load view footer from template
-    $this->load->view('public_template/footer');
+    $this->load->view('public/public_template/footer');
 ?>
 

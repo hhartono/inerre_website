@@ -21,6 +21,11 @@
         <link rel="stylesheet" href="/assets/css/vertical-rhythm.min.css">
         <link rel="stylesheet" href="/assets/css/owl.carousel.css">
         <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+        <style>
+        .textshadow{
+            text-shadow:-1px 1px 4px #000;
+        }
+        </style>
         <!-- Load Google Analytic Code -->
         <?php //$this->load->view('public_template/analyticstracking');?>
     </head>

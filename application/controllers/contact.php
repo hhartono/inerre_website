@@ -17,7 +17,7 @@ class Contact extends CI_Controller {
 				'title' => '&mdash; Contact',
 				'contactactive' => 'active'
 			);
-		$this->load->view('contact', $data);
+		$this->load->view('public/contact', $data);
 	}
 
 	/*

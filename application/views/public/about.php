@@ -1,6 +1,6 @@
 <?php 
     // load view header from template
-    $this->load->view('public_template/header');
+    $this->load->view('public/public_template/header');
 ?>   
             <!-- Head Section -->
             <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/full-width-images/new-crop-flip.jpg">
@@ -377,6 +377,6 @@
             <!-- End Features Section -->
 <?php 
     // load view footer from template
-    $this->load->view('public_template/footer');
+    $this->load->view('public/public_template/footer');
 ?>
 

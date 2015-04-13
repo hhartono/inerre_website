@@ -8,7 +8,7 @@ class Portfolio extends CI_Controller {
 				'title' => '&mdash; Portfolio',
 				'portfolioactive' => 'active'
 			);
-		$this->load->view('portfolio', $data);
+		$this->load->view('public/portfolio', $data);
 	}
 	
 }

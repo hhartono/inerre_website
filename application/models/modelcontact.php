@@ -9,7 +9,8 @@ class Modelcontact extends CI_Model {
 			'name' => $name,
 			'email' => $email,
 			'message' => $message,
-			'date_in' => date("Y-m-d H:i:s")
+			'date_in' => date("Y-m-d H:i:s"),
+			'status' => 'belum dibalas'
 		);
 		$insert = $this->db->insert('contact', $field);
 	}

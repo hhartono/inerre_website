@@ -23,7 +23,7 @@ class Showroom extends CI_Controller {
 				'title' => '&mdash; Showroom',
 				'showroomactive' => 'active'
 			);
-		$this->load->view('showroom', $data);
+		$this->load->view('public/showroom', $data);
 	}
 }
 
