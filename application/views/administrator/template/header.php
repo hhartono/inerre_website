@@ -1,32 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
 	<title><?php echo $title;?></title>
-	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+	<meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta charset="utf-8">
+    <meta name="author" content="Hans Hartono">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="/assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style-responsive.css">
+    <link rel="stylesheet" href="/assets/css/animate.min.css">
+    <link rel="stylesheet" href="/assets/css/vertical-rhythm.min.css">
+    <link rel="stylesheet" href="/assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-datetimepicker.min.css">
+	<style>
+	.dataTables_messagefil, .dataTables_tgl{
+		float:left;
+	}
+	</style>
 </head>
 <body>
-		<nav class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container">
-			    <!-- Brand and toggle get grouped for better mobile display -->
-			    <div class="navbar-header">
-			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			        <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			      </button>
-			      <a class="navbar-brand" href="#">Inerre</a>
-			    </div>
-
-			    <!-- Collect the nav links, forms, and other content for toggling -->
-			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			      <ul class="nav navbar-nav">
-			        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-			        <li><a href="#">Link</a></li>
-			        <li><a href="#">Logout</a></li>
-			      </ul>
-			    </div><!-- /.navbar-collapse -->
-			</div><!-- /.container -->
-		</nav>
+	<!-- Page Loader -->        
+        <div class="page-loader">
+            <div class="loader">Loading...</div>
+        </div>
+        <!-- End Page Loader -->
+        <!-- Page Wrap -->
+        <div class="page" id="top">
+            <!-- Navigation panel -->
+            <nav class="main-nav dark stick-fixed">
+                <div class="full-wrapper relative clearfix">
+                     <!-- Logo ( * your text or image into link tag *) -->
+                    <div class="nav-logo-wrap local-scroll">
+                        <a href="/home" class="logo">
+                            <img src="/assets/images/logo-white-2.png" width="177" height="40.5" alt="" />
+                        </a>
+                    </div>
+                    <div class="mobile-nav">
+                        <i class="fa fa-bars"></i>
+                    </div>
+                    <!-- Main Menu -->
+                    <div class="inner-nav desktop-nav">
+                        <ul class="clearlist">
+                            <!-- Link -->
+                            <li>
+                                <a href="">Link</a>
+                            </li>
+                            <!-- End Link -->
+                            <!-- Link -->
+                            <li>
+                                <a href="">Link</a>
+                            </li>
+                            <!-- End Link -->
+                            <!-- Link -->
+                            <li>
+                                <a href="">Logout</a>
+                            </li>
+                            <!-- End Link -->
+                            <!-- Search -->
+                            <li>
+                                <a href="#" class="mn-has-sub"><i class="fa fa-search"></i> Search</a>
+                                <ul class="mn-sub">
+                                    <li>
+                                        <div class="mn-wrap">
+                                            <form method="post" class="form">
+                                                <div class="search-wrap">
+                                                    <button class="search-button animate" type="submit" title="Start Search">
+                                                        <i class="fa fa-search"></i>
+                                                    </button>
+                                                    <input type="text" class="form-control search-field" placeholder="Search...">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- End Search -->
+                        </ul>
+                    </div>
+                    <!-- End Main Menu -->
+                </div>
+            </nav>
+            <!-- End Navigation panel -->
 	

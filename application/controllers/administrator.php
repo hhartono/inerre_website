@@ -20,48 +20,41 @@ class Administrator extends CI_Controller {
 	public function messagecenter()
 	{	
 		$data = array(
-			'title' => 'Inerre Interior - Administrator / Message Center'
-			//'loadAllMessage' => $this->modelmessagecenter->loadAllMessage()
+				'title' => 'Inerre Interior - Administrator / Message Center'
+				//'loadmessage' => $this->modelmessagecenter->loadMessageAll()
 			);
 		$this->load->view('administrator/messagecenter', $data);
 	}
 
 	public function loadAllMessage()
 	{
+		
+		//$tgl = $this->input->post('tgl');	
+		
 		$loadAll = $this->modelmessagecenter->loadMessageAll();
 		if(isset($loadAll)){
-			echo '<table class="table">
-					<tr>
-						<th>No</th>
-						<th colspan="2">Message(s)</th>
-					</tr>';
-					$no = 1;
-					foreach($loadAll as $lam){
-			echo '<tbody>';
+			echo '<table id="tablemessage" class="display">
+				<thead>
+					<th>No</th>
+					<th>Name (Email)</th>
+					<th>Message(s)</th>
+					<th>Date</th>
+					<th>Status</th>
+				</thead>
+				<tbody>';
+			$no = 1;
+			foreach ($loadAll as $row) {
 			echo '<tr>';
 			echo '<td>'. $no .'</td>';
-			echo '<td>From : '. $lam->name .'</td>';
-			if($lam->status=="replied"){
-				$label = "info";
-			}else{
-				$label = "warning";
-			}
-			echo '<td><span class="label label-'.$label.'">'. ucwords($lam->status ). '</span></td>';
+			echo '<td>'. $row->name.' ('.$row->email .')</td>';
+			echo '<td>'. $row->message .'</td>';
+			echo '<td>'. $row->date_in .'</td>';
+			echo '<td>'. $row->status .'</td>';
 			echo '</tr>';
-			echo '<tr>';
-			echo '<td></td>';
-			echo '<td>Email: '. $lam->email .'</td>';
-			echo '<td>'. $lam->date_in .'</td>';
-			echo '</tr>';
-			echo '<tr>';
-			echo '<td></td>';
-			echo '<td>Message : '. $lam->message.'</td>';
-			echo '<td><a href="">Delete</a> | <a href="">Reply</a></td>';
-			echo '</tr>';
-			echo '</tbody>';
-						$no++;
-					}
-			echo '</table>';
+					$no++;
+				}
+			echo '</tbody>
+				</table>';
 		}else{
 			echo "nothing";
 		}
@@ -73,33 +66,28 @@ class Administrator extends CI_Controller {
 		$loadUnreplied = $this->modelmessagecenter->loadMessageWithStatus($status);
 		//echo "loadUnreplied";
 		if(isset($loadUnreplied)){
-			echo '<table class="table">
-					<tr>
-						<th>No</th>
-						<th colspan="2">Message(s)</th>
-					</tr>';
-					$no = 1;
-					foreach($loadUnreplied as $lam){
-			echo '<tbody>';
+			echo '<table id="tablemessage" class="display">
+				<thead>
+					<th>No</th>
+					<th>Name (Email)</th>
+					<th>Message(s)</th>
+					<th>Date</th>
+					<th>Status</th>
+				</thead>
+				<tbody>';
+			$no = 1;
+			foreach ($loadUnreplied as $row) {
 			echo '<tr>';
 			echo '<td>'. $no .'</td>';
-			echo '<td>From : '. $lam->name .'</td>';
-			echo '<td><span class="label label-warning">'. ucwords($lam->status ) . '</span></td>';
+			echo '<td>'. $row->name.' ('.$row->email .')</td>';
+			echo '<td>'. $row->message .'</td>';
+			echo '<td>'. $row->date_in .'</td>';
+			echo '<td>'. $row->status .'</td>';
 			echo '</tr>';
-			echo '<tr>';
-			echo '<td></td>';
-			echo '<td>Email: '. $lam->email .'</td>';
-			echo '<td>'. $lam->date_in .'</td>';
-			echo '</tr>';
-			echo '<tr>';
-			echo '<td></td>';
-			echo '<td>Message : '. $lam->message.'</td>';
-			echo '<td><a href="">Delete</a> | <a href="">Reply</a></td>';
-			echo '</tr>';
-			echo '</tbody>';
-						$no++;
-					}
-			echo '</table>';
+					$no++;
+				}
+			echo '</tbody>
+				</table>';
 		}else{
 			echo "nothing";
 		}
@@ -112,37 +100,33 @@ class Administrator extends CI_Controller {
 		$loadReplied = $this->modelmessagecenter->loadMessageWithStatus($status);
 		//echo "loadRepliedMessage";
 		if(isset($loadReplied)){
-			echo '<table class="table">
-					<tr>
-						<th>No</th>
-						<th colspan="2">Message(s)</th>
-					</tr>';
-					$no = 1;
-					foreach($loadReplied as $lam){
-			echo '<tbody>';
+			echo '<table id="tablemessage" class="display">
+				<thead>
+					<th>No</th>
+					<th>Name (Email)</th>
+					<th>Message(s)</th>
+					<th>Date</th>
+					<th>Status</th>
+				</thead>
+				<tbody>';
+			$no = 1;
+			foreach ($loadReplied as $row) {
 			echo '<tr>';
 			echo '<td>'. $no .'</td>';
-			echo '<td>From : '. $lam->name .'</td>';
-			echo '<td><span class="label label-info">'. ucwords($lam->status) . '</span></td>';
+			echo '<td>'. $row->name.' ('.$row->email .')</td>';
+			echo '<td>'. $row->message .'</td>';
+			echo '<td>'. $row->date_in .'</td>';
+			echo '<td>'. $row->status .'</td>';
 			echo '</tr>';
-			echo '<tr>';
-			echo '<td></td>';
-			echo '<td>Email: '. $lam->email .'</td>';
-			echo '<td>'. $lam->date_in .'</td>';
-			echo '</tr>';
-			echo '<tr>';
-			echo '<td></td>';
-			echo '<td>Message : '. $lam->message.'</td>';
-			echo '<td><a href="">Delete</a> | <a href="">Reply</a></td>';
-			echo '</tr>';
-			echo '</tbody>';
-						$no++;
-					}
-			echo '</table>';
+					$no++;
+				}
+			echo '</tbody>
+				</table>';
 		}else{
 			echo "nothing";
 		}
 	}
+	
 }
 
 /* End of file home.php */

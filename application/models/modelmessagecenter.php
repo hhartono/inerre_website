@@ -4,11 +4,16 @@ class Modelmessagecenter extends CI_Model {
 
 	public function loadMessageAll()
 	{
-		$query = $this->db->query("
-				SELECT c.*
-				FROM contact c
-				ORDER BY c.date_in ASC
-			");
+		$this->db->select('*');
+		$this->db->order_by('date_in','ASC');
+		//$this->db->like('date_in', $tgl);
+		$query = $this->db->get('contact');
+		// $query = $this->db->query('
+		// 		SELECT c.*
+		// 		FROM contact c
+		// 		ORDER BY c.date_in ASC
+		// 		WHERE c.date_in LIKE = "$tgl"
+		// 	');
 		if($query->num_rows() > 0){
 			foreach ($query->result() as $row) {
 				$data[] = $row;
