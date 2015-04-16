@@ -29,7 +29,7 @@
 	}
 	</style>
 </head>
-<body>
+<body class="">
 	<!-- Page Loader -->        
         <div class="page-loader">
             <div class="loader">Loading...</div>
@@ -38,7 +38,7 @@
         <!-- Page Wrap -->
         <div class="page" id="top">
             <!-- Navigation panel -->
-            <nav class="main-nav dark stick-fixed">
+            <nav class="main-nav dark js-stick">
                 <div class="full-wrapper relative clearfix">
                      <!-- Logo ( * your text or image into link tag *) -->
                     <div class="nav-logo-wrap local-scroll">

@@ -2,11 +2,13 @@
 
 class Modelmessagecenter extends CI_Model {
 
-	public function loadMessageAll()
+	public function loadMessageAll($tgl)
 	{
 		$this->db->select('*');
 		$this->db->order_by('date_in','ASC');
-		//$this->db->like('date_in', $tgl);
+		if($tgl!=""){
+			$this->db->like('date_in', $tgl);	
+		}
 		$query = $this->db->get('contact');
 		// $query = $this->db->query('
 		// 		SELECT c.*
@@ -22,14 +24,21 @@ class Modelmessagecenter extends CI_Model {
 		}
 	}
 
-	public function loadMessageWithStatus($status)
+	public function loadMessageWithStatus($status, $tgl)
 	{
-		$query = $this->db->query("
-				SELECT c.*
-				FROM contact c
-				WHERE c.status='$status'
-				ORDER BY c.date_in ASC
-			");
+		$this->db->select('*');
+		$this->db->order_by('date_in', 'ASC');
+		if($tgl!=""){
+			$this->db->like('date_in', $tgl);
+		}
+		$this->db->where('status', $status);
+		$query = $this->db->get('contact');
+		// $query = $this->db->query("
+		// 		SELECT c.*
+		// 		FROM contact c
+		// 		WHERE c.status='$status'
+		// 		ORDER BY c.date_in ASC
+		// 	");
 		if($query->num_rows() > 0){
 			foreach ($query->result() as $row) {
 				$data[] = $row;

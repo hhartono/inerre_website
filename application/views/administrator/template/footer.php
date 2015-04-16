@@ -1,4 +1,4 @@
-	            <!-- Footer -->
+	        <!-- Footer -->
             <footer class="page-section bg-gray-lighter footer pb-60">
                 <div class="container">
                     <!-- Footer Logo -->
@@ -69,102 +69,107 @@
 			$('document').ready(function(){
 				loadAll();
 			})
-			var dataall = '<div class="dataTables_tgl"><label for="">Tanggal <input id="tgl" type="text" /></label></div>'+
+			var addFormFilter = '<div class="dataTables_tgl"><label for="">Date <input id="tgl" type="text" /></label></div>'+
 									'<div class="dataTables_messagefil">'+
 									'<label for="statusmessageoption">Message(s)'+
 									'<select name="statusmessageoption" id="statusmessageoption" onchange="loadMessageStatus();">'+
-									'<option value="0" SELECTED>All</option>'+
+									'<option value="-" >------------------</option>'+
+									'<option value="0">All</option>'+
 									'<option value="1">Unreplied</option>'+
 									'<option value="2">Replied</option>'+
 									'</select>'+
 									'</label>'+
 									'</div>';
-			var dataunreplied = '<div class="dataTables_tgl"><label for="">Tanggal <input id="tgl" type="text" /></label></div>'+
-									'<div class="dataTables_messagefil">'+
-									'<label for="statusmessageoption">Message(s)'+
-									'<select name="statusmessageoption" id="statusmessageoption" onchange="loadMessageStatus();">'+
-									'<option value="0" >All</option>'+
-									'<option value="1" SELECTED>Unreplied</option>'+
-									'<option value="2">Replied</option>'+
-									'</select>'+
-									'</label>'+
-									'</div>';
-			var datareplied = '<div class="dataTables_tgl"><label for="">Tanggal <input id="tgl" type="text" /></label></div>'+
-									'<div class="dataTables_messagefil">'+
-									'<label for="statusmessageoption">Message(s)'+
-									'<select name="statusmessageoption" id="statusmessageoption" onchange="loadMessageStatus();">'+
-									'<option value="0" >All</option>'+
-									'<option value="1" >Unreplied</option>'+
-									'<option value="2" SELECTED>Replied</option>'+
-									'</select>'+
-									'</label>'+
-									'</div>';
 
-			//var tgl = $("#tgl").val();
 			function loadMessageStatus(){
 				var messageoption = $("#statusmessageoption").val();
+				var tgl = $("input#tgl").val();
 
-				//var tgl = $("#tgl").val();
 				if(messageoption=='1'){
 					$.ajax({
 						type:"POST",
 						url:"loadUnrepliedMessage",
-						//data: {tgl:tgl},
+						data: {tgl:tgl},
 						success: function(data){
 							$('#datamessage').html(data);
+							if(tgl==""){
+								$('h1#title-page').text("Message: Unreplied ");
+							}else{
+								$('h1#title-page').text("Message: Unreplied / "+ tgl);	
+							}
 							$("#tablemessage").dataTable({
 								"fnInitComplete": function( oSettings , json) {
-									$("#tablemessage_wrapper").prepend(dataunreplied);
-									//$("#tablemessage_filter label input").attr('id', 'tgl');
+									$("#tablemessage_wrapper").prepend(addFormFilter);
 									$("#tgl").datetimepicker({
 										format:'YYYY-MM-DD'
 									});
+									$("#tgl").val(tgl);
 								}
 							});
+
 						}
 					});
+					e.preventDefault();
 				}else if(messageoption==2){
 					$.ajax({
 						type:"POST",
 						url:"loadRepliedMessage",
-						//data: {tgl:tgl},
+						data: {tgl:tgl},
 						success: function(data){
 							$('#datamessage').html(data);
+							if(tgl==""){
+								$('h1#title-page').text("Message: Replied ");
+							}else{
+								$('h1#title-page').text("Message: Replied / "+ tgl);	
+							}
 							$("#tablemessage").dataTable({
 								"fnInitComplete": function( oSettings , json) {
-									$("#tablemessage_wrapper").prepend(datareplied);
-									//$("#tablemessage_filter label input").attr('id', 'tgl');
+									$("#tablemessage_wrapper").prepend(addFormFilter);
 									$("#tgl").datetimepicker({
 										format:'YYYY-MM-DD'
 									});
+									$("#tgl").val(tgl);
 								}
 							});
 						}
 					});
+					e.preventDefault();
 				}else{
-					loadAll();
+					loadAll(tgl);
 				}
 			}
-			function loadAll(){
+			function loadAll(tgl){
+				var tglparams;
+				if(tgl==null){
+					tglparams="";
+				}else{
+					tglparams=tgl;
+				}
 				$.ajax({
 					type:"POST",
 					url:"loadAllMessage",
-					//data: {tgl:tgl},
+					data: {tgl:tgl},
 					success: function(data){
 						$('#datamessage').html(data);
+						if(tglparams==""){
+							$('h1#title-page').text("Message: All ");	
+						}else{
+							$('h1#title-page').text("Message: All / " + tglparams);		
+						}
 						$("#tablemessage").dataTable({
 							"fnInitComplete": function( oSettings , json) {
-								$("#tablemessage_wrapper").prepend(dataall);
-								//$("#tablemessage_filter label input").attr('id', 'tgl');
+								$("#tablemessage_wrapper").prepend(addFormFilter);
 								$("#tgl").datetimepicker({
 									format:'YYYY-MM-DD'
 								});
+								
 							}
 						});
+						$("#tgl").val(tglparams);
 					}
 				});
+				e.preventDefault();
 			}
-			
 		</script>
     </body>
 </html>
