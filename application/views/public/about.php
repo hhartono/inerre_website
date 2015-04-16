@@ -29,57 +29,45 @@
             <!-- About Section -->
             <section class="page-section" id="about">
                 <div class="container relative">
-                    
                     <div class="section-text mb-50 mb-sm-20">
                         <div class="row">
-                        
                             <div class="col-md-4">
                                 <blockquote>
                                     <p>
-                                    Design is&nbsp;not making beauty, beauty emerges from selection, affinities, integration, love.
+                                    I've always thought that design can have equal importance to the idea of internal architecture. Professionally, things can be very dogmatic - you do the architecture, someone else does the interiors, someone else does the furniture, the fabric, etc. But I think design is all-encompassing.
                                     </p>
                                     <footer>
-                                        Louis Kahn
+                                        Zaha Hadid
                                     </footer>
                                 </blockquote>
                             </div>
-                            
                             <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In maximus ligula semper metus pellentesque mattis. Maecenas  volutpat, diam enim sagittis quam, id porta quam. Sed id dolor consectetur fermentum nibh volutpat, accumsan purus. 
+                                INERRE is an interior design firm capturing each client’s personality and reflecting it through a unified and well tailored interior design according to their lifestyles and needs. <br>
+                                INERRE wants to create a space that speaks a luxuriously livable language with a dialect that embodies a unique, custom design and personality. <br>
+                                INERRE is established in 2015 by a design family oriented couple Hans Hartono and Nessa Phoeng. The two spent seven years living in United States for college and work before they eventually decided to come back home and start INERRE.
                             </div>
-                            
                             <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                Etiam sit amet fringilla lacus. Pellentesque suscipit ante at ullamcorper pulvinar neque porttitor. Integer lectus. Praesent sed nisi eleifend, fermentum orci amet, iaculis libero. Donec vel ultricies purus. Nam dictum sem, eu aliquam.
+                                Both founders together intend to develop an interior design firm that is unique according to their different education backgrounds. INERRE practices an interdisciplinary background combining interior design and computer science as a whole.
                             </div>
-                            
                         </div>
                     </div>
                     
-                    
                     <div class="row">
-                        
                         <!-- Team item -->
                         <div class="col-sm-3 mb-xs-30 wow fadeInUp">
                             <div class="team-item">
-                                
                                 <div class="team-item-image">
-                                    
                                     <img src="/assets/images/team/team-1.jpg" alt="" />
-                                    
                                     <div class="team-item-detail">
-                                        
                                         <h4 class="font-alt normal">Hello & Welcome!</h4>
-                                        
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&nbsp;iaculis diam. 
+                                        Hans pursued his long-life passion as a computer scientist at Purdue University and University of Southern California (USC). Hans’ breadth of project work showcases his ability and skills to create various problem-solving programs that feature the uniqueness of each client’s need.As a head system developer, Hans always envisions himself to be able to enhance the quality of people’s life through his work.
                                         </p>
-                                        
                                         <div class="team-social-links">
                                             <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
                                             <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
                                             <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
                                         </div>
-                                        
                                     </div>
                                 </div>
                                 
@@ -112,7 +100,7 @@
                                         <h4 class="font-alt normal">Nice to meet!</h4>
                                         
                                         <p>
-                                            Curabitur augue, nec finibus mauris pretium eu. Duis placerat ex gravida nibh tristique porta.
+                                        Pursuing a degree in United States, Nessa went to a college in San Francisco and later moved in to Los Angeles to continue to study interior design in Woodbury University majoring in Interior Architecture. She had worked for design architecture firms within Los Angeles area including Beverly Hills and Santa Monica. Nessa brings solid experience through her education and career in United States and reflects it towards her design passion influenced by her multicultural background.
                                         </p>
                                         
                                         <div class="team-social-links">
@@ -143,40 +131,28 @@
                         <!-- Team item -->
                         <div class="col-sm-3 mb-xs-30 wow fadeInUp" data-wow-delay="0.2s">
                             <div class="team-item">
-
                                 <div class="team-item-image">
-
                                     <img src="/assets/images/team/team-3.jpg" alt="" />
-
                                     <div class="team-item-detail">
-
                                         <h4 class="font-alt normal">Whats Up!</h4>
-
                                         <p>
-                                            Adipiscing elit curabitur eu&nbsp;adipiscing lacus eu&nbsp;adipiscing lacus, a&nbsp;iaculis diam.
+                                        With more than 30 years of experience, Subianto and wife established an architecture company in their early careers. The firm started to branch the interior design division 20 years ago believing that architecture and interior design are completely inseparable. 
                                         </p>
-
                                         <div class="team-social-links">
                                             <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
                                             <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
                                             <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
                                         </div>
-
                                     </div>
                                 </div>
-
                                 <div class="team-item-descr font-alt">
-
                                     <div class="team-item-name">
                                         Subianto Hartono
                                     </div>
-
                                     <div class="team-item-role">
                                         Design Advisor
                                     </div>
-
                                 </div>
-
                             </div>
                         </div>
                         <!-- End Team item -->
@@ -184,25 +160,18 @@
                         <!-- Team item -->
                         <div class="col-sm-3 mb-xs-30 wow fadeInUp" data-wow-delay="0.2s">
                             <div class="team-item">
-
                                 <div class="team-item-image">
-
                                     <img src="/assets/images/team/team-3.jpg" alt="" />
-
                                     <div class="team-item-detail">
-
                                         <h4 class="font-alt normal">Whats Up!</h4>
-
                                         <p>
                                             Adipiscing elit curabitur eu&nbsp;adipiscing lacus eu&nbsp;adipiscing lacus, a&nbsp;iaculis diam.
                                         </p>
-
                                         <div class="team-social-links">
                                             <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
                                             <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
                                             <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
                                         </div>
-
                                     </div>
                                 </div>
 

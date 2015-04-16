@@ -81,63 +81,24 @@
 									'</label>'+
 									'</div>';
 
-			function loadMessageStatus(){
-				var messageoption = $("#statusmessageoption").val();
-				var tgl = $("input#tgl").val();
-
-				if(messageoption=='1'){
-					$.ajax({
-						type:"POST",
-						url:"loadUnrepliedMessage",
-						data: {tgl:tgl},
-						success: function(data){
-							$('#datamessage').html(data);
-							if(tgl==""){
-								$('h1#title-page').text("Message: Unreplied ");
-							}else{
-								$('h1#title-page').text("Message: Unreplied / "+ tgl);	
-							}
-							$("#tablemessage").dataTable({
-								"fnInitComplete": function( oSettings , json) {
-									$("#tablemessage_wrapper").prepend(addFormFilter);
-									$("#tgl").datetimepicker({
-										format:'YYYY-MM-DD'
-									});
-									$("#tgl").val(tgl);
-								}
-							});
-
-						}
-					});
-					e.preventDefault();
-				}else if(messageoption==2){
-					$.ajax({
-						type:"POST",
-						url:"loadRepliedMessage",
-						data: {tgl:tgl},
-						success: function(data){
-							$('#datamessage').html(data);
-							if(tgl==""){
-								$('h1#title-page').text("Message: Replied ");
-							}else{
-								$('h1#title-page').text("Message: Replied / "+ tgl);	
-							}
-							$("#tablemessage").dataTable({
-								"fnInitComplete": function( oSettings , json) {
-									$("#tablemessage_wrapper").prepend(addFormFilter);
-									$("#tgl").datetimepicker({
-										format:'YYYY-MM-DD'
-									});
-									$("#tgl").val(tgl);
-								}
-							});
-						}
-					});
-					e.preventDefault();
+			function tableMessage(status, tgl, data){
+				$('#datamessage').html(data);
+				if(tgl==""){
+					$('h1#title-page').text("Message: "+status);	
 				}else{
-					loadAll(tgl);
+					$('h1#title-page').text("Message: "+status+ " / " + tgl);		
 				}
+				$("#tablemessage").dataTable({
+					"fnInitComplete": function( oSettings , json) {
+						$("#tablemessage_wrapper").prepend(addFormFilter);
+						$("#tgl").datetimepicker({
+							format:'YYYY-MM-DD'
+						});
+						$("#tgl").val(tgl);
+					}
+				});
 			}
+
 			function loadAll(tgl){
 				var tglparams;
 				if(tgl==null){
@@ -150,25 +111,40 @@
 					url:"loadAllMessage",
 					data: {tgl:tgl},
 					success: function(data){
-						$('#datamessage').html(data);
-						if(tglparams==""){
-							$('h1#title-page').text("Message: All ");	
-						}else{
-							$('h1#title-page').text("Message: All / " + tglparams);		
-						}
-						$("#tablemessage").dataTable({
-							"fnInitComplete": function( oSettings , json) {
-								$("#tablemessage_wrapper").prepend(addFormFilter);
-								$("#tgl").datetimepicker({
-									format:'YYYY-MM-DD'
-								});
-								
-							}
-						});
-						$("#tgl").val(tglparams);
+						tableMessage('All', tglparams, data);
 					}
 				});
 				e.preventDefault();
+			}
+			
+			function loadMessageStatus(){
+				var messageoption = $("#statusmessageoption").val();
+				var tgl = $("input#tgl").val();
+
+				if(messageoption=='1'){
+					$.ajax({
+						type:"POST",
+						url:"loadUnrepliedMessage",
+						data: {tgl:tgl},
+						success: function(data){
+							tableMessage('Unreplied', tgl, data);
+							
+						}
+					});
+					e.preventDefault();
+				}else if(messageoption==2){
+					$.ajax({
+						type:"POST",
+						url:"loadRepliedMessage",
+						data: {tgl:tgl},
+						success: function(data){
+							tableMessage('Replied', tgl, data);
+						}
+					});
+					e.preventDefault();
+				}else{
+					loadAll(tgl);
+				}
 			}
 		</script>
     </body>

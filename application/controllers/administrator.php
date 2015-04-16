@@ -22,7 +22,7 @@ class Administrator extends CI_Controller {
 	public function messagecenter()
 	{	
 		$data = array(
-				'title' => 'Inerre Interior - Administrator / Message Center'
+				'title' => 'INERRE Interior - Administrator / Message Center'
 				//'loadmessage' => $this->modelmessagecenter->loadMessageAll()
 			);
 		$this->load->view('administrator/messagecenter', $data);
@@ -163,29 +163,51 @@ class Administrator extends CI_Controller {
 		}
 	}
 	
-	// public function sendingMail()
-	// {
-	// 	$config = array(
-	// 	 	'protocol' => 'sendmail',
-	// 	 	'mailpath' => '/usr/sbin/sendmail',
-	// 	 	'charset' => 'iso-8859-1',
-	// 	 	'wordwrap' => TRUE
-	// 	);
-	// 	$this->email->initialize($config);  
+	public function sendingmail()
+	{
+		/*$configsmtpgmail = array(
+		 	'protocol' => 'smtp',
+		 	'smtp_host' => 'ssl://smtp.googlemail.com',
+		 	'smtp_port' => 465,
+		 	'smtp_user' => 'willi.ilmukomputer@gmail.com',
+		 	'smtp_pass' => '0s4pr1l!98g',
+		 	'smtp_timeout' => 5,
+		 	'wordwrap' => TRUE,
+		 	'crlf' => '\r\n',
+		 	'newline' => '\r\n'
+		);
+		$this->email->initialize($configsmtpgmail);*/
 
-	// 	$this->email->from('willi.ilmukomputer@gmail.com', 'Willi');
-	// 	$this->email->to('willi@inerre.com');
-	// 	//$this->email->cc('');
-	// 	//$this->email->bcc('');
-	// 	$this->email->subject('[subject] testing email from inerre website');
-	// 	$this->email->message('[message] testing email from inerre website');
-	// 	$this->email->send();
-	// 	if(! $this->email->send()){
-	// 		echo 'email not send';
-	// 	}else{
-	// 		echo $this->email->print_debugger();	
-	// 	}
-	// }
+		/*$configsendmail = array(
+			'useragent' => 'inerre website',
+			'protocol' => 'sendmail',
+		 	'mailpath' => '/usr/sbin/sendmail',
+		 	'smtp_host' => 'localhost',
+		 	'smtp_port' => 25,
+		 	'charset' => 'utf-8',
+		 	'wordwrap' => TRUE,
+		 	'crlf' => '\r\n',
+		 	'newline' => '\r\n'
+		);
+		$this->email->initialize($configsendmail);*/
+
+		$this->email->from('willi.ilmukomputer@gmail.com', 'Willi');
+		$this->email->to('willi@inerre.com');
+		//$this->email->cc('');
+		//$this->email->bcc('');
+		$this->email->subject('[subject] testing email from inerre website');
+		$this->email->message('[message] testing email from inerre website');
+		$this->email->send();
+		//if(! $this->email->send()){
+		//	echo 'email not send';
+		//}else{
+		echo $this->email->print_debugger();	
+		//}
+	}
+
+	/*function tosha1(){
+		echo sha1('123456');
+	}*/
 
 }
 
