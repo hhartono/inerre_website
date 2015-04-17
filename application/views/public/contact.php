@@ -3,7 +3,8 @@
     $this->load->view('public/public_template/header');
 ?>          
             <!-- Head Section -->
-            <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/full-width-images/new-crop-flip.jpg">
+            <!-- <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/full-width-images/new-crop-flip.jpg"> -->
+            <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/showroom-inerre/pantry_1.jpg" style="">
                 <div class="relative container align-left">
                     
                     <div class="row">
@@ -126,7 +127,7 @@
                                     <div class="cf-right-col">
                                         <!-- Send Button -->
                                         <div class="align-right pt-10">
-                                            <button class="submit_btn btn btn-mod btn-medium btn-round" id="submit_btn">Submit Message</button>
+                                            <button class="submit_btn btn btn-mod btn-medium btn-border" id="submit_btn">Submit Message</button>
                                         </div>
                                     </div>
                                 </div>

@@ -25,6 +25,24 @@ class About extends CI_Controller {
 			);
 		$this->load->view('public/about', $data);
 	}
+
+	public function team()
+	{
+		$data = array(
+				'title' => '&mdash; About / Team',
+				'aboutactive' => 'active'
+			);
+		$this->load->view('public/team', $data);
+	}
+
+	public function workshop()
+	{
+		$data = array(
+				'title' => '&mdash; About / Workshop',
+				'aboutactive' => 'active'
+			);
+		$this->load->view('public/workshop', $data);
+	}
 }
 
 /* End of file showroom.php */

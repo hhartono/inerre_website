@@ -85,27 +85,27 @@
                         <ul class="clearlist">
                             <!-- Home -->
                             <li>
-                                <a href="<?php echo (isset($homeactive)) ? "#" : "/home" ;?>" class="<?php echo (isset($homeactive)) ? $homeactive : "";?>">Home</a>
+                                <a title="INERRE Interior Home Page" href="<?php echo (isset($homeactive)) ? "#" : "/home" ;?>" class="<?php echo (isset($homeactive)) ? $homeactive : "";?>">Home</a>
                             </li>
                             <!-- End Home -->
                             <!-- Showroom -->
                             <li>
-                                <a href="<?php echo (isset($showroomactive)) ? "#" : "/showroom";?>" class="<?php echo (isset($showroomactive)) ? $showroomactive : "";?>">Showroom</a>
+                                <a title="INERRE Interior Showroom Page"  href="<?php echo (isset($showroomactive)) ? "#" : "/showroom";?>" class="<?php echo (isset($showroomactive)) ? $showroomactive : "";?>">Showroom</a>
                             </li>
                             <!-- End Showroom -->
                             <!-- Portfolio -->
                             <li>
-                                <a href="<?php echo (isset($portfolioactive)) ? "#" : "/portfolio";?>" class="<?php echo (isset($portfolioactive)) ? $portfolioactive : "";?>">Portfolio</a>
+                                <a title="INERRE Interior Portfolio Page" href="<?php echo (isset($portfolioactive)) ? "#" : "/portfolio";?>" class="<?php echo (isset($portfolioactive)) ? $portfolioactive : "";?>">Portfolio</a>
                             </li>
                             <!-- End Portfolio -->
                             <!-- About Us -->
                             <li>
-                                <a href="<?php echo (isset($aboutactive)) ? "#" : "/about";?>" class="<?php echo (isset($aboutactive)) ? $aboutactive : "";?>">About</a>
+                                <a title="INERRE Interior About Page" href="<?php echo (isset($aboutactive)) ? "/about#" : "/about";?>" class="<?php echo (isset($aboutactive)) ? $aboutactive : "";?>">About</a>
                             </li>
                             <!-- End About Us -->
                             <!-- Contact Us -->
                             <li>
-                                <a href="<?php echo (isset($contactactive)) ? "#" : "/contact";?>" class="<?php echo (isset($contactactive)) ? $contactactive : "";?>">Contact</a>
+                                <a title="INERRE Interior Contact Page" href="<?php echo (isset($contactactive)) ? "#" : "/contact";?>" class="<?php echo (isset($contactactive)) ? $contactactive : "";?>">Contact</a>
                             </li>
                             <!-- End Contact Us -->
                             <!-- Search -->

@@ -3,7 +3,7 @@
     $this->load->view('public/public_template/header');
 ?>
             <!-- Home Section -->
-            <section class="home-section bg-color-lighter parallax-2" data-background="/assets/images/full-width-images/resize1.jpg" id="home">
+            <section class="home-section bg-color-lighter parallax-2" data-background="/assets/images/showroom-inerre/pantry_1.jpg" id="home">
                 <div class="js-height-full">
                     
                     <!-- Hero Content -->
@@ -152,6 +152,7 @@
             
             <!-- Call Action Section -->
             <section class="page-section pt-0 pb-0 banner-section bg-dark" data-background="/assets/images/full-width-images/unsplashdotcom4-crop.jpg">
+            <!-- <section class="page-section pt-0 pb-0 banner-section bg-dark" data-background="/assets/images/workshop/workshop_3.jpg"> -->
                 <div class="container relative">
                     
                     <div class="row">
@@ -204,13 +205,12 @@
                             <div class="text">
 
                                 <h3 class="font-alt mb-30 mb-xxs-10">Our Showroom</h3>
-
                                 <p>
-                                    Phasellus facilisis mauris vel velit molestie pellentesque. Donec rutrum, tortor ut elementum venenatis, purus magna bibendum nisl, ut accumsan ipsum erat eu sapien.
+                                Through thoughtful design, we deliver environments that not only satisfy our clients’ needs, but allow them to achieve a level of enjoyment and success beyond their expectations because we create a great living space.
                                 </p>
 
                                 <div class="mt-40">
-                                    <a href="/showroom" class="btn btn-mod btn-border btn-round btn-medium">Visit Our Showroom</a>
+                                    <a href="/showroom" class="btn btn-mod btn-border btn-medium">Visit Our Showroom</a>
                                 </div>
 
                             </div>
@@ -229,19 +229,15 @@
             <!-- Portfolio Section -->
             <section class="page-section pb-0" id="portfolio">
                 <div class="relative">
-                    
                     <h2 class="section-title font-alt mb-70 mb-sm-40">
                         Our Portfolio
                     </h2>
-                    
                     <div class="container">
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2">
-                                
                                 <div class="section-text align-center mb-70 mb-xs-40">
-                                    Curabitur eu adipiscing lacus, a iaculis diam. Nullam placerat blandit auctor. Nulla accumsan ipsum et nibh rhoncus, eget tempus sapien ultricies. Donec mollis lorem vehicula.
+                                We demonstrate to have versatile skills to approach the design process in a holistic manner to achieve our ultimate goal, which is our client’s satisfaction. Our goal is to have a proud portrait of INERRE’s dedication and one that ultimately illuminates a deep understanding of the homeowner’s personality and lifestyle.
                                 </div>
-                                
                             </div>
                         </div>
                     </div>
@@ -311,7 +307,7 @@
                     <div class="align-center">
                         <h3 class="banner-heading font-alt textshadow ">Want to see more works?</h3>
                         <div class="local-scroll">
-                            <a href="/portfolio" class="btn btn-mod btn-w btn-medium btn-round">Lets view portfolio</a>
+                            <a href="/portfolio" class="btn btn-mod btn-medium btn-border">Lets view portfolio</a>
                         </div>
                     </div>
                     
@@ -448,7 +444,7 @@
                                 <div class="mb-20">
                                     <input placeholder="Enter Your Email" class="newsletter-field input-md round mb-xs-10" type="email" pattern=".{5,100}" required/>
                                     
-                                    <button type="submit" class="btn btn-mod btn-medium btn-round mb-xs-10">
+                                    <button type="submit" class="btn btn-mod btn-medium btn-border mb-xs-10">
                                         Subscribe
                                     </button>
                                 </div>

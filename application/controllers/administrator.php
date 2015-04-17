@@ -7,8 +7,9 @@ class Administrator extends CI_Controller {
 		parent::__construct();
 		$this->load->database();
 		$this->load->helper('email');
-		$this->load->library('email');
+		$this->load->library(array('email','tank_auth'));
 		$this->load->model(array('modelmessagecenter'));
+		
 	}
 
 	public function index()
@@ -206,7 +207,7 @@ class Administrator extends CI_Controller {
 	}
 
 	/*function tosha1(){
-		echo sha1('123456');
+		echo sha1('INERREInteriorBandung');
 	}*/
 
 }

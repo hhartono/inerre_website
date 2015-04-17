@@ -1,0 +1,134 @@
+<?php 
+    // load view header from template
+    $this->load->view('public/public_template/header');
+?>   
+            <!-- Head Section -->
+            <!-- <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/full-width-images/new-crop-flip.jpg"> -->
+            <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/showroom-inerre/pantry_1.jpg">
+                <div class="relative container align-left">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="hs-line-11 font-alt mb-20 mt-xs-40 mb-xs-0 inerre-brown"><a class="inerre-brown" style="text-decoration:none;" href="/about">About</a> / Team</h1>
+                            <div class="hs-line-4 font-alt">
+                                Extraordinary art team &&nbsp;creative minimalism lovers
+                            </div>
+                        </div>
+                        <!--div class="col-md-4 mt-30">
+                            <div class="mod-breadcrumbs font-alt align-right">
+                                <a href="/home">Home</a>&nbsp;<i class="inerre-brown">//</i>&nbsp;<span>About</span>
+                            </div>
+                        </div-->
+                    </div>
+                </div>
+            </section>
+            <!-- End Head Section -->
+
+            <!-- About Section -->
+            <section class="page-section" id="about">
+                <div class="container relative">
+                    
+                    <div class="row">
+                        <!-- Team item 1 -->
+                        
+                        <div class="col-sm-12 mb-xs-30 team-row">
+                            <div id="hanshartono" class="team-item team-offset-block">
+                                <div class="col-md-3 ">
+                                    <img src="/assets/images/team/team-1.jpg" alt="" />
+                                </div>
+                                <div class="font-alt">
+                                    <div class="team-item-name">
+                                        Hans Hartono
+                                    </div>
+                                    <div class="inerre-brown team-item-role">
+                                        // Head System Developer
+                                    </div>
+                                    <div class="team-desc">
+                                        Hans pursued his long-life passion as a computer scientist at Purdue University and University of Southern California (USC). Majoring in Computer Science, Hans spent most of his time exploring different aspects of latest technology. After graduated, he worked for a startup company in Los Angeles as a software developer.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Team item 1 -->
+                        
+                        <!-- Team item 2 -->
+                        <div class="col-sm-12 mb-xs-30 team-row">
+                            <div id="nessaphoeng" class="team-item team-offset-block">
+                                <div class="col-md-3 ">
+                                    <img src="/assets/images/team/team-1.jpg" alt="" />
+                                </div>
+
+                                <div class="font-alt">
+                                    <div class="team-item-name">
+                                        Nessa Phoeng
+                                    </div>
+                                    <div class="inerre-brown team-item-role">
+                                       // Head Designer
+                                    </div>
+                                    <div class="team-desc">
+                                        Pursuing a degree in United States, Nessa went to a college in San Francisco and later moved in to Los Angeles to continue to study interior design in Woodbury University majoring in Interior Architecture. After graduated, she worked for different design firms within Los Angeles area including Beverly Hills and Santa Monica.
+Nessa brings solid experience through her education and career in United States and reflects it towards her design passion influenced by her multicultural background. Nessa adheres to the philosophy that all aspects of the project - design strategy, interior design vocabulary, furniture, and graphic - should embody the character and spirit of client’s brand and vision.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Team item 2 -->
+
+                        <!-- Team item 3 -->
+                        <div class="col-sm-12 mb-xs-30 team-row">
+                            <div id="subiantohartono" class="team-item team-offset-block">
+                                <div class="col-md-3 ">
+                                    <img src="/assets/images/team/team-1.jpg" alt="" />
+                                </div>
+
+                                <div class="font-alt">
+                                    <div class="team-item-name">
+                                        Subianto Hartono
+                                    </div>
+                                    <div class="inerre-brown team-item-role">
+                                        // Design Advisor
+                                    </div>
+                                    <div class="team-desc">
+                                        With more than 30 years of experience, Subianto and wife established an architecture company in their early careers. The firm started to branch the interior design division 20 years ago believing that architecture and interior design are completely inseparable.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Team item 3 -->
+
+                        <!-- Team item 4 -->
+                        <div class="col-sm-12 mb-xs-30 team-row">
+                            <div id="sianekurnia" class="team-item  team-offset-block">
+                                <div class="col-md-3 ">
+                                    <img src="/assets/images/team/team-1.jpg" alt="" />
+                                </div>
+
+                                <div class="font-alt">
+                                    <div class="team-item-name">
+                                        Siane Kurnia
+                                    </div>
+                                    <div class="inerre-brown team-item-role">
+                                        // Design Advisor
+                                    </div>
+                                    <div class="team-desc">
+                                        Together with her husband, Siane started off the architecture firm Subianto & Siane in 1988. Today, the company has built more than 600 residential projects and hundreds of commercial projects all over in Indonesia. Her endless contributions for the company has made Subianto & Siane Architecture to be one of the top national architecture firms.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Team item 4 -->
+                    </div>
+
+                    <div class="row">
+                        <div class="mt-80 align-center" >
+                            <a href="workshop" class="btn btn-mod btn-border btn-medium">Sneak Peak To Our Workshop</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+           
+
+<?php 
+    // load view footer from template
+    $this->load->view('public/public_template/footer');
+?>
+

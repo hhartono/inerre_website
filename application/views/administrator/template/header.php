@@ -64,7 +64,7 @@
                             <!-- End Link -->
                             <!-- Link -->
                             <li>
-                                <a href="">Logout</a>
+                                <a href="/auth/logout">Logout</a>
                             </li>
                             <!-- End Link -->
                             <!-- Search -->
