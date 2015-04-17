@@ -39,18 +39,18 @@
                                 </blockquote>
                             </div>
                             <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                INERRE is an interior design firm capturing each client’s personality and reflecting it through a unified and well tailored interior design according to their lifestyles and needs. <br>
-                                <br>INERRE wants to create a space that speaks a luxuriously livable language with a dialect that embodies a unique, custom design and personality.
+                                INERRE is an interior design firm capturing each client’s personality and reflecting it through a unified and well tailored interior design according to their lifestyles and needs.
+                                <br><br>INERRE wants to create a space that speaks a luxuriously livable language with a dialect that embodies a unique, custom design and personality.
                             </div>
                             <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                INERRE is established in 2015 by a design family oriented couple Hans Hartono and Nessa Phoeng. The two spent seven years living in United States for college and work before they eventually decided to come back home and start INERRE. <br> 
-                                <br>Both founders together intend to develop an interior design firm that is unique according to their different education backgrounds. INERRE practices an interdisciplinary background combining interior design and computer science as a whole.
+                                INERRE is established in 2015 by a design family oriented couple Hans Hartono and Nessa Phoeng. The two spent seven years living in United States for college and work before they eventually decided to come back home and start INERRE.
+                                <br><br>Both founders together intend to develop an interior design firm that is unique according to their different education backgrounds. INERRE practices an interdisciplinary background combining interior design and computer science as a whole.
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <!-- Team item 1 -->
-                        <div class="col-sm-3 mb-xs-30 wow fadeInUp">
+                        <div class="col-sm-3 mb-xs-30 wow fadeInUp"  data-wow-delay="0.1s">
                             <div class="team-item">
                                 <div class="team-item-image">
                                     <img src="/assets/images/team/team-1.jpg" alt="" />
@@ -389,6 +389,77 @@
                 </div>
             </section>
             <!-- End Features Section -->
+            <!-- Contact Section -->
+            <section class="page-section" id="contact">
+                <div class="container relative">
+                    
+                    <h2 class="section-title font-alt mb-70 mb-sm-40">
+                        Find Inerre
+                    </h2>
+                    
+                    <div class="row">
+                        
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="row">
+                                
+                                <!-- Phone -->
+                                <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
+                                    <div class="contact-item">
+                                        <div class="ci-icon">
+                                            <i class="fa fa-phone"></i>
+                                        </div>
+                                        <div class="ci-title font-alt">
+                                            Call Us
+                                        </div>
+                                        <div class="ci-text">
+                                            +62 22 423 2200
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Phone -->
+                                
+                                <!-- Address -->
+                                <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
+                                    <div class="contact-item">
+                                        <div class="ci-icon">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div class="ci-title font-alt">
+                                            Address
+                                        </div>
+                                        <div class="ci-text">
+                                            Jl. Pasteur No 11<br>
+                                            Bandung<br>
+                                            INDONESIA
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Address -->
+                                
+                                <!-- Email -->
+                                <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
+                                    <div class="contact-item">
+                                        <div class="ci-icon">
+                                            <i class="fa fa-envelope"></i>
+                                        </div>
+                                        <div class="ci-title font-alt">
+                                            Email
+                                        </div>
+                                        <div class="ci-text">
+                                            <a href="mailto:support@bestlooker.pro">info@inerre.com</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Email -->
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </section>
+            <!-- End Contact Section -->
 <?php 
     // load view footer from template
     $this->load->view('public/public_template/footer');

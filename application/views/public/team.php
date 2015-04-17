@@ -30,7 +30,7 @@
                     <div class="row">
                         <!-- Team item 1 -->
                         
-                        <div class="col-sm-12 mb-xs-30 team-row">
+                        <div class="col-sm-12 mb-xs-30 team-row wow" >
                             <div id="hanshartono" class="team-item team-offset-block">
                                 <div class="col-md-3 ">
                                     <img src="/assets/images/team/team-1.jpg" alt="" />
@@ -51,7 +51,7 @@
                         <!-- End Team item 1 -->
                         
                         <!-- Team item 2 -->
-                        <div class="col-sm-12 mb-xs-30 team-row">
+                        <div class="col-sm-12 mb-xs-30 team-row wow">
                             <div id="nessaphoeng" class="team-item team-offset-block">
                                 <div class="col-md-3 ">
                                     <img src="/assets/images/team/team-1.jpg" alt="" />
@@ -74,7 +74,7 @@ Nessa brings solid experience through her education and career in United States 
                         <!-- End Team item 2 -->
 
                         <!-- Team item 3 -->
-                        <div class="col-sm-12 mb-xs-30 team-row">
+                        <div class="col-sm-12 mb-xs-30 team-row wow">
                             <div id="subiantohartono" class="team-item team-offset-block">
                                 <div class="col-md-3 ">
                                     <img src="/assets/images/team/team-1.jpg" alt="" />
@@ -96,7 +96,7 @@ Nessa brings solid experience through her education and career in United States 
                         <!-- End Team item 3 -->
 
                         <!-- Team item 4 -->
-                        <div class="col-sm-12 mb-xs-30 team-row">
+                        <div class="col-sm-12 mb-xs-30 team-row wow">
                             <div id="sianekurnia" class="team-item  team-offset-block">
                                 <div class="col-md-3 ">
                                     <img src="/assets/images/team/team-1.jpg" alt="" />
@@ -125,7 +125,78 @@ Nessa brings solid experience through her education and career in United States 
                     </div>
                 </div>
             </section>
-           
+            
+            <!-- Contact Section -->
+            <section class="page-section" id="contact">
+                <div class="container relative">
+                    
+                    <h2 class="section-title font-alt mb-70 mb-sm-40">
+                        Find Inerre
+                    </h2>
+                    
+                    <div class="row">
+                        
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="row">
+                                
+                                <!-- Phone -->
+                                <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
+                                    <div class="contact-item">
+                                        <div class="ci-icon">
+                                            <i class="fa fa-phone"></i>
+                                        </div>
+                                        <div class="ci-title font-alt">
+                                            Call Us
+                                        </div>
+                                        <div class="ci-text">
+                                            +62 22 423 2200
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Phone -->
+                                
+                                <!-- Address -->
+                                <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
+                                    <div class="contact-item">
+                                        <div class="ci-icon">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div class="ci-title font-alt">
+                                            Address
+                                        </div>
+                                        <div class="ci-text">
+                                            Jl. Pasteur No 11<br>
+                                            Bandung<br>
+                                            INDONESIA
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Address -->
+                                
+                                <!-- Email -->
+                                <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
+                                    <div class="contact-item">
+                                        <div class="ci-icon">
+                                            <i class="fa fa-envelope"></i>
+                                        </div>
+                                        <div class="ci-title font-alt">
+                                            Email
+                                        </div>
+                                        <div class="ci-text">
+                                            <a href="mailto:support@bestlooker.pro">info@inerre.com</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Email -->
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </section>
+            <!-- End Contact Section -->
 
 <?php 
     // load view footer from template

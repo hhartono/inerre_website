@@ -2526,6 +2526,7 @@ a.logo:hover{
   margin-top:35px;
 }
 
+
 /* Hover state */
 .no-mobile .team-item:hover .team-item-image:after{
 	background: rgba(255,255,255, .93);
@@ -3422,7 +3423,8 @@ a.logo:hover{
     position: absolute;
     top: 10px;
     left: 3px;
-    color: #fff;
+    /*color: #fff;*/
+    color:#888;
     text-align: center;
     line-height: 23px;
 }
@@ -3435,7 +3437,9 @@ a.logo:hover{
     top: 0;
     left: 0;
     /*background: #111;*/
-    background: #c87f28;
+    /*background: #c87f28;*/
+    border:1px solid #C87F28;
+    background: #fff;
     
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;

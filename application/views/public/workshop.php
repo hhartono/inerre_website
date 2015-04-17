@@ -138,6 +138,8 @@
             </section>
             <!-- End Contact Section -->
 
+            
+
 <?php
     // load view footer from template
     $this->load->view('public/public_template/footer');
