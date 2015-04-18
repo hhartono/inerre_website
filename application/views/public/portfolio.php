@@ -5,7 +5,7 @@
             
             <!-- Head Section -->
             <!-- <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/full-width-images/new-crop-flip.jpg" style=""> -->
-            <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/showroom-inerre/pantry_1.jpg" style="">
+            <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/portfolio-inerre/pantry_2_169.jpg" style="">
                 <div class="relative container align-left">
                     
                     <div class="row">

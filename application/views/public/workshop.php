@@ -11,7 +11,7 @@
                     <div class="row">
                         
                         <div class="col-md-12">
-                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0 inerre-brown"><a class="inerre-brown" style="text-decoration:none;" href="/about">About</a> / Workshop</h1>
+                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0 inerre-brown"><!-- <a class="inerre-brown" style="text-decoration:none;" href="/about">About</a> /  -->Workshop</h1>
                             <div class="hs-line-4 font-alt">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing
                             </div>
@@ -34,34 +34,62 @@
             <section class="page-section">
                 <div class="container relative">
                     
-                    <!-- Photo Item -->
-                    <div class="align-center font-alt post-prev-img mb-30">
-                        <img src="/assets/images/workshop/Machine_Holzma.jpg" alt="INERRE Interior Bandung Workshop Holzma HPP 180 Optimat - Running Saw" />
-                        <span class="workshop-desc">Holzma HPP 180 Optimat - Running Saw</span>
+
+                    <!-- Photo Grid -->
+                    <div class="row multi-columns-row mb-30 mb-xs-10">
+                        
+                        <!-- Photo Item -->
+                        <div class="col-md-6 col-lg-6 mb-md-10">
+                            
+                            <div class="post-prev-img">
+                                <a href="/assets/images/workshop/Machine_Holzma.jpg" class="lightbox-gallery-2 mfp-image">
+                                <img src="/assets/images/workshop/Machine_Holzma.jpg" alt="" /></a>
+                                <span class="workshop-desc">Holzma HPP 180 Optimat - Running Saw</span>
+                            </div>
+
+                        </div>
+                        <!-- End Photo Item -->
+                        
+                        <!-- Photo Item -->
+                        <div class="col-md-6 col-lg-6 mb-md-10">
+                            
+                            <div class="post-prev-img">
+                                <a href="/assets/images/workshop/Machine_Brandt_2.jpg" class="lightbox-gallery-2 mfp-image">
+                                <img src="/assets/images/workshop/Machine_Brandt_2.jpg" alt="" /></a>
+                                <span class="workshop-desc">Brandt Optimat KDN 340 - Edge Banding Machine</span>
+                            </div>
+
+                        </div>
+                        <!-- End Photo Item -->
+                        
+                        <!-- Photo Item -->
+                        <div class="col-md-6 col-lg-6 mb-md-10">
+                            
+                            <div class="post-prev-img">
+                                <a href="/assets/images/workshop/Machine_Altendorf.jpg" class="lightbox-gallery-2 mfp-image">
+                                <img src="/assets/images/workshop/Machine_Altendorf.jpg" alt="" /></a>
+                                <span class="workshop-desc">Altendorf WA8 - Panel Saw</span>
+                            </div>
+
+                        </div>
+                        <!-- End Photo Item -->
+                        
+                        <!-- Photo Item -->
+                        <div class="col-md-6 col-lg-6 mb-md-10">
+                            
+                            <div class="post-prev-img">
+                                <a href="/assets/images/workshop/Machine_Weeke.jpg" class="lightbox-gallery-2 mfp-image">
+                                <img src="/assets/images/workshop/Machine_Weeke.jpg" alt="" /></a>
+                                <span class="workshop-desc">Weeke PTP 160 PLUS - CNC Processing Center</span>
+                            </div>
+
+                        </div>
+                        <!-- End Photo Item -->
+                       
+                        
                     </div>
-                    <!-- End Photo Item -->
-                    
-                    <!-- Photo Item -->
-                    <div class="align-center font-alt post-prev-img mb-30">
-                        <img src="/assets/images/workshop/Machine_Brandt_2.jpg" alt="INERRE Interior Bandung Workshop Brandt Optimat KDN 340 - Edge Banding Machine" />
-                        <span class="workshop-desc">Brandt Optimat KDN 340 - Edge Banding Machine</span>
-                    </div>
-                    <!-- End Photo Item -->
-                    
-                    <!-- Photo Item -->
-                    <div class="align-center font-alt post-prev-img mb-30">
-                        <img src="/assets/images/workshop/Machine_Altendorf.jpg" alt="INERRE Interior Bandung Workshop Altendorf WA8 - Panel Saw" />
-                        <span class="workshop-desc">Altendorf WA8 - Panel Saw</span>
-                    </div>
-                    <!-- End Photo Item -->
-                    
-                    <!-- Photo Item -->
-                    <div class="align-center font-alt post-prev-img mb-30">
-                        <img src="/assets/images/workshop/Machine_Weeke.jpg" alt="INERRE Interior Bandung Workshop Weeke PTP 160 PLUS - CNC Processing Center" />
-                        <span class="workshop-desc">Weeke PTP 160 PLUS - CNC Processing Center</span>
-                    </div>
-                    <!-- End Photo Item -->
-                    
+                    <!-- End Photo Grid -->
+
                 </div>
             </section>
             <!-- End Section -->

@@ -2482,12 +2482,22 @@ a.logo:hover{
     text-transform: uppercase;
     letter-spacing: 0.4em;
 }
+.team-item-name-no-mt{
+  margin-top: 0px;
+}
 .team-item-role{
 	margin-top: 4px;
 	font-size: 12px;
 	text-transform: uppercase;
     letter-spacing: 0.4em;
     color: #aaa;
+}
+.team-item-role-more{
+  margin-top: 4px;
+  font-size: 12px;
+  text-transform: uppercase;
+    letter-spacing: 0.4em;
+    color: #666;
 }
 .team-social-links{
 	font-size: 14px;
