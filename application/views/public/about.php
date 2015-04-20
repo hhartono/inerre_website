@@ -275,7 +275,6 @@
             </section>
             End Testimonials Section -->
 
-
             <!-- Features Section -->
             <section class="page-section">
                 <div class="container relative">
@@ -295,9 +294,7 @@
                                 </div>
                                 <h3 class="alt-features-title font-alt">We’re Creative</h3>
                                 <div class="alt-features-descr align-left">
-                                    Lorem ipsum dolor sit amet, c-r adipiscing elit. 
-                                    In maximus ligula semper metus pellentesque mattis. 
-                                    Maecenas  volutpat, diam enim.
+                                    Creative people is the best to describe our design team. Our inspirations are limitless. We travel all around the world to get a lot more inspirations for our future clients.
                                 </div>
                             </div>
                         </div>
@@ -311,9 +308,7 @@
                                 </div>
                                 <h3 class="alt-features-title font-alt">We’re Punctual</h3>
                                 <div class="alt-features-descr align-left">
-                                    Proin fringilla augue at maximus vestibulum. 
-                                    Nam pulvinar vitae neque et porttitor. Praesent sed 
-                                    nisi eleifend, lorem fermentum orci sit amet, iaculis libero.
+                                    Time is money, and we appreciate your valuable time. 
                                 </div>
                             </div>
                         </div>
@@ -327,9 +322,7 @@
                                 </div>
                                 <h3 class="alt-features-title font-alt">We have magic</h3>
                                 <div class="alt-features-descr align-left">
-                                    Curabitur iaculis accumsan augue, nec finibus mauris pretium eu. 
-                                    Duis placerat ex gravida nibh tristique porta. Nulla facilisi. 
-                                    Suspendisse ultricies eros blandit.
+                                    We believe in magic. We believe in chasing dreams. Whatever type of your dream house/interior you have in mind, let us know, and we would be more than happy to make your dream comes true.
                                 </div>
                             </div>
                         </div>
@@ -359,9 +352,7 @@
                                 </div>
                                 <h3 class="alt-features-title font-alt">We’re responsible</h3>
                                 <div class="alt-features-descr align-left">
-                                    Fusce aliquet quam eget neque ultrices elementum. Nulla posuere 
-                                    felis id arcu blandit sagittis. Eleifender vestibulum purus, sit 
-                                    amet vulputate risus.
+                                    As much as we strive for a perfection, we realize that we may make mistakes. Please let us know how we could fix it. Any input is highly appreciated. 
                                 </div>
                             </div>
                         </div>
@@ -375,9 +366,7 @@
                                 </div>
                                 <h3 class="alt-features-title font-alt">We're Friendly</h3>
                                 <div class="alt-features-descr align-left">
-                                    Pulvinar vitae neque et porttitor. Integer non dapibus diam, ac 
-                                    eleifend lectus. Praesent sed nisi eleifend, fermentum orci sit 
-                                    amet, iaculis libero interdum.
+                                    Our people are approachable, meaning that you can ask us any question at anytime 24/7 through our website or you favorite social media.
                                 </div>
                             </div>
                         </div>
@@ -389,6 +378,7 @@
                 </div>
             </section>
             <!-- End Features Section -->
+
             <!-- Contact Section -->
             <section class="page-section" id="contact">
                 <div class="container relative">
