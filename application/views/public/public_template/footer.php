@@ -52,7 +52,7 @@
         <script type="text/javascript" src="/assets/js/isotope.pkgd.min.js"></script>
         <script type="text/javascript" src="/assets/js/imagesloaded.pkgd.min.js"></script>
         <script type="text/javascript" src="/assets/js/jquery.magnific-popup.min.js"></script>
-        <!--script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script-->
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
         <script type="text/javascript" src="/assets/js/gmap3.min.js"></script>
         <script type="text/javascript" src="/assets/js/wow.min.js"></script>
         <script type="text/javascript" src="/assets/js/masonry.pkgd.min.js"></script>

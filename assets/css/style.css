@@ -2450,7 +2450,8 @@ a.logo:hover{
 	position: absolute;
 	top: 50%;
 	left: 0;
-	padding: 20px 23px 55px;
+  /* padding bottom 55px -> 0px */
+	padding: 20px 23px 0px;
 	font-size: 14px;
     font-weight: 300;
 	color: #777;

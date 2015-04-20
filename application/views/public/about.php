@@ -50,7 +50,7 @@
                     </div>
                     <div class="row">
                         <!-- Team item 1 -->
-                        <div class="col-sm-3 mb-xs-30 wow fadeInUp"  data-wow-delay="0.1s">
+                        <div class="col-sm-3 mb-xs-30 wow fadeInUp"  data-wow-delay="0.2s">
                             <div class="team-item">
                                 <div class="team-item-image">
                                     <img src="/assets/images/team/team-1.jpg" alt="" />
@@ -81,7 +81,7 @@
                         <!-- End Team item 1 -->
                         
                         <!-- Team item 2 -->
-                        <div class="col-sm-3 mb-xs-30 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="col-sm-3 mb-xs-30 wow fadeInUp" data-wow-delay="0.2s">
                             <div class="team-item">
                                 <div class="team-item-image">
                                     <img src="/assets/images/team/team-2.jpg" alt="" />

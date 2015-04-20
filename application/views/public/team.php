@@ -43,7 +43,9 @@
                                         <span class="inerre-brown">// </span>Head System Developer
                                     </div>
                                     <div class="team-desc">
-                                        Hans pursued his long-life passion as a computer scientist at Purdue University and University of Southern California (USC). Majoring in Computer Science, Hans spent most of his time exploring different aspects of latest technology. After graduated, he worked for a startup company in Los Angeles as a software developer.
+                                        Hans pursued his long-life passion as a computer scientist at Purdue University and University of Southern California (USC). Majoring in Computer Science, Hans spent most of his time exploring different aspects of latest technology. After graduated, he worked for a startup company in Los Angeles as a software developer. 
+Hans’ breadth of project work showcases his ability and skills to create various problem-solving programs that feature the uniqueness of each client’s need. 
+As a head system developer, Hans always envisions himself to be able to enhance the quality of people’s life through his work.
                                     </div>
                                 </div>
                             </div>
@@ -65,8 +67,8 @@
                                        <span class="inerre-brown">// </span>Head Designer
                                     </div>
                                     <div class="team-desc">
-                                        Pursuing a degree in United States, Nessa went to a college in San Francisco and later moved in to Los Angeles to continue to study interior design in Woodbury University majoring in Interior Architecture. After graduated, she worked for different design firms within Los Angeles area including Beverly Hills and Santa Monica.
-Nessa brings solid experience through her education and career in United States and reflects it towards her design passion influenced by her multicultural background. Nessa adheres to the philosophy that all aspects of the project - design strategy, interior design vocabulary, furniture, and graphic - should embody the character and spirit of client’s brand and vision.
+                                        Pursuing a degree in United States, Nessa went to a college in San Francisco and later moved in to Los Angeles to continue to study interior design in Woodbury University majoring in Interior Architecture. After graduated, she worked for different design firms within Los Angeles area including Beverly Hills and Santa Monica. 
+Nessa brings solid experience through her education and career in United States and reflects it towards her design passion influenced by her multicultural background. Nessa adheres to the philosophy that all aspects of the project - design strategy, interior design vocabulary, furniture, and graphic - should embody the character and spirit of client’s brand and vision. 
                                     </div>
                                 </div>
                             </div>
