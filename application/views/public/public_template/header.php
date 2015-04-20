@@ -22,8 +22,12 @@
         <link rel="stylesheet" href="/assets/css/owl.carousel.css">
         <link rel="stylesheet" href="/assets/css/magnific-popup.css">
         <style>
-        .textshadow{
-            text-shadow:-1px 1px 4px #000;
+        .textshadowwhite{
+            text-shadow:-1px 1px 0px #fff;
+            
+        }
+        .textshadowblack{
+            text-shadow:-1px 1px 0px #000;
         }
         </style>
         <!-- Load Google Analytic Code -->

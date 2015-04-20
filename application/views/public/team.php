@@ -8,9 +8,9 @@
                 <div class="relative container align-left">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="hs-line-11 font-alt mb-20 mt-xs-40 mb-xs-0 inerre-brown"><!-- <a class="inerre-brown" style="text-decoration:none;" href="/about">About</a> /  -->Team</h1>
-                            <div class="hs-line-4 font-alt">
-                                Extraordinary art team &&nbsp;creative minimalism lovers
+                            <h1 class="textshadowblack hs-line-11 font-alt mb-20 mt-xs-40 mb-xs-0 inerre-brown"><!-- <a class="inerre-brown" style="text-decoration:none;" href="/about">About</a> /  -->Team</h1>
+                            <div class="textshadowblack hs-line-4 font-alt">
+                                A list of creative minimalism lovers
                             </div>
                         </div>
                         <!--div class="col-md-4 mt-30">

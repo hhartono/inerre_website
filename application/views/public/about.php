@@ -8,9 +8,9 @@
                 <div class="relative container align-left">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="hs-line-11 font-alt mb-20 mt-xs-40 mb-xs-0 inerre-brown">About</h1>
-                            <div class="hs-line-4 font-alt">
-                                Extraordinary art team &&nbsp;creative minimalism lovers
+                            <h1 class="textshadowblack hs-line-11 font-alt mb-20 mt-xs-40 mb-xs-0 inerre-brown">About</h1>
+                            <div class="textshadowblack hs-line-4 font-alt">
+                                A story of us and the people behind INERRE
                             </div>
                         </div>
                         <!--div class="col-md-4 mt-30">
@@ -31,10 +31,10 @@
                             <div class="col-md-4">
                                 <blockquote>
                                     <p>
-                                    I've always thought that design can have equal importance to the idea of internal architecture. Professionally, things can be very dogmatic - you do the architecture, someone else does the interiors, someone else does the furniture, the fabric, etc. But I think design is all-encompassing.
+                                    Less is more
                                     </p>
                                     <footer>
-                                        Zaha Hadid
+                                        Ludwig Mies van der Rohe
                                     </footer>
                                 </blockquote>
                             </div>
@@ -294,27 +294,13 @@
                                 </div>
                                 <h3 class="alt-features-title font-alt">We’re Creative</h3>
                                 <div class="alt-features-descr align-left">
-                                    Creative people is the best to describe our design team. Our inspirations are limitless. We travel all around the world to get a lot more inspirations for our future clients.
+                                    Creative people is the best to describe our design team. Our ideas are limitless. We travel all around the world to get a lot more inspirations for our future clients.
                                 </div>
                             </div>
                         </div>
                         <!-- End Features Item -->
-                        
-                        <!-- Features Item -->
-                        <div class="col-sm-6 col-md-4 col-lg-4">
-                            <div class="alt-features-item align-center">
-                                <div class="alt-features-icon">
-                                    <span class="icon-clock"></span>
-                                </div>
-                                <h3 class="alt-features-title font-alt">We’re Punctual</h3>
-                                <div class="alt-features-descr align-left">
-                                    Time is money, and we appreciate your valuable time. 
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Features Item -->
-                        
-                        <!-- Features Item -->
+
+                         <!-- Features Item -->
                         <div class="col-sm-6 col-md-4 col-lg-4">
                             <div class="alt-features-item align-center">
                                 <div class="alt-features-icon">
@@ -327,7 +313,7 @@
                             </div>
                         </div>
                         <!-- End Features Item -->
-                        
+
                         <!-- Features Item -->
                         <div class="col-sm-6 col-md-4 col-lg-4">
                             <div class="alt-features-item align-center">
@@ -336,9 +322,7 @@
                                 </div>
                                 <h3 class="alt-features-title font-alt">We love minimalism</h3>
                                 <div class="alt-features-descr align-left">
-                                    Cras luctus interdum sodales. Quisque quis odio dui. Sedes sit 
-                                    amet neque malesuada, lobortis  commodo magna ntesque pharetra 
-                                    metus vivera sagittis.
+                                    Less is more. We prioritize function over everything else. Cleanliness in simplicity makes us much easier to keep the space clean. Minimalism also means minimal spending.
                                 </div>
                             </div>
                         </div>
@@ -348,11 +332,25 @@
                         <div class="col-sm-6 col-md-4 col-lg-4">
                             <div class="alt-features-item align-center">
                                 <div class="alt-features-icon">
-                                    <span class="icon-linegraph"></span>
+                                    <span class="icon-hourglass"></span>
+                                </div>
+                                <h3 class="alt-features-title font-alt">We’re Efficient</h3>
+                                <div class="alt-features-descr align-left">
+                                    We use the latest wood processing machines and technology to ensure the precision and minimal waste. We work hard to get our office and workshop all digitally connected to keep the time efficiency. 
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Features Item -->
+                        
+                        <!-- Features Item -->
+                        <div class="col-sm-6 col-md-4 col-lg-4">
+                            <div class="alt-features-item align-center">
+                                <div class="alt-features-icon">
+                                    <span class="icon-refresh"></span>
                                 </div>
                                 <h3 class="alt-features-title font-alt">We’re responsible</h3>
                                 <div class="alt-features-descr align-left">
-                                    As much as we strive for a perfection, we realize that we may make mistakes. Please let us know how we could fix it. Any input is highly appreciated. 
+                                    As much as we strive for perfection, we realize that we may make mistakes. Please let us know how we could fix it. Any input is highly appreciated.
                                 </div>
                             </div>
                         </div>
@@ -366,7 +364,7 @@
                                 </div>
                                 <h3 class="alt-features-title font-alt">We're Friendly</h3>
                                 <div class="alt-features-descr align-left">
-                                    Our people are approachable, meaning that you can ask us any question at anytime 24/7 through our website or you favorite social media.
+                                    Our people are approachable, meaning that you can ask us any question at anytime 24/7 through our website or you favorite social media. 
                                 </div>
                             </div>
                         </div>

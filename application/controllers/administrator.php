@@ -178,7 +178,7 @@ class Administrator extends CI_Controller {
 	
 	public function sendingmail()
 	{
-		/*$configsmtpgmail = array(
+		$configsmtpgmail = array(
 		 	'protocol' => 'smtp',
 		 	'smtp_host' => 'ssl://smtp.googlemail.com',
 		 	'smtp_port' => 465,
@@ -189,7 +189,7 @@ class Administrator extends CI_Controller {
 		 	'crlf' => '\r\n',
 		 	'newline' => '\r\n'
 		);
-		$this->email->initialize($configsmtpgmail);*/
+		$this->email->initialize($configsmtpgmail);
 
 		/*$configsendmail = array(
 			'useragent' => 'inerre website',

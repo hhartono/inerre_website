@@ -10,9 +10,9 @@
                     <div class="row">
                         
                         <div class="col-md-12">
-                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0 inerre-brown">Contact</h1>
-                            <div class="hs-line-4 font-alt">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                            <h1 class="textshadowblack hs-line-11 font-alt mb-20 mb-xs-0 inerre-brown">Contact</h1>
+                            <div class="textshadowblack hs-line-4 font-alt">
+                                A place where you can talk, discuss, and ask us
                             </div>
                         </div>
                         

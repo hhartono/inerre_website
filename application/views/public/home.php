@@ -10,7 +10,7 @@
                     <div class="home-content">
                         <div class="home-text">
                             
-                            <h1 class=" hs-line-1 font-alt mb-50 mb-xs-50 mt-50 mb-xs-0 inerre-brown">
+                            <h1 class="textshadowblack hs-line-1 font-alt mb-50 mb-xs-50 mt-50 mb-xs-0 inerre-brown">
                                 INERRE
                             </h1>
                             
@@ -94,7 +94,7 @@
                             <div class="alt-features-item align-center">
                                 <div class="alt-features-descr align-left">
                                     <h2 class="section-title mt-0 font-alt align-left">Work process</h2>
-                                    Our goal is to have a proud portrait of INERRE’s dedication and one that ultimately illuminates a deep understanding of the homeowner’s personality and lifestyle.
+                                    From idea to installation, from concept to check-in, we want to make sure that all of our designs are able to reflect the characters of our clients’ personality and lifestyle, from the broad narrative down to the smallest most meaningful details.
                                 </div>
                             </div>
                         </div>
@@ -334,27 +334,13 @@
                                 </div>
                                 <h3 class="alt-features-title font-alt">We’re Creative</h3>
                                 <div class="alt-features-descr align-left">
-                                    Creative people is the best to describe our design team. Our inspirations are limitless. We travel all around the world to get a lot more inspirations for our future clients.
+                                    Creative people is the best to describe our design team. Our ideas are limitless. We travel all around the world to get a lot more inspirations for our future clients.
                                 </div>
                             </div>
                         </div>
                         <!-- End Features Item -->
-                        
-                        <!-- Features Item -->
-                        <div class="col-sm-6 col-md-4 col-lg-4">
-                            <div class="alt-features-item align-center">
-                                <div class="alt-features-icon">
-                                    <span class="icon-clock"></span>
-                                </div>
-                                <h3 class="alt-features-title font-alt">We’re Punctual</h3>
-                                <div class="alt-features-descr align-left">
-                                    Time is money, and we appreciate your valuable time. 
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Features Item -->
-                        
-                        <!-- Features Item -->
+
+                         <!-- Features Item -->
                         <div class="col-sm-6 col-md-4 col-lg-4">
                             <div class="alt-features-item align-center">
                                 <div class="alt-features-icon">
@@ -367,7 +353,7 @@
                             </div>
                         </div>
                         <!-- End Features Item -->
-                        
+
                         <!-- Features Item -->
                         <div class="col-sm-6 col-md-4 col-lg-4">
                             <div class="alt-features-item align-center">
@@ -376,9 +362,7 @@
                                 </div>
                                 <h3 class="alt-features-title font-alt">We love minimalism</h3>
                                 <div class="alt-features-descr align-left">
-                                    Cras luctus interdum sodales. Quisque quis odio dui. Sedes sit 
-                                    amet neque malesuada, lobortis  commodo magna ntesque pharetra 
-                                    metus vivera sagittis.
+                                    Less is more. We prioritize function over everything else. Cleanliness in simplicity makes us much easier to keep the space clean. Minimalism also means minimal spending.
                                 </div>
                             </div>
                         </div>
@@ -388,11 +372,25 @@
                         <div class="col-sm-6 col-md-4 col-lg-4">
                             <div class="alt-features-item align-center">
                                 <div class="alt-features-icon">
-                                    <span class="icon-linegraph"></span>
+                                    <span class="icon-hourglass"></span>
+                                </div>
+                                <h3 class="alt-features-title font-alt">We’re Efficient</h3>
+                                <div class="alt-features-descr align-left">
+                                    We use the latest wood processing machines and technology to ensure the precision and minimal waste. We work hard to get our office and workshop all digitally connected to keep the time efficiency. 
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Features Item -->
+                        
+                        <!-- Features Item -->
+                        <div class="col-sm-6 col-md-4 col-lg-4">
+                            <div class="alt-features-item align-center">
+                                <div class="alt-features-icon">
+                                    <span class="icon-refresh"></span>
                                 </div>
                                 <h3 class="alt-features-title font-alt">We’re responsible</h3>
                                 <div class="alt-features-descr align-left">
-                                    As much as we strive for a perfection, we realize that we may make mistakes. Please let us know how we could fix it. Any input is highly appreciated. 
+                                    As much as we strive for perfection, we realize that we may make mistakes. Please let us know how we could fix it. Any input is highly appreciated.
                                 </div>
                             </div>
                         </div>
@@ -406,7 +404,7 @@
                                 </div>
                                 <h3 class="alt-features-title font-alt">We're Friendly</h3>
                                 <div class="alt-features-descr align-left">
-                                    Our people are approachable, meaning that you can ask us any question at anytime 24/7 through our website or you favorite social media.
+                                    Our people are approachable, meaning that you can ask us any question at anytime 24/7 through our website or you favorite social media. 
                                 </div>
                             </div>
                         </div>
