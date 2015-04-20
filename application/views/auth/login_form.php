@@ -46,8 +46,8 @@
 				$login_label = 'Email';
 			}
 			$login = array(
-				'name'	=> 'login',
-				'id'	=> 'login',
+				'name'	=> 'username',
+				'id'	=> 'username',
 				'value' => set_value('login'),
 				'maxlength'	=> 80,
 				'size'	=> 30,
@@ -82,11 +82,17 @@
 				
 					<div class="mb-20 mb-md-10">
 					<?php echo form_input($login); ?>
-					<?php echo form_error($login['name']); ?><?php echo isset($errors[$login['name']])?$errors[$login['name']]:''; ?>
+					<!-- Error Notice -->
+					<?php echo form_error($login['name']); ?>
+					<?php echo isset($errors[$login['name']])? '<div class="alert error"><i class="fa fa-lg  fa-times-circle"></i> '.$errors[$login['name']].'</div>'  :  ''; ?>
+						
 					</div>
 					<div class="mb-20 mb-md-10">
 					<?php echo form_password($password); ?>
-					<?php echo form_error($password['name']); ?><?php echo isset($errors[$password['name']])?$errors[$password['name']]:''; ?>
+					<!-- Error Notice -->
+					<?php echo form_error($password['name']); ?>
+					<?php echo isset($errors[$password['name']])? '<div class="alert error"><i class="fa fa-lg  fa-times-circle"></i> '.$errors[$password['name']].'</div>' : ''; ?>
+						
 					</div>
 
 					<?php if ($show_captcha) {

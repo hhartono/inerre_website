@@ -15,11 +15,11 @@ class Auth extends CI_Controller
 
 	function index()
 	{
-		/*if ($message = $this->session->flashdata('message')) {
+		if ($message = $this->session->flashdata('message')) {
 			$this->load->view('auth/general_message', array('message' => $message));
-		} else {*/
+		} else {
 			redirect('auth/login/');
-		// }
+		}
 	}
 
 	/**
@@ -40,7 +40,7 @@ class Auth extends CI_Controller
 					$this->config->item('use_username', 'tank_auth'));
 			$data['login_by_email'] = $this->config->item('login_by_email', 'tank_auth');
 
-			$this->form_validation->set_rules('login', 'Login', 'trim|required|xss_clean');
+			$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
 			$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
 			$this->form_validation->set_rules('remember', 'Remember me', 'integer');
 
@@ -63,7 +63,7 @@ class Auth extends CI_Controller
 
 			if ($this->form_validation->run()) {								// validation ok
 				if ($this->tank_auth->login(
-						$this->form_validation->set_value('login'),
+						$this->form_validation->set_value('username'),
 						$this->form_validation->set_value('password'),
 						$this->form_validation->set_value('remember'),
 						$data['login_by_username'],

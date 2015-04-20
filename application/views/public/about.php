@@ -119,7 +119,7 @@
                                     <div class="team-item-detail">
                                         <!-- <h4 class="font-alt normal">Whats Up!</h4> -->
                                         <p>
-                                        With more than 30 years of experience, Subianto and wife established an architecture company in their early careers. The firm started to branch the interior design division 20 years ago believing that architecture and interior design are completely inseparable. 
+                                        With more than 30 years of experience, Subianto and wife established an architecture company in their early careers. The firm started to branch the interior design division 20 years ago believing that architecture and interior design are completely inseparable.
                                         </p>
                                         <!-- <div class="team-social-links">
                                             <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>

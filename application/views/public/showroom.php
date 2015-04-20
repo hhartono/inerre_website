@@ -70,67 +70,6 @@
                 </section>
                 <!-- End Slide Item -->
                 
-                <!-- Slide Item -->
-                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/full-width-images/section-bg-9.jpg">
-                    <div class="js-height-full container">
-                        
-                        <!-- Hero Content -->
-                        <div class="home-content">
-                            <div class="home-text">
-                                
-                                <!-- HK: Use for Caption -->
-                                <!--
-                                <h2 class="hs-line-8 no-transp font-alt mb-50 mb-xs-30">
-                                    Create your dream with
-                                </h2>                       
-                                
-                                <h1 class="hs-line-14 font-alt mb-50 mb-xs-30">
-                                    Amazing Design
-                                </h1>
-                                
-                                <div>
-                                    <a href="pages-pricing-1.html" class="btn btn-mod btn-border-w btn-medium btn-round">Get Pricing</a>
-                                </div>
-                                -->
-
-                            </div>
-                        </div>
-                        <!-- End Hero Content -->
-                        
-                    </div>
-                </section>
-                <!-- End Slide Item -->
-            
-                <!-- Slide Item -->
-                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/full-width-images/section-bg-8.jpg">
-                    <div class="js-height-full container">
-                        
-                        <!-- Hero Content -->
-                        <div class="home-content">
-                            <div class="home-text">
-                                
-                                <!-- HK: Use for Caption -->
-                                <!--
-                                <h2 class="hs-line-8 no-transp font-alt mb-50 mb-xs-30">
-                                    Create your dream with
-                                </h2>                       
-                                
-                                <h1 class="hs-line-14 font-alt mb-50 mb-xs-30">
-                                    Amazing Design
-                                </h1>
-                                
-                                <div>
-                                    <a href="pages-pricing-1.html" class="btn btn-mod btn-border-w btn-medium btn-round">Get Pricing</a>
-                                </div>
-                                -->
-                                
-                            </div>
-                        </div>
-                        <!-- End Hero Content -->
-                        
-                    </div>
-                </section>
-                <!-- End Slide Item -->
 
             </div>
             <!-- End Fullwidth Slider -->
