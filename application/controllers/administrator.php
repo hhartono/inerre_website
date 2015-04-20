@@ -1,31 +1,43 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class Administrator extends CI_Controller {
 
-	public function __construct()
+	function __construct()
 	{
 		parent::__construct();
 		$this->load->database();
-		$this->load->helper('email');
-		$this->load->library(array('email','tank_auth'));
+		$this->load->helper(array('email', 'url'));
+		$this->load->library(array('email', 'tank_auth'));
+		$this->is_logged_in();
 		$this->load->model(array('modelmessagecenter'));
 		
 	}
 
 	public function index()
 	{	
-		$data = array(
-				'title' => 'Inerre Interior - Administrator Main',
-			);
-		$this->load->view('administrator/administrator', $data);
+		/*$data = array(
+			'title' => 'Inerre Interior - Administrator Main',
+		);
+		$this->load->view('administrator/administrator', $data);*/
+		redirect('admin/messagecenter/');	
+	}
+
+	/*
+	 * check if user is logged in
+	 */
+	public function is_logged_in(){
+		if(!$this->tank_auth->is_logged_in()){
+			redirect('/auth/login');
+		}
 	}
 
 	public function messagecenter()
 	{	
 		$data = array(
-				'title' => 'INERRE Interior - Administrator / Message Center'
-				//'loadmessage' => $this->modelmessagecenter->loadMessageAll()
-			);
+			'title' => 'INERRE Interior - Administrator / Message Center',
+			//'loadmessage' => $this->modelmessagecenter->loadMessageAll()
+			'username' => $this->tank_auth->get_username()
+		);
 		$this->load->view('administrator/messagecenter', $data);
 	}
 

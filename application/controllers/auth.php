@@ -15,11 +15,11 @@ class Auth extends CI_Controller
 
 	function index()
 	{
-		if ($message = $this->session->flashdata('message')) {
+		/*if ($message = $this->session->flashdata('message')) {
 			$this->load->view('auth/general_message', array('message' => $message));
-		} else {
+		} else {*/
 			redirect('auth/login/');
-		}
+		// }
 	}
 
 	/**
@@ -27,7 +27,7 @@ class Auth extends CI_Controller
 	 *
 	 * @return void
 	 */
-	function login()
+	public function login()
 	{
 		if ($this->tank_auth->is_logged_in()) {									// logged in
 			redirect('administrator/messagecenter');

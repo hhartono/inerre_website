@@ -52,15 +52,20 @@
                     <!-- Main Menu -->
                     <div class="inner-nav desktop-nav">
                         <ul class="clearlist">
-                            <!-- Link -->
+                            <!-- Link
                             <li>
                                 <a href="">Link</a>
                             </li>
-                            <!-- End Link -->
-                            <!-- Link -->
+                            End Link
+                            Link
                             <li>
                                 <a href="">Link</a>
                             </li>
+                            End Link -->
+                            <!-- Link -->
+                            <!-- <li>
+                                <a href="">Hallo <?php echo $this->tank_auth->get_username();?></a>
+                            </li> -->
                             <!-- End Link -->
                             <!-- Link -->
                             <li>
@@ -68,7 +73,7 @@
                             </li>
                             <!-- End Link -->
                             <!-- Search -->
-                            <li>
+                            <!-- <li>
                                 <a href="#" class="mn-has-sub"><i class="fa fa-search"></i> Search</a>
                                 <ul class="mn-sub">
                                     <li>
@@ -84,7 +89,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                            </li>
+                            </li> -->
                             <!-- End Search -->
                         </ul>
                     </div>

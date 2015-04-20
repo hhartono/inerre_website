@@ -7,7 +7,7 @@
                 <div class="row">        
                     <div class="col-md-12">
                         <h1 id="title-page" class="hs-line-11 font-alt mb-0"></h1>
-                    </div> 
+                    </div>
                 </div>    
             </div>
         </section>

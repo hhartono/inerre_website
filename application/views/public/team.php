@@ -35,7 +35,7 @@
                                 <div class="col-md-3 ">
                                     <img src="/assets/images/team/team-1.jpg" alt="" />
                                 </div>
-                                <div class="font-alt">
+                                <div class="col-md-9 font-alt">
                                     <div class="team-item-name team-item-name-no-mt">
                                         Hans Hartono
                                     </div>
@@ -57,7 +57,7 @@
                                     <img src="/assets/images/team/team-1.jpg" alt="" />
                                 </div>
 
-                                <div class="font-alt">
+                                <div class="col-md-9 font-alt">
                                     <div class="team-item-name team-item-name-no-mt">
                                         Nessa Phoeng
                                     </div>
@@ -80,7 +80,7 @@ Nessa brings solid experience through her education and career in United States 
                                     <img src="/assets/images/team/team-1.jpg" alt="" />
                                 </div>
 
-                                <div class="font-alt">
+                                <div class="col-md-9 font-alt">
                                     <div class="team-item-name team-item-name-no-mt">
                                         Subianto Hartono
                                     </div>
@@ -101,8 +101,7 @@ Nessa brings solid experience through her education and career in United States 
                                 <div class="col-md-3 ">
                                     <img src="/assets/images/team/team-1.jpg" alt="" />
                                 </div>
-
-                                <div class="font-alt">
+                                <div class="col-md-9 font-alt">
                                     <div class="team-item-name team-item-name-no-mt">
                                         Siane Kurnia
                                     </div>

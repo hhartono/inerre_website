@@ -166,7 +166,7 @@
                                         Our employees have worked on a range of project types, including boutique hotels, restaurants, retail stores, and residentials.
                                     </div>
                                     <div class="local-scroll">
-                                        <a href="/contact" class="btn btn-mod btn-w btn-medium btn-round">Lets talk</a>
+                                        <a href="/contact" class="btn btn-mod btn-medium btn-border">Lets talk</a>
                                     </div>
                                 </div>
                             </div>

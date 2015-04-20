@@ -29,7 +29,7 @@ class About extends CI_Controller {
 	public function team()
 	{
 		$data = array(
-				'title' => '&mdash; About / Team',
+				'title' => '&mdash;  Team',
 				'aboutactive' => 'active'
 			);
 		$this->load->view('public/team', $data);
@@ -38,10 +38,11 @@ class About extends CI_Controller {
 	public function workshop()
 	{
 		$data = array(
-				'title' => '&mdash; About / Workshop',
+				'title' => '&mdash; Workshop',
 				'aboutactive' => 'active'
 			);
 		$this->load->view('public/workshop', $data);
+		//redirect('/about/team');
 	}
 }
 
