@@ -4,7 +4,7 @@
 ?>   
             <!-- Head Section -->
             <!-- <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/full-width-images/new-crop-flip.jpg"> -->
-            <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/showroom-inerre/pantry_1.jpg">
+            <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/subheader/subheader_team.jpg">
                 <div class="relative container align-left">
                     <div class="row">
                         <div class="col-md-12">
@@ -56,7 +56,7 @@ As a head system developer, Hans always envisions himself to be able to enhance 
                         <div class="col-sm-12 mb-xs-30 team-row wow">
                             <div id="nessaphoeng" class="team-item team-offset-block">
                                 <div class="col-md-3 ">
-                                    <img src="/assets/images/team/team-1.jpg" alt="" />
+                                    <img src="/assets/images/team/team-2.jpg" alt="" />
                                 </div>
 
                                 <div class="col-md-9 font-alt">

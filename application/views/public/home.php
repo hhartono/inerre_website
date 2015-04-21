@@ -155,7 +155,7 @@
             <!-- End Process Section -->
             
             <!-- Call Action Section -->
-            <section class="page-section pt-0 pb-0 banner-section bg-dark" data-background="/assets/images/full-width-images/unsplashdotcom4-crop.jpg">
+            <section class="page-section pt-0 pb-0 banner-section bg-dark" data-background="/assets/images/subheader/subheader_looking_2.jpg">
             <!-- <section class="page-section pt-0 pb-0 banner-section bg-dark" data-background="/assets/images/workshop/workshop_3.jpg"> -->
                 <div class="container relative">
                     
@@ -165,8 +165,8 @@
                             
                             <div class="mt-140 mt-lg-80 mb-140 mb-lg-80">
                                 <div class="banner-content">
-                                    <h3 class="textshadowblack banner-heading font-alt">Looking for personalized interior design?</h3>
-                                    <div class="textshadowblack banner-decription">
+                                    <h3 class="black banner-heading font-alt">Looking for personalized interior design?</h3>
+                                    <div class="black banner-decription">
                                         INERRE believes that each person deserves to have a room that is unique and personal to oneself because nobody has the same exact needs. We are here to help you not only to design, but personalize your unique rooms.
                                     </div>
                                     <div class="local-scroll">
@@ -195,7 +195,7 @@
                             <div class="work-full-media mt-0 white-shadow wow fadeInUp">
                                 <ul class="clearlist work-full-slider owl-carousel">
                                     <li>
-                                        <img src="/assets/images/full-width-images/DeathtoStock_Objects4-crop.jpg" alt="" />
+                                        <img src="/assets/images/home/showroom_map.png" alt="" />
                                     </li>
                                 </ul>
                             </div>

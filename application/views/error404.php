@@ -38,18 +38,18 @@
         <div class="page" id="top">
             
             <!-- Home Section -->
-            <section class="home-section bg-dark-alfa-50 parallax-2" data-background="/assets/images/full-width-images/404-bg.jpg">
+            <section class="home-section bg-dark-alfa-60 parallax-2" data-background="/assets/images/showroom-inerre/1.jpg">
                 <div class="js-height-full">
                     
                     <!-- Hero Content -->
                     <div class="home-content container">
-                        <div class="home-text">
+                        <div class="error-text">
                             <div class="hs-cont">
                                 
                                 <!-- Headings -->
                                 <div class="hs-wrap">
                                     
-                                    <div class="hs-line-13 font-alt mb-10">
+                                    <div class="white hs-line-13 font-alt mb-10">
                                         404
                                     </div>
                                     
