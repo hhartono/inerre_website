@@ -183,10 +183,12 @@
                 if ($(window).scrollTop() > 10) {
                     $(".js-transparent").removeClass("transparent");
                     $(".main-nav, .nav-logo-wrap .logo, .mobile-nav").addClass("small-height");
+                    $(".inner-nav ul li a,.inner-nav ul li a.active").css('color', '#777');
                 }
                 else {
                     $(".js-transparent").addClass("transparent");
                     $(".main-nav, .nav-logo-wrap .logo, .mobile-nav").removeClass("small-height");
+                    $(".inner-nav ul li a, .inner-nav ul li a.active, .inner-nav ul li a:hover").css('color', '#fff');
                 }
             
             

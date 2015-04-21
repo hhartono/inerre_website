@@ -3,7 +3,7 @@
     $this->load->view('public/public_template/header');
 ?>          
             <!-- Head Section -->
-            <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/subheader/6E9C2055_19201080.jpg">
+            <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/subheader/subheader_portfolio.jpg">
                 <div class="relative container align-left">
                     <div class="row">
                         <div class="col-md-12">

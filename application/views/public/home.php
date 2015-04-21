@@ -3,7 +3,7 @@
     $this->load->view('public/public_template/header');
 ?>
             <!-- Home Section -->
-            <section class="home-section bg-color-lighter parallax-2" data-background="/assets/images/showroom-inerre/pantry_1.jpg" id="home">
+            <section class="home-section bg-color-lighter parallax-2" data-background="/assets/images/showroom-inerre/main_page_3.jpg" id="home">
                 <div class="js-height-full">
                     
                     <!-- Hero Content -->
@@ -13,11 +13,11 @@
                             <!-- <h1 class=" textshadowblack hs-line-1 font-alt mb-50 mb-xs-50 mt-50 mb-xs-0 inerre-brown">
                                 INERRE
                             </h1> -->
-                            <div class="hidden-xs mb-10 mb-xs-50 mt-50 mb-xs-0 ">
+                            <div class="hidden-xs mb-10 mb-xs-50 mt-50 mb-xs-0">
                                 <img src="/assets/images/inerrelogo.png" class="center-block img-responsive" alt="">
                             </div>
                             <div class="hidden-sm hidden-md hidden-lg mb-50 mb-xs-50 mt-50 mb-xs-0 ">
-                                <img src="/assets/images/inerrelogo.png" width="220px" class="center-block" alt="">
+                                <img src="/assets/images/inerrelogo.png" width="220px" class="center-block" style="background:rgba(0,0,0, .70);" alt="">
                             </div>    
                             <div class="textshadowblack hs-line-6 mb-120 mb-xs-80 col-xs-12">
                                 I&nbsp;&nbsp;&nbsp;N&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;R&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;R
@@ -251,49 +251,49 @@
                         
                         <!-- Work Item (External Page) -->
                         <li class="work-item">
-                            <a href="portfolio-single-1.html" class="work-ext-link">
+                            <!-- <a href="portfolio-single-1.html" class="work-ext-link"> -->
                                 <div class="work-img">
                                     <img class="work-img" src="/assets/images/portfolio-inerre/015532-650.jpg" alt="Work" />
                                 </div>
-                                <div class="work-intro">
+                                <!-- <div class="work-intro">
                                     <h3 class="work-title">Portfolio #10</h3>
                                     <div class="work-descr">
                                         External Page
                                     </div>
-                                </div>
-                            </a>
+                                </div> -->
+                            <!-- </a> -->
                         </li>
                         <!-- End Work Item -->
                         
                         <!-- Work Item (External Page) -->
                         <li class="work-item">
-                            <a href="portfolio-single-1.html" class="work-ext-link">
+                            <!-- <a href="portfolio-single-1.html" class="work-ext-link"> -->
                                 <div class="work-img">
                                     <img class="work-img" src="/assets/images/portfolio-inerre/025053-650.jpg" alt="Work" />
                                 </div>
-                                <div class="work-intro">
+                                <!-- <div class="work-intro">
                                     <h3 class="work-title">Portfolio #9</h3>
                                     <div class="work-descr">
                                         External Page
                                     </div>
-                                </div>
-                            </a>
+                                </div> -->
+                            <!-- </a> -->
                         </li>
                         <!-- End Work Item -->
                         
                         <!-- Work Item (External Page) -->
                         <li class="work-item">
-                            <a href="portfolio-single-1.html" class="work-ext-link">
+                            <!-- <a href="portfolio-single-1.html" class="work-ext-link"> -->
                                 <div class="work-img">
                                     <img class="work-img" src="/assets/images/portfolio-inerre/034836-650.jpg" alt="Work" />
                                 </div>
-                                <div class="work-intro">
+                                <!-- <div class="work-intro">
                                     <h3 class="work-title">Portfolio #8</h3>
                                     <div class="work-descr">
                                         External Page
                                     </div>
-                                </div>
-                            </a>
+                                </div> -->
+                            <!-- </a> -->
                         </li>
                         <!-- End Work Item -->
                         
