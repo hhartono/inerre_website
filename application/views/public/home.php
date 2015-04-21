@@ -74,7 +74,7 @@
                                 INERRE is an interior design firm capturing each client’s personality and reflecting it through a unified and well tailored design according to their lifestyles and needs. We believe that design is much more than creating beautiful spaces. A successfully designed home should have a one-of-a-kind aesthetic that is unique and breathtaking, yet livable, and most importantly showcases the personality of its occupants. 
                             </div>
                             <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                Our philosophy is reflected in the furniture and products we produce and the way how each piece is performed and functioned. INERRE showcases various kinds of details so clients can interact with the desired designed products at our showroom - and that’s how INERRE perceives it as personal designs. 
+                                Our philosophy is reflected in the furniture and products we produce and the way how each piece performs and functions. INERRE showcases various kinds of details so clients can interact with the desired designed products at our showroom - and that’s how INERRE perceives it as personal designs.
                             </div>
                             
                         </div>
@@ -512,7 +512,7 @@
                                             Email
                                         </div>
                                         <div class="ci-text">
-                                            <a href="mailto:support@bestlooker.pro">info@inerre.com</a>
+                                            <a href="mailto:info@inerre.com">info@inerre.com</a>
                                         </div>
                                     </div>
                                 </div>

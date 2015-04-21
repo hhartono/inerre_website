@@ -453,7 +453,7 @@
                                             Email
                                         </div>
                                         <div class="ci-text">
-                                            <a href="mailto:support@bestlooker.pro">info@inerre.com</a>
+                                            <a href="mailto:info@inerre.com">info@inerre.com</a>
                                         </div>
                                     </div>
                                 </div>

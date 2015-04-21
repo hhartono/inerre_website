@@ -31,7 +31,7 @@
         }
         </style>
         <!-- Load Google Analytic Code -->
-        <?php //$this->load->view('public_template/analyticstracking');?>
+        <?php $this->load->view('public_template/analyticstracking');?>
     </head>
 
     <body class="appear-animate">
