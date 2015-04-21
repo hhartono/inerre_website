@@ -309,7 +309,7 @@
                 <div class="container relative">
                     
                     <div class="align-center">
-                        <h3 class="banner-heading font-alt textshadowblack ">Want to see more works?</h3>
+                        <h3 class="banner-heading font-alt black ">Want to see more works?</h3>
                         <div class="local-scroll">
                             <a href="/portfolio" class="btn btn-mod btn-medium btn-border">Lets view portfolio</a>
                         </div>
