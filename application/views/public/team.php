@@ -79,7 +79,7 @@ Nessa brings solid experience through her education and career in United States 
                         <div class="col-sm-12 mb-xs-30 team-row wow">
                             <div id="subiantohartono" class="team-item team-offset-block">
                                 <div class="col-md-3 ">
-                                    <img src="/assets/images/team/team-1.jpg" alt="" />
+                                    <img src="/assets/images/team/team-3.jpg" alt="" />
                                 </div>
 
                                 <div class="col-md-9 font-alt">
@@ -101,7 +101,7 @@ Nessa brings solid experience through her education and career in United States 
                         <div class="col-sm-12 mb-xs-30 team-row wow">
                             <div id="sianekurnia" class="team-item  team-offset-block">
                                 <div class="col-md-3 ">
-                                    <img src="/assets/images/team/team-1.jpg" alt="" />
+                                    <img src="/assets/images/team/team-4.jpg" alt="" />
                                 </div>
                                 <div class="col-md-9 font-alt">
                                     <div class="team-item-name team-item-name-no-mt">
