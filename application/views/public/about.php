@@ -64,6 +64,7 @@
                     <div class="row">
                         <!-- Team item 1 -->
                         <div class="col-sm-3 mb-xs-30 wow fadeInUp" data-wow-delay="0.2s">
+                            <a class="team-link" href="/about/team#hanshartono">
                             <div class="team-item-member">
                                 <div class="team-item-image">
                                     <img src="/assets/images/team/team-1.jpg" alt="" />
@@ -79,7 +80,7 @@
                                         </div>
                                     </div> -->
                                 </div>
-                                <a class="team-link" href="/about/team#hanshartono">
+                                
                                     <div class="team-item-descr font-alt">
                                         <div class="team-item-name">
                                             Hans Hartono
@@ -88,13 +89,14 @@
                                             Co-Founder
                                         </div>
                                     </div>
-                                </a>
                             </div>
+                            </a>
                         </div>
                         <!-- End Team item 1 -->
                         
                         <!-- Team item 2 -->
                         <div class="col-sm-3 mb-xs-30 wow fadeInUp" data-wow-delay="0.2s">
+                            <a class="team-link" href="/about/team#nessaphoeng">
                             <div class="team-item-member">
                                 <div class="team-item-image">
                                     <img src="/assets/images/team/team-2.jpg" alt="" />
@@ -110,7 +112,7 @@
                                         </div>
                                     </div> -->
                                 </div>
-                                <a class="team-link" href="/about/team#nessaphoeng">
+                                
                                     <div class="team-item-descr font-alt">
                                         <div class="team-item-name">
                                             Nessa Phoeng
@@ -119,13 +121,14 @@
                                             Co-Founder
                                         </div>
                                     </div>
-                                </a>
                             </div>
+                            </a>
                         </div>
                         <!-- End Team item 2 -->
 
                         <!-- Team item 3 -->
                         <div class="col-sm-3 mb-xs-30 wow fadeInUp" data-wow-delay="0.2s">
+                            <a class="team-link" href="/about/team#subiantohartono">
                             <div class="team-item-member">
                                 <div class="team-item-image">
                                     <img src="/assets/images/team/team-3.jpg" alt="" />
@@ -141,7 +144,7 @@
                                         </div>
                                     </div> -->
                                 </div>
-                                <a class="team-link" href="/about/team#subiantohartono">
+                                
                                 <div class="team-item-descr font-alt">
                                     <div class="team-item-name">
                                         Subianto Hartono
@@ -150,13 +153,15 @@
                                         Design Advisor
                                     </div>
                                 </div>
-                                </a>
+                                
                             </div>
+                            </a>
                         </div>
                         <!-- End Team item 3 -->
 
                         <!-- Team item 4 -->
                         <div class="col-sm-3 mb-xs-30 wow fadeInUp" data-wow-delay="0.2s">
+                            <a class="team-link" href="/about/team#sianekurnia">
                             <div class="team-item-member">
                                 <div class="team-item-image">
                                     <img src="/assets/images/team/team-3.jpg" alt="" />
@@ -172,7 +177,7 @@
                                         </div>
                                     </div> -->
                                 </div>
-                                <a class="team-link" href="/about/team#sianekurnia">
+                                
                                 <div class="team-item-descr font-alt">
                                     <div class="team-item-name">
                                         Siane Kurnia
@@ -181,8 +186,9 @@
                                         Design Advisor
                                     </div>
                                 </div>
-                                </a>
+                                
                             </div>
+                            </a>
                         </div>
                         <!-- End Team item 4 -->
                     </div>
