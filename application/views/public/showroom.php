@@ -5,7 +5,7 @@
             <!-- Fullwidth Slider -->
             <div class="home-section fullwidth-slider bg-dark" id="home">
                 <!-- Slide Item -->
-                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/showroom-inerre/1.jpg">
+                <section class="home-section bg-scroll" data-background="/assets/images/showroom-inerre/1.jpg">
                     <div class="js-height-full container">
                         
                         <!-- Hero Content -->
@@ -38,7 +38,7 @@
                 <!-- End Slide Item -->
                 
                 <!-- Slide Item -->
-                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/showroom-inerre/2.jpg">
+                <section class="home-section bg-scroll" data-background="/assets/images/showroom-inerre/2.jpg">
                     <div class="js-height-full container">
                         
                         <!-- Hero Content -->
@@ -71,7 +71,7 @@
                 <!-- End Slide Item -->
 
                 <!-- Slide Item -->
-                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/showroom-inerre/3.jpg">
+                <section class="home-section bg-scroll " data-background="/assets/images/showroom-inerre/3.jpg">
                     <div class="js-height-full container">
                         
                         <!-- Hero Content -->
@@ -104,7 +104,7 @@
                 <!-- End Slide Item -->
 
                 <!-- Slide Item -->
-                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/showroom-inerre/4.jpg">
+                <section class="home-section bg-scroll " data-background="/assets/images/showroom-inerre/4.jpg">
                     <div class="js-height-full container">
                         
                         <!-- Hero Content -->
@@ -137,7 +137,7 @@
                 <!-- End Slide Item -->
 
                 <!-- Slide Item -->
-                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/showroom-inerre/5.jpg">
+                <section class="home-section bg-scroll " data-background="/assets/images/showroom-inerre/5.jpg">
                     <div class="js-height-full container">
                         
                         <!-- Hero Content -->
@@ -170,7 +170,7 @@
                 <!-- End Slide Item -->
 
                 <!-- Slide Item -->
-                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/showroom-inerre/6.jpg">
+                <section class="home-section bg-scroll " data-background="/assets/images/showroom-inerre/6.jpg">
                     <div class="js-height-full container">
                         
                         <!-- Hero Content -->
