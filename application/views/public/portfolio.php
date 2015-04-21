@@ -1,30 +1,23 @@
 <?php 
     // load view header from template
     $this->load->view('public/public_template/header');
-?>
-            
+?>          
             <!-- Head Section -->
-            <!-- <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/full-width-images/new-crop-flip.jpg" style=""> -->
-            <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/portfolio-inerre/pantry_2_169.jpg" style="">
+            <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/subheader/6E9C2055_19201080.jpg">
                 <div class="relative container align-left">
-                    
                     <div class="row">
-                        
                         <div class="col-md-12">
-                            <h1 class="textshadowblack hs-line-11 font-alt mb-20 mb-xs-0 inerre-brown">Portfolio</h1>
-                            <div class="textshadowblack hs-line-4 font-alt">
+                            <h1 class="opensans700 textshadowblack hs-line-11 font-alt mb-20 mt-xs-40 mb-xs-0 inerre-brown ">Portfolio</h1>
+                            <div class="opensans700 textshadowblack hs-line-4 font-alt ">
                                 A proud portrait of INERRE’s work
                             </div>
                         </div>
-                        
                         <!--div class="col-md-4 mt-30">
                             <div class="mod-breadcrumbs font-alt align-right">
                                 <a href="/home">Home</a>&nbsp;<i class="inerre-brown">//</i>&nbsp;<span>Portfolio</span>
                             </div>
-                            
                         </div-->
                     </div>
-                    
                 </div>
             </section>
             <!-- End Head Section -->

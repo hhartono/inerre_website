@@ -93,7 +93,7 @@
     
     // Sections backgrounds
     
-    var pageSection = $(".home-section, .page-section, .small-section, .split-section");
+    var pageSection = $(".home-section, .page-section, .small-section, .split-section, .page-section-about");
     pageSection.each(function(indx){
         
         if ($(this).attr("data-background")){
@@ -281,7 +281,7 @@
             easing: "easeInOutExpo"
         });
         
-        var sections = $(".home-section, .split-section, .page-section");
+        var sections = $(".home-section, .split-section, .page-section, .page-section-about");
         var menu_links = $(".scroll-nav li a");
         
         $(window).scroll(function(){

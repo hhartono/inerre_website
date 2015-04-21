@@ -11,8 +11,10 @@ Primary use:    MultiPurpose Template
 @import "font-awesome.min.css";
 @import "et-line.css";
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,600,700,800);
 @import url(http://fonts.googleapis.com/css?family=Dosis:300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
 
 /*------------------------------------------------------------------
 [Table of contents]
@@ -571,6 +573,28 @@ hr.black{
 }
 .sub-heading.black{
 	color: rgba(0,0,0, .75);
+}
+.oswaldlight{
+  font-family: 'Oswald';
+  font-weight: lighter;
+}
+.oswald{
+  font-family: 'Oswald';
+}
+.oswaldbold{
+  font-family: 'Oswald';
+  font-weight: bold;
+}
+.roboto{
+  font-family: 'Roboto Condensed';
+}
+.opensans700{
+  font-family: 'Open Sans' !important;
+  font-weight: 700 !important;
+}
+.opensans800{
+  font-family: 'Open Sans' !important;
+  font-weight: 800 !important;
 }
 
 
@@ -1139,6 +1163,11 @@ a.btn-mod:focus{
   opacity: .9;
   margin-right:-51px;
 }
+@media only screen and (max-device-width: 767px){ 
+  .hs-line-1{
+    margin-right:0;
+  }
+}
 .hs-line-2{
     margin-top: 0;
 	position: relative;
@@ -1158,7 +1187,6 @@ a.btn-mod:focus{
 	letter-spacing: 2px;
 	color: rgba(255,255,255, .7);
 }
-
 .hs-line-4{
     margin-top: 0;
     position: relative;
@@ -1809,8 +1837,8 @@ a.logo:hover{
 	width: 100%;
 	display: block;	
 	position: relative;
-    overflow: hidden;
-    background-attachment: fixed;
+  overflow: hidden;
+  background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-position: center center;
     
@@ -1819,11 +1847,14 @@ a.logo:hover{
 	-o-background-size: cover;
 	background-size: cover;
     
-    -webkit-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
     
 	padding: 140px 0;
+}
+.page-section-about{
+  background-position: center -170px !important;
 }
 .small-section{
 	padding: 70px 0;
@@ -2483,16 +2514,22 @@ a.logo:hover{
     -ms-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
     transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
 }
-
 .team-item-name {
     margin-top: 23px;
     font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 0.4em;
+    text-decoration: none;
 }
 .team-item-name-no-mt{
   margin-top: 0px;
 }
+@media only screen and (max-width: 767px) {
+    .team-item-name-no-mt{
+     margin-top: 5px;
+    }
+}
+
 .team-item-role{
 	margin-top: 4px;
 	font-size: 12px;
@@ -2542,6 +2579,12 @@ a.logo:hover{
 }
 .team-row{
   margin-top:35px;
+}
+.no-mobile .team-item-member:hover .team-item-descr{ 
+  color: #111;
+}
+.team-item-member.js-active .team-item-descr{  
+  color: #111;
 }
 
 

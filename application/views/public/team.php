@@ -8,8 +8,8 @@
                 <div class="relative container align-left">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="textshadowblack hs-line-11 font-alt mb-20 mt-xs-40 mb-xs-0 inerre-brown"><!-- <a class="inerre-brown" style="text-decoration:none;" href="/about">About</a> /  -->Team</h1>
-                            <div class="textshadowblack hs-line-4 font-alt">
+                            <h1 class="opensans700 textshadowblack hs-line-11 font-alt mb-20 mt-xs-40 mb-xs-0 inerre-brown"><!-- <a class="inerre-brown" style="text-decoration:none;" href="/about">About</a> /  -->Team</h1>
+                            <div class="opensans700 textshadowblack hs-line-4 font-alt">
                                 A list of creative minimalism lovers
                             </div>
                         </div>
@@ -40,10 +40,10 @@
                                         Hans Hartono
                                     </div>
                                     <div class="team-item-role-more">
-                                        <span class="inerre-brown">// </span>Head System Developer
+                                        <span class="inerre-brown">// </span>Co-Founder, Head System Developer
                                     </div>
                                     <div class="team-desc">
-                                        Hans pursued his long-life passion as a computer scientist at Purdue University and University of Southern California (USC). Majoring in Computer Science, Hans spent most of his time exploring different aspects of latest technology. After graduated, he worked for a startup company in Los Angeles as a software developer. 
+                                        Hans pursued his long-life passion as a computer scientist at Purdue University and University of Southern California (USC). Majoring in Computer Science, Hans spent most of his time exploring different aspects of latest technology. After graduated, he worked for a startup company in Los Angeles as a software developer. <br>
 Hans’ breadth of project work showcases his ability and skills to create various problem-solving programs that feature the uniqueness of each client’s need. 
 As a head system developer, Hans always envisions himself to be able to enhance the quality of people’s life through his work.
                                     </div>
@@ -64,10 +64,10 @@ As a head system developer, Hans always envisions himself to be able to enhance 
                                         Nessa Phoeng
                                     </div>
                                     <div class="team-item-role-more">
-                                       <span class="inerre-brown">// </span>Head Designer
+                                       <span class="inerre-brown">// </span>Co-Founder, Head Designer
                                     </div>
                                     <div class="team-desc">
-                                        Pursuing a degree in United States, Nessa went to a college in San Francisco and later moved in to Los Angeles to continue to study interior design in Woodbury University majoring in Interior Architecture. After graduated, she worked for different design firms within Los Angeles area including Beverly Hills and Santa Monica. 
+                                        Pursuing a degree in United States, Nessa went to a college in San Francisco and later moved in to Los Angeles to continue to study interior design in Woodbury University majoring in Interior Architecture. After graduated, she worked for different design firms within Los Angeles area including Beverly Hills and Santa Monica. <br>
 Nessa brings solid experience through her education and career in United States and reflects it towards her design passion influenced by her multicultural background. Nessa adheres to the philosophy that all aspects of the project - design strategy, interior design vocabulary, furniture, and graphic - should embody the character and spirit of client’s brand and vision. 
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@ Nessa brings solid experience through her education and career in United States 
                                         <span class="inerre-brown">// </span>Design Advisor
                                     </div>
                                     <div class="team-desc">
-                                        With more than 30 years of experience, Subianto and wife established an architecture company in their early careers. The firm started to branch the interior design division 20 years ago believing that architecture and interior design are completely inseparable.
+                                        With more than 30 years of experience, Subianto and wife established an architecture company in their early careers. The firm started to branch out the interior design division 20 years ago believing that architecture and interior design are completely inseparable.
                                     </div>
                                 </div>
                             </div>

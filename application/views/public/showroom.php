@@ -5,7 +5,7 @@
             <!-- Fullwidth Slider -->
             <div class="home-section fullwidth-slider bg-dark" id="home">
                 <!-- Slide Item -->
-                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/showroom-inerre/pantry_1.jpg">
+                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/showroom-inerre/1.jpg">
                     <div class="js-height-full container">
                         
                         <!-- Hero Content -->
@@ -38,7 +38,139 @@
                 <!-- End Slide Item -->
                 
                 <!-- Slide Item -->
-                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/showroom-inerre/office_1.jpg">
+                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/showroom-inerre/2.jpg">
+                    <div class="js-height-full container">
+                        
+                        <!-- Hero Content -->
+                        <div class="home-content">
+                            <div class="home-text">
+                                
+                                <!-- HK: Use for Caption -->
+                                <!--
+                                <h1 class="hs-line-8 no-transp font-alt mb-50 mb-xs-30">
+                                    Branding / Design / Development / Photo
+                                </h1>
+                                
+                                <h2 class="hs-line-14 font-alt mb-50 mb-xs-30">
+                                    Design Studio
+                                </h2>
+                                
+                                <div class="local-scroll">
+                                    <a href="#about" class="btn btn-mod btn-border-w btn-medium btn-round hidden-xs">See More</a>
+                                    <span class="hidden-xs">&nbsp;</span>
+                                    <a href="http://vimeo.com/50201327" class="btn btn-mod btn-border-w btn-medium btn-round lightbox mfp-iframe">Play Reel</a>
+                                </div>
+                                -->
+                                
+                            </div>
+                        </div>
+                        <!-- End Hero Content -->
+
+                    </div>
+                </section>
+                <!-- End Slide Item -->
+
+                <!-- Slide Item -->
+                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/showroom-inerre/3.jpg">
+                    <div class="js-height-full container">
+                        
+                        <!-- Hero Content -->
+                        <div class="home-content">
+                            <div class="home-text">
+                                
+                                <!-- HK: Use for Caption -->
+                                <!--
+                                <h1 class="hs-line-8 no-transp font-alt mb-50 mb-xs-30">
+                                    Branding / Design / Development / Photo
+                                </h1>
+                                
+                                <h2 class="hs-line-14 font-alt mb-50 mb-xs-30">
+                                    Design Studio
+                                </h2>
+                                
+                                <div class="local-scroll">
+                                    <a href="#about" class="btn btn-mod btn-border-w btn-medium btn-round hidden-xs">See More</a>
+                                    <span class="hidden-xs">&nbsp;</span>
+                                    <a href="http://vimeo.com/50201327" class="btn btn-mod btn-border-w btn-medium btn-round lightbox mfp-iframe">Play Reel</a>
+                                </div>
+                                -->
+                                
+                            </div>
+                        </div>
+                        <!-- End Hero Content -->
+
+                    </div>
+                </section>
+                <!-- End Slide Item -->
+
+                <!-- Slide Item -->
+                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/showroom-inerre/4.jpg">
+                    <div class="js-height-full container">
+                        
+                        <!-- Hero Content -->
+                        <div class="home-content">
+                            <div class="home-text">
+                                
+                                <!-- HK: Use for Caption -->
+                                <!--
+                                <h1 class="hs-line-8 no-transp font-alt mb-50 mb-xs-30">
+                                    Branding / Design / Development / Photo
+                                </h1>
+                                
+                                <h2 class="hs-line-14 font-alt mb-50 mb-xs-30">
+                                    Design Studio
+                                </h2>
+                                
+                                <div class="local-scroll">
+                                    <a href="#about" class="btn btn-mod btn-border-w btn-medium btn-round hidden-xs">See More</a>
+                                    <span class="hidden-xs">&nbsp;</span>
+                                    <a href="http://vimeo.com/50201327" class="btn btn-mod btn-border-w btn-medium btn-round lightbox mfp-iframe">Play Reel</a>
+                                </div>
+                                -->
+                                
+                            </div>
+                        </div>
+                        <!-- End Hero Content -->
+
+                    </div>
+                </section>
+                <!-- End Slide Item -->
+
+                <!-- Slide Item -->
+                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/showroom-inerre/5.jpg">
+                    <div class="js-height-full container">
+                        
+                        <!-- Hero Content -->
+                        <div class="home-content">
+                            <div class="home-text">
+                                
+                                <!-- HK: Use for Caption -->
+                                <!--
+                                <h1 class="hs-line-8 no-transp font-alt mb-50 mb-xs-30">
+                                    Branding / Design / Development / Photo
+                                </h1>
+                                
+                                <h2 class="hs-line-14 font-alt mb-50 mb-xs-30">
+                                    Design Studio
+                                </h2>
+                                
+                                <div class="local-scroll">
+                                    <a href="#about" class="btn btn-mod btn-border-w btn-medium btn-round hidden-xs">See More</a>
+                                    <span class="hidden-xs">&nbsp;</span>
+                                    <a href="http://vimeo.com/50201327" class="btn btn-mod btn-border-w btn-medium btn-round lightbox mfp-iframe">Play Reel</a>
+                                </div>
+                                -->
+                                
+                            </div>
+                        </div>
+                        <!-- End Hero Content -->
+
+                    </div>
+                </section>
+                <!-- End Slide Item -->
+
+                <!-- Slide Item -->
+                <section class="home-section bg-scroll bg-dark-alfa-10" data-background="/assets/images/showroom-inerre/6.jpg">
                     <div class="js-height-full container">
                         
                         <!-- Hero Content -->

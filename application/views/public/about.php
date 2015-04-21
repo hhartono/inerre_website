@@ -3,13 +3,12 @@
     $this->load->view('public/public_template/header');
 ?>   
             <!-- Head Section -->
-            <!-- <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/full-width-images/new-crop-flip.jpg"> -->
-            <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/showroom-inerre/pantry_1.jpg">
+            <section class=" page-section bg-dark-lighter parallax-3" data-background="/assets/images/subheader/6E9C1997_19201080.jpg">
                 <div class="relative container align-left">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="textshadowblack hs-line-11 font-alt mb-20 mt-xs-40 mb-xs-0 inerre-brown">About</h1>
-                            <div class="textshadowblack hs-line-4 font-alt">
+                            <h1 class="opensans700 textshadowblack hs-line-11 font-alt mb-20 mt-xs-40 mb-xs-0 inerre-brown ">About</h1>
+                            <div class="opensans700 textshadowblack hs-line-4 font-alt ">
                                 A story of us and the people behind INERRE
                             </div>
                         </div>
@@ -31,40 +30,54 @@
                             <div class="col-md-4">
                                 <blockquote>
                                     <p>
-                                    Less is more
+                                    Form ever follows function.
                                     </p>
                                     <footer>
-                                        Ludwig Mies van der Rohe
+                                        Louis Sullivan
                                     </footer>
                                 </blockquote>
                             </div>
-                            <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                INERRE is an interior design firm capturing each client’s personality and reflecting it through a unified and well tailored interior design according to their lifestyles and needs.
-                                <br><br>INERRE wants to create a space that speaks a luxuriously livable language with a dialect that embodies a unique, custom design and personality.
+                            <!-- for extra small device -->
+                            <div class="hidden-xs col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
+                                INERRE is an interior design firm capturing each client’s personality and reflecting it through a unified and well tailored design according to their lifestyles and needs. INERRE comes from a word “inner” in German, which means being situated inside and personal. Driven by a team of passionate people, Inerre believes that a design should be designated for one’s self, and not for the accolades of others. INERRE wants to create a space that speaks a luxuriously livable language with a dialect that embodies a unique, custom design and personality.
+                                <br><br>
+                                INERRE is established in 2015 by a design family oriented couple Hans Hartono and Nessa Phoeng. 
+                                The two spent seven years living in United States for 
                             </div>
-                            <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                INERRE is established in 2015 by a design family oriented couple Hans Hartono and Nessa Phoeng. The two spent seven years living in United States for college and work before they eventually decided to come back home and start INERRE.
-                                <br><br>Both founders together intend to develop an interior design firm that is unique according to their different education backgrounds. INERRE practices an interdisciplinary background combining interior design and computer science as a whole.
+                            <div class="hidden-xs col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
+                                college and work before they eventually decided to come back home and start INERRE. Both founders together intend to develop an interior design firm that is unique according to their different education backgrounds. INERRE practices an interdisciplinary background combining interior design and computer science as a whole.
+                                <br><br>
+                                INERRE team is consisted of talented employees using an interactive design approach and cutting technology to integrate the input of those who will use the space into every aspect of the design. Most our employees have been working in the field for about 20 years and dedicate their great craftsmanship to deliver the best client’s satisfactory. 
                             </div>
+                            <div class="hidden-lg hidden-md hidden-sm col-xs-12 mb-sm-50 mb-xs-30">
+                                INERRE is an interior design firm capturing each client’s personality and reflecting it through a unified and well tailored design according to their lifestyles and needs. INERRE comes from a word “inner” in German, which means being situated inside and personal. Driven by a team of passionate people, Inerre believes that a design should be designated for one’s self, and not for the accolades of others. INERRE wants to create a space that speaks a luxuriously livable language with a dialect that embodies a unique, custom design and personality.
+                                <br><br>
+                                INERRE is established in 2015 by a design family oriented couple Hans Hartono and Nessa Phoeng. 
+                                The two spent seven years living in United States for college and work before they eventually decided to come back home and start INERRE. Both founders together intend to develop an interior design firm that is unique according to their different education backgrounds. INERRE practices an interdisciplinary background combining interior design and computer science as a whole.
+                                <br><br>
+                                INERRE team is consisted of talented employees using an interactive design approach and cutting technology to integrate the input of those who will use the space into every aspect of the design. Most our employees have been working in the field for about 20 years and dedicate their great craftsmanship to deliver the best client’s satisfactory. 
+                            </div>
+                            <!-- END for extra small device -->
                         </div>
                     </div>
+
                     <div class="row">
                         <!-- Team item 1 -->
-                        <div class="col-sm-3 mb-xs-30 wow fadeInUp"  data-wow-delay="0.2s">
-                            <div class="team-item">
+                        <div class="col-sm-3 mb-xs-30 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="team-item-member">
                                 <div class="team-item-image">
                                     <img src="/assets/images/team/team-1.jpg" alt="" />
-                                    <div class="team-item-detail">
-                                        <!-- <h4 class="font-alt normal">Hello & Welcome!</h4> -->
+                                    <!-- <div class="team-item-detail">
+                                        <h4 class="font-alt normal">Hello & Welcome!</h4>
                                         <p>
                                         Hans pursued his long-life passion as a computer scientist at Purdue University and University of Southern California (USC). Hans’ breadth of project work showcases his ability and skills to create various problem-solving programs that feature the uniqueness of each client’s need.As a head system developer, Hans always envisions himself to be able to enhance the quality of people’s life through his work.
                                         </p>
-                                        <!-- <div class="team-social-links">
+                                        <div class="team-social-links">
                                             <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
                                             <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
                                             <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
-                                        </div> -->
-                                    </div>
+                                        </div>
+                                    </div> -->
                                 </div>
                                 <a class="team-link" href="/about/team#hanshartono">
                                     <div class="team-item-descr font-alt">
@@ -72,7 +85,7 @@
                                             Hans Hartono
                                         </div>
                                         <div class="team-item-role">
-                                            Head System Developer
+                                            Co-Founder
                                         </div>
                                     </div>
                                 </a>
@@ -82,20 +95,20 @@
                         
                         <!-- Team item 2 -->
                         <div class="col-sm-3 mb-xs-30 wow fadeInUp" data-wow-delay="0.2s">
-                            <div class="team-item">
+                            <div class="team-item-member">
                                 <div class="team-item-image">
                                     <img src="/assets/images/team/team-2.jpg" alt="" />
-                                    <div class="team-item-detail">
-                                        <!-- <h4 class="font-alt normal">Nice to meet!</h4> -->
+                                    <!-- <div class="team-item-detail">
+                                        <h4 class="font-alt normal">Nice to meet!</h4>
                                         <p>
                                         Pursuing a degree in United States, Nessa moved in to Los Angeles to continue to study in Woodbury University majoring in Interior Architecture. She had worked for different design architecture firms within Los Angeles area including Beverly Hills and Santa Monica. Nessa brings solid experience through her education and career, and reflects it towards her design passion influenced by her multicultural background.
                                         </p>
-                                        <!-- <div class="team-social-links">
+                                        <div class="team-social-links">
                                             <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
                                             <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
                                             <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
-                                        </div> -->
-                                    </div>
+                                        </div>
+                                    </div> -->
                                 </div>
                                 <a class="team-link" href="/about/team#nessaphoeng">
                                     <div class="team-item-descr font-alt">
@@ -103,7 +116,7 @@
                                             Nessa Phoeng
                                         </div>
                                         <div class="team-item-role">
-                                            Head Designer
+                                            Co-Founder
                                         </div>
                                     </div>
                                 </a>
@@ -113,20 +126,20 @@
 
                         <!-- Team item 3 -->
                         <div class="col-sm-3 mb-xs-30 wow fadeInUp" data-wow-delay="0.2s">
-                            <div class="team-item">
+                            <div class="team-item-member">
                                 <div class="team-item-image">
                                     <img src="/assets/images/team/team-3.jpg" alt="" />
-                                    <div class="team-item-detail">
-                                        <!-- <h4 class="font-alt normal">Whats Up!</h4> -->
+                                    <!-- <div class="team-item-detail">
+                                        <h4 class="font-alt normal">Whats Up!</h4>
                                         <p>
                                         With more than 30 years of experience, Subianto and wife established an architecture company in their early careers. The firm started to branch the interior design division 20 years ago believing that architecture and interior design are completely inseparable.
                                         </p>
-                                        <!-- <div class="team-social-links">
+                                        <div class="team-social-links">
                                             <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
                                             <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
                                             <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
-                                        </div> -->
-                                    </div>
+                                        </div>
+                                    </div> -->
                                 </div>
                                 <a class="team-link" href="/about/team#subiantohartono">
                                 <div class="team-item-descr font-alt">
@@ -144,20 +157,20 @@
 
                         <!-- Team item 4 -->
                         <div class="col-sm-3 mb-xs-30 wow fadeInUp" data-wow-delay="0.2s">
-                            <div class="team-item">
+                            <div class="team-item-member">
                                 <div class="team-item-image">
                                     <img src="/assets/images/team/team-3.jpg" alt="" />
-                                    <div class="team-item-detail">
-                                        <!-- <h4 class="font-alt normal">Whats Up!</h4> -->
+                                    <!-- <div class="team-item-detail">
+                                        <h4 class="font-alt normal">Whats Up!</h4>
                                         <p>
                                         Together with her husband, Siane started off the architecture firm Subianto & Siane in 1988. Today, the company has built more than 600 residential projects and hundreds of commercial projects all over in Indonesia. Her endless contributions for the company has made Subianto & Siane Architecture to be one of the top national architecture firms.
                                         </p>
-                                        <!-- <div class="team-social-links">
+                                        <div class="team-social-links">
                                             <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
                                             <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
                                             <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
-                                        </div> -->
-                                    </div>
+                                        </div>
+                                    </div> -->
                                 </div>
                                 <a class="team-link" href="/about/team#sianekurnia">
                                 <div class="team-item-descr font-alt">

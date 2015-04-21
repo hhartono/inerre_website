@@ -5,14 +5,14 @@
             
             <!-- Head Section -->
             <!-- <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/full-width-images/new-crop-flip.jpg" style=""> -->
-            <section class="page-section bg-dark parallax-3" data-background="/assets/images/workshop/workshop_3.jpg" style="">
+            <section class="page-section bg-dark parallax-3" data-background="/assets/images/workshop/workshop_3.jpg">
                 <div class="relative container align-left">
                     
                     <div class="row">
                         
                         <div class="col-md-12">
-                            <h1 class="textshadowblack hs-line-11 font-alt mb-20 mb-xs-0 inerre-brown"><!-- <a class="inerre-brown" style="text-decoration:none;" href="/about">About</a> /  -->Workshop</h1>
-                            <div class="textshadowblack hs-line-4 font-alt">
+                            <h1 class="opensans700 textshadowblack hs-line-11 font-alt mb-20 mt-xs-40 mb-xs-0 inerre-brown">Workshop</h1>
+                            <div class="opensans700 textshadowblack hs-line-4 font-alt">
                                 A place where all the magic happen
                             </div>
                         </div>

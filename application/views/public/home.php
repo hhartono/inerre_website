@@ -10,12 +10,17 @@
                     <div class="home-content">
                         <div class="home-text">
                             
-                            <h1 class="textshadowblack hs-line-1 font-alt mb-50 mb-xs-50 mt-50 mb-xs-0 inerre-brown">
+                            <!-- <h1 class=" textshadowblack hs-line-1 font-alt mb-50 mb-xs-50 mt-50 mb-xs-0 inerre-brown">
                                 INERRE
-                            </h1>
-                            
-                            <div class="hs-line-6 mb-120 mb-xs-120">
-                                Extraordinary art studio &&nbsp;creative minimalism lovers
+                            </h1> -->
+                            <div class="hidden-xs mb-10 mb-xs-50 mt-50 mb-xs-0 ">
+                                <img src="/assets/images/inerrelogo.png" class="center-block img-responsive" alt="">
+                            </div>
+                            <div class="hidden-sm hidden-md hidden-lg mb-50 mb-xs-50 mt-50 mb-xs-0 ">
+                                <img src="/assets/images/inerrelogo.png" width="220px" class="center-block" alt="">
+                            </div>    
+                            <div class="textshadowblack hs-line-6 mb-120 mb-xs-80 col-xs-12">
+                                I&nbsp;&nbsp;&nbsp;N&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;R&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;R
                             </div>
                             
                         </div>
@@ -66,11 +71,10 @@
                             </div>
 
                             <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                INERRE is an interior design firm capturing each client’s personality and reflecting it through a unified and well tailored interior design according to their lifestyles and needs.
+                                INERRE is an interior design firm capturing each client’s personality and reflecting it through a unified and well tailored design according to their lifestyles and needs. We believe that design is much more than creating beautiful spaces. A successfully designed home should have a one-of-a-kind aesthetic that is unique and breathtaking, yet livable, and most importantly showcases the personality of its occupants. 
                             </div>
-                            
                             <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                INERRE wants to create a space that speaks a luxuriously livable language with a dialect that embodies a unique, custom design and personality.
+                                Our philosophy is reflected in the furniture and products we produce and the way how each piece is performed and functioned. INERRE showcases various kinds of details so clients can interact with the desired designed products at our showroom - and that’s how INERRE perceives it as personal designs. 
                             </div>
                             
                         </div>
@@ -94,7 +98,7 @@
                             <div class="alt-features-item align-center">
                                 <div class="alt-features-descr align-left">
                                     <h2 class="section-title mt-0 font-alt align-left">Work process</h2>
-                                    From idea to installation, from concept to check-in, we want to make sure that all of our designs are able to reflect the characters of our clients’ personality and lifestyle, from the broad narrative down to the smallest most meaningful details.
+                                    From idea to installation, from concept to check-in, we want to make sure that all of our designs are able to reflect the characters of our clients’ personalities and lifestyles, from the broad narrative down to the smallest most meaningful details.
                                 </div>
                             </div>
                         </div>
@@ -161,9 +165,9 @@
                             
                             <div class="mt-140 mt-lg-80 mb-140 mb-lg-80">
                                 <div class="banner-content">
-                                    <h3 class="textshadow banner-heading font-alt">Looking for personalized interior design?</h3>
-                                    <div class="textshadow banner-decription">
-                                        Our employees have worked on a range of project types, including boutique hotels, restaurants, retail stores, and residentials.
+                                    <h3 class="textshadowblack banner-heading font-alt">Looking for personalized interior design?</h3>
+                                    <div class="textshadowblack banner-decription">
+                                        INERRE believes that each person deserves to have a room that is unique and personal to oneself because nobody has the same exact needs. We are here to help you not only to design, but personalize your unique rooms.
                                     </div>
                                     <div class="local-scroll">
                                         <a href="/contact" class="btn btn-mod btn-medium btn-border">Lets talk</a>
@@ -305,7 +309,7 @@
                 <div class="container relative">
                     
                     <div class="align-center">
-                        <h3 class="banner-heading font-alt textshadow ">Want to see more works?</h3>
+                        <h3 class="banner-heading font-alt textshadowblack ">Want to see more works?</h3>
                         <div class="local-scroll">
                             <a href="/portfolio" class="btn btn-mod btn-medium btn-border">Lets view portfolio</a>
                         </div>
@@ -404,7 +408,7 @@
                                 </div>
                                 <h3 class="alt-features-title font-alt">We're Friendly</h3>
                                 <div class="alt-features-descr align-left">
-                                    Our people are approachable, meaning that you can ask us any question at anytime 24/7 through our website or you favorite social media. 
+                                    Our people are approachable, meaning that you can ask us any question at anytime 24/7 through our website or your favorite social media. 
                                 </div>
                             </div>
                         </div>
