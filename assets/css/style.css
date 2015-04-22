@@ -1023,6 +1023,12 @@ a.btn-mod:focus{
 	vertical-align: bottom;
 }
 
+.error-text{
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+}
+
 /* Scroll down icon */
 
 @-webkit-keyframes scroll-down-anim {

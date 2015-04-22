@@ -164,7 +164,7 @@
                             <a class="team-link" href="/about/team#sianekurnia">
                             <div class="team-item-member">
                                 <div class="team-item-image">
-                                    <img src="/assets/images/team/team-3.jpg" alt="" />
+                                    <img src="/assets/images/team/team-4.jpg" alt="" />
                                     <!-- <div class="team-item-detail">
                                         <h4 class="font-alt normal">Whats Up!</h4>
                                         <p>
@@ -453,7 +453,7 @@
                                             Email
                                         </div>
                                         <div class="ci-text">
-                                            <a href="mailto:support@bestlooker.pro">info@inerre.com</a>
+                                            <a href="mailto:info@inerre.com">info@inerre.com</a>
                                         </div>
                                     </div>
                                 </div>
