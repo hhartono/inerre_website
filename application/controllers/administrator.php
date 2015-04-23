@@ -19,7 +19,7 @@ class Administrator extends CI_Controller {
 			'title' => 'Inerre Interior - Administrator Main',
 		);
 		$this->load->view('administrator/administrator', $data);*/
-		redirect('admin/messagecenter/');	
+		redirect('administrator/messagecenter/');	
 	}
 
 	/*
@@ -55,9 +55,11 @@ class Administrator extends CI_Controller {
 					<th>Message(s)</th>
 					<th>Date</th>
 					<th>Status</th>
+					<th></th>
 				</thead>
 				<tbody>';
 			$no = 1;
+
 			foreach ($loadAll as $row) {
 			echo '<tr>';
 			echo '<td>'. $no .'</td>';
@@ -65,7 +67,9 @@ class Administrator extends CI_Controller {
 			echo '<td>'. $row->message .'</td>';
 			echo '<td>'. $row->date_in .'</td>';
 			echo '<td>'. $row->status .'</td>';
+			echo '<td>'. ($row->status == 'unreplied' ? '<button type="button" data-name="'.$row->name.'" data-email="'.$row->email.'" class="btn btn-danger" data-toggle="modal" data-target="#replyModal"><i class="fa fa-mail-reply"></i></button>' : '<button class="btn btn-success" disabled><i class="fa fa-check"></i></button>' ) .'</td>';
 			echo '</tr>';
+
 					$no++;
 				}
 			echo '</tbody>
@@ -78,6 +82,7 @@ class Administrator extends CI_Controller {
 					<th>Message(s)</th>
 					<th>Date</th>
 					<th>Status</th>
+					<th></th>
 				</thead>
 				<tbody>
 				</tbody>
@@ -100,6 +105,7 @@ class Administrator extends CI_Controller {
 					<th>Message(s)</th>
 					<th>Date</th>
 					<th>Status</th>
+					<th></th>
 				</thead>
 				<tbody>';
 			$no = 1;
@@ -110,11 +116,15 @@ class Administrator extends CI_Controller {
 			echo '<td>'. $row->message .'</td>';
 			echo '<td>'. $row->date_in .'</td>';
 			echo '<td>'. $row->status .'</td>';
+			echo '<td><button type="button" data-name="'.$row->name.'" data-email="'.$row->email.'" class="btn btn-danger" data-toggle="modal" data-target="#replyModal" >';
+			echo '<i class="fa fa-mail-reply"></i></button></td>';
 			echo '</tr>';
+			
 					$no++;
 				}
 			echo '</tbody>
 				</table>';
+			
 		}else{
 			echo '<table id="tablemessage" class="display">
 				<thead>
@@ -123,6 +133,7 @@ class Administrator extends CI_Controller {
 					<th>Message(s)</th>
 					<th>Date</th>
 					<th>Status</th>
+					<th></th>
 				</thead>
 				<tbody>
 				</tbody>
@@ -146,6 +157,7 @@ class Administrator extends CI_Controller {
 					<th>Message(s)</th>
 					<th>Date</th>
 					<th>Status</th>
+					<th></th>
 				</thead>
 				<tbody>';
 			$no = 1;
@@ -156,6 +168,7 @@ class Administrator extends CI_Controller {
 			echo '<td>'. $row->message .'</td>';
 			echo '<td>'. $row->date_in .'</td>';
 			echo '<td>'. $row->status .'</td>';
+			echo '<td><button class="btn btn-success" disabled><i class="fa fa-check"></i></button></td>';
 			echo '</tr>';
 					$no++;
 				}
@@ -169,6 +182,7 @@ class Administrator extends CI_Controller {
 					<th>Message(s)</th>
 					<th>Date</th>
 					<th>Status</th>
+					<th></th>
 				</thead>
 				<tbody>
 				</tbody>
@@ -178,7 +192,7 @@ class Administrator extends CI_Controller {
 	
 	public function sendingmail()
 	{
-		$configsmtpgmail = array(
+		/*$configsmtpgmail = array(
 		 	'protocol' => 'smtp',
 		 	'smtp_host' => 'ssl://smtp.googlemail.com',
 		 	'smtp_port' => 465,
@@ -189,9 +203,9 @@ class Administrator extends CI_Controller {
 		 	'crlf' => '\r\n',
 		 	'newline' => '\r\n'
 		);
-		$this->email->initialize($configsmtpgmail);
+		$this->email->initialize($configsmtpgmail);*/
 
-		/*$configsendmail = array(
+		$configsendmail = array(
 			'useragent' => 'inerre website',
 			'protocol' => 'sendmail',
 		 	'mailpath' => '/usr/sbin/sendmail',
@@ -202,13 +216,13 @@ class Administrator extends CI_Controller {
 		 	'crlf' => '\r\n',
 		 	'newline' => '\r\n'
 		);
-		$this->email->initialize($configsendmail);*/
+		$this->email->initialize($configsendmail);
 
-		$this->email->from('willi.ilmukomputer@gmail.com', 'Willi');
-		$this->email->to('willi@inerre.com');
+		$this->email->from('willi@inerre.com', 'Willi');
+		$this->email->to('willi.ilmukomputer@gmail.com');
 		//$this->email->cc('');
 		//$this->email->bcc('');
-		$this->email->subject('[subject] testing email from inerre website');
+		$this->email->subject('[subject] testing email from inerre website, sakali deui da si nunu teu percanten');
 		$this->email->message('[message] testing email from inerre website');
 		$this->email->send();
 		//if(! $this->email->send()){

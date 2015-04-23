@@ -186,11 +186,8 @@
             <!-- Section -->
             <section class="page-section">
                 <div class="container relative">
-
                     <div class="row">
-
                         <div class="col-md-7 mb-sm-40">
-
                             <!-- Gallery -->
                             <div class="work-full-media mt-0 white-shadow wow fadeInUp">
                                 <ul class="clearlist work-full-slider owl-carousel">
@@ -200,26 +197,19 @@
                                 </ul>
                             </div>
                             <!-- End Gallery -->
-
                         </div>
-
                         <div class="col-md-5 col-lg-4 col-lg-offset-1">
-
                             <!-- About Project -->
                             <div class="text">
-
                                 <h3 class="font-alt mb-30 mb-xxs-10">Our Showroom</h3>
                                 <p>
                                 Through thoughtful design, we deliver environments that not only satisfy our clients’ needs, but allow them to achieve a level of enjoyment and success beyond their expectations because we create a great living space.
                                 </p>
-
                                 <div class="mt-40">
                                     <a href="/showroom" class="btn btn-mod btn-border btn-medium">Visit Our Showroom</a>
                                 </div>
-
                             </div>
                             <!-- End About Project -->
-
                         </div>
                     </div>
                 </div>
@@ -432,19 +422,15 @@
                                 <div class="newsletter-label font-alt">
                                     Stay informed with our newsletter
                                 </div>
-                                
                                 <div class="mb-20">
                                     <input placeholder="Enter Your Email" class="newsletter-field input-md round mb-xs-10" type="email" pattern=".{5,100}" required/>
-                                    
                                     <button type="submit" class="btn btn-mod btn-medium btn-border mb-xs-10">
                                         Subscribe
                                     </button>
                                 </div>
-                                
                                 <div class="form-tip">
                                     <i class="fa fa-info-circle"></i> Please trust us, we will never send you spam
                                 </div>
-                                
                                 <div id="subscribe-result"></div>
                                 
                             </div>
@@ -458,16 +444,12 @@
             <!-- Contact Section -->
             <section class="page-section" id="contact">
                 <div class="container relative">
-
                     <h2 class="section-title font-alt mb-70 mb-sm-40">
                         Find Inerre
                     </h2>
-
                     <div class="row">
-
                         <div class="col-md-8 col-md-offset-2">
                             <div class="row">
-
                                 <!-- Phone -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -517,7 +499,6 @@
                                     </div>
                                 </div>
                                 <!-- End Email -->
-
                             </div>
                         </div>
 
