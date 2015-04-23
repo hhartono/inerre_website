@@ -67,7 +67,7 @@ class Administrator extends CI_Controller {
 			echo '<td>'. $row->message .'</td>';
 			echo '<td>'. $row->date_in .'</td>';
 			echo '<td>'. $row->status .'</td>';
-			echo '<td>'. ($row->status == 'unreplied' ? '<button type="button" data-name="'.$row->name.'" data-email="'.$row->email.'" class="btn btn-danger" data-toggle="modal" data-target="#replyModal"><i class="fa fa-mail-reply"></i></button>' : '<button class="btn btn-success" disabled><i class="fa fa-check"></i></button>' ) .'</td>';
+			echo '<td>'. ($row->status == 'unreplied' ? '<button type="button" data-id="'.$row->id.'" data-name="'.$row->name.'" data-email="'.$row->email.'" class="btn btn-danger" data-toggle="modal" data-target="#replyModal"><i class="fa fa-mail-reply"></i></button>' : '<button class="btn btn-success" disabled><i class="fa fa-check"></i></button>' ) .'</td>';
 			echo '</tr>';
 
 					$no++;
@@ -116,7 +116,7 @@ class Administrator extends CI_Controller {
 			echo '<td>'. $row->message .'</td>';
 			echo '<td>'. $row->date_in .'</td>';
 			echo '<td>'. $row->status .'</td>';
-			echo '<td><button type="button" data-name="'.$row->name.'" data-email="'.$row->email.'" class="btn btn-danger" data-toggle="modal" data-target="#replyModal" >';
+			echo '<td><button type="button" data-id="'.$row->id.'" data-name="'.$row->name.'" data-email="'.$row->email.'" class="btn btn-danger" data-toggle="modal" data-target="#replyModal" >';
 			echo '<i class="fa fa-mail-reply"></i></button></td>';
 			echo '</tr>';
 			
@@ -204,7 +204,12 @@ class Administrator extends CI_Controller {
 		 	'newline' => '\r\n'
 		);
 		$this->email->initialize($configsmtpgmail);*/
-
+		
+		$id = $this->input->post('id');
+		$name = $this->input->post('recipient-name');
+		$email = $this->input->post('recipient-email');
+		$subject = $this->input->post('subject');
+		$message = $this->input->post('message');
 		$configsendmail = array(
 			'useragent' => 'inerre website',
 			'protocol' => 'sendmail',
@@ -219,17 +224,19 @@ class Administrator extends CI_Controller {
 		$this->email->initialize($configsendmail);
 
 		$this->email->from('willi@inerre.com', 'Willi');
-		$this->email->to('willi.ilmukomputer@gmail.com');
+		$this->email->to($email);
 		//$this->email->cc('');
 		//$this->email->bcc('');
-		$this->email->subject('[subject] testing email from inerre website, sakali deui da si nunu teu percanten');
-		$this->email->message('[message] testing email from inerre website');
+		$this->email->subject($subject);
+		$this->email->message($message);
 		$this->email->send();
 		//if(! $this->email->send()){
 		//	echo 'email not send';
 		//}else{
-		echo $this->email->print_debugger();	
+		//echo $this->email->print_debugger();	
 		//}
+		$this->modelmessagecenter->updateStatusMessage($id);
+		redirect('administrator/messagecenter');
 	}
 
 	/*function tosha1(){

@@ -31,31 +31,36 @@
 				    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				    <h4 class="modal-title" id="exampleModalLabel">New message</h4>
 				</div>
+			<form action="sendingmail" method="POST">
 			<div class="modal-body">
-		        <form >
+		       		<input type="hidden" name="id" id="idmessage">
 					<div class="form-group">
 					    <label for="recipient-name" class="control-label">Recipient:</label>
 					    <input type="text" class="form-control" id="recipient-name" disabled>
+					    <input type="hidden" id="recipient-name-hidden" name="recipient-name">
 					</div>
 					<div class="form-group">
 					    <label for="recipient-email" class="control-label">Email:</label>
 					    <input type="text" class="form-control" id="recipient-email" disabled>
+					    <input type="hidden" id="recipient-email-hidden"  name="recipient-email">
 					</div>
 					<div class="form-group">
 						<label for="subject" class="control-label">Subject: </label>
-						<input type="text" class="form-control" id="subject">
+						<input type="text" class="form-control" id="subject" name="subject">
 					</div>
 					<div class="form-group">
 					    <label for="message-text" class="control-label">Message:</label>
-					    <textarea class="form-control" id="message-text"></textarea>
+					    <textarea class="form-control" id="message-text" name="message"></textarea>
 					</div>
-				</form>
+				
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">Send message</button>
+				<!-- <button type="button" class="btn btn-primary">Send message</button> -->
+				<input type="submit" value="Send Message" class="btn btn-primary">
 			</div>
 			</div>
+			</form>
 		</div>
 	</div>
 	<!-- modal -->

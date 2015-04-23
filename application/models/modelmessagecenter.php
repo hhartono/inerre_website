@@ -47,6 +47,14 @@ class Modelmessagecenter extends CI_Model {
 		}
 	}
 
+	public function updateStatusMessage($id){
+		$data = array(
+			'status' => 'replied'
+			);
+		$this->db->where('id', $id);
+		$this->db->update('contact', $data);
+	}
+
 
 }
 

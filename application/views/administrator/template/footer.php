@@ -68,6 +68,7 @@
         <script>
         	$('#replyModal').on('show.bs.modal', function (event) {
 				  var button = $(event.relatedTarget); // Button that triggered the modal
+				  var id = button.data('id');
 				  var recipient = button.data('name') ;
 				  var email = button.data('email');
 				  // Extract info from data-* attributes
@@ -75,8 +76,11 @@
 				  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
 				  var modal = $(this);
 				  modal.find('.modal-title').text('New message to ' + recipient);
+				  modal.find('.modal-body input#idmessage').val(id);
 				  modal.find('.modal-body input#recipient-name').val(recipient);
+				  modal.find('.modal-body input#recipient-name-hidden').val(recipient);
 				  modal.find('.modal-body input#recipient-email').val(email);
+				  modal.find('.modal-body input#recipient-email-hidden').val(email);
 				})
 
 			$('document').ready(function(){
