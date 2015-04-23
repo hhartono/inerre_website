@@ -20,7 +20,7 @@
                     <div class="footer-text">
                         <!-- Copyright -->
                         <div class="footer-copy font-alt">
-                            <a href="/home" target="_blank">&copy; INERRE 2014</a>.
+                            <a href="/home" target="_blank">&copy; INERRE 2015</a>.
                         </div>
                         <!-- End Copyright -->
                     </div>
