@@ -3,7 +3,7 @@
     $this->load->view('public/public_template/header');
 ?>
             <!-- Home Section -->
-            <section class="home-section bg-color-lighter parallax-2" data-background="/assets/images/showroom-inerre/main_page_3.jpg" id="home">
+            <section class="home-section bg-color-lighter parallax-2" data-background="/assets/images/home/main_page_3.jpg" id="home">
                 <div class="js-height-full">
                     <!-- Hero Content -->
                     <div class="home-content">
@@ -11,9 +11,11 @@
                             <!-- <h1 class=" textshadowblack hs-line-1 font-alt mb-50 mb-xs-50 mt-50 mb-xs-0 inerre-brown">
                                 INERRE
                             </h1> -->
+                            <!-- logo for non mobile / extra small device -->
                             <div class="hidden-xs mb-10 mb-xs-50 mt-50 mb-xs-0">
                                 <img src="/assets/images/inerrelogo.png" class="center-block img-responsive" alt="">
                             </div>
+                            <!-- logo for mobile / extra small device -->
                             <div class="hidden-sm hidden-md hidden-lg mb-50 mb-xs-50 mt-50 mb-xs-0 ">
                                 <img src="/assets/images/inerrelogo.png" width="220px" class="center-block" style="background:rgba(0,0,0, .70);" alt="">
                             </div>    
