@@ -40,6 +40,7 @@
             <nav class="main-nav transparent stick-fixed">
                 <div class="full-wrapper relative clearfix">
                     <?php 
+                        $uri_satu = $this->uri->segment(1);
                         /*
                          * jika bukan halaman home
                          * munculkan logo
