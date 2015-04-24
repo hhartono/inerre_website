@@ -28,7 +28,6 @@
         <!-- Load Google Analytic Code -->
         <?php //$this->load->view('public/public_template/analyticstracking');?>
     </head>
-
     <body class="appear-animate">
         <!-- Page Loader -->        
         <div class="page-loader">
@@ -37,16 +36,8 @@
         <!-- End Page Loader -->
         <!-- Page Wrap -->
         <div class="page" id="top">
-        <?php 
-            $uri_satu = $this->uri->segment(1);
-            if(($uri_satu=="") || (isset($homeactive)) || (isset($showroomactive))){
-                $classNavOption = "transparent stick-fixed"; 
-            }else{
-                $classNavOption = "js-stick";
-            }
-        ?>
             <!-- Navigation panel -->
-            <nav class="main-nav transparent stick-fixed <?php //echo $classNavOption;?>">
+            <nav class="main-nav transparent stick-fixed">
                 <div class="full-wrapper relative clearfix">
                     <?php 
                         /*
@@ -54,7 +45,6 @@
                          * munculkan logo
                          */
                         if((isset($homeactive)) || ($uri_satu=="")){
-
                             // echo nothing
                         ?>
                             <!-- Logo ( * your text or image into link tag *) -->
@@ -75,7 +65,6 @@
                     <?php
                         }
                     ?>
-
                     <div class="mobile-nav">
                         <i class="fa fa-bars"></i>
                     </div>
