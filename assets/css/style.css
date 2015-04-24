@@ -571,6 +571,10 @@ hr.black{
 .sub-heading.black{
 	color: rgba(0,0,0, .75);
 }
+.opensans700{
+  font-family: 'Open Sans' !important;
+  font-weight: 700 !important;
+}
 /* ==============================
    Buttons
    ============================== */

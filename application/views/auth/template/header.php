@@ -15,12 +15,12 @@
         <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png">
         <!-- CSS -->
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/assets/css/style.css">
-        <link rel="stylesheet" href="/assets/css/style-responsive.css">
+        <link rel="stylesheet" href="/assets/css/style.min.css">
+        <link rel="stylesheet" href="/assets/css/style-responsive.min.css">
         <link rel="stylesheet" href="/assets/css/animate.min.css">
         <link rel="stylesheet" href="/assets/css/vertical-rhythm.min.css">
-        <link rel="stylesheet" href="/assets/css/owl.carousel.css">
-        <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="/assets/css/magnific-popup.min.css">
         <style>
         .textshadow{
             text-shadow:-1px 1px 4px #000;
