@@ -67,7 +67,7 @@ class Administrator extends CI_Controller {
 			echo '<td>'. $row->message .'</td>';
 			echo '<td>'. $row->date_in .'</td>';
 			echo '<td>'. $row->status .'</td>';
-			echo '<td>'. ($row->status == 'unreplied' ? '<button type="button" data-id="'.$row->id.'" data-name="'.$row->name.'" data-email="'.$row->email.'" class="btn btn-danger" data-toggle="modal" data-target="#replyModal"><i class="fa fa-mail-reply"></i></button>' : '<button class="btn btn-success" disabled><i class="fa fa-check"></i></button>' ) .'</td>';
+			echo '<td>'. ($row->status == 'unreplied' ? '<button type="button" data-id="'.$row->id.'" data-name="'.ucwords($row->name).'" data-email="'.ucwords($row->email).'" class="btn btn-danger" data-toggle="modal" data-target="#replyModal"><i class="fa fa-mail-reply"></i></button>' : '<button class="btn btn-success" disabled><i class="fa fa-check"></i></button>' ) .'</td>';
 			echo '</tr>';
 
 					$no++;
@@ -116,7 +116,7 @@ class Administrator extends CI_Controller {
 			echo '<td>'. $row->message .'</td>';
 			echo '<td>'. $row->date_in .'</td>';
 			echo '<td>'. $row->status .'</td>';
-			echo '<td><button type="button" data-id="'.$row->id.'" data-name="'.$row->name.'" data-email="'.$row->email.'" class="btn btn-danger" data-toggle="modal" data-target="#replyModal" >';
+			echo '<td><button type="button" data-id="'.$row->id.'" data-name="'.ucwords($row->name).'" data-email="'.ucwords($row->email).'" class="btn btn-danger" data-toggle="modal" data-target="#replyModal" >';
 			echo '<i class="fa fa-mail-reply"></i></button></td>';
 			echo '</tr>';
 			

@@ -66,6 +66,7 @@
 
         <!--[if lt IE 10]><script type="text/javascript" src="/assets/js/placeholder.js"></script><![endif]-->
         <script>
+        	// modals for reply message (message center)
         	$('#replyModal').on('show.bs.modal', function (event) {
 				  var button = $(event.relatedTarget); // Button that triggered the modal
 				  var id = button.data('id');
