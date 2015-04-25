@@ -15,12 +15,12 @@
         <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png">
         <!-- CSS -->
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/assets/css/style.css">
-        <link rel="stylesheet" href="/assets/css/style-responsive.css">
+        <link rel="stylesheet" href="/assets/css/style.min.css">
+        <link rel="stylesheet" href="/assets/css/style-responsive.min.css">
         <link rel="stylesheet" href="/assets/css/animate.min.css">
         <link rel="stylesheet" href="/assets/css/vertical-rhythm.min.css">
-        <link rel="stylesheet" href="/assets/css/owl.carousel.css">
-        <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="/assets/css/magnific-popup.min.css">
         <style>
         .textshadowwhite{text-shadow:-1px 1px 0px #fff;}
         .textshadowblack{text-shadow:-1px 1px 0px #000;}
@@ -28,7 +28,6 @@
         <!-- Load Google Analytic Code -->
         <?php //$this->load->view('public/public_template/analyticstracking');?>
     </head>
-
     <body class="appear-animate">
         <!-- Page Loader -->        
         <div class="page-loader">
@@ -37,24 +36,16 @@
         <!-- End Page Loader -->
         <!-- Page Wrap -->
         <div class="page" id="top">
-        <?php 
-            $uri_satu = $this->uri->segment(1);
-            if(($uri_satu=="") || (isset($homeactive)) || (isset($showroomactive))){
-                $classNavOption = "transparent stick-fixed"; 
-            }else{
-                $classNavOption = "js-stick";
-            }
-        ?>
             <!-- Navigation panel -->
-            <nav class="main-nav transparent stick-fixed <?php //echo $classNavOption;?>">
+            <nav class="main-nav transparent stick-fixed">
                 <div class="full-wrapper relative clearfix">
                     <?php 
+                        $uri_satu = $this->uri->segment(1);
                         /*
                          * jika bukan halaman home
                          * munculkan logo
                          */
                         if((isset($homeactive)) || ($uri_satu=="")){
-
                             // echo nothing
                         ?>
                             <!-- Logo ( * your text or image into link tag *) -->
@@ -75,7 +66,6 @@
                     <?php
                         }
                     ?>
-
                     <div class="mobile-nav">
                         <i class="fa fa-bars"></i>
                     </div>

@@ -13,23 +13,15 @@
                                 A list of creative minimalism lovers
                             </div>
                         </div>
-                        <!--div class="col-md-4 mt-30">
-                            <div class="mod-breadcrumbs font-alt align-right">
-                                <a href="/home">Home</a>&nbsp;<i class="inerre-brown">//</i>&nbsp;<span>About</span>
-                            </div>
-                        </div-->
                     </div>
                 </div>
             </section>
             <!-- End Head Section -->
-
             <!-- About Section -->
             <section class="page-section" id="about">
                 <div class="container relative">
-                    
                     <div class="row">
                         <!-- Team item 1 -->
-                        
                         <div class="col-sm-12 mb-xs-30 team-row wow" >
                             <div id="hanshartono" class="team-item team-offset-block">
                                 <div class="col-md-3 ">
@@ -51,7 +43,6 @@ As a head system developer, Hans always envisions himself to be able to enhance 
                             </div>
                         </div>
                         <!-- End Team item 1 -->
-                        
                         <!-- Team item 2 -->
                         <div class="col-sm-12 mb-xs-30 team-row wow">
                             <div id="nessaphoeng" class="team-item team-offset-block">
@@ -74,7 +65,6 @@ Nessa brings solid experience through her education and career in United States 
                             </div>
                         </div>
                         <!-- End Team item 2 -->
-
                         <!-- Team item 3 -->
                         <div class="col-sm-12 mb-xs-30 team-row wow">
                             <div id="subiantohartono" class="team-item team-offset-block">
@@ -96,7 +86,6 @@ Nessa brings solid experience through her education and career in United States 
                             </div>
                         </div>
                         <!-- End Team item 3 -->
-
                         <!-- Team item 4 -->
                         <div class="col-sm-12 mb-xs-30 team-row wow">
                             <div id="sianekurnia" class="team-item  team-offset-block">
@@ -118,7 +107,6 @@ Nessa brings solid experience through her education and career in United States 
                         </div>
                         <!-- End Team item 4 -->
                     </div>
-
                     <div class="row">
                         <div class="mt-80 align-center" >
                             <a href="workshop" class="btn btn-mod btn-border btn-medium">Sneak Peak To Our Workshop</a>
@@ -130,16 +118,12 @@ Nessa brings solid experience through her education and career in United States 
             <!-- Contact Section -->
             <section class="page-section" id="contact">
                 <div class="container relative">
-                    
                     <h2 class="section-title font-alt mb-70 mb-sm-40">
                         Find Inerre
                     </h2>
-                    
                     <div class="row">
-                        
                         <div class="col-md-8 col-md-offset-2">
                             <div class="row">
-                                
                                 <!-- Phone -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -155,7 +139,6 @@ Nessa brings solid experience through her education and career in United States 
                                     </div>
                                 </div>
                                 <!-- End Phone -->
-                                
                                 <!-- Address -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -173,7 +156,6 @@ Nessa brings solid experience through her education and career in United States 
                                     </div>
                                 </div>
                                 <!-- End Address -->
-                                
                                 <!-- Email -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -189,16 +171,12 @@ Nessa brings solid experience through her education and career in United States 
                                     </div>
                                 </div>
                                 <!-- End Email -->
-                                
                             </div>
                         </div>
-                        
                     </div>
-                    
                 </div>
             </section>
             <!-- End Contact Section -->
-
 <?php 
     // load view footer from template
     $this->load->view('public/public_template/footer');

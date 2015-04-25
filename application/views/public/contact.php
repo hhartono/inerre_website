@@ -3,42 +3,28 @@
     $this->load->view('public/public_template/header');
 ?>          
             <!-- Head Section -->
-            <!-- <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/full-width-images/new-crop-flip.jpg"> -->
             <section class="page-section bg-dark-lighter parallax-3" data-background="/assets/images/subheader/subheader_contact_2.jpg" style="">
                 <div class="relative container align-left">
-                    
                     <div class="row">
-                        
                         <div class="col-md-12">
                             <h1 class="opensans700 textshadowblack hs-line-11 font-alt mb-20 mt-xs-40 mb-xs-0 inerre-brown">Contact</h1>
                             <div class="opensans700 textshadowblack hs-line-4 font-alt">
                                 A place where you can talk, discuss, and ask us
                             </div>
                         </div>
-                        
-                        <!--div class="col-md-4 mt-30">
-                            <div class="mod-breadcrumbs font-alt align-right">
-                                <a href="/home">Home</a>&nbsp;<i class="inerre-brown">//</i>&nbsp;<span>Contact</span>
-                            </div>
-                        </div-->
                     </div>
-                    
                 </div>
             </section>
             <!-- End Head Section -->
-            
             <!-- Contact Section -->
             <section class="page-section" id="contact">
                 <div class="container relative">
-                    
                     <h2 class="section-title font-alt mb-70 mb-sm-40">
                         Find Inerre
                     </h2>
-                    
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
                             <div class="row">
-                                
                                 <!-- Phone -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -54,7 +40,6 @@
                                     </div>
                                 </div>
                                 <!-- End Phone -->
-                                
                                 <!-- Address -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -72,7 +57,6 @@
                                     </div>
                                 </div>
                                 <!-- End Address -->
-                                
                                 <!-- Email -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -88,7 +72,6 @@
                                     </div>
                                 </div>
                                 <!-- End Email -->
-                                
                             </div>
                         </div>
                     </div>
@@ -96,7 +79,6 @@
                     <!-- Contact Form -->                            
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            
                             <form method="POST" class="form contact-form" id="contact_form" autocomplete="off">
                                 <div class="clearfix">
                                     <div class="cf-left-col">

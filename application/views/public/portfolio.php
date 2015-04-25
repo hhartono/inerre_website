@@ -21,119 +21,83 @@
                 </div>
             </section>
             <!-- End Head Section -->
-            
-            
             <!-- Section -->
             <section class="page-section">
                 <div class="container relative">
-                    
                     <!-- Photo Grid -->
                     <div class="row multi-columns-row mb-30 mb-xs-10">
-                        
                         <!-- Photo Item -->
                         <div class="col-md-6 col-lg-6 mb-md-10">
-                            
                             <div class="post-prev-img">
                                 <a href="/assets/images/portfolio-inerre/015532-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/015532-650.jpg" alt="" /></a>
                             </div>
-
                         </div>
                         <!-- End Photo Item -->
-                        
                         <!-- Photo Item -->
                         <div class="col-md-6 col-lg-6 mb-md-10">
-                            
                             <div class="post-prev-img">
                                 <a href="/assets/images/portfolio-inerre/025053-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/025053-650.jpg" alt="" /></a>
                             </div>
-
                         </div>
                         <!-- End Photo Item -->
-                        
                         <!-- Photo Item -->
                         <div class="col-md-6 col-lg-6 mb-md-10">
-                            
                             <div class="post-prev-img">
                                 <a href="/assets/images/portfolio-inerre/034836-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/034836-650.jpg" alt="" /></a>
                             </div>
-
                         </div>
                         <!-- End Photo Item -->
-                        
                         <!-- Photo Item -->
                         <div class="col-md-6 col-lg-6 mb-md-10">
-                            
                             <div class="post-prev-img">
                                 <a href="/assets/images/portfolio-inerre/034909-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/034909-650.jpg" alt="" /></a>
                             </div>
-
                         </div>
                         <!-- End Photo Item -->
-                        
-
                         <!-- Photo Item -->
                         <div class="col-md-6 col-lg-6 mb-md-10">
-                            
                             <div class="post-prev-img">
                                 <a href="/assets/images/portfolio-inerre/045216-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/045216-650.jpg" alt="" /></a>
                             </div>
-
                         </div>
                         <!-- End Photo Item -->
-
                         <!-- Photo Item -->
                         <div class="col-md-6 col-lg-6 mb-md-10">
-                            
                             <div class="post-prev-img">
                                 <a href="/assets/images/portfolio-inerre/051453-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/051453-650.jpg" alt="" /></a>
                             </div>
-
                         </div>
                         <!-- End Photo Item -->
-                        
-                        
                         <!-- Photo Item -->
                         <div class="col-md-6 col-lg-6 mb-md-10">
-                            
                             <div class="post-prev-img">
                                 <a href="/assets/images/portfolio-inerre/052712-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/052712-650.jpg" alt="" /></a>
                             </div>
-
                         </div>
                         <!-- End Photo Item -->
-                        
                         <!-- Photo Item -->
                         <div class="col-md-6 col-lg-6 mb-md-10">
-                            
                             <div class="post-prev-img">
                                 <a href="/assets/images/portfolio-inerre/052786-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/052786-650.jpg" alt="" /></a>
                             </div>
-
                         </div>
                         <!-- End Photo Item -->
-                        
                         <!-- Photo Item -->
                         <div class="col-md-6 col-lg-6 mb-md-10">
-                            
                             <div class="post-prev-img">
                                 <a href="/assets/images/portfolio-inerre/059594-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/059594-650.jpg" alt="" /></a>
                             </div>
-
                         </div>
                         <!-- End Photo Item -->
-                        
                         <!-- Photo Item -->
                         <div class="col-md-6 col-lg-6 mb-md-10">
-                            
                             <div class="post-prev-img">
                                 <a href="/assets/images/portfolio-inerre/059982-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/059982-650.jpg" alt="" /></a>
                             </div>
-
                         </div>
                         <!-- End Photo Item -->
                     </div>
                     <!-- End Photo Grid -->
-                    
                 </div>
             </section>
             <!-- End Section -->
@@ -141,16 +105,12 @@
             <!-- Contact Section -->
             <section class="page-section" id="contact">
                 <div class="container relative">
-                    
                     <h2 class="section-title font-alt mb-70 mb-sm-40">
                         Find Inerre
                     </h2>
-                    
                     <div class="row">
-                        
                         <div class="col-md-8 col-md-offset-2">
                             <div class="row">
-                                
                                 <!-- Phone -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -166,7 +126,6 @@
                                     </div>
                                 </div>
                                 <!-- End Phone -->
-                                
                                 <!-- Address -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -184,7 +143,6 @@
                                     </div>
                                 </div>
                                 <!-- End Address -->
-                                
                                 <!-- Email -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -200,16 +158,12 @@
                                     </div>
                                 </div>
                                 <!-- End Email -->
-                                
                             </div>
                         </div>
-                        
                     </div>
-                    
                 </div>
             </section>
             <!-- End Contact Section -->
-
 <?php
     // load view footer from template
     $this->load->view('public/public_template/footer');

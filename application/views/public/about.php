@@ -12,16 +12,10 @@
                                 A story of us and the people behind INERRE
                             </div>
                         </div>
-                        <!--div class="col-md-4 mt-30">
-                            <div class="mod-breadcrumbs font-alt align-right">
-                                <a href="/home">Home</a>&nbsp;<i class="inerre-brown">//</i>&nbsp;<span>About</span>
-                            </div>
-                        </div-->
                     </div>
                 </div>
             </section>
             <!-- End Head Section -->
-
             <!-- About Section -->
             <section class="page-section" id="about">
                 <div class="container relative">
@@ -80,71 +74,44 @@
                                         </div>
                                     </div> -->
                                 </div>
-                                
-                                    <div class="team-item-descr font-alt">
-                                        <div class="team-item-name">
-                                            Hans Hartono
-                                        </div>
-                                        <div class="team-item-role">
-                                            Co-Founder
-                                        </div>
+                                <div class="team-item-descr font-alt">
+                                    <div class="team-item-name">
+                                        Hans Hartono
                                     </div>
+                                    <div class="team-item-role">
+                                        Co-Founder
+                                    </div>
+                                </div>
                             </div>
                             </a>
                         </div>
                         <!-- End Team item 1 -->
-                        
                         <!-- Team item 2 -->
                         <div class="col-sm-3 mb-xs-30 wow fadeInUp" data-wow-delay="0.2s">
                             <a class="team-link" href="/about/team#nessaphoeng">
                             <div class="team-item-member">
                                 <div class="team-item-image">
                                     <img src="/assets/images/team/team-2.jpg" alt="" />
-                                    <!-- <div class="team-item-detail">
-                                        <h4 class="font-alt normal">Nice to meet!</h4>
-                                        <p>
-                                        Pursuing a degree in United States, Nessa moved in to Los Angeles to continue to study in Woodbury University majoring in Interior Architecture. She had worked for different design architecture firms within Los Angeles area including Beverly Hills and Santa Monica. Nessa brings solid experience through her education and career, and reflects it towards her design passion influenced by her multicultural background.
-                                        </p>
-                                        <div class="team-social-links">
-                                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                                            <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
-                                        </div>
-                                    </div> -->
                                 </div>
-                                
-                                    <div class="team-item-descr font-alt">
-                                        <div class="team-item-name">
-                                            Nessa Phoeng
-                                        </div>
-                                        <div class="team-item-role">
-                                            Co-Founder
-                                        </div>
+                                <div class="team-item-descr font-alt">
+                                    <div class="team-item-name">
+                                        Nessa Phoeng
                                     </div>
+                                    <div class="team-item-role">
+                                        Co-Founder
+                                    </div>
+                                </div>
                             </div>
                             </a>
                         </div>
                         <!-- End Team item 2 -->
-
                         <!-- Team item 3 -->
                         <div class="col-sm-3 mb-xs-30 wow fadeInUp" data-wow-delay="0.2s">
                             <a class="team-link" href="/about/team#subiantohartono">
                             <div class="team-item-member">
                                 <div class="team-item-image">
                                     <img src="/assets/images/team/team-3.jpg" alt="" />
-                                    <!-- <div class="team-item-detail">
-                                        <h4 class="font-alt normal">Whats Up!</h4>
-                                        <p>
-                                        With more than 30 years of experience, Subianto and wife established an architecture company in their early careers. The firm started to branch the interior design division 20 years ago believing that architecture and interior design are completely inseparable.
-                                        </p>
-                                        <div class="team-social-links">
-                                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                                            <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
-                                        </div>
-                                    </div> -->
                                 </div>
-                                
                                 <div class="team-item-descr font-alt">
                                     <div class="team-item-name">
                                         Subianto Hartono
@@ -165,19 +132,7 @@
                             <div class="team-item-member">
                                 <div class="team-item-image">
                                     <img src="/assets/images/team/team-4.jpg" alt="" />
-                                    <!-- <div class="team-item-detail">
-                                        <h4 class="font-alt normal">Whats Up!</h4>
-                                        <p>
-                                        Together with her husband, Siane started off the architecture firm Subianto & Siane in 1988. Today, the company has built more than 600 residential projects and hundreds of commercial projects all over in Indonesia. Her endless contributions for the company has made Subianto & Siane Architecture to be one of the top national architecture firms.
-                                        </p>
-                                        <div class="team-social-links">
-                                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                                            <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
-                                        </div>
-                                    </div> -->
                                 </div>
-                                
                                 <div class="team-item-descr font-alt">
                                     <div class="team-item-name">
                                         Siane Kurnia
@@ -186,7 +141,6 @@
                                         Design Advisor
                                     </div>
                                 </div>
-                                
                             </div>
                             </a>
                         </div>
@@ -199,23 +153,12 @@
                     </div>
                 </div>
             </section>
-            <!-- End About Section -->
-            <!-- <section class="small-section" style="background: #ccc;">
-                <div class="row">
-                    <div class="align-center" >
-                        <a href="about/team" class="btn btn-mod btn-border btn-medium">More About Us</a>
-                    </div>
-                </div>
-            </section> -->
-
-
             <!-- Divider -->
             <hr class="mt-0 mb-0"/>
             <!-- End Divider -->
             
             <!-- Testimonials Section
             <section class="page-section bg-dark bg-dark-alfa-90 fullwidth-slider" data-background="images/full-width-images/section-bg-3.jpg">
-                
                 Slide Item
                 <div>
                     <div class="container relative">
@@ -297,14 +240,11 @@
             <!-- Features Section -->
             <section class="page-section">
                 <div class="container relative">
-                    
                     <h2 class="section-title font-alt mb-70 mb-sm-40">
                         Why Choose Us?
                     </h2>
-                    
                     <!-- Features Grid -->
                     <div class="row multi-columns-row alt-features-grid">
-                        
                         <!-- Features Item -->
                         <div class="col-sm-6 col-md-4 col-lg-4">
                             <div class="alt-features-item align-center">
@@ -318,8 +258,7 @@
                             </div>
                         </div>
                         <!-- End Features Item -->
-
-                         <!-- Features Item -->
+                        <!-- Features Item -->
                         <div class="col-sm-6 col-md-4 col-lg-4">
                             <div class="alt-features-item align-center">
                                 <div class="alt-features-icon">
@@ -332,7 +271,6 @@
                             </div>
                         </div>
                         <!-- End Features Item -->
-
                         <!-- Features Item -->
                         <div class="col-sm-6 col-md-4 col-lg-4">
                             <div class="alt-features-item align-center">
@@ -346,7 +284,6 @@
                             </div>
                         </div>
                         <!-- End Features Item -->
-                        
                         <!-- Features Item -->
                         <div class="col-sm-6 col-md-4 col-lg-4">
                             <div class="alt-features-item align-center">
@@ -360,7 +297,6 @@
                             </div>
                         </div>
                         <!-- End Features Item -->
-                        
                         <!-- Features Item -->
                         <div class="col-sm-6 col-md-4 col-lg-4">
                             <div class="alt-features-item align-center">
@@ -374,7 +310,6 @@
                             </div>
                         </div>
                         <!-- End Features Item -->
-                        
                         <!-- Features Item -->
                         <div class="col-sm-6 col-md-4 col-lg-4">
                             <div class="alt-features-item align-center">
@@ -388,10 +323,8 @@
                             </div>
                         </div>
                         <!-- End Features Item -->
-                        
                     </div>
                     <!-- End Features Grid -->
-                
                 </div>
             </section>
             <!-- End Features Section -->
@@ -399,16 +332,12 @@
             <!-- Contact Section -->
             <section class="page-section" id="contact">
                 <div class="container relative">
-                    
                     <h2 class="section-title font-alt mb-70 mb-sm-40">
                         Find Inerre
                     </h2>
-                    
                     <div class="row">
-                        
                         <div class="col-md-8 col-md-offset-2">
                             <div class="row">
-                                
                                 <!-- Phone -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -424,7 +353,6 @@
                                     </div>
                                 </div>
                                 <!-- End Phone -->
-                                
                                 <!-- Address -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -442,7 +370,6 @@
                                     </div>
                                 </div>
                                 <!-- End Address -->
-                                
                                 <!-- Email -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -458,12 +385,9 @@
                                     </div>
                                 </div>
                                 <!-- End Email -->
-                                
                             </div>
                         </div>
-                        
                     </div>
-                    
                 </div>
             </section>
             <!-- End Contact Section -->

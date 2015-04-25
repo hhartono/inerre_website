@@ -7,11 +7,9 @@
                 <!-- Slide Item -->
                 <section class="home-section bg-scroll" data-background="/assets/images/showroom-inerre/1.jpg">
                     <div class="js-height-full container">
-                        
                         <!-- Hero Content -->
                         <div class="home-content">
                             <div class="home-text">
-                                
                                 <!-- Uncomment to put caption -->
                                 <!--
                                 <h1 class="hs-line-8 no-transp font-alt mb-50 mb-xs-30">
@@ -28,23 +26,18 @@
                                     <a href="http://vimeo.com/50201327" class="btn btn-mod btn-border-w btn-medium btn-round lightbox mfp-iframe">Play Reel</a>
                                 </div>
                                 -->
-
                             </div>
                         </div>
                         <!-- End Hero Content -->
-                        
                     </div>
                 </section>
                 <!-- End Slide Item -->
-                
                 <!-- Slide Item -->
                 <section class="home-section bg-scroll" data-background="/assets/images/showroom-inerre/2.jpg">
                     <div class="js-height-full container">
-                        
                         <!-- Hero Content -->
                         <div class="home-content">
                             <div class="home-text">
-                                
                                 <!-- HK: Use for Caption -->
                                 <!--
                                 <h1 class="hs-line-8 no-transp font-alt mb-50 mb-xs-30">
@@ -61,11 +54,9 @@
                                     <a href="http://vimeo.com/50201327" class="btn btn-mod btn-border-w btn-medium btn-round lightbox mfp-iframe">Play Reel</a>
                                 </div>
                                 -->
-                                
                             </div>
                         </div>
                         <!-- End Hero Content -->
-
                     </div>
                 </section>
                 <!-- End Slide Item -->
@@ -73,11 +64,9 @@
                 <!-- Slide Item -->
                 <section class="home-section bg-scroll " data-background="/assets/images/showroom-inerre/3.jpg">
                     <div class="js-height-full container">
-                        
                         <!-- Hero Content -->
                         <div class="home-content">
                             <div class="home-text">
-                                
                                 <!-- HK: Use for Caption -->
                                 <!--
                                 <h1 class="hs-line-8 no-transp font-alt mb-50 mb-xs-30">
@@ -94,23 +83,18 @@
                                     <a href="http://vimeo.com/50201327" class="btn btn-mod btn-border-w btn-medium btn-round lightbox mfp-iframe">Play Reel</a>
                                 </div>
                                 -->
-                                
                             </div>
                         </div>
                         <!-- End Hero Content -->
-
                     </div>
                 </section>
                 <!-- End Slide Item -->
-
                 <!-- Slide Item -->
                 <section class="home-section bg-scroll " data-background="/assets/images/showroom-inerre/4.jpg">
                     <div class="js-height-full container">
-                        
                         <!-- Hero Content -->
                         <div class="home-content">
                             <div class="home-text">
-                                
                                 <!-- HK: Use for Caption -->
                                 <!--
                                 <h1 class="hs-line-8 no-transp font-alt mb-50 mb-xs-30">
@@ -127,23 +111,18 @@
                                     <a href="http://vimeo.com/50201327" class="btn btn-mod btn-border-w btn-medium btn-round lightbox mfp-iframe">Play Reel</a>
                                 </div>
                                 -->
-                                
                             </div>
                         </div>
                         <!-- End Hero Content -->
-
                     </div>
                 </section>
                 <!-- End Slide Item -->
-
                 <!-- Slide Item -->
                 <section class="home-section bg-scroll " data-background="/assets/images/showroom-inerre/5.jpg">
                     <div class="js-height-full container">
-                        
                         <!-- Hero Content -->
                         <div class="home-content">
                             <div class="home-text">
-                                
                                 <!-- HK: Use for Caption -->
                                 <!--
                                 <h1 class="hs-line-8 no-transp font-alt mb-50 mb-xs-30">
@@ -160,11 +139,9 @@
                                     <a href="http://vimeo.com/50201327" class="btn btn-mod btn-border-w btn-medium btn-round lightbox mfp-iframe">Play Reel</a>
                                 </div>
                                 -->
-                                
                             </div>
                         </div>
                         <!-- End Hero Content -->
-
                     </div>
                 </section>
                 <!-- End Slide Item -->
@@ -172,11 +149,9 @@
                 <!-- Slide Item -->
                 <section class="home-section bg-scroll " data-background="/assets/images/showroom-inerre/6.jpg">
                     <div class="js-height-full container">
-                        
                         <!-- Hero Content -->
                         <div class="home-content">
                             <div class="home-text">
-                                
                                 <!-- HK: Use for Caption -->
                                 <!--
                                 <h1 class="hs-line-8 no-transp font-alt mb-50 mb-xs-30">
@@ -193,69 +168,51 @@
                                     <a href="http://vimeo.com/50201327" class="btn btn-mod btn-border-w btn-medium btn-round lightbox mfp-iframe">Play Reel</a>
                                 </div>
                                 -->
-                                
                             </div>
                         </div>
                         <!-- End Hero Content -->
-
                     </div>
                 </section>
                 <!-- End Slide Item -->
-                
-
             </div>
             <!-- End Fullwidth Slider -->
-            
 
             <!-- Newsletter Section -->
             <!--
             <section class="small-section bg-gray-lighter">
                 <div class="container relative">
-                    
                     <form class="form align-center" id="mailchimp">
                         <div class="row">
                             <div class="col-md-6 col-md-offset-3">
-                                
                                 <div class="newsletter-label font-alt">
                                     Stay informed with our newsletter
                                 </div>
-                                
                                 <div class="mb-20">
                                     <input placeholder="Enter Your Email" class="newsletter-field input-md round mb-xs-10" type="email" pattern=".{5,100}" required/>
-                                    
                                     <button type="submit" class="btn btn-mod btn-medium btn-round mb-xs-10">
                                         Subscribe
                                     </button>
                                 </div>
-                                
                                 <div class="form-tip">
                                     <i class="fa fa-info-circle"></i> Please trust us, we will never send you spam
                                 </div>
-                                
                                 <div id="subscribe-result"></div>
-                                
                             </div>
                         </div>
                     </form>
-                    
                 </div>
             </section>
             -->
             <!-- End Newsletter Section -->
-            
             <!-- Contact Section -->
             <section class="page-section" id="contact">
                 <div class="container relative">
-                    
                     <h2 class="section-title font-alt mb-70 mb-sm-40">
                         Find Inerre
                     </h2>
-                    
                     <div class="row">
-                        
                         <div class="col-md-8 col-md-offset-2">
                             <div class="row">
-                                
                                 <!-- Phone -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -271,7 +228,6 @@
                                     </div>
                                 </div>
                                 <!-- End Phone -->
-                                
                                 <!-- Address -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -289,7 +245,6 @@
                                     </div>
                                 </div>
                                 <!-- End Address -->
-                                
                                 <!-- Email -->
                                 <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
                                     <div class="contact-item">
@@ -305,16 +260,12 @@
                                     </div>
                                 </div>
                                 <!-- End Email -->
-                                
                             </div>
                         </div>
-                        
                     </div>
-                    
                 </div>
             </section>
             <!-- End Contact Section -->
-
 <?php
     // load view footer from template
     $this->load->view('public/public_template/footer');
