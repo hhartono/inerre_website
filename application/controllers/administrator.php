@@ -223,7 +223,7 @@ class Administrator extends CI_Controller {
 		);
 		$this->email->initialize($configsendmail);
 
-		$this->email->from('willi@inerre.com', 'Willi');
+		$this->email->from('info@inerre.com', 'INERRE Interior');
 		$this->email->to($email);
 		//$this->email->cc('');
 		//$this->email->bcc('');
