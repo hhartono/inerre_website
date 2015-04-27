@@ -21,34 +21,53 @@
 
     <!--common script for all pages-->
     <script src="/assets_admin/js/common-scripts.js"></script>
-
     <!--script for this page-->
     <script src="/assets_admin/js/jquery-ui-1.9.2.custom.min.js"></script>
-
 	<!--custom switch-->
 	<script src="/assets_admin/js/bootstrap-switch.js"></script>
-	
 	<!--custom tagsinput-->
 	<script src="/assets_admin/js/jquery.tagsinput.js"></script>
-	
 	<!--custom checkbox & radio-->
-	
 	<script type="text/javascript" src="/assets_admin/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 	<script type="text/javascript" src="/assets_admin/js/bootstrap-daterangepicker/date.js"></script>
 	<script type="text/javascript" src="/assets_admin/js/bootstrap-daterangepicker/daterangepicker.js"></script>
-	
 	<script type="text/javascript" src="/assets_admin/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
-	
-	
-	<script src="/assets_admin/js/form-component.js"></script>    
-    
-    
+	<script type="text/javascript" src="/assets_admin/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="/assets_admin/js/form-component.js"></script>    
   <script>
-      //custom select box
+      /*//custom select box
       $(function(){
           $('select.styled').customSelect();
+      });*/
+
+      $('#viewModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget)// Button that triggered the modal
+        var kode = button.data('kode')
+        var barang = button.data('barang')
+        var stock = button.data('stock')
+        var hargabeli = button.data('hargabeli')
+        var hargajual = button.data('hargajual')
+        var status = button.data('status')
+        var modal = $(this)
+        modal.find('.modal-title').text(kode + ' - ' +barang)
+        modal.find('.modal-body table tr td#stock-table').text(stock)
+        modal.find('.modal-body table tr td#status-table').text(status)
+        modal.find('.modal-body table tr td#beli-table').text('Rp. ' +hargabeli)
+        modal.find('.modal-body table tr td#jual-table').text('Rp. ' +hargajual)
+      });
+      
+      $('#deleteModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget)// Button that triggered the modal
+        var kode = button.data('kode')
+        var barang = button.data('barang')
+        var modal = $(this)
+        modal.find('.modal-title').text(kode + ' - ' +barang)
+        modal.find('.modal-body h2#h2alert').text('Hapus  ' +barang+' ( kode: '+kode+' ) ?')
       });
 
+      $('document').ready(function(){
+        $('#tableproduct').DataTable();
+      })
   </script>
 
   </body>

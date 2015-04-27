@@ -7,8 +7,8 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>DASHGUM - FREE Bootstrap Admin Template</title>
-
+    <title><?php echo $title;?></title>
+    <link rel="shortcut icon" href="/assets_admin/img/favicon.png">
     <!-- Bootstrap core CSS -->
     <link href="/assets_admin/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
@@ -21,6 +21,9 @@
     <link href="/assets_admin/css/style.css" rel="stylesheet">
     <link href="/assets_admin/css/style-responsive.css" rel="stylesheet">
 
+    <link href="/assets_admin/css/table-responsive.css" rel="stylesheet">
+
+    <link href="/assets_admin/css/jquery.dataTables.min.css" rel="stylesheet" >
     <script src="/assets_admin/js/chart-master/Chart.js"></script>
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -37,7 +40,7 @@
       TOP BAR CONTENT & NOTIFICATIONS
       *********************************************************************************************************************************************************** -->
       <!--header start-->
-      <header class="header black-bg">
+      	<header class="header black-bg">
               <div class="sidebar-toggle-box">
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>

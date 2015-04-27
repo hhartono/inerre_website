@@ -238,16 +238,14 @@ class Administrator extends CI_Controller {
 		redirect('administrator/messagecenter');
 	}
 
-	/*function tosha1(){
-		echo sha1('INERREInteriorBandung');
-	}*/
-
 	public function product()
 	{
 		$data = array(
 			'title' => 'INERRE Interior - Administrator / Product',
 			'title_page' => 'All Products',
-			'username' => $this->tank_auth->get_username()
+			'username' => $this->tank_auth->get_username(),
+			'productactive' => 'active',
+			'loadAllBarang' => $this->modelproduct->loadAllBarang()
 		);
 		$this->load->view('administrator/product', $data);
 	}
@@ -258,10 +256,37 @@ class Administrator extends CI_Controller {
 			'title' => 'INERRE Interior - Administrator / Add Product',
 			'title_page' => 'Add Product',
 			'username' => $this->tank_auth->get_username(),
+			'productaddactive' => 'active',
 			'loadStatusBarang' => $this->modelproduct->loadStatusBarang()
 		);
 		$this->load->view('administrator/productadd', $data);
 	}
+
+	public function productaddsubmit()
+	{
+		/*
+		 * belum pakai validasi
+		 */
+		$nama = $this->input->post('nama');
+		$kode = $this->input->post('kode');
+		$stock = $this->input->post('stock');
+		$hargabeli = $this->input->post('harga_beli');
+		$hargajual = $this->input->post('harga_jual');
+		$idstatus = $this->input->post('id_status');
+		$this->modelproduct->insertBarang($kode, $nama, $stock, $hargabeli, $hargajual, $idstatus);
+		redirect('administrator/product');
+	}
+
+	/*public function test(){
+		$data = array(
+			'loadAllBarang' => $this->modelproduct->loadAllBarang()
+		);
+		$this->load->view('administrator/test', $data);
+	}*/
+	
+	/*function tosha1(){
+		echo sha1('INERREInteriorBandung');
+	}*/
 
 }
 

@@ -11,20 +11,20 @@
               	  <h5 class="centered"><?php echo ucwords($username);?></h5>
               	  	
                   <li class="mt">
-                      <a class="active" href="/administrator">
+                      <a class="" href="/administrator">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
                   </li>
 
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a class="<?php echo (isset($productactive)||isset($productaddactive))? 'active':'';?>" href="javascript:;" >
                           <i class="fa fa-th"></i>
                           <span>Product</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="product">All Products</a></li>
-                          <li><a  href="productadd">Add Product</a></li>
+                          <li><a class="" href="product">All Products</a></li>
+                          <li><a class="" href="productadd">Add Product</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">

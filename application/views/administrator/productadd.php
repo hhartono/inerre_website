@@ -13,7 +13,7 @@
           	<div class="row mt">
           		<div class="col-lg-12">
                   <div class="form-panel">
-                      <form class="form-horizontal style-form" method="get">
+                      <form class="form-horizontal style-form" method="POST" action="/administrator/productaddsubmit">
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Barang</label>
                               <div class="col-sm-10">
@@ -50,7 +50,7 @@
 								<label for="status" class="col-sm-2 col-sm-2 control-label">Status Barang</label>
 								<div class="col-sm-10">
 										
-									<select class="form-control">
+									<select name="id_status" class="form-control">
 									<?php if(isset($loadStatusBarang)){
 										foreach ($loadStatusBarang as $lsb){
 									?>

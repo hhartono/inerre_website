@@ -2,35 +2,19 @@
 
 class Modelproduct extends CI_Model {
 
-	public function loadMessageAll($tgl)
-	{
-		$this->db->select('*');
-		$this->db->order_by('date_in','ASC');
-		if($tgl!=""){
-			$this->db->like('date_in', $tgl);	
-		}
-		$query = $this->db->get('contact');
-		// $query = $this->db->query('
-		// 		SELECT c.*
-		// 		FROM contact c
-		// 		ORDER BY c.date_in ASC
-		// 		WHERE c.date_in LIKE = "$tgl"
-		// 	');
+	public function loadAllBarang(){
+		$query = $this->db->query("
+				SELECT b.*, bs.barang_status
+				FROM barang b, barang_status bs 
+				WHERE bs.id = b.id_status
+				ORDER BY b.id DESC
+			");
 		if($query->num_rows() > 0){
 			foreach ($query->result() as $row) {
 				$data[] = $row;
 			}
 			return $data;
 		}
-	}
-
-
-	public function updateStatusMessage($id){
-		$data = array(
-			'status' => 'replied'
-			);
-		$this->db->where('id', $id);
-		$this->db->update('contact', $data);
 	}
 
 	public function loadStatusBarang(){
@@ -47,6 +31,17 @@ class Modelproduct extends CI_Model {
 		}
 	}
 
+	public function insertBarang($kode_barang, $nama_barang, $stock_barang, $harga_beli, $harga_jual, $id_status){
+		$field = array(
+			'kode_barang' => $kode_barang,
+			'nama_barang' => $nama_barang,
+			'stock_barang' => $stock_barang,
+			'harga_beli' => $harga_beli,
+			'harga_jual' => $harga_jual,
+			'id_status' => $id_status
+		);
+		$this->db->insert('barang', $field);
+	}
 
 }
 
