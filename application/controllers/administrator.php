@@ -9,8 +9,7 @@ class Administrator extends CI_Controller {
 		$this->load->helper(array('email', 'url'));
 		$this->load->library(array('email', 'tank_auth'));
 		$this->is_logged_in();
-		$this->load->model(array('modelmessagecenter'));
-		
+		$this->load->model(array('modelmessagecenter', 'modelproduct'));
 	}
 
 	public function index()
@@ -242,6 +241,27 @@ class Administrator extends CI_Controller {
 	/*function tosha1(){
 		echo sha1('INERREInteriorBandung');
 	}*/
+
+	public function product()
+	{
+		$data = array(
+			'title' => 'INERRE Interior - Administrator / Product',
+			'title_page' => 'All Products',
+			'username' => $this->tank_auth->get_username()
+		);
+		$this->load->view('administrator/product', $data);
+	}
+
+	public function productadd()
+	{
+		$data = array(
+			'title' => 'INERRE Interior - Administrator / Add Product',
+			'title_page' => 'Add Product',
+			'username' => $this->tank_auth->get_username(),
+			'loadStatusBarang' => $this->modelproduct->loadStatusBarang()
+		);
+		$this->load->view('administrator/productadd', $data);
+	}
 
 }
 
