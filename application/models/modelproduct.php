@@ -2,7 +2,8 @@
 
 class Modelproduct extends CI_Model {
 
-	public function loadAllBarang(){
+	public function loadAllBarang()
+	{
 		$query = $this->db->query("
 				SELECT b.*, bs.barang_status
 				FROM barang b, barang_status bs 
@@ -17,7 +18,21 @@ class Modelproduct extends CI_Model {
 		}
 	}
 
-	public function loadStatusBarang(){
+	public function loadBarang($id)
+	{
+		$query = $this->db->query("
+				SELECT b.nama_barang, b.kode_barang
+				FROM barang b
+				WHERE b.id = $id
+			");
+		if($query->num_rows()>0){
+			$data = $query->row();
+		}
+		return $data;
+	}
+
+	public function loadStatusBarang()
+	{
 		$query = $this->db->query("
 				SELECT bs.*
 				FROM barang_status bs
@@ -31,7 +46,8 @@ class Modelproduct extends CI_Model {
 		}
 	}
 
-	public function insertBarang($kode_barang, $nama_barang, $stock_barang, $harga_beli, $harga_jual, $id_status){
+	public function insertBarang($kode_barang, $nama_barang, $stock_barang, $harga_beli, $harga_jual, $id_status)
+	{
 		$field = array(
 			'kode_barang' => $kode_barang,
 			'nama_barang' => $nama_barang,
@@ -41,6 +57,25 @@ class Modelproduct extends CI_Model {
 			'id_status' => $id_status
 		);
 		$this->db->insert('barang', $field);
+	}
+
+	public function deleteBarang($idbarang)
+	{
+		return $this->db->delete('barang', array('id'=>$idbarang));
+	}
+
+	public function updateBarang($idbarang, $kode, $nama, $stock, $hargabeli, $hargajual, $status)
+	{
+		$field = array(
+			'kode_barang' => $kode,
+			'nama_barang' => $nama,
+			'stock_barang' => $stock,
+			'harga_beli' => $hargabeli,
+			'harga_jual' => $hargajual,
+			'id_status' => $status
+		);
+		$this->db->where('id', $idbarang);
+		$this->db->update('barang', $field);
 	}
 
 }

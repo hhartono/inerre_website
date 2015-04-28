@@ -7,18 +7,19 @@ class Administrator extends CI_Controller {
 		parent::__construct();
 		$this->load->database();
 		$this->load->helper(array('email', 'url'));
-		$this->load->library(array('email', 'tank_auth'));
+		$this->load->library(array('email', 'tank_auth', 'session'));
 		$this->is_logged_in();
 		$this->load->model(array('modelmessagecenter', 'modelproduct'));
 	}
 
 	public function index()
 	{	
-		/*$data = array(
-			'title' => 'Inerre Interior - Administrator Main',
+		$data = array(
+			'title' => 'INERRE Interior - Administrator / Message Center',
+			'dashboardactive' => 'active',
+			'username' => $this->tank_auth->get_username()
 		);
-		$this->load->view('administrator/administrator', $data);*/
-		redirect('administrator/messagecenter/');	
+		$this->load->view('administrator/dashboard', $data);
 	}
 
 	/*
@@ -37,7 +38,7 @@ class Administrator extends CI_Controller {
 			//'loadmessage' => $this->modelmessagecenter->loadMessageAll()
 			'username' => $this->tank_auth->get_username()
 		);
-		$this->load->view('administrator/messagecenter', $data);
+		$this->load->view('administrator/message_center', $data);
 	}
 
 	public function loadAllMessage()
@@ -245,7 +246,8 @@ class Administrator extends CI_Controller {
 			'title_page' => 'All Products',
 			'username' => $this->tank_auth->get_username(),
 			'productactive' => 'active',
-			'loadAllBarang' => $this->modelproduct->loadAllBarang()
+			'loadAllBarang' => $this->modelproduct->loadAllBarang(),
+			'loadStatusBarang' => json_encode($this->modelproduct->loadStatusBarang())
 		);
 		$this->load->view('administrator/product', $data);
 	}
@@ -259,7 +261,7 @@ class Administrator extends CI_Controller {
 			'productaddactive' => 'active',
 			'loadStatusBarang' => $this->modelproduct->loadStatusBarang()
 		);
-		$this->load->view('administrator/productadd', $data);
+		$this->load->view('administrator/product_add', $data);
 	}
 
 	public function productaddsubmit()
@@ -274,14 +276,42 @@ class Administrator extends CI_Controller {
 		$hargajual = $this->input->post('harga_jual');
 		$idstatus = $this->input->post('id_status');
 		$this->modelproduct->insertBarang($kode, $nama, $stock, $hargabeli, $hargajual, $idstatus);
+		$this->session->set_flashdata('message', '<div class="alert alert-success">Data barang '.ucwords($nama).'('.$kode.') berhasil ditambahkan!</div>');
+		redirect('administrator/product');
+	}
+
+	public function productdelete($id)
+	{
+		$idbarang = $id;
+		$barang = $this->modelproduct->loadBarang($idbarang);
+		$namabarang = $barang->nama_barang;
+		$kodebarang = $barang->kode_barang;
+		$this->modelproduct->deleteBarang($idbarang);
+		$this->session->set_flashdata('message', '<div class="alert alert-success">'.ucwords($namabarang).'('. $kodebarang .')'.'telah berhasil dihapus!</div>');
+		redirect('administrator/product');
+	}
+
+	public function productupdatesubmit()
+	{
+		$idbarang = $this->input->post('idbarang');
+		$nama = $this->input->post('nama');
+		$kode = $this->input->post('kode');
+		$stock = $this->input->post('stock');
+		$hargabeli = $this->input->post('harga_beli');
+		$hargajual = $this->input->post('harga_jual');
+		$status = $this->input->post('status');
+		$this->modelproduct->updateBarang($idbarang, $kode, $nama, $stock, $hargabeli, $hargajual, $status);
+		$this->session->set_flashdata('message', '<div class="alert alert-success">Data barang '.ucwords($nama).'('.$kode.') berhasil diubah dan disimpan!</div>');
 		redirect('administrator/product');
 	}
 
 	/*public function test(){
-		$data = array(
-			'loadAllBarang' => $this->modelproduct->loadAllBarang()
-		);
-		$this->load->view('administrator/test', $data);
+		// $data = array(
+			// 'loadAllBarang' => $this->modelproduct->loadAllBarang()
+		// );
+		// $this->load->view('administrator/test', $data);
+		$loadStatusBarang = $this->modelproduct->loadStatusBarang();
+		echo json_encode($loadStatusBarang);
 	}*/
 	
 	/*function tosha1(){

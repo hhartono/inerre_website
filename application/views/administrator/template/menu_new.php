@@ -7,11 +7,11 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="/assets_admin/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="#"><img src="/assets_admin/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered"><?php echo ucwords($username);?></h5>
               	  	
                   <li class="mt">
-                      <a class="" href="/administrator">
+                      <a class="<?php echo (isset($dashboardactive))? 'active' : '';?>" href="/administrator">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
@@ -23,12 +23,12 @@
                           <span>Product</span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="product">All Products</a></li>
-                          <li><a class="" href="productadd">Add Product</a></li>
+                          <li><a class="" href="/administrator/product">All Products</a></li>
+                          <li><a class="" href="/administrator/productadd">Add Product</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a href="messagecenter" >
+                      <a href="/administrator/messagecenter" >
                           <i class="fa fa-envelope"></i>
                           <span>Message Center</span>
                       </a>

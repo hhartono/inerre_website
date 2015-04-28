@@ -50,11 +50,11 @@
 								<label for="status" class="col-sm-2 col-sm-2 control-label">Status Barang</label>
 								<div class="col-sm-10">
 										
-									<select name="id_status" class="form-control">
+									<select id="status" name="id_status" class="form-control">
 									<?php if(isset($loadStatusBarang)){
 										foreach ($loadStatusBarang as $lsb){
 									?>
-											<option value="<?php echo $lsb->id;?>"><?php echo $lsb->barang_status;?></option>
+											<option value="<?php echo $lsb->id;?>"><?php echo ucwords($lsb->barang_status);?></option>
 									<?php
 										}
 									}else{
