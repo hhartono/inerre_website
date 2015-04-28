@@ -28,7 +28,7 @@
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a href="/administrator/messagecenter" >
+                      <a class="<?php echo (isset($messageactive))? 'active' : '';?>" href="/administrator/messagecenter" >
                           <i class="fa fa-envelope"></i>
                           <span>Message Center</span>
                       </a>

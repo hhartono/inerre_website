@@ -35,12 +35,12 @@ class Administrator extends CI_Controller {
 	{	
 		$data = array(
 			'title' => 'INERRE Interior - Administrator / Message Center',
-			//'loadmessage' => $this->modelmessagecenter->loadMessageAll()
+			'messageactive' => 'active',
 			'username' => $this->tank_auth->get_username()
 		);
 		$this->load->view('administrator/message_center', $data);
 	}
-
+	
 	public function loadAllMessage()
 	{
 		

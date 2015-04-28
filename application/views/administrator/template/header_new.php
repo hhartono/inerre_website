@@ -20,12 +20,11 @@
     <!-- Custom styles for this template -->
     <link href="/assets_admin/css/style.css" rel="stylesheet">
     <link href="/assets_admin/css/style-responsive.css" rel="stylesheet">
-
     <link href="/assets_admin/css/table-responsive.css" rel="stylesheet">
-
     <link href="/assets_admin/css/jquery.dataTables.min.css" rel="stylesheet" >
+    <link href="/assets_admin/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
     <script src="/assets_admin/js/chart-master/Chart.js"></script>
-    
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -36,6 +35,9 @@
         .content-panel{
             padding-left:20px;
             padding-right:20px;
+        }
+        .dataTables_messagefil, .dataTables_tgl{
+            float:left;
         }
     </style>
   </head>

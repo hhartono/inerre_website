@@ -1,35 +1,25 @@
-<?php
-	// load header
-	$this->load->view('administrator/template/header_new');
-	// load menu / sidebar
-	$this->load->view('administrator/template/menu_new');
-?>	
-	 	<!-- **********************************************************************************************************************************************************
-      	MAIN CONTENT
-      	*********************************************************************************************************************************************************** -->
-      	<!--main content start-->
-      	<section id="main-content">
-          <section class="wrapper site-min-height">
-          	<h3><i class="fa fa-angle-right"></i> Message Center</h3>
-          	<div class="row mt">
-          		<div class="col-lg-12">
-          			<h3 id="title-page"></h1><hr>
-          		</div>
-          		<div class="col-lg-12">
-          			<div id="datamessage">
-					<!-- load data here -->
-					</div>
-          		</div>
-          	</div>
-			
-		</section><! --/wrapper -->
-      	</section><!-- /MAIN CONTENT -->
-		
+<?php 
+	$this->load->view('administrator/template/header');
+?>
+	<!-- Section -->
+        <section class="small-section bg-dark-lighter pt-30 pb-30">
+            <div class="relative container align-left">      
+                <div class="row">        
+                    <div class="col-md-12">
+                        <h1 id="title-page" class="hs-line-11 font-alt mb-0"></h1>
+                    </div>
+                </div>    
+            </div>
+        </section>
+    <!-- End Section -->
 	<div class="container" style="padding-top:20px;">
 		<div class="row">
 			<div class="col-md-12">
-				
+				<div id="datamessage">
+					<!-- load data here -->
+				</div>
 			</div>
+
 		</div>
 	</div>
 	
@@ -74,8 +64,6 @@
 		</div>
 	</div>
 	<!-- modal -->
-
-<?php
-	// load footer
-	$this->load->view('administrator/template/footer_new');
+<?php 
+	$this->load->view('administrator/template/footer');
 ?>
