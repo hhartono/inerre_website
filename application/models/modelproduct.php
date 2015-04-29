@@ -78,6 +78,70 @@ class Modelproduct extends CI_Model {
 		$this->db->update('barang', $field);
 	}
 
+	public function insertKategori($kategori, $kodekategori)
+	{
+		$field = array(
+			'barang_kategori' => $kategori,
+			'kategori_kode' => $kodekategori
+		);
+		$this->db->insert('barang_kategori', $field);
+	}
+
+	public function loadAllKategori()
+	{
+		$query = $this->db->query("
+				SELECT bk.*
+				FROM barang_kategori bk
+				ORDER BY bk.id DESC
+			");
+		if($query->num_rows()>0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
+	public function cekKategoriKode($kode)
+	{
+		$query = $this->db->query("
+				SELECT bk.*
+				FROM barang_kategori bk
+				WHERE bk.kategori_kode = '$kode'
+		");
+		/*if($query->num_rows()>0){
+			$data = $query->row();
+		}*/
+		return $query;
+	}
+
+	public function cekKategoriNama($kategori)
+	{
+		$query = $this->db->query("
+				SELECT bk.*
+				FROM barang_kategori bk
+				WHERE bk.barang_kategori = '$kategori'
+		");
+		/*if($query->num_rows()>0){
+			$data = $query->row();
+		}*/
+		return $query;
+	}
+
+	public function loadKategoriNama($kategori)
+	{
+		$query = $this->db->query("
+				SELECT bk.*
+				FROM barang_kategori bk
+				WHERE bk.barang_kategori = '$kategori'
+		");
+		if($query->num_rows()>0){
+			$data = $query->row();
+			return $data;
+		}
+		
+	}
+
 }
 
 /* End of file modelproduct.php */

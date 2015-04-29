@@ -12,39 +12,39 @@
           	<!-- BASIC FORM ELELEMNTS -->
           	<div class="row mt">
           		<div class="col-lg-12">
-                  <div class="form-panel">
-                      <form class="form-horizontal style-form" method="POST" action="/administrator/productaddsubmit">
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Barang</label>
-                              <div class="col-sm-10">
-                                  <input type="text" name="nama" class="form-control">
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Kode</label>
-                              <div class="col-sm-10">
-                                  <input type="text" name="kode" class="form-control">
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Stock</label>
-                              <div class="col-sm-10">
-                                  <input type="text" name="stock" class="form-control">
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Harga Beli</label>
-                              <div class="col-sm-10">
-                                  <input type="text" name="harga_beli" class="form-control" placeholder="Rp.">
-                                  <span class="help-block">Jika barang titip jual, isi harga beli dengan 0</span>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Harga Jual</label>
-                              <div class="col-sm-10">
-                                  <input type="text" name="harga_jual" class="form-control"  placeholder="Rp.">
-                              </div>
-                          </div>
+                    <div class="form-panel">
+                        <form class="form-horizontal style-form" method="POST" action="/administrator/productaddsubmit">
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Barang</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="nama" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Kode</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="kode" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Stock</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="stock" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Harga Beli</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="harga_beli" class="form-control" placeholder="Rp.">
+                                    <span class="help-block">Jika barang titip jual, isi harga beli dengan 0</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Harga Jual</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="harga_jual" class="form-control"  placeholder="Rp.">
+                                </div>
+                            </div>
 
 							<div class="form-group">
 								<label for="status" class="col-sm-2 col-sm-2 control-label">Status Barang</label>

@@ -7,15 +7,18 @@ class Administrator extends CI_Controller {
 		parent::__construct();
 		$this->load->database();
 		$this->load->helper(array('email', 'url'));
-		$this->load->library(array('email', 'tank_auth', 'session'));
+		$this->load->library(array('email', 'tank_auth', 'session', 'form_validation'));
 		$this->is_logged_in();
 		$this->load->model(array('modelmessagecenter', 'modelproduct'));
 	}
 
+	/*
+	 * main (index) administrator
+	 */
 	public function index()
 	{	
 		$data = array(
-			'title' => 'INERRE Interior - Administrator / Message Center',
+			'title' => 'INERRE Interior - Administrator / Dashboard',
 			'dashboardactive' => 'active',
 			'username' => $this->tank_auth->get_username()
 		);
@@ -25,12 +28,16 @@ class Administrator extends CI_Controller {
 	/*
 	 * check if user is logged in
 	 */
-	public function is_logged_in(){
+	public function is_logged_in()
+	{
 		if(!$this->tank_auth->is_logged_in()){
 			redirect('/auth/login');
 		}
 	}
 
+	/*
+	 * message center (contact form)
+	 */
 	public function messagecenter()
 	{	
 		$data = array(
@@ -40,7 +47,11 @@ class Administrator extends CI_Controller {
 		);
 		$this->load->view('administrator/message_center', $data);
 	}
-	
+
+	/*
+	 * AJAX response
+	 * load all message (message center)
+	 */
 	public function loadAllMessage()
 	{
 		
@@ -90,6 +101,10 @@ class Administrator extends CI_Controller {
 		}
 	}
 
+	/*
+	 * AJAX response
+	 * load unreplied message (message center)
+	 */
 	public function loadUnrepliedMessage()
 	{
 		$status = 'unreplied';
@@ -124,7 +139,6 @@ class Administrator extends CI_Controller {
 				}
 			echo '</tbody>
 				</table>';
-			
 		}else{
 			echo '<table id="tablemessage" class="display">
 				<thead>
@@ -139,9 +153,12 @@ class Administrator extends CI_Controller {
 				</tbody>
 				</table>';
 		}
-
 	}
 
+	/*
+	 * AJAX response
+	 * load replied message (message center)
+	 */
 	public function loadRepliedMessage()
 	{
 		$status = 'replied';
@@ -190,6 +207,9 @@ class Administrator extends CI_Controller {
 		}
 	}
 	
+	/* 
+	 * sending mail (reply message in message center)
+	 */
 	public function sendingmail()
 	{
 		/*$configsmtpgmail = array(
@@ -239,6 +259,9 @@ class Administrator extends CI_Controller {
 		redirect('administrator/messagecenter');
 	}
 
+	/*
+	 * product list controller
+	 */
 	public function product()
 	{
 		$data = array(
@@ -252,6 +275,9 @@ class Administrator extends CI_Controller {
 		$this->load->view('administrator/product', $data);
 	}
 
+	/*
+	 * add product form 
+	 */
 	public function productadd()
 	{
 		$data = array(
@@ -264,11 +290,38 @@ class Administrator extends CI_Controller {
 		$this->load->view('administrator/product_add', $data);
 	}
 
+	/*
+	 * add product process submit
+	 */
 	public function productaddsubmit()
 	{
+		// configuration form validation
 		/*
-		 * belum pakai validasi
-		 */
+		$configvalidation = array(
+				array(
+					'field' => 'nama',
+					'label' => 'Nama barang',
+					'rules' => 'required'
+					),
+				array(
+					'field' => 'kode',
+					'label' => 'Kode barang',
+					'rules' => 'required'
+					),
+				array(
+					'field' => 'stock',
+					'label' => 'Stock',
+					'rules' => 'required'
+					)
+			);
+		$this->form_validation->set_rules($configvalidation);
+		if($this->form_validation->run() == FALSE){
+			
+		}else{
+	
+		}
+		*/
+
 		$nama = $this->input->post('nama');
 		$kode = $this->input->post('kode');
 		$stock = $this->input->post('stock');
@@ -280,6 +333,9 @@ class Administrator extends CI_Controller {
 		redirect('administrator/product');
 	}
 
+	/*
+	 * product delete process
+	 */
 	public function productdelete($id)
 	{
 		$idbarang = $id;
@@ -291,6 +347,9 @@ class Administrator extends CI_Controller {
 		redirect('administrator/product');
 	}
 
+	/*
+	 * product update process submit
+	 */
 	public function productupdatesubmit()
 	{
 		$idbarang = $this->input->post('idbarang');
@@ -303,6 +362,74 @@ class Administrator extends CI_Controller {
 		$this->modelproduct->updateBarang($idbarang, $kode, $nama, $stock, $hargabeli, $hargajual, $status);
 		$this->session->set_flashdata('message', '<div class="alert alert-success">Data barang '.ucwords($nama).'('.$kode.') berhasil diubah dan disimpan!</div>');
 		redirect('administrator/product');
+	}
+
+	/*
+	 * add category of product
+	 */
+	public function categoryadd()
+	{
+		$data = array(
+			'title' => 'INERRE Interior - Administrator / Add Category',
+			'title_page' => 'Category',
+			'username' => $this->tank_auth->get_username(),
+			'productactive' => 'active'
+		);
+		$this->load->view('administrator/category_add', $data);
+	}
+
+	public function loadcategory()
+	{
+		$category = $this->modelproduct->loadAllKategori();
+		$output = json_encode($category);
+		die($output);
+	}
+
+	public function categoryaddsubmit()
+	{
+		$kategori = $this->input->post('barang_kategori');
+		$kodekategori = $this->input->post('kategori_kode');
+
+		if($_POST){
+			//check if its an ajax request, exit if not
+		    if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest'){
+				//exit script outputting json data
+				$output = json_encode(
+				array(
+					'type'=> 'error', 
+					'text' => 'Request must come from Ajax'
+				));
+				die($output);
+		    } 
+		    if(!isset($kategori) || !isset($kodekategori)){
+				$output = json_encode(array('type'=>'error', 'text' => 'Tidak boleh kosong'));
+				die($output);
+			}
+			if(strlen($kodekategori) != 3){
+				$output = json_encode(array('type'=>'error', 'text' => 'Kode kategori tidak boleh kurang atau lebih dari 3 huruf'));
+				die($output);
+			}
+			if(strlen($kodekategori) == 3){
+				$cekkode = $this->modelproduct->cekKategoriKode($kodekategori);
+				$cekkategori = $this->modelproduct->cekKategoriNama($kategori);
+				
+
+				if($cekkategori->num_rows() > 0){
+					$output = json_encode(array('type'=>'error', 'text' => 'Kategori yang dimasukkan sudah ada'));
+					die($output);
+				}
+				if($cekkode->num_rows() > 0){
+					$output = json_encode(array('type'=>'error', 'text' => 'Kode kategori yang dimasukkan sudah ada'));
+					die($output);
+				}
+				if(($cekkategori->num_rows()==0) && ($cekkode->num_rows()==0)){
+					$this->modelproduct->insertKategori($kategori, $kodekategori);
+					$loadkategori = $this->modelproduct->loadKategoriNama($kategori);
+					$output = json_encode(array('type'=>'message', 'text' => 'Kategori telah tersimpan.','datainsert' => array('id'=> $loadkategori->id ,'kategori' => $kategori, 'kode' => $kodekategori)));
+					die($output);
+				}
+			}
+		}
 	}
 
 	/*public function test(){

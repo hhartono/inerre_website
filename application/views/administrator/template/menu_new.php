@@ -25,6 +25,7 @@
                       <ul class="sub">
                           <li><a class="" href="/administrator/product">All Products</a></li>
                           <li><a class="" href="/administrator/productadd">Add Product</a></li>
+                          <li><a class="" href="/administrator/categoryadd">Add Category</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">

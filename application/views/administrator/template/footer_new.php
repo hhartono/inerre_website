@@ -36,18 +36,33 @@
 	<script type="text/javascript" src="/assets_admin/js/form-component.js"></script>
     <script type="text/javascript" src="/assets_admin/js/moment.js"></script>
     <script type="text/javascript" src="/assets_admin/js/bootstrap-datetimepicker.min.js"></script>
-  <script>
+    <script>
         /*//custom select box
         $(function(){
-        $('select.styled').customSelect();
+            $('select.styled').customSelect();
         });
         */
-        $('document').ready(function(){
+        $(document).ready(function(){
             $('#tableproduct').DataTable();
-            loadAll();
+
+
+        <?php 
+            $uridua = $this->uri->segment(2);
+            if($uridua=='messagecenter'){
+        ?>
+                // call loadAll for load all messages
+                loadAll();
+        <?php
+            }
+        ?>
+            loadCategory();
+            // call submitCategory function
+            submitCategory();
+            
         });
+
         /*
-         *
+         * modal for view product
          */
         $('#viewModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget)// Button that triggered the modal
@@ -65,6 +80,9 @@
             modal.find('.modal-body table tr td#jual-table').text('Rp. ' +hargajual)
         });
 
+        /*
+         * modals for edit product
+         */
         $('#editModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget)// Button that triggered the modal
             var idbarang = button.data('idbarang')
@@ -95,6 +113,9 @@
             })
         });
       
+        /*
+         * modal for delete product
+         */
         $('#deleteModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget)// Button that triggered the modal
             var kode = button.data('kode')
@@ -106,6 +127,9 @@
             modal.find('.modal-footer a#deletelink').attr("href", 'productdelete/'+idbarang)
         });
 
+        /*
+         * modal for reply message (message center)
+         */
         $('#replyModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget); // Button that triggered the modal
             var id = button.data('id');
@@ -150,6 +174,9 @@
             });
         }
 
+        /*
+         * load all messages (message center)
+         */
         function loadAll(tgl){
             var tglparams;
             if(tgl==null){
@@ -167,7 +194,10 @@
             });
             e.preventDefault();
         }
-            
+        
+        /*
+         * load message with status (unreplied, replied)
+         */
         function loadMessageStatus(){
             var messageoption = $("#statusmessageoption").val();
             var tgl = $("input#tgl").val();
@@ -196,16 +226,99 @@
                 loadAll(tgl);
             }
         }
-
         
-        
-  </script>
-        <!-- BACKSTRETCH -->
-        <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
-        <script type="text/javascript" src="/assets_admin/js/jquery.backstretch.min.js"></script>
-        <script>
-            $.backstretch("assets/img/login-bg.jpg", {speed: 500});
-        </script>
+        function loadCategory(){
+            $.ajax({
+                type: "POST",
+                url:"loadcategory",
+                dataType: "json",
+                success:function(response){
+                    var tablecat = '<section><table id="table-category" class="table table-striped cf display">'+
+                                    '<thead><tr><th>Category</th><th>Code</th><th>Action</th></tr></thead>'+
+                                    '</table></section>';
+                    //var trFirst = '';
+                    $('#data').append(tablecat);
+                    //$('#table-category').after(trFirst);
+                    $('#table-category').append('<tbody></tbody>');
+                    var datatablecat;
+                    $.each(response, function(key, value){
+                        console.log(value.barang_kategori);
+                        datatablecat = '<tr>'+
+                                        '<td>'+ value.barang_kategori +'</td>'+
+                                        '<td>'+ value.kategori_kode +'</td>'+
+                                        '<td><button class="btn btn-primary" data-toggle="modal" data-target="#deletecatModal" data-idcat="'+value.id+'" data-kategori="'+value.barang_kategori+'" data-kode="'+value.kategori_kode+'"><i class="fa fa-trash-o"></i></button></td>'+
+                                        '</tr>';
+                        $('#table-category tbody').append(datatablecat);
+                    });
+                    $('#table-category').DataTable();
+                    
+                }
+            })
+        }
+        /*
+         * submit category
+         */
+        function submitCategory(){
+            $("#submitcategory").click(function(){
+                var kategori = $('input[name=kategori]').val();
+                var kodekategori = $('input[name=kodekategori]').val();
 
+                var proceed = true;
+                if(kategori == ""){
+                    $('input[name=kategori]').css('border-color', '#e41919');
+                    proceed = false;
+                }
+                if(kodekategori == ""){
+                    $('input[name=kodekategori]').css('border-color', '#e41919');
+                    proceed = false;
+                }
+                if(proceed){
+                    $.ajax({
+                        type: "POST",
+                        url:"categoryaddsubmit",
+                        data:{barang_kategori: kategori, kategori_kode: kodekategori},
+                        dataType: "json",
+                        success:function(response){
+                            //console.log(response.type);
+                            if(response.type =='error'){
+                                output = '<div class="alert alert-danger">' + response.text + '</div>';
+                            }else{
+                                //reset values in all input fields
+                                $('input#kategori').val('');
+                                $('input#kodekategori').val('');
+                                //console.log(response);
+                                output = '<div class="alert alert-success">' + response.text + '</div>';
+                                tabledata = '<td>'+ response.datainsert.kategori +'</td>'+
+                                            '<td>'+ response.datainsert.kode +'</td>'+
+                                            '<td><button class="btn btn-primary" data-toggle="modal" data-target="#deletecatModal" data-idcat="'+response.datainsert.id+'" data-kategori="'+response.datainsert.kategori+'" data-kode="'+response.datainsert.kode+'"><i class="fa fa-trash-o"></i></button></td>'
+                                $('#table-category tbody tr:first').before(tabledata);
+                            }
+                            $("#message_result").hide().html(output).slideDown();
+                        }
+                    });
+                }
+                return false;
+            })
+            //reset previously set border colors and hide all message on .keyup()
+            $("input#kategori, input#kodekategori").keyup(function(){
+                $("input#kategori, input#kodekategori").css('border-color', '');
+                $("#message_result").slideUp();
+            });
+        }
+                    /*
+                     * modal for delete category
+                     */
+                    $('#deletecatModal').on('show.bs.modal', function (event) {
+                        var button = $(event.relatedTarget)// Button that triggered the modal
+                        var kode = button.data('kode')
+                        var kategori = button.data('kategori')
+                        var idcat = button.data('idcat')
+                        var modal = $(this)
+                        modal.find('.modal-title').text(kode + ' - ' +kategori)
+                        modal.find('.modal-body h2#h2alert').text('Hapus  ' +kategori+' ( kode: '+kode+' ) ?')
+                        modal.find('.modal-footer a#deletelink').attr("href", 'categorydelete/'+idcat)
+                    });
+        
+    </script>
   </body>
 </html>

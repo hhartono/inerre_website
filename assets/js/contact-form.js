@@ -27,7 +27,7 @@ $(document).ready(function(){
         }
         
         //everything looks good! proceed...
-        if (proceed) {
+        if (proceed) {  
             //data to be sent to server
             post_data = {
                 'userName': user_name,
