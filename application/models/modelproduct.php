@@ -2,6 +2,21 @@
 
 class Modelproduct extends CI_Model {
 
+	/*
+	public function loadAllTableData($table, $wherefield, $wherecondition, $orderby, $order)
+	{
+		$this->db->where($wherefield, $wherecondition);
+		$this->db->order_by($orderby, $order);
+		$query = $this->db->get($table);
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+	*/
+
 	public function loadAllBarang()
 	{
 		$query = $this->db->query("
@@ -27,8 +42,9 @@ class Modelproduct extends CI_Model {
 			");
 		if($query->num_rows()>0){
 			$data = $query->row();
+			return $data;
 		}
-		return $data;
+		
 	}
 
 	public function loadStatusBarang()
@@ -139,7 +155,35 @@ class Modelproduct extends CI_Model {
 			$data = $query->row();
 			return $data;
 		}
-		
+	}
+
+	public function loadKategori($field, $condition)
+	{
+		$this->db->where($field, $condition);
+		$query = $this->db->get('barang_kategori');
+		/*$query = $this->db->query("
+				SELECT bk.*
+				FROM barang_kategori bk
+				WHERE '$field' = '$condition'
+			");*/
+		if($query->num_rows()>0){
+			$data = $query->row();
+			return $data;
+		}
+	}
+
+	public function deleteKategori($id){
+		return $this->db->delete('barang_kategori', array('id'=>$id));
+	}
+
+	public function updateKategori($id, $kategori, $kode)
+	{
+		$field = array(
+			'barang_kategori' => $kategori,
+			'kategori_kode' => $kode
+		);
+		$this->db->where('id', $id);
+		$this->db->update('barang_kategori', $field);
 	}
 
 }

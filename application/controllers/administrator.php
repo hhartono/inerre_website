@@ -432,6 +432,89 @@ class Administrator extends CI_Controller {
 		}
 	}
 
+	public function categoryupdatesubmit()
+	{
+		$idcat = $this->input->post('idcat');
+		$kategori = $this->input->post('kategori_edit');
+		$kodekategori = $this->input->post('kode_edit');
+		if($kategori=="" || $kodekategori==""){
+			$this->session->set_flashdata('message', '<div class="alert alert-success">Tidak boleh kosong!</div>');
+			redirect('administrator/categoryadd');
+		}
+		if(strlen($kodekategori) != 3){
+			$this->session->set_flashdata('message', '<div class="alert alert-success">Kode kategori tidak boleh kurang atau lebih dari 3 huruf!</div>');
+			redirect('administrator/categoryadd');
+		}
+		if(strlen($kodekategori) == 3){
+			$this->modelproduct->updateKategori($idcat, $kategori, $kodekategori);
+			$this->session->set_flashdata('message', '<div class="alert alert-success">Kategori berhasil diubah dan disimpan!</div>');
+			redirect('administrator/categoryadd');
+			
+		}
+	}
+
+	public function categorydelete($id)
+	{
+		$idcat = $id;
+		$tabelkategori = $this->modelproduct->loadKategori('id', $idcat);
+		$kategori = $tabelkategori->barang_kategori;
+		$kode = $tabelkategori->kategori_kode;
+		$this->modelproduct->deleteKategori($idcat);
+		$this->session->set_flashdata('message', '<div class="alert alert-success">'.ucwords($kategori).' ('. $kode .')'.' telah berhasil dihapus!</div>');
+		redirect('administrator/categoryadd');
+	}
+
+	/*
+	public function categoryupdatesubmit()
+	{
+		$idcat = $this->input->post('idcat');
+		$kategori = $this->input->post('barang_kategori');
+		$kodekategori = $this->input->post('kategori_kode');
+
+		if($_POST){
+			//check if its an ajax request, exit if not
+		    if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest'){
+				//exit script outputting json data
+				$output = json_encode(
+				array(
+					'type'=> 'error', 
+					'text' => 'Request must come from Ajax'
+				));
+				die($output);
+		    } 
+		    if(!isset($kategori) || !isset($kodekategori)){
+				$output = json_encode(array('type'=>'error', 'text' => 'Tidak boleh kosong'));
+				die($output);
+			}
+			if(strlen($kodekategori) != 3){
+				$output = json_encode(array('type'=>'error', 'text' => 'Kode kategori tidak boleh kurang atau lebih dari 3 huruf'));
+				die($output);
+			}
+			if(strlen($kodekategori) == 3){
+				$cekkode = $this->modelproduct->cekKategoriKode($kodekategori);
+				$cekkategori = $this->modelproduct->cekKategoriNama($kategori);
+				
+
+				if($cekkategori->num_rows() > 0){
+					$output = json_encode(array('type'=>'error', 'text' => 'Kategori yang dimasukkan sudah ada'));
+					die($output);
+				}
+				if($cekkode->num_rows() > 0){
+					$output = json_encode(array('type'=>'error', 'text' => 'Kode kategori yang dimasukkan sudah ada'));
+					die($output);
+				}
+				if(($cekkategori->num_rows()==0) && ($cekkode->num_rows()==0)){
+					$this->modelproduct->updateKategori($id, $kategori, $kodekategori);
+					$loadkategori = $this->modelproduct->loadKategoriNama($kategori);
+					$output = json_encode(array('type'=>'message', 'text' => 'Kategori yang diubah telah tersimpan.','datainsert' => array('id'=> $loadkategori->id ,'kategori' => $kategori, 'kode' => $kodekategori)));
+					die($output);
+				}
+			}
+		}
+	}
+*/
+	
+
 	/*public function test(){
 		// $data = array(
 			// 'loadAllBarang' => $this->modelproduct->loadAllBarang()

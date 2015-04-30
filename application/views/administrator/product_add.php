@@ -21,6 +21,10 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="" class="col-sm-2 col-sm-2 control-label">Kategori</label>
+                                <div class="col-sm-10"></div>
+                            </div>
+                            <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Kode</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="kode" class="form-control">
