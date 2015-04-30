@@ -20,9 +20,10 @@ class Modelproduct extends CI_Model {
 	public function loadAllBarang()
 	{
 		$query = $this->db->query("
-				SELECT b.*, bs.barang_status
-				FROM barang b, barang_status bs 
+				SELECT b.id AS idbarang, b.kode_barang, b. nama_barang, b.stock_barang, b.harga_beli, b.harga_jual, b.id_status, b.id_kategori, bs.barang_status, bk.id AS idkategori, bk.barang_kategori, bk.kategori_kode
+				FROM barang b, barang_status bs, barang_kategori bk
 				WHERE bs.id = b.id_status
+				AND bk.id = b.id_kategori
 				ORDER BY b.id DESC
 			");
 		if($query->num_rows() > 0){
@@ -62,7 +63,7 @@ class Modelproduct extends CI_Model {
 		}
 	}
 
-	public function insertBarang($kode_barang, $nama_barang, $stock_barang, $harga_beli, $harga_jual, $id_status)
+	public function insertBarang($kode_barang, $nama_barang, $stock_barang, $harga_beli, $harga_jual, $id_status, $id_kategori)
 	{
 		$field = array(
 			'kode_barang' => $kode_barang,
@@ -70,7 +71,8 @@ class Modelproduct extends CI_Model {
 			'stock_barang' => $stock_barang,
 			'harga_beli' => $harga_beli,
 			'harga_jual' => $harga_jual,
-			'id_status' => $id_status
+			'id_status' => $id_status,
+			'id_kategori' => $id_kategori
 		);
 		$this->db->insert('barang', $field);
 	}
@@ -80,7 +82,8 @@ class Modelproduct extends CI_Model {
 		return $this->db->delete('barang', array('id'=>$idbarang));
 	}
 
-	public function updateBarang($idbarang, $kode, $nama, $stock, $hargabeli, $hargajual, $status)
+	//public function updateBarang($idbarang, $kode, $nama, $stock, $hargabeli, $hargajual, $status, $kategoriedit)
+	public function updateBarang($idbarang, $kode, $nama, $stock, $hargabeli, $hargajual, $status, $kategori)
 	{
 		$field = array(
 			'kode_barang' => $kode,
@@ -88,7 +91,8 @@ class Modelproduct extends CI_Model {
 			'stock_barang' => $stock,
 			'harga_beli' => $hargabeli,
 			'harga_jual' => $hargajual,
-			'id_status' => $status
+			'id_status' => $status,
+			'id_kategori' => $kategori
 		);
 		$this->db->where('id', $idbarang);
 		$this->db->update('barang', $field);

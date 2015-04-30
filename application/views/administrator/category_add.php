@@ -23,7 +23,6 @@
                         ?>
                     <!-- FORM CATEGORY -->
                     <div class="col-lg-6">
-                        
                         <div class="form-panel">
                             <form method="POST" class="form-horizontal style-form" >
                                 <div id="message_result"></div>

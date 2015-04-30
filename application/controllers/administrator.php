@@ -270,7 +270,8 @@ class Administrator extends CI_Controller {
 			'username' => $this->tank_auth->get_username(),
 			'productactive' => 'active',
 			'loadAllBarang' => $this->modelproduct->loadAllBarang(),
-			'loadStatusBarang' => json_encode($this->modelproduct->loadStatusBarang())
+			'loadStatusBarang' => json_encode($this->modelproduct->loadStatusBarang()),
+			'loadKategori' => json_encode($this->modelproduct->loadAllKategori())
 		);
 		$this->load->view('administrator/product', $data);
 	}
@@ -329,7 +330,8 @@ class Administrator extends CI_Controller {
 		$hargabeli = $this->input->post('harga_beli');
 		$hargajual = $this->input->post('harga_jual');
 		$idstatus = $this->input->post('id_status');
-		$this->modelproduct->insertBarang($kode, $nama, $stock, $hargabeli, $hargajual, $idstatus);
+		$idkategori = $this->input->post('kategori');
+		$this->modelproduct->insertBarang($kode, $nama, $stock, $hargabeli, $hargajual, $idstatus, $idkategori);
 		$this->session->set_flashdata('message', '<div class="alert alert-success">Data barang '.ucwords($nama).'('.$kode.') berhasil ditambahkan!</div>');
 		redirect('administrator/product');
 	}
@@ -360,7 +362,9 @@ class Administrator extends CI_Controller {
 		$hargabeli = $this->input->post('harga_beli');
 		$hargajual = $this->input->post('harga_jual');
 		$status = $this->input->post('status');
-		$this->modelproduct->updateBarang($idbarang, $kode, $nama, $stock, $hargabeli, $hargajual, $status);
+		$kategoriedit = $this->input->post('kategori-edit');
+		
+		$this->modelproduct->updateBarang($idbarang, $kode, $nama, $stock, $hargabeli, $hargajual, $status, $kategoriedit);
 		$this->session->set_flashdata('message', '<div class="alert alert-success">Data barang '.ucwords($nama).'('.$kode.') berhasil diubah dan disimpan!</div>');
 		redirect('administrator/product');
 	}
