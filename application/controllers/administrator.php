@@ -285,7 +285,8 @@ class Administrator extends CI_Controller {
 			'title_page' => 'Add Product',
 			'username' => $this->tank_auth->get_username(),
 			'productaddactive' => 'active',
-			'loadStatusBarang' => $this->modelproduct->loadStatusBarang()
+			'loadStatusBarang' => $this->modelproduct->loadStatusBarang(),
+			'loadKategori' => $this->modelproduct->loadAllKategori()
 		);
 		$this->load->view('administrator/product_add', $data);
 	}

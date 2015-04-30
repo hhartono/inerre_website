@@ -108,7 +108,7 @@ class Modelproduct extends CI_Model {
 		$query = $this->db->query("
 				SELECT bk.*
 				FROM barang_kategori bk
-				ORDER BY bk.id DESC
+				ORDER BY bk.id ASC
 			");
 		if($query->num_rows()>0){
 			foreach ($query->result() as $row) {

@@ -21,6 +21,7 @@
                             echo '';
                         }
                         ?>
+                    <!-- FORM CATEGORY -->
                     <div class="col-lg-6">
                         
                         <div class="form-panel">
@@ -48,41 +49,44 @@
                             </form>
                         </div>    
                     </div>
+
                     <div class="col-lg-6">
                         <div id="data" class=""></div>
                     </div>
+                    <!-- END FORM CATEGORY -->
                     
                     <!-- MODAL FOR EDIT -->
                     <div class="modal fade" id="editcatModal" tabindex="-1" role="dialog" aria-labelledby="editcatModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
-                            <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                              <h4 class="modal-title" id="editcatModalLabel">Modal title</h4>
-                            </div>
-                            <form action="/administrator/categoryupdatesubmit" method="POST" class="form-horizontal style-form">
-                                <div class="modal-body">
-                                    <div id="message_result_edit"></div>
-                                    <input type="hidden" name="idcat" id="idcat" value="">
-                                    <div class="form-group">
-                                        <label class="col-sm-2 col-sm-2 control-label">Category</label>
-                                          <div class="col-sm-10">
-                                             <input type="text" name="kategori_edit" id="kategori_edit" class="form-control">
-                                          </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 col-sm-2 control-label">Category Code</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" name="kode_edit" id="kode_edit" class="form-control">
-                                            <span class="help-block">Kode harus terdiri dari 3 huruf</span>
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                  <h4 class="modal-title" id="editcatModalLabel">Modal title</h4>
+                                </div>
+                                <form action="/administrator/categoryupdatesubmit" method="POST" class="form-horizontal style-form">
+                                    <div class="modal-body">
+                                        <div id="message_result_edit"></div>
+                                        <input type="hidden" name="idcat" id="idcat" value="">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Category</label>
+                                              <div class="col-sm-10">
+                                                 <input type="text" name="kategori_edit" id="kategori_edit" class="form-control">
+                                              </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Category Code</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="kode_edit" id="kode_edit" class="form-control">
+                                                <span class="help-block">Kode harus terdiri dari 3 huruf</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                  <button type="submit" id="submitupdatecategory" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </form>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                      <button type="submit" id="submitupdatecategory" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>  
                     <!-- END MODAL FOR EDIT ->

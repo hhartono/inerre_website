@@ -22,7 +22,24 @@
                             </div>
                             <div class="form-group">
                                 <label for="" class="col-sm-2 col-sm-2 control-label">Kategori</label>
-                                <div class="col-sm-10"></div>
+                                <div class="col-sm-10">
+                                    <select data-placeholder="Pilih Kategori..." id="kategori-formproduct" name="kategori" class="form-control">
+                                        <option value=""></option>
+                                <?php
+                                    if(isset($loadKategori)){
+                                        foreach ($loadKategori as $lk) {
+                                ?>  
+                                        <option value="<?php echo $lk->id;?>"><?php echo $lk->barang_kategori;?></option>
+                                <?php
+                                        }
+                                    }else{
+                                ?>
+                                        <option value="-">Tidak ada kategori</option>
+                                <?php 
+                                    }
+                                ?>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Kode</label>

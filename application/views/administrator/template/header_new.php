@@ -23,8 +23,9 @@
     <link href="/assets_admin/css/table-responsive.css" rel="stylesheet">
     <link href="/assets_admin/css/jquery.dataTables.min.css" rel="stylesheet" >
     <link href="/assets_admin/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets_admin/css/chosen.min.css">
 
-    <script src="/assets_admin/js/chart-master/Chart.js"></script>
+    <!--script src="/assets_admin/js/chart-master/Chart.js"></script-->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -38,6 +39,21 @@
         }
         .dataTables_messagefil, .dataTables_tgl{
             float:left;
+        }
+        /*
+         * chosen drop list overwrite css 
+         */
+        .chosen-container{
+            font-size:14px !important;
+        }
+        .chosen-container-single .chosen-single{
+            height:34px !important;
+            border-radius:4px !important;
+            border:1px solid #ccc !important;
+            line-height: 32px !important;
+        }
+        .chosen-container-single .chosen-single div{
+            top:6px !important;
         }
     </style>
   </head>

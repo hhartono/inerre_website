@@ -18,7 +18,6 @@
     <script src="/assets_admin/js/jquery.scrollTo.min.js"></script>
     <script src="/assets_admin/js/jquery.nicescroll.js" type="text/javascript"></script>
 
-
     <!--common script for all pages-->
     <script src="/assets_admin/js/common-scripts.js"></script>
     <!--script for this page-->
@@ -36,6 +35,7 @@
 	<script type="text/javascript" src="/assets_admin/js/form-component.js"></script>
     <script type="text/javascript" src="/assets_admin/js/moment.js"></script>
     <script type="text/javascript" src="/assets_admin/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="/assets_admin/js/chosen.jquery.min.js"></script>
     <script>
         /*//custom select box
         $(function(){
@@ -44,8 +44,6 @@
         */
         $(document).ready(function(){
             $('#tableproduct').DataTable();
-
-
         <?php 
             $uridua = $this->uri->segment(2);
             if($uridua=='messagecenter'){
@@ -55,11 +53,11 @@
         <?php
             }
         ?>
-
             loadCategory();
             submitCategory();
-            submitUpdateCategory();
-            
+            $('#kategori-formproduct').chosen({
+                no_results_text: "Kategori yang dicari tidak ada"
+            });
         });
 
         /*
@@ -245,18 +243,22 @@
                     $.each(response, function(key, value){
                         console.log(value.barang_kategori);
                         datatablecat = '<tr>'+
-                                        '<td>'+ value.barang_kategori +'</td>'+
-                                        '<td>'+ value.kategori_kode +'</td>'+
-                                        '<td>'+
-                                            '<div class="btn-group">'+
-                                            '<button class="btn btn-success" data-toggle="modal" data-target="#editcatModal" data-idcat="'+value.id+'" data-kategori="'+value.barang_kategori+'" data-kode="'+value.kategori_kode+'"><i class="fa fa-edit"></i></button>'+
-                                            '<button class="btn btn-primary" data-toggle="modal" data-target="#deletecatModal" data-idcat="'+value.id+'" data-kategori="'+value.barang_kategori+'" data-kode="'+value.kategori_kode+'"><i class="fa fa-trash-o"></i></button>'+
-                                            '</div></td>'+
+                                            '<td>'+ value.barang_kategori +'</td>'+
+                                            '<td>'+ value.kategori_kode +'</td>'+
+                                            '<td>'+
+                                                '<div class="btn-group">'+
+                                                '<button class="btn btn-success" data-toggle="modal" data-target="#editcatModal" data-idcat="'+value.id+'" data-kategori="'+ value.barang_kategori +'" data-kode="'+ value.kategori_kode +'">'+
+                                                    '<i class="fa fa-edit"></i>'+
+                                                '</button>'+
+                                                '<button class="btn btn-primary" data-toggle="modal" data-target="#deletecatModal" data-idcat="'+value.id+'" data-kategori="'+ value.barang_kategori +'" data-kode="'+ value.kategori_kode +'">'+
+                                                    '<i class="fa fa-trash-o"></i>'+
+                                                '</button>'+
+                                                '</div>'+
+                                            '</td>'+
                                         '</tr>';
                         $('#table-category tbody').append(datatablecat);
                     });
                     $('#table-category').DataTable();
-                    
                 }
             })
         }
@@ -295,7 +297,12 @@
                                 output = '<div class="alert alert-success">' + response.text + '</div>';
                                 tabledata = '<td>'+ response.datainsert.kategori +'</td>'+
                                             '<td>'+ response.datainsert.kode +'</td>'+
-                                            '<td><button class="btn btn-primary" data-toggle="modal" data-target="#deletecatModal" data-idcat="'+response.datainsert.id+'" data-kategori="'+response.datainsert.kategori+'" data-kode="'+response.datainsert.kode+'"><i class="fa fa-trash-o"></i></button></td>'
+                                            '<td>'+
+                                                '<div class="btn-group">'+
+                                                '<button class="btn btn-success" data-toggle="modal" data-target="#editcatModal" data-idcat="'+response.datainsert.id+'" data-kategori="'+response.datainsert.kategori+'" data-kode="'+response.datainsert.kode+'"><i class="fa fa-edit"></i></button>'+
+                                                '<button class="btn btn-primary" data-toggle="modal" data-target="#deletecatModal" data-idcat="'+response.datainsert.id+'" data-kategori="'+response.datainsert.kategori+'" data-kode="'+response.datainsert.kode+'"><i class="fa fa-trash-o"></i></button></td>'
+                                                '</div>'+
+                                            '</td>';
                                 $('#table-category tbody tr:first').before(tabledata);
                             }
                             $("#message_result").hide().html(output).slideDown();
@@ -310,56 +317,6 @@
                 $("#message_result").slideUp();
             });
         }
-
-        /*
-         * submit update category
-         */
-        /*function submitUpdateCategory(){
-            $("#submitupdatecategory").click(function(){
-                var idcat = $('input[name="idcat]').val();
-                var kategori = $('input[name=kategori_edit]').val();
-                var kodekategori = $('input[name=kode_edit]').val();
-
-                var proceed = true;
-                if(kategori == ""){
-                    $('input[name=kategori_edit]').css('border-color', '#e41919');
-                    proceed = false;
-                }
-                if(kodekategori == ""){
-                    $('input[name=kode_edit]').css('border-color', '#e41919');
-                    proceed = false;
-                }
-                if(proceed){
-                    $.ajax({
-                        type: "POST",
-                        url:"categoryupdatesubmit",
-                        data:{idcat: idcat, barang_kategori: kategori, kategori_kode: kodekategori},
-                        dataType: "json",
-                        success:function(response){
-                            console.log(response.type);
-                            if(response.type =='error'){
-                                output = '<div class="alert alert-danger">' + response.text + '</div>';
-                            }else{
-                                //reset values in all input fields
-                                $('input#kategori').val('');
-                                $('input#kodekategori').val('');
-                                console.log(response);
-                                output = '<div class="alert alert-success">' + response.text + '</div>';
-                                
-                            }
-                            $("#message_result").hide().html(output).slideDown();
-                        }
-                    });
-                }
-                return false;
-            })
-            //reset previously set border colors and hide all message on .keyup()
-            $("input#kategori_edit, input#kodekategori_edit").keyup(function(){
-                $("input#kategori_edit, input#kodekategori_edit").css('border-color', '');
-                $("#message_result").slideUp();
-            });
-        }*/
-
         /*
          * modals for edit category
          */
@@ -384,7 +341,7 @@
             var idcat = button.data('idcat')
             var modal = $(this)
             modal.find('.modal-title').text(kode + ' - ' +kategori)
-            modal.find('.modal-body h2#h2alert').text('Hapus  ' +kategori+' ( kode: '+kode+' ) ?')
+            modal.find('.modal-body h2#h2alert').text('Hapus ' +kategori+' ( kode: '+kode+' ) ?')
             modal.find('.modal-footer a#deletelink').attr("href", 'categorydelete/'+idcat)
         });
         
