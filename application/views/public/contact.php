@@ -84,17 +84,17 @@
                                     <div class="cf-left-col">
                                         <!-- Name -->
                                         <div class="form-group">
-                                            <input type="text" name="name" id="name" class="input-md round form-control" placeholder="Name" pattern=".{3,100}" required>
+                                            <input type="text" name="name" id="name" class="tolower input-md round form-control" placeholder="Name" pattern=".{3,100}" required>
                                         </div>
                                         <!-- Email -->
                                         <div class="form-group">
-                                            <input type="email" name="email" id="email" class="input-md round form-control" placeholder="Email" pattern=".{5,100}" required>
+                                            <input type="email" name="email" id="email" class="tolower input-md round form-control" placeholder="Email" pattern=".{5,100}" required>
                                         </div>
                                     </div>
                                     <div class="cf-right-col">
                                         <!-- Message -->
                                         <div class="form-group">                                            
-                                            <textarea name="message" id="message" class="input-md round form-control" style="height: 84px;" placeholder="Message"></textarea>
+                                            <textarea name="message" id="message" class="tolower input-md round form-control" style="height: 84px;" placeholder="Message"></textarea>
                                         </div>
                                     </div>
                                 </div>

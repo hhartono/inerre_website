@@ -97,7 +97,7 @@ Section Text:       15px/1.7 "Open Sans", arial, sans-serif;
 /* ==============================
    Common styles
    ============================== */
-  
+.form input[type="text"].tolower{text-transform: none !important;}
 .align-center{ text-align:center !important; }
 .align-left{ text-align:left !important;}
 .align-right{ text-align:right !important; }
@@ -902,7 +902,7 @@ a.btn-mod:focus{
 .form textarea{
 	font-size: 12px;
 	font-weight: 400;
-	text-transform: uppercase !important;
+	text-transform: uppercase;
 	letter-spacing: 1px;
 	color: #777;
 	border-color: rgba(0,0,0, .1);
