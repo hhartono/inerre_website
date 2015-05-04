@@ -116,6 +116,139 @@
     </section>
     <!-- /MAIN CONTENT -->
 
+        <script src="/assets_admin/js/jquery.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            // load all category
+            loadCategory();
+            submitCategory();
+        })
+
+        /*
+         * load all category
+         */
+        function loadCategory(){
+            $.ajax({
+                type: "POST",
+                url:"loadcategory",
+                dataType: "json",
+                success:function(response){
+                    var tablecat = '<section><table id="table-category" class="table table-striped cf display">'+
+                                    '<thead><tr><th>Kategori</th><th>Kode Kategori</th><th>Action</th></tr></thead>'+
+                                    '</table></section>';
+                    //var trFirst = '';
+                    $('#data').append(tablecat);
+                    //$('#table-category').after(trFirst);
+                    $('#table-category').append('<tbody></tbody>');
+                    var datatablecat;
+                    $.each(response, function(key, value){
+                        console.log(value.barang_kategori);
+                        datatablecat = '<tr>'+
+                                            '<td>'+ value.barang_kategori +'</td>'+
+                                            '<td>'+ value.kategori_kode +'</td>'+
+                                            '<td>'+
+                                                '<div class="btn-group">'+
+                                                '<button class="btn btn-success" data-toggle="modal" data-target="#editcatModal" data-idcat="'+value.id+'" data-kategori="'+ value.barang_kategori +'" data-kode="'+ value.kategori_kode +'">'+
+                                                    '<i class="fa fa-edit"></i>'+
+                                                '</button>'+
+                                                '<button class="btn btn-primary" data-toggle="modal" data-target="#deletecatModal" data-idcat="'+value.id+'" data-kategori="'+ value.barang_kategori +'" data-kode="'+ value.kategori_kode +'">'+
+                                                    '<i class="fa fa-trash-o"></i>'+
+                                                '</button>'+
+                                                '</div>'+
+                                            '</td>'+
+                                        '</tr>';
+                        $('#table-category tbody').append(datatablecat);
+                    });
+                    $('#table-category').DataTable();
+                }
+            })
+        }
+        /*
+         * submit category
+         */
+        function submitCategory(){
+            $("#submitcategory").click(function(){
+                var kategori = $('input[name=kategori]').val();
+                var kodekategori = $('input[name=kodekategori]').val();
+
+                var proceed = true;
+                if(kategori == ""){
+                    $('input[name=kategori]').css('border-color', '#e41919');
+                    proceed = false;
+                }
+                if(kodekategori == ""){
+                    $('input[name=kodekategori]').css('border-color', '#e41919');
+                    proceed = false;
+                }
+                if(proceed){
+                    $.ajax({
+                        type: "POST",
+                        url:"categoryaddsubmit",
+                        data:{barang_kategori: kategori, kategori_kode: kodekategori},
+                        dataType: "json",
+                        success:function(response){
+                            //console.log(response.type);
+                            if(response.type =='error'){
+                                output = '<div class="alert alert-danger">' + response.text + '</div>';
+                            }else{
+                                //reset values in all input fields
+                                $('input#kategori').val('');
+                                $('input#kodekategori').val('');
+                                //console.log(response);
+                                output = '<div class="alert alert-success">' + response.text + '</div>';
+                                tabledata = '<tr><td>'+ response.datainsert.kategori +'</td>'+
+                                            '<td>'+ response.datainsert.kode +'</td>'+
+                                            '<td>'+
+                                                '<div class="btn-group">'+
+                                                '<button class="btn btn-success" data-toggle="modal" data-target="#editcatModal" data-idcat="'+response.datainsert.id+'" data-kategori="'+response.datainsert.kategori+'" data-kode="'+response.datainsert.kode+'"><i class="fa fa-edit"></i></button>'+
+                                                '<button class="btn btn-primary" data-toggle="modal" data-target="#deletecatModal" data-idcat="'+response.datainsert.id+'" data-kategori="'+response.datainsert.kategori+'" data-kode="'+response.datainsert.kode+'"><i class="fa fa-trash-o"></i></button></td>'
+                                                '</div>'+
+                                            '</td></tr>';
+                                $('#table-category tbody tr:first').before(tabledata);
+                            }
+                            $("#message_result").hide().html(output).slideDown();
+                        }
+                    });
+                }
+                return false;
+            })
+            //reset previously set border colors and hide all message on .keyup()
+            $("input#kategori, input#kodekategori").keyup(function(){
+                $("input#kategori, input#kodekategori").css('border-color', '');
+                $("#message_result").slideUp();
+            });
+        }
+        /*
+         * modals for edit category
+         */
+        $('#editcatModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget)// Button that triggered the modal
+            var kode = button.data('kode')
+            var kategori = button.data('kategori')
+            var idcat = button.data('idcat')
+            var modal = $(this)
+            modal.find('.modal-title').text('Edit ' + kode + ' - ' +kategori)
+            modal.find('.modal-body input#idcat').val(idcat)
+            modal.find('.modal-body div.form-group div input#kategori_edit').val(kategori)
+            modal.find('.modal-body div.form-group div input#kode_edit').val(kode)
+        });
+        /*
+         * modal for delete category
+         */
+        $('#deletecatModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget)// Button that triggered the modal
+            var kode = button.data('kode')
+            var kategori = button.data('kategori')
+            var idcat = button.data('idcat')
+            var modal = $(this)
+            modal.find('.modal-title').text(kode + ' - ' +kategori)
+            modal.find('.modal-body h2#h2alert').text('Hapus ' +kategori+' ( kode: '+kode+' ) ?')
+            modal.find('.modal-footer a#deletelink').attr("href", 'categorydelete/'+idcat)
+        });
+        
+    </script>
+
+
 <?php
 	// load footer
 	$this->load->view('administrator/template/footer_new');
