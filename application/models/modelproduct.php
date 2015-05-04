@@ -45,7 +45,6 @@ class Modelproduct extends CI_Model {
 			$data = $query->row();
 			return $data;
 		}
-		
 	}
 
 	public function loadStatusBarang()
@@ -82,7 +81,6 @@ class Modelproduct extends CI_Model {
 		return $this->db->delete('barang', array('id'=>$idbarang));
 	}
 
-	//public function updateBarang($idbarang, $kode, $nama, $stock, $hargabeli, $hargajual, $status, $kategoriedit)
 	public function updateBarang($idbarang, $kode, $nama, $stock, $hargabeli, $hargajual, $status, $kategori)
 	{
 		$field = array(
@@ -96,6 +94,31 @@ class Modelproduct extends CI_Model {
 		);
 		$this->db->where('id', $idbarang);
 		$this->db->update('barang', $field);
+	}
+
+	public function getCode($kategori)
+	{
+		$query = $this->db->query("
+				SELECT b.id, b.kode_barang, bk.kategori_kode
+				FROM barang b, barang_kategori bk
+				WHERE b.id_kategori=bk.id
+				AND bk.id='$kategori'
+				ORDER BY b.id DESC
+			");
+		return $query;
+	}
+
+	public function getCodeCat($kategori)
+	{
+		$query = $this->db->query("
+				SELECT bk.id, bk.kategori_kode
+				FROM barang_kategori bk
+				WHERE bk.id = '$kategori'
+			");
+		if($query->num_rows()>0){
+			$data = $query->row();
+			return $data;
+		}
 	}
 
 	public function insertKategori($kategori, $kodekategori)

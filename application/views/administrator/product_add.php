@@ -27,7 +27,7 @@
                             <div class="form-group">
                                 <label for="kategori-formproduct" class="col-sm-2 col-sm-2 control-label">Kategori</label>
                                 <div class="col-sm-10">
-                                    <select data-placeholder="Pilih Kategori..." id="kategori-formproduct" name="kategori" class="form-control">
+                                    <select onChange="generatecode();" data-placeholder="Pilih Kategori..." id="kategori-formproduct" name="kategori" class="form-control">
                                         <option value=""></option>
                                 <?php
                                     if(isset($loadKategori)){
@@ -48,7 +48,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Kode</label>
                                 <div class="col-sm-10">
-                                    <input type="text" id="kode" name="kode" class="form-control">
+                                    <input type="text" id="kode" name="kode" class="form-control" DISABLED>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -177,6 +177,23 @@
             $("input#nama, select#kategori-formproduct, input#kode, input#stock, input#hargabeli, input#hargajual, select#status").css('border-color', '');
             $("#message_result").slideUp();
         });
+    }
+
+    /*
+     * generate 'kode barang'
+     */
+    function generatecode(){
+        var kategori = $('select[name=kategori]').val();
+        $.ajax({
+            type: "POST",
+            url: "generateproductcode",
+            data: {kategori: kategori},
+            dataType: "JSON",
+            success: function(response){
+                //console.log(response.kodebarang);
+                $('#kode').val(response.kodebarang);
+            }
+        })
     }
     </script>
 

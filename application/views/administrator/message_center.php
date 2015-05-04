@@ -177,7 +177,7 @@
                         tableMessage('Replied', tgl, data);
                     }
                 });
-                    e.preventDefault();
+                e.preventDefault();
             }else{
                 loadAll(tgl);
             }

@@ -315,7 +315,7 @@ class Administrator extends CI_Controller {
 				'hargajual' => form_error('harga_jual'),
 				'idstatus' => form_error('id_status')
 				);
-			$output = json_encode(array('type'=>'error', 'content_form'=> validation_errors()));
+			$output = json_encode(array('type'=>'error', 'content_form' => validation_errors()));
 			die($output);
 		}else{
 			$nama = $this->input->post('nama');
@@ -327,20 +327,9 @@ class Administrator extends CI_Controller {
 			$idstatus = $this->input->post('id_status');
 			// insert product to database
 			$this->modelproduct->insertBarang($kode, $nama, $stock, $hargabeli, $hargajual, $idstatus, $kategori);
-
-			$output = json_encode(
-						array(
-							'type'=>'message', 
-							'text' => 'Barang yang dimasukkan telah tersimpan.', 
-							'datainsert'=> array(
-								'nama'=> 'nama'
-								)
-							)
-						);
+			$output = json_encode(array('type'=> 'message', 'text' => ucwords($nama).'('.$kode.') telah tersimpan'));
 			die($output);
 		}
-		
-
 		/*$nama = $this->input->post('nama');
 		$kode = $this->input->post('kode');
 		$stock = $this->input->post('stock');
@@ -372,18 +361,70 @@ class Administrator extends CI_Controller {
 	 */
 	public function productupdatesubmit()
 	{
-		$idbarang = $this->input->post('idbarang');
-		$nama = $this->input->post('nama');
-		$kode = $this->input->post('kode');
-		$stock = $this->input->post('stock');
-		$hargabeli = $this->input->post('harga_beli');
-		$hargajual = $this->input->post('harga_jual');
-		$status = $this->input->post('status');
-		$kategoriedit = $this->input->post('kategori-edit');
-		
-		$this->modelproduct->updateBarang($idbarang, $kode, $nama, $stock, $hargabeli, $hargajual, $status, $kategoriedit);
-		$this->session->set_flashdata('message', '<div class="alert alert-success">Data barang '.ucwords($nama).'('.$kode.') berhasil diubah dan disimpan!</div>');
-		redirect('administrator/product');
+		// configuration form validation
+		$this->form_validation->set_rules('nama', 'Nama barang', 'required');
+		$this->form_validation->set_rules('kategori', 'Kategori barang', 'required');
+		$this->form_validation->set_rules('kode', 'Kode barang', 'required');
+		$this->form_validation->set_rules('stock', 'Stock', 'required|numeric');
+		$this->form_validation->set_rules('harga_beli', 'Harga beli', 'numeric');
+		$this->form_validation->set_rules('harga_jual', 'Harga jual', 'numeric');
+		$this->form_validation->set_rules('status', 'Status barang', 'required');
+		if($this->form_validation->run() == FALSE){
+			// form validation false
+			$value = array(
+				'nama' => form_error('nama'),
+				'kategori' => form_error('kategori'),
+				'kode' => form_error('kode'),
+				'stock' => form_error('stock'),
+				'hargabeli' => form_error('harga_beli'),
+				'hargajual' => form_error('harga_jual'),
+				'idstatus' => form_error('status')
+				);
+			$output = json_encode(array('type'=>'error', 'content_form' => validation_errors()));
+			die($output);
+		}else{
+			$idbarang = $this->input->post('idbarang');
+			$nama = $this->input->post('nama');
+			$kode = $this->input->post('kode');
+			$stock = $this->input->post('stock');
+			$hargabeli = $this->input->post('harga_beli');
+			$hargajual = $this->input->post('harga_jual');
+			$status = $this->input->post('status');
+			$kategoriedit = $this->input->post('kategori');
+			
+			$this->modelproduct->updateBarang($idbarang, $kode, $nama, $stock, $hargabeli, $hargajual, $status, $kategoriedit);
+			$output = json_encode(array('type'=> 'message', 'text' => ucwords($nama).' ('.$kode.') telah diubah dan tersimpan'));
+			die($output);
+
+			//$this->modelproduct->updateBarang($idbarang, $kode, $nama, $stock, $hargabeli, $hargajual, $status, $kategoriedit);
+			//$this->session->set_flashdata('message', '<div class="alert alert-success">Data barang '.ucwords($nama).'('.$kode.') berhasil diubah dan disimpan!</div>');
+			//redirect('administrator/product');
+		}
+	}
+
+	/*
+	 * generate 'kode barang' based on selected category
+	 */
+	public function generateproductcode()
+	{
+		$kategori = $this->input->post('kategori');
+		$getcode = $this->modelproduct->getCode($kategori);
+		if($getcode->num_rows()>0){
+			$data = $getcode->row();
+			$lastcode = $data->kode_barang;
+			$codecategory = $data->kategori_kode;
+			$getnumlastcode = substr($lastcode, 3);
+			$nextnum = str_pad($getnumlastcode+1, 4, 0, STR_PAD_LEFT);
+			$resultcode = $codecategory.''.$nextnum;
+			$output = json_encode(array('type' => 'code','kodebarang' => $resultcode));
+			die($output);
+		}else{
+			$getcodecat = $this->modelproduct->getCodeCat($kategori);
+			$codecat = $getcodecat->kategori_kode;
+			$resultcode = $codecat.'0001';
+			$output = json_encode(array('type' => 'code', 'kodebarang' => $resultcode));
+			die($output);
+		}
 	}
 
 	/*
@@ -537,18 +578,18 @@ class Administrator extends CI_Controller {
 */
 	
 
-	/*public function test(){
+	public function test(){
 		// $data = array(
 			// 'loadAllBarang' => $this->modelproduct->loadAllBarang()
 		// );
 		// $this->load->view('administrator/test', $data);
 		$loadStatusBarang = $this->modelproduct->loadStatusBarang();
 		echo json_encode($loadStatusBarang);
-	}*/
+	}
 	
-	/*function tosha1(){
+	function tosha1(){
 		echo sha1('INERREInteriorBandung');
-	}*/
+	}
 
 }
 

@@ -50,7 +50,20 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <div id="data" class=""></div>
+                        <div id="data" class="">
+                            <section>
+                                <table id="table-category" class="table cf display">
+                                    <thead>
+                                        <tr>
+                                        <th>Kategori</th>
+                                        <th>Kode Kategori</th>
+                                        <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+
+                            </section>
+                        </div>
                     </div>
                     <!-- END FORM CATEGORY -->
                     
@@ -120,46 +133,56 @@
         <script type="text/javascript">
         $(document).ready(function(){
             // load all category
+            
             loadCategory();
             submitCategory();
+            
         })
 
         /*
          * load all category
          */
         function loadCategory(){
+            
+            
             $.ajax({
                 type: "POST",
                 url:"loadcategory",
                 dataType: "json",
                 success:function(response){
-                    var tablecat = '<section><table id="table-category" class="table table-striped cf display">'+
-                                    '<thead><tr><th>Kategori</th><th>Kode Kategori</th><th>Action</th></tr></thead>'+
-                                    '</table></section>';
+                    //var tablecat = '<section><table id="table-category" class="table cf display">'+
+                    //                '<thead><tr><th>Kategori</th><th>Kode Kategori</th><th>Action</th></tr></thead>'+
+                    //                '</table></section>';
                     //var trFirst = '';
-                    $('#data').append(tablecat);
+                    //$('#data').append(tablecat);
                     //$('#table-category').after(trFirst);
                     $('#table-category').append('<tbody></tbody>');
-                    var datatablecat;
-                    $.each(response, function(key, value){
-                        console.log(value.barang_kategori);
-                        datatablecat = '<tr>'+
-                                            '<td>'+ value.barang_kategori +'</td>'+
-                                            '<td>'+ value.kategori_kode +'</td>'+
-                                            '<td>'+
-                                                '<div class="btn-group">'+
-                                                '<button class="btn btn-success" data-toggle="modal" data-target="#editcatModal" data-idcat="'+value.id+'" data-kategori="'+ value.barang_kategori +'" data-kode="'+ value.kategori_kode +'">'+
-                                                    '<i class="fa fa-edit"></i>'+
-                                                '</button>'+
-                                                '<button class="btn btn-primary" data-toggle="modal" data-target="#deletecatModal" data-idcat="'+value.id+'" data-kategori="'+ value.barang_kategori +'" data-kode="'+ value.kategori_kode +'">'+
-                                                    '<i class="fa fa-trash-o"></i>'+
-                                                '</button>'+
-                                                '</div>'+
-                                            '</td>'+
-                                        '</tr>';
-                        $('#table-category tbody').append(datatablecat);
-                    });
-                    $('#table-category').DataTable();
+                    if(!response){
+                        console.log('NULL');
+                    }else{
+                        var datatablecat;
+                        $.each(response, function(key, value){
+                            console.log(value.barang_kategori);
+                            datatablecat = '<tr>'+
+                                                '<td>'+ value.barang_kategori +'</td>'+
+                                                '<td>'+ value.kategori_kode +'</td>'+
+                                                '<td>'+
+                                                    '<div class="btn-group">'+
+                                                    '<button class="btn btn-success" data-toggle="modal" data-target="#editcatModal" data-idcat="'+value.id+'" data-kategori="'+ value.barang_kategori +'" data-kode="'+ value.kategori_kode +'">'+
+                                                        '<i class="fa fa-edit"></i>'+
+                                                    '</button>'+
+                                                    '<button class="btn btn-primary" data-toggle="modal" data-target="#deletecatModal" data-idcat="'+value.id+'" data-kategori="'+ value.barang_kategori +'" data-kode="'+ value.kategori_kode +'">'+
+                                                        '<i class="fa fa-trash-o"></i>'+
+                                                    '</button>'+
+                                                    '</div>'+
+                                                '</td>'+
+                                            '</tr>';
+                            $('#table-category tbody').append(datatablecat);
+
+                        });
+                        //$('#table-category tbody tr td.dataTables_empty').hide();
+                    } 
+                    $('#table-category').DataTable();      
                 }
             })
         }
@@ -207,6 +230,7 @@
                                 $('#table-category tbody tr:first').before(tabledata);
                             }
                             $("#message_result").hide().html(output).slideDown();
+                            $('#table-category tbody tr td.dataTables_empty').parent().hide();
                         }
                     });
                 }
