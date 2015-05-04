@@ -75,6 +75,116 @@
 	</div>
 	<!-- modal -->
 
+		<script src="/assets_admin/js/jquery.js"></script>
+	    <script type="text/javascript">
+	    $(document).ready(function(){
+	        // call loadAll for load all messages
+            loadAll();
+
+	    })
+
+        /*
+         * modal for reply message (message center)
+         */
+        $('#replyModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var id = button.data('id');
+            var recipient = button.data('name') ;
+            var email = button.data('email');
+            var modal = $(this);
+            modal.find('.modal-title').text('New message to ' + recipient);
+            modal.find('.modal-body input#idmessage').val(id);
+            modal.find('.modal-body input#recipient-name').val(recipient);
+            modal.find('.modal-body input#recipient-name-hidden').val(recipient);
+            modal.find('.modal-body input#recipient-email').val(email);
+            modal.find('.modal-body input#recipient-email-hidden').val(email);
+        })
+
+        var addFormFilter = '<div class="dataTables_tgl"><label for="" style="color:#333;">Date <input id="tgl" type="text" /></label></div>'+
+                                    '&nbsp;&nbsp;<div class="dataTables_messagefil">'+
+                                    '<label for="statusmessageoption" style="color:#333;">Message(s)'+
+                                    '<select name="statusmessageoption" id="statusmessageoption" onchange="loadMessageStatus();">'+
+                                    '<option value="-" >------------------</option>'+
+                                    '<option value="0">All</option>'+
+                                    '<option value="1">Unreplied</option>'+
+                                    '<option value="2">Replied</option>'+
+                                    '</select>'+
+                                    '</label>'+
+                                    '</div>&nbsp;&nbsp;';
+
+        function tableMessage(status, tgl, data){
+            $('#datamessage').html(data);
+            if(tgl==""){
+                $('h3#title-page').text("Message: "+status);    
+            }else{
+                $('h3#title-page').text("Message: "+status+ " / " + tgl);       
+            }
+            $("#tablemessage").dataTable({
+                "fnInitComplete": function( oSettings , json) {
+                    $("#tablemessage_wrapper").prepend(addFormFilter);
+                    $("#tgl").datetimepicker({
+                        format:'YYYY-MM-DD'
+                    });
+                    $("#tgl").val(tgl);
+                }
+            });
+        }
+
+        /*
+         * load all messages (message center)
+         */
+        function loadAll(tgl){
+            var tglparams;
+            if(tgl==null){
+                tglparams="";
+            }else{
+                tglparams=tgl;
+            }
+            $.ajax({
+                type:"POST",
+                url:"loadAllMessage",
+                data: {tgl:tgl},
+                success: function(data){
+                    tableMessage('All', tglparams, data);
+                }
+            });
+            e.preventDefault();
+        }
+        
+        /*
+         * load message with status (unreplied, replied)
+         */
+        function loadMessageStatus(){
+            var messageoption = $("#statusmessageoption").val();
+            var tgl = $("input#tgl").val();
+
+            if(messageoption=='1'){
+                $.ajax({
+                    type:"POST",
+                    url:"loadUnrepliedMessage",
+                    data: {tgl:tgl},
+                    success: function(data){
+                        tableMessage('Unreplied', tgl, data);
+                    }
+                });
+                    e.preventDefault();
+            }else if(messageoption==2){
+                $.ajax({
+                    type:"POST",
+                    url:"loadRepliedMessage",
+                    data: {tgl:tgl},
+                    success: function(data){
+                        tableMessage('Replied', tgl, data);
+                    }
+                });
+                    e.preventDefault();
+            }else{
+                loadAll(tgl);
+            }
+        }
+        
+    </script>
+
 <?php
 	// load footer
 	$this->load->view('administrator/template/footer_new');

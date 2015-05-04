@@ -13,15 +13,19 @@
           	<div class="row mt">
           		<div class="col-lg-12">
                     <div class="form-panel">
-                        <form class="form-horizontal style-form" method="POST" action="/administrator/productaddsubmit">
+                        <!-- action="/administrator/productaddsubmit"-->
+                        <form class="form-horizontal style-form" method="POST" >
+                        
+                            <div id="message_result"></div>
+
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Barang</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="nama" class="form-control">
+                                    <input type="text" id="nama" name="nama" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="" class="col-sm-2 col-sm-2 control-label">Kategori</label>
+                                <label for="kategori-formproduct" class="col-sm-2 col-sm-2 control-label">Kategori</label>
                                 <div class="col-sm-10">
                                     <select data-placeholder="Pilih Kategori..." id="kategori-formproduct" name="kategori" class="form-control">
                                         <option value=""></option>
@@ -34,7 +38,7 @@
                                         }
                                     }else{
                                 ?>
-                                        <option value="-">Tidak ada kategori</option>
+                                        <option value="">Tidak ada kategori</option>
                                 <?php 
                                     }
                                 ?>
@@ -44,26 +48,26 @@
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Kode</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="kode" class="form-control">
+                                    <input type="text" id="kode" name="kode" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Stock</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="stock" class="form-control">
+                                    <input type="text" id="stock" name="stock" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Harga Beli</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="harga_beli" class="form-control" placeholder="Rp.">
+                                    <input type="text" id="hargabeli" name="harga_beli" class="form-control" placeholder="Rp.">
                                     <span class="help-block">Jika barang titip jual, isi harga beli dengan 0</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Harga Jual</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="harga_jual" class="form-control"  placeholder="Rp.">
+                                    <input type="text" id="hargajual" name="harga_jual" class="form-control"  placeholder="Rp.">
                                 </div>
                             </div>
 
@@ -80,7 +84,7 @@
 										}
 									}else{
 									?>
-									  		<option value="-">----------</option>
+									  		<option value="">----------</option>
 									<?php
 									}
 									?>
@@ -90,7 +94,7 @@
                           	
                           	<div class="form-group">
                           		<div class="showback">
-								<input type="submit" value="Add Product" class="btn btn-primary">
+								<input id="submitproduct" type="submit" value="Add Product" class="btn btn-primary">
 								</div>
                           	</div>
 
@@ -98,11 +102,83 @@
                   </div>
           		</div><!-- col-lg-12-->      	
           	</div><!-- /row -->
+            </section><! --/wrapper -->
+        </section><!-- /MAIN CONTENT -->
 
-          	
-          	
-		</section><! --/wrapper -->
-      </section><!-- /MAIN CONTENT -->
+    <script src="/assets_admin/js/jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        // jquery 'chosen' for select option category
+        $('#kategori-formproduct').chosen({
+            no_results_text: "Kategori yang dicari tidak ada"
+        });
+        submitProduct();
+    });
+    function submitProduct(){
+        $('#submitproduct').click(function(){
+            var nama = $('input[name=nama]').val();
+            var kategori = $('select[name=kategori]').val();
+            var kode = $('input[name=kode]').val();
+            var stock = $('input[name=stock]').val();
+            var hargabeli = $('input[name=harga_beli]').val();
+            var hargajual = $('input[name=harga_jual]').val();
+            var idstatus = $('select[name=id_status]').val();
+            var proceed = true;
+            if(nama == ""){
+                $('input[name=nama]').css('border-color', '#e41919');
+                proceed = false;
+            }
+            if(kategori == ""){
+                $('#kategori_formproduct_chosen .chosen_single').css('border-color', '#e41919 !important');
+                proceed = false;
+            }
+            if(kode == ""){
+                $('input[name=kode]').css('border-color', '#e41919');
+                proceed = false;
+            }
+            if(stock == ""){
+                $('input[name=stock]').css('border-color', '#e41919');
+                proceed = false;
+            }
+            if(hargabeli == ""){
+                $('input[name=harga_beli]').css('border-color', '#e41919');
+                proceed = false;
+            }
+            if(hargajual == ""){
+                $('input[name=harga_jual]').css('border-color', '#e41919');
+                proceed = false;
+            }
+            if(idstatus == ""){
+                $('select#status').css('border-color', '#e41919 !important');
+                proceed = false;
+            }
+            
+            if(proceed){
+                $.ajax({
+                    type: "POST",
+                    url: "productaddsubmit",
+                    data: {nama: nama, kategori: kategori, kode: kode, stock: stock, harga_beli: hargabeli, harga_jual: hargajual, id_status: idstatus},
+                    dataType: "json",
+                    success: function(response){
+                        if(response.type=='error'){
+                            //console.log(response.content_form);   
+                            output = '<div class="alert alert-danger">' + response.content_form + '</div>';
+                        }else{
+                            //console.log(response.text);
+                            output = '<div class="alert alert-success">'+ response.text +' Lihat pada <a href="product">Table Product</a></div>';
+                        }
+                        $("#message_result").hide().html(output).slideDown();
+                    }
+                });        
+            }
+            return false;
+        });
+        $("input#nama, select#kategori-formproduct, input#kode, input#stock, input#hargabeli, input#hargajual, select#status").keyup(function(){
+            $("input#nama, select#kategori-formproduct, input#kode, input#stock, input#hargabeli, input#hargajual, select#status").css('border-color', '');
+            $("#message_result").slideUp();
+        });
+    }
+    </script>
 
 <?php
 	// load footer
