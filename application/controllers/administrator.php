@@ -408,6 +408,7 @@ class Administrator extends CI_Controller {
 	public function generateproductcode()
 	{
 		$kategori = $this->input->post('kategori');
+		
 		$getcode = $this->modelproduct->getCode($kategori);
 		if($getcode->num_rows()>0){
 			$data = $getcode->row();
@@ -424,7 +425,7 @@ class Administrator extends CI_Controller {
 			$resultcode = $codecat.'0001';
 			$output = json_encode(array('type' => 'code', 'kodebarang' => $resultcode));
 			die($output);
-		}
+		}	
 	}
 
 	/*

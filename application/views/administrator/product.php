@@ -35,6 +35,7 @@
                           ?>
                               <table id="tableproduct" class="table table-striped cf display">
                                   <thead>
+                                    <th>No.</th>
                                     <th>Kode</th>
                                     <th>Barang</th>
                                     <th>Kategori</th>
@@ -45,36 +46,39 @@
                                   </thead>
                                   <tbody>
                           <?php
-                              foreach ($loadAllBarang as $lab) {
+                                $no=1;
+                                foreach ($loadAllBarang as $lab) {
                           ?>
-                                  <tr>
-                                    <td data-title="Kode"><?php echo $lab->kode_barang;?></td>
-                                    <td data-title="Barang"><?php echo $lab->nama_barang;?></td>
-                                    <td data-title="Kategori"><?php echo $lab->barang_kategori;?></td>
-                                    <td class="numeric" data-title="Stock"><?php echo $lab->stock_barang;?></td>
-                                    <td class="numeric" data-title="Harga">Rp. <?php echo number_format($lab->harga_jual);?></td>
-                                    <td data-title="Status">
-                                      <label for="" class="label label-<?php echo ($lab->id_status==1)? 'primary' : 'warning';?>">
-                                        <?php echo $lab->barang_status;?>
-                                      </label>
-                                    </td>
-                                    <td data-title="Action">
-                                      <div class="btn-group">
-                                            <button class="btn btn-primary" data-toggle="modal" data-target="#viewModal" data-kode="<?php echo $lab->kode_barang;?>" data-barang="<?php echo $lab->nama_barang;?>" data-kategori="<?php echo $lab->barang_kategori;?>" data-stock="<?php echo $lab->stock_barang;?>" data-hargabeli="<?php echo $lab->harga_beli;?>" data-hargajual="<?php echo $lab->harga_jual;?>" data-status="<?php echo $lab->barang_status;?>">
-                                                <i class="fa fa-search"></i>
-                                            </button>
-                                            <button class="btn btn-success" data-toggle="modal" data-target="#editModal"  data-kode="<?php echo $lab->kode_barang;?>" data-barang="<?php echo $lab->nama_barang;?>" data-kategori="<?php echo $lab->barang_kategori;?>" data-stock="<?php echo $lab->stock_barang;?>" data-hargabeli="<?php echo $lab->harga_beli;?>" data-hargajual="<?php echo $lab->harga_jual;?>" data-status="<?php echo $lab->barang_status;?>" data-loadstatus='<?php echo $loadStatusBarang;?>' data-idbarang="<?php echo $lab->idbarang;?>" data-loadkategori='<?php echo $loadKategori;?>'>
-                                                <i class="fa fa-edit"></i>
-                                            </button>
-                                            <button class="btn btn-warning" data-toggle="modal" data-target="#deleteModal" data-kode="<?php echo $lab->kode_barang;?>" data-barang="<?php echo $lab->nama_barang;?>" data-idbarang="<?php echo $lab->idbarang;?>">
-                                                <i class="fa fa-trash-o"></i>
-                                            </button>
-                                      </div>
-                                      <button class="btn btn-danger" data-toggle="modal" data-target="#updateStockBarang"><i class="fa fa-edit"></i> Update Stock</button>
-                                    </td>
-                                  </tr>
+                                    <tr>
+                                        <td data-title="No"><?php echo $no;?></td>
+                                        <td data-title="Kode"><?php echo $lab->kode_barang;?></td>
+                                        <td data-title="Barang"><?php echo $lab->nama_barang;?></td>
+                                        <td data-title="Kategori"><?php echo $lab->barang_kategori;?></td>
+                                        <td class="numeric" data-title="Stock"><?php echo $lab->stock_barang;?></td>
+                                        <td class="numeric" data-title="Harga">Rp. <?php echo number_format($lab->harga_jual);?></td>
+                                        <td data-title="Status">
+                                            <label for="" class="label label-<?php echo ($lab->id_status==1)? 'primary' : 'warning';?>">
+                                              <?php echo $lab->barang_status;?>
+                                            </label>
+                                        </td>
+                                        <td data-title="Action">
+                                            <div class="btn-group">
+                                                <button class="btn btn-primary" data-toggle="modal" data-target="#viewModal" data-kode="<?php echo $lab->kode_barang;?>" data-barang="<?php echo $lab->nama_barang;?>" data-kategori="<?php echo $lab->barang_kategori;?>" data-stock="<?php echo $lab->stock_barang;?>" data-hargabeli="<?php echo $lab->harga_beli;?>" data-hargajual="<?php echo $lab->harga_jual;?>" data-status="<?php echo $lab->barang_status;?>">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                                <button class="btn btn-success" data-toggle="modal" data-target="#editModal"  data-kode="<?php echo $lab->kode_barang;?>" data-barang="<?php echo $lab->nama_barang;?>" data-kategori="<?php echo $lab->barang_kategori;?>" data-stock="<?php echo $lab->stock_barang;?>" data-hargabeli="<?php echo $lab->harga_beli;?>" data-hargajual="<?php echo $lab->harga_jual;?>" data-status="<?php echo $lab->barang_status;?>" data-loadstatus='<?php echo $loadStatusBarang;?>' data-idbarang="<?php echo $lab->idbarang;?>" data-loadkategori='<?php echo $loadKategori;?>'>
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                                <button class="btn btn-warning" data-toggle="modal" data-target="#deleteModal" data-kode="<?php echo $lab->kode_barang;?>" data-barang="<?php echo $lab->nama_barang;?>" data-idbarang="<?php echo $lab->idbarang;?>">
+                                                    <i class="fa fa-trash-o"></i>
+                                                </button>
+                                              </div>
+                                            <button class="btn btn-danger" data-toggle="modal" data-target="#updateStockBarang"><i class="fa fa-edit"></i> Update Stock</button>
+                                        </td>
+                                    </tr>
                           <?php
-                              }
+                                    $no++;
+                                }
                           ?>
                                   </tbody>
                               </table>
@@ -82,17 +86,18 @@
                             }else{
                           ?>
                               <table id="tableproduct" class="table table-striped cf display">
-                                  <thead>
-                                    <th>Kode</th>
-                                    <th>Barang</th>
-                                    <th>Kategori</th>
-                                    <th class="numeric">Stock</th>
-                                    <th class="numeric">Harga</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                  </thead>
-                                  <tbody>
-                                  </tbody>
+                                    <thead>
+                                        <th>No.</th>
+                                        <th>Kode</th>
+                                        <th>Barang</th>
+                                        <th>Kategori</th>
+                                        <th class="numeric">Stock</th>
+                                        <th class="numeric">Harga</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
                               </table>
                           <?php
                             }
@@ -170,6 +175,7 @@
                                                     <div class="col-sm-10">
                                                         <input type="text" name="kode" id="kode" class="form-control" DISABLED>
                                                         <input type="hidden" name="kode-hidden" id="kode-hidden" value="">
+                                                        <input type="hidden" name="kode-current-hidden" id="kode-current-hidden" value="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -240,7 +246,7 @@
         <script type="text/javascript">
         $(document).ready(function(){
             // data table of products
-            $('#tableproduct').DataTable();
+            $('#tableproduct').DataTable({"order":[[0,"ASC"]]});
         })
 
         function submitUpdateProduct(){
@@ -309,18 +315,26 @@
         }
 
         function generatecode(){
+            var kategoriselected = $('#selectedkategori').val();
             var kategori = $('select[name=kategori-edit]').val();
-            $.ajax({
-                type: "POST",
-                url: "generateproductcode",
-                data: {kategori: kategori},
-                dataType: "JSON",
-                success: function(response){
-                    //console.log(response.kodebarang);
-                    $('#kode').val(response.kodebarang);
-                    $('#kode-hidden').val(response.kodebarang);
-                }
-            })
+            var kodecurrent = $('#kode-current-hidden').val();
+            if(kategori == kategoriselected){
+                $('#kode').val(kodecurrent);
+                $('#kode-hidden').val(kodecurrent);
+            }else{
+                $.ajax({
+                    type: "POST",
+                    url: "generateproductcode",
+                    data: {kategori: kategori},
+                    dataType: "JSON",
+                    success: function(response){
+                        //console.log(response.kodebarang);
+                        $('#kode').val(response.kodebarang);
+                        $('#kode-hidden').val(response.kodebarang);
+                    }
+                })
+            }
+            
         }
 
         /*
@@ -367,13 +381,15 @@
             modal.find('.modal-body div.form-group div input#nama').val(barang)
             modal.find('.modal-body div.form-group div input#kode').val(kode)
             modal.find('.modal-body div.form-group div input#kode-hidden').val(kode)
+            modal.find('.modal-body div.form-group div input#kode-current-hidden').val(kode)
             modal.find('.modal-body div.form-group div input#stock').val(stock)
             modal.find('.modal-body div.form-group div input#hargabeli').attr('placeholder', 'Rp. ').val(hargabeli)
             modal.find('.modal-body div.form-group div input#hargajual').attr('placeholder', 'Rp. ').val(hargajual)
             selectkategori.html('')
             $.each(kategorijson, function(i, obj){
                 if(obj.barang_kategori==kategori){
-                    selectkategori.prepend('<option value="'+obj.id+'" SELECTED>'+obj.barang_kategori+'</option>');
+                    selectkategori.prepend('<option value="'+obj.id+'" title="selected" SELECTED >'+obj.barang_kategori+'</option>');
+                    selectkategori.prepend('<input type="hidden" name="selectedkategori" id="selectedkategori" value="'+obj.id+'"/>');
                 }else{
                     selectkategori.prepend('<option value="'+obj.id+'">'+obj.barang_kategori+'</option>');
                 }
