@@ -96,6 +96,15 @@ class Modelproduct extends CI_Model {
 		$this->db->update('barang', $field);
 	}
 
+	public function updateProductStock($idproduct, $newstock)
+	{
+		$field = array(
+			'stock_barang' => $newstock
+		);
+		$this->db->where('id', $idproduct);
+		$this->db->update('barang', $field);
+	}
+
 	public function getCode($kategori)
 	{
 		$query = $this->db->query("

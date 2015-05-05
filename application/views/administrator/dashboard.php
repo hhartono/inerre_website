@@ -49,9 +49,9 @@
 				        </a>
                   	</div>
             </div><!-- /row mt -->	
-		</section><! --/wrapper -->
+            </section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
-
+    <script src="/assets_admin/js/jquery.js"></script>
 <?php
 	// load footer
 	$this->load->view('administrator/template/footer_new');

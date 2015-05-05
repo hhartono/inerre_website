@@ -389,6 +389,36 @@ class Administrator extends CI_Controller {
 	}
 
 	/*
+	 * product update stock process submit 
+	 */
+	public function productupdatestocksubmit()
+	{
+		$this->form_validation->set_rules('stockadd', 'Stock', 'numeric');
+		$this->form_validation->set_message('numeric', 'Input harus berupa angka');
+		if($this->form_validation->run() == FALSE){
+			$value = array(
+				'stockadd' => form_error('input_stock_update')
+			);
+			$output = json_encode(array('type'=>'error', 'text' => validation_errors()));
+			die($output);
+		}else{
+			$idproduct = $this->input->post('idproduct');
+			$laststock = $this->input->post('laststock');
+			$stockadd = $this->input->post('stockadd');
+			$newstock = 0;
+			if($stockadd == ""){
+				$stockadd = 0;
+				$newstock = $laststock + $stockadd;
+			}else{
+				$newstock = $laststock + $stockadd;
+			}
+			$this->modelproduct->updateProductStock($idproduct, $newstock);
+			$output = json_encode(array('type' => 'message', 'text' => 'Stock telah diperbarui!'));
+			die($output);
+		}
+
+	}
+	/*
 	 * generate 'kode barang' based on selected category
 	 */
 	public function generateproductcode()
