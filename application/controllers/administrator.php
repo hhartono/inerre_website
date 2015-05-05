@@ -59,7 +59,9 @@ class Administrator extends CI_Controller {
 		//$tgl = '2015-04-08';
 		$loadAll = $this->modelmessagecenter->loadMessageAll($tgl);
 		if(isset($loadAll)){
-			echo '<table id="tablemessage" class="display">
+			echo '<div class="content-panel">
+				<section id="no-more-tables">
+				<table id="tablemessage" class="display">
 				<thead>
 					<th>No</th>
 					<th>Name (Email)</th>
@@ -73,20 +75,24 @@ class Administrator extends CI_Controller {
 
 			foreach ($loadAll as $row) {
 			echo '<tr>';
-			echo '<td>'. $no .'</td>';
-			echo '<td>'. $row->name.' ('.$row->email .')</td>';
-			echo '<td>'. $row->message .'</td>';
-			echo '<td>'. $row->date_in .'</td>';
-			echo '<td>'. $row->status .'</td>';
+			echo '<td data-title="No.">'. $no .'</td>';
+			echo '<td data-title="Name">'. $row->name.' ('.$row->email .')</td>';
+			echo '<td data-title="Message">'. $row->message .'</td>';
+			echo '<td data-title="Date">'. $row->date_in .'</td>';
+			echo '<td data-title="Status">'. $row->status .'</td>';
 			echo '<td>'. ($row->status == 'unreplied' ? '<button type="button" data-id="'.$row->id.'" data-name="'.ucwords($row->name).'" data-email="'.ucwords($row->email).'" class="btn btn-danger" data-toggle="modal" data-target="#replyModal"><i class="fa fa-mail-reply"></i></button>' : '<button class="btn btn-success" disabled><i class="fa fa-check"></i></button>' ) .'</td>';
 			echo '</tr>';
 
 					$no++;
 				}
 			echo '</tbody>
-				</table>';
+				</table>
+				</section>
+				</div>';
 		}else{
-			echo '<table id="tablemessage" class="display">
+			echo '<div class="content-panel">
+				<section id="no-more-tables">
+			<table id="tablemessage" class="display">
 				<thead>
 					<th>No</th>
 					<th>Name (Email)</th>
@@ -97,7 +103,9 @@ class Administrator extends CI_Controller {
 				</thead>
 				<tbody>
 				</tbody>
-				</table>';
+				</table>
+				</section>
+				</div>';
 		}
 	}
 
@@ -113,7 +121,9 @@ class Administrator extends CI_Controller {
 		$loadUnreplied = $this->modelmessagecenter->loadMessageWithStatus($status, $tgl);
 		//echo "loadUnreplied";
 		if(isset($loadUnreplied)){
-			echo '<table id="tablemessage" class="display">
+			echo '<div class="content-panel">
+				<section id="no-more-tables">
+				<table id="tablemessage" class="display">
 				<thead>
 					<th>No</th>
 					<th>Name (Email)</th>
@@ -126,11 +136,11 @@ class Administrator extends CI_Controller {
 			$no = 1;
 			foreach ($loadUnreplied as $row) {
 			echo '<tr>';
-			echo '<td>'. $no .'</td>';
-			echo '<td>'. $row->name.' ('.$row->email .')</td>';
-			echo '<td>'. $row->message .'</td>';
-			echo '<td>'. $row->date_in .'</td>';
-			echo '<td>'. $row->status .'</td>';
+			echo '<td data-title="No.">'. $no .'</td>';
+			echo '<td data-title="Name">'. $row->name.' ('.$row->email .')</td>';
+			echo '<td data-title="Message">'. $row->message .'</td>';
+			echo '<td data-title="Date">'. $row->date_in .'</td>';
+			echo '<td data-title="Status">'. $row->status .'</td>';
 			echo '<td><button type="button" data-id="'.$row->id.'" data-name="'.ucwords($row->name).'" data-email="'.ucwords($row->email).'" class="btn btn-danger" data-toggle="modal" data-target="#replyModal" >';
 			echo '<i class="fa fa-mail-reply"></i></button></td>';
 			echo '</tr>';
@@ -138,9 +148,13 @@ class Administrator extends CI_Controller {
 					$no++;
 				}
 			echo '</tbody>
-				</table>';
+				</table>
+				</section>
+				</div>';
 		}else{
-			echo '<table id="tablemessage" class="display">
+			echo '<div class="content-panel">
+				<section id="no-more-tables">
+				<table id="tablemessage" class="display">
 				<thead>
 					<th>No</th>
 					<th>Name (Email)</th>
@@ -151,7 +165,9 @@ class Administrator extends CI_Controller {
 				</thead>
 				<tbody>
 				</tbody>
-				</table>';
+				</table>
+				</section>
+				</div>';
 		}
 	}
 
@@ -167,7 +183,9 @@ class Administrator extends CI_Controller {
 		$loadReplied = $this->modelmessagecenter->loadMessageWithStatus($status, $tgl);
 		//echo "loadRepliedMessage";
 		if(isset($loadReplied)){
-			echo '<table id="tablemessage" class="display">
+			echo '<div class="content-panel">
+				<section id="no-more-tables">
+				<table id="tablemessage" class="display">
 				<thead>
 					<th>No</th>
 					<th>Name (Email)</th>
@@ -180,19 +198,23 @@ class Administrator extends CI_Controller {
 			$no = 1;
 			foreach ($loadReplied as $row) {
 			echo '<tr>';
-			echo '<td>'. $no .'</td>';
-			echo '<td>'. $row->name.' ('.$row->email .')</td>';
-			echo '<td>'. $row->message .'</td>';
-			echo '<td>'. $row->date_in .'</td>';
-			echo '<td>'. $row->status .'</td>';
+			echo '<td data-title="No.">'. $no .'</td>';
+			echo '<td data-title="Name">'. $row->name.' ('.$row->email .')</td>';
+			echo '<td data-title="Message">'. $row->message .'</td>';
+			echo '<td data-title="Date">'. $row->date_in .'</td>';
+			echo '<td data-title="Status">'. $row->status .'</td>';
 			echo '<td><button class="btn btn-success" disabled><i class="fa fa-check"></i></button></td>';
 			echo '</tr>';
 					$no++;
 				}
 			echo '</tbody>
-				</table>';
+				</table>
+				</section>
+				</div>';
 		}else{
-			echo '<table id="tablemessage" class="display">
+			echo '<div class="content-panel">
+				<section id="no-more-tables">
+				<table id="tablemessage" class="display">
 				<thead>
 					<th>No</th>
 					<th>Name (Email)</th>
@@ -203,7 +225,9 @@ class Administrator extends CI_Controller {
 				</thead>
 				<tbody>
 				</tbody>
-				</table>';
+				</table>
+				</section>
+				</div>';
 		}
 	}
 	
