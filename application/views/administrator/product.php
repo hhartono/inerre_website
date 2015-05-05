@@ -391,14 +391,15 @@
                         data:{idproduct: idproduct, laststock: laststock, stockadd: stockadd},
                         dataType: "json",
                         success: function(response){
-
                             if(response.type == "error"){
-                                console.log(response.text);
+                                //console.log(response.text);
                                 output = '<div class="alert alert-danger">' + response.text + '</div>';
                             }else{
                                 $('input#input_stock_update').val('');
-                                console.log(response.text);
+                                //console.log(response.text);
                                 output = '<div class="alert alert-success">'+ response.text +'</div>';
+                                $('#hidden_laststock_update').val(response.newstock);
+                                $('#input_laststock_disabled').val(response.newstock);
                             }
                             $('#message_result_updatestock').hide().html(output).slideDown();
                         }

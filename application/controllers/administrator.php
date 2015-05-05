@@ -413,7 +413,7 @@ class Administrator extends CI_Controller {
 				$newstock = $laststock + $stockadd;
 			}
 			$this->modelproduct->updateProductStock($idproduct, $newstock);
-			$output = json_encode(array('type' => 'message', 'text' => 'Stock telah diperbarui!'));
+			$output = json_encode(array('type' => 'message', 'text' => 'Stock telah diperbarui!', 'newstock' => $newstock));
 			die($output);
 		}
 
