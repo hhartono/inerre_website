@@ -121,16 +121,16 @@ class Modelproduct extends CI_Model {
 		}
 	}
 
-	public function insertKategori($kategori, $kodekategori)
+	public function insertCategory($category, $categorycode)
 	{
 		$field = array(
-			'barang_kategori' => $kategori,
-			'kategori_kode' => $kodekategori
+			'barang_kategori' => $category,
+			'kategori_kode' => $categorycode
 		);
 		$this->db->insert('barang_kategori', $field);
 	}
 
-	public function loadAllKategori()
+	public function loadAllCategory()
 	{
 		$query = $this->db->query("
 				SELECT bk.*
@@ -145,12 +145,12 @@ class Modelproduct extends CI_Model {
 		}
 	}
 
-	public function cekKategoriKode($kode)
+	public function checkCategoryCode($code)
 	{
 		$query = $this->db->query("
 				SELECT bk.*
 				FROM barang_kategori bk
-				WHERE bk.kategori_kode = '$kode'
+				WHERE bk.kategori_kode = '$code'
 		");
 		/*if($query->num_rows()>0){
 			$data = $query->row();
@@ -158,12 +158,12 @@ class Modelproduct extends CI_Model {
 		return $query;
 	}
 
-	public function cekKategoriNama($kategori)
+	public function checkCategoryName($category)
 	{
 		$query = $this->db->query("
 				SELECT bk.*
 				FROM barang_kategori bk
-				WHERE bk.barang_kategori = '$kategori'
+				WHERE bk.barang_kategori = '$category'
 		");
 		/*if($query->num_rows()>0){
 			$data = $query->row();
@@ -171,12 +171,12 @@ class Modelproduct extends CI_Model {
 		return $query;
 	}
 
-	public function loadKategoriNama($kategori)
+	public function loadCategoryName($category)
 	{
 		$query = $this->db->query("
 				SELECT bk.*
 				FROM barang_kategori bk
-				WHERE bk.barang_kategori = '$kategori'
+				WHERE bk.barang_kategori = '$category'
 		");
 		if($query->num_rows()>0){
 			$data = $query->row();
@@ -184,7 +184,7 @@ class Modelproduct extends CI_Model {
 		}
 	}
 
-	public function loadKategori($field, $condition)
+	public function loadCategory($field, $condition)
 	{
 		$this->db->where($field, $condition);
 		$query = $this->db->get('barang_kategori');
@@ -199,15 +199,15 @@ class Modelproduct extends CI_Model {
 		}
 	}
 
-	public function deleteKategori($id){
+	public function deleteCategory($id){
 		return $this->db->delete('barang_kategori', array('id'=>$id));
 	}
 
-	public function updateKategori($id, $kategori, $kode)
+	public function updateCategory($id, $category, $categorycode)
 	{
 		$field = array(
-			'barang_kategori' => $kategori,
-			'kategori_kode' => $kode
+			'barang_kategori' => $category,
+			'kategori_kode' => $categorycode
 		);
 		$this->db->where('id', $id);
 		$this->db->update('barang_kategori', $field);

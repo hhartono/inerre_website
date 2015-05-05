@@ -148,7 +148,7 @@
                     tableMessage('All', tglparams, data);
                 }
             });
-            e.preventDefault();
+            //e.preventDefault();
         }
         
         /*

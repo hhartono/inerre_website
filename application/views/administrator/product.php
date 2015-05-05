@@ -35,7 +35,7 @@
                           ?>
                               <table id="tableproduct" class="table table-striped cf display">
                                   <thead>
-                                    <th>No.</th>
+                                    <!-- <th>No.</th> -->
                                     <th>Kode</th>
                                     <th>Barang</th>
                                     <th>Kategori</th>
@@ -46,11 +46,11 @@
                                   </thead>
                                   <tbody>
                           <?php
-                                $no=1;
+                                // $no=1;
                                 foreach ($loadAllBarang as $lab) {
                           ?>
                                     <tr>
-                                        <td data-title="No"><?php echo $no;?></td>
+                                        <!-- <td data-title="No"><?php// echo $no;?></td> -->
                                         <td data-title="Kode"><?php echo $lab->kode_barang;?></td>
                                         <td data-title="Barang"><?php echo $lab->nama_barang;?></td>
                                         <td data-title="Kategori"><?php echo $lab->barang_kategori;?></td>
@@ -66,7 +66,7 @@
                                                 <button class="btn btn-primary" data-toggle="modal" data-target="#viewModal" data-kode="<?php echo $lab->kode_barang;?>" data-barang="<?php echo $lab->nama_barang;?>" data-kategori="<?php echo $lab->barang_kategori;?>" data-stock="<?php echo $lab->stock_barang;?>" data-hargabeli="<?php echo $lab->harga_beli;?>" data-hargajual="<?php echo $lab->harga_jual;?>" data-status="<?php echo $lab->barang_status;?>">
                                                     <i class="fa fa-search"></i>
                                                 </button>
-                                                <button class="btn btn-success" data-toggle="modal" data-target="#editModal"  data-kode="<?php echo $lab->kode_barang;?>" data-barang="<?php echo $lab->nama_barang;?>" data-kategori="<?php echo $lab->barang_kategori;?>" data-stock="<?php echo $lab->stock_barang;?>" data-hargabeli="<?php echo $lab->harga_beli;?>" data-hargajual="<?php echo $lab->harga_jual;?>" data-status="<?php echo $lab->barang_status;?>" data-loadstatus='<?php echo $loadStatusBarang;?>' data-idbarang="<?php echo $lab->idbarang;?>" data-loadkategori='<?php echo $loadKategori;?>'>
+                                                <button class="btn btn-success" data-toggle="modal" data-target="#editModal"  data-kode="<?php echo $lab->kode_barang;?>" data-barang="<?php echo $lab->nama_barang;?>" data-kategori="<?php echo $lab->barang_kategori;?>" data-stock="<?php echo $lab->stock_barang;?>" data-hargabeli="<?php echo $lab->harga_beli;?>" data-hargajual="<?php echo $lab->harga_jual;?>" data-status="<?php echo $lab->barang_status;?>" data-loadstatus='<?php echo $loadStatusBarang;?>' data-idbarang="<?php echo $lab->idbarang;?>" data-loadcategory='<?php echo $loadCategory;?>'>
                                                     <i class="fa fa-edit"></i>
                                                 </button>
                                                 <button class="btn btn-warning" data-toggle="modal" data-target="#deleteModal" data-kode="<?php echo $lab->kode_barang;?>" data-barang="<?php echo $lab->nama_barang;?>" data-idbarang="<?php echo $lab->idbarang;?>">
@@ -77,7 +77,7 @@
                                         </td>
                                     </tr>
                           <?php
-                                    $no++;
+                                    // $no++;
                                 }
                           ?>
                                   </tbody>
@@ -87,7 +87,7 @@
                           ?>
                               <table id="tableproduct" class="table table-striped cf display">
                                     <thead>
-                                        <th>No.</th>
+                                        <!-- <th>No.</th> -->
                                         <th>Kode</th>
                                         <th>Barang</th>
                                         <th>Kategori</th>
@@ -246,7 +246,7 @@
         <script type="text/javascript">
         $(document).ready(function(){
             // data table of products
-            $('#tableproduct').DataTable({"order":[[0,"ASC"]]});
+            $('#tableproduct').DataTable();
         })
 
         function submitUpdateProduct(){
@@ -334,7 +334,6 @@
                     }
                 })
             }
-            
         }
 
         /*
@@ -373,7 +372,7 @@
             var status = button.data('status')
             var statusjson = button.data('loadstatus')
             var selectstatus = $('#statusbarang-edit')
-            var kategorijson = button.data('loadkategori')
+            var kategorijson = button.data('loadcategory')
             var selectkategori = $('#kategori-edit')
             var modal = $(this)
             modal.find('.modal-title').text('Edit ' + kode + ' - ' +barang)

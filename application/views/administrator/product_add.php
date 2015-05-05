@@ -30,8 +30,8 @@
                                     <select onChange="generatecode();" data-placeholder="Pilih Kategori..." id="kategori-formproduct" name="kategori" class="form-control">
                                         <option value=""></option>
                                 <?php
-                                    if(isset($loadKategori)){
-                                        foreach ($loadKategori as $lk) {
+                                    if(isset($loadCategory)){
+                                        foreach ($loadCategory as $lk) {
                                 ?>  
                                         <option value="<?php echo $lk->id;?>"><?php echo $lk->barang_kategori;?></option>
                                 <?php

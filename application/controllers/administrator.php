@@ -271,7 +271,7 @@ class Administrator extends CI_Controller {
 			'productactive' => 'active',
 			'loadAllBarang' => $this->modelproduct->loadAllBarang(),
 			'loadStatusBarang' => json_encode($this->modelproduct->loadStatusBarang()),
-			'loadKategori' => json_encode($this->modelproduct->loadAllKategori())
+			'loadCategory' => json_encode($this->modelproduct->loadAllCategory())
 		);
 		$this->load->view('administrator/product', $data);
 	}
@@ -287,7 +287,7 @@ class Administrator extends CI_Controller {
 			'username' => $this->tank_auth->get_username(),
 			'productaddactive' => 'active',
 			'loadStatusBarang' => $this->modelproduct->loadStatusBarang(),
-			'loadKategori' => $this->modelproduct->loadAllKategori()
+			'loadCategory' => $this->modelproduct->loadAllCategory()
 		);
 		$this->load->view('administrator/product_add', $data);
 	}
@@ -330,16 +330,6 @@ class Administrator extends CI_Controller {
 			$output = json_encode(array('type'=> 'message', 'text' => ucwords($nama).'('.$kode.') telah tersimpan'));
 			die($output);
 		}
-		/*$nama = $this->input->post('nama');
-		$kode = $this->input->post('kode');
-		$stock = $this->input->post('stock');
-		$hargabeli = $this->input->post('harga_beli');
-		$hargajual = $this->input->post('harga_jual');
-		$idstatus = $this->input->post('id_status');
-		$idkategori = $this->input->post('kategori');
-		$this->modelproduct->insertBarang($kode, $nama, $stock, $hargabeli, $hargajual, $idstatus, $idkategori);
-		$this->session->set_flashdata('message', '<div class="alert alert-success">Data barang '.ucwords($nama).'('.$kode.') berhasil ditambahkan!</div>');
-		redirect('administrator/product');*/
 	}
 
 	/*
@@ -395,10 +385,6 @@ class Administrator extends CI_Controller {
 			$this->modelproduct->updateBarang($idbarang, $kode, $nama, $stock, $hargabeli, $hargajual, $status, $kategoriedit);
 			$output = json_encode(array('type'=> 'message', 'text' => ucwords($nama).' ('.$kode.') telah diubah dan tersimpan'));
 			die($output);
-
-			//$this->modelproduct->updateBarang($idbarang, $kode, $nama, $stock, $hargabeli, $hargajual, $status, $kategoriedit);
-			//$this->session->set_flashdata('message', '<div class="alert alert-success">Data barang '.ucwords($nama).'('.$kode.') berhasil diubah dan disimpan!</div>');
-			//redirect('administrator/product');
 		}
 	}
 
@@ -444,15 +430,15 @@ class Administrator extends CI_Controller {
 
 	public function loadcategory()
 	{
-		$category = $this->modelproduct->loadAllKategori();
+		$category = $this->modelproduct->loadAllCategory();
 		$output = json_encode($category);
 		die($output);
 	}
 
 	public function categoryaddsubmit()
 	{
-		$kategori = $this->input->post('barang_kategori');
-		$kodekategori = $this->input->post('kategori_kode');
+		$category = $this->input->post('category');
+		$categorycode = $this->input->post('categorycode');
 
 		if($_POST){
 			//check if its an ajax request, exit if not
@@ -465,31 +451,31 @@ class Administrator extends CI_Controller {
 				));
 				die($output);
 		    } 
-		    if(!isset($kategori) || !isset($kodekategori)){
+		    if(!isset($category) || !isset($categorycode)){
 				$output = json_encode(array('type'=>'error', 'text' => 'Tidak boleh kosong'));
 				die($output);
 			}
-			if(strlen($kodekategori) != 3){
+			if(strlen($categorycode) != 3){
 				$output = json_encode(array('type'=>'error', 'text' => 'Kode kategori tidak boleh kurang atau lebih dari 3 huruf'));
 				die($output);
 			}
-			if(strlen($kodekategori) == 3){
-				$cekkode = $this->modelproduct->cekKategoriKode($kodekategori);
-				$cekkategori = $this->modelproduct->cekKategoriNama($kategori);
+			if(strlen($categorycode) == 3){
+				$checkCode = $this->modelproduct->checkCategoryCode($categorycode);
+				$checkCategory = $this->modelproduct->checkCategoryName($category);
 				
 
-				if($cekkategori->num_rows() > 0){
+				if($checkCategory->num_rows() > 0){
 					$output = json_encode(array('type'=>'error', 'text' => 'Kategori yang dimasukkan sudah ada'));
 					die($output);
 				}
-				if($cekkode->num_rows() > 0){
+				if($checkCode->num_rows() > 0){
 					$output = json_encode(array('type'=>'error', 'text' => 'Kode kategori yang dimasukkan sudah ada'));
 					die($output);
 				}
-				if(($cekkategori->num_rows()==0) && ($cekkode->num_rows()==0)){
-					$this->modelproduct->insertKategori($kategori, $kodekategori);
-					$loadkategori = $this->modelproduct->loadKategoriNama($kategori);
-					$output = json_encode(array('type'=>'message', 'text' => 'Kategori telah tersimpan.','datainsert' => array('id'=> $loadkategori->id ,'kategori' => $kategori, 'kode' => $kodekategori)));
+				if(($checkCategory->num_rows()==0) && ($checkCode->num_rows()==0)){
+					$this->modelproduct->insertCategory($category, $categorycode);
+					$loadCategory = $this->modelproduct->loadCategoryName($category);
+					$output = json_encode(array('type'=>'message', 'text' => 'Kategori telah tersimpan.','datainsert' => array('id'=> $loadCategory->id ,'category' => $category, 'categorycode' => $categorycode)));
 					die($output);
 				}
 			}
@@ -499,18 +485,18 @@ class Administrator extends CI_Controller {
 	public function categoryupdatesubmit()
 	{
 		$idcat = $this->input->post('idcat');
-		$kategori = $this->input->post('kategori_edit');
-		$kodekategori = $this->input->post('kode_edit');
-		if($kategori=="" || $kodekategori==""){
+		$category = $this->input->post('input_category_edit');
+		$categorycode = $this->input->post('input_categorycode_edit');
+		if($category=="" || $categorycode==""){
 			$this->session->set_flashdata('message', '<div class="alert alert-success">Tidak boleh kosong!</div>');
 			redirect('administrator/categoryadd');
 		}
-		if(strlen($kodekategori) != 3){
+		if(strlen($categorycode) != 3){
 			$this->session->set_flashdata('message', '<div class="alert alert-success">Kode kategori tidak boleh kurang atau lebih dari 3 huruf!</div>');
 			redirect('administrator/categoryadd');
 		}
-		if(strlen($kodekategori) == 3){
-			$this->modelproduct->updateKategori($idcat, $kategori, $kodekategori);
+		if(strlen($categorycode) == 3){
+			$this->modelproduct->updateCategory($idcat, $category, $categorycode);
 			$this->session->set_flashdata('message', '<div class="alert alert-success">Kategori berhasil diubah dan disimpan!</div>');
 			redirect('administrator/categoryadd');
 			
@@ -520,65 +506,14 @@ class Administrator extends CI_Controller {
 	public function categorydelete($id)
 	{
 		$idcat = $id;
-		$tabelkategori = $this->modelproduct->loadKategori('id', $idcat);
-		$kategori = $tabelkategori->barang_kategori;
-		$kode = $tabelkategori->kategori_kode;
-		$this->modelproduct->deleteKategori($idcat);
-		$this->session->set_flashdata('message', '<div class="alert alert-success">'.ucwords($kategori).' ('. $kode .')'.' telah berhasil dihapus!</div>');
+		$tableCategory = $this->modelproduct->loadCategory('id', $idcat);
+		$category = $tableCategory->barang_kategori;
+		$categorycode = $tableCategory->kategori_kode;
+		$this->modelproduct->deleteCategory($idcat);
+		$this->session->set_flashdata('message', '<div class="alert alert-success">'.ucwords($category).' ('. $categorycode .')'.' telah berhasil dihapus!</div>');
 		redirect('administrator/categoryadd');
 	}
-
 	/*
-	public function categoryupdatesubmit()
-	{
-		$idcat = $this->input->post('idcat');
-		$kategori = $this->input->post('barang_kategori');
-		$kodekategori = $this->input->post('kategori_kode');
-
-		if($_POST){
-			//check if its an ajax request, exit if not
-		    if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest'){
-				//exit script outputting json data
-				$output = json_encode(
-				array(
-					'type'=> 'error', 
-					'text' => 'Request must come from Ajax'
-				));
-				die($output);
-		    } 
-		    if(!isset($kategori) || !isset($kodekategori)){
-				$output = json_encode(array('type'=>'error', 'text' => 'Tidak boleh kosong'));
-				die($output);
-			}
-			if(strlen($kodekategori) != 3){
-				$output = json_encode(array('type'=>'error', 'text' => 'Kode kategori tidak boleh kurang atau lebih dari 3 huruf'));
-				die($output);
-			}
-			if(strlen($kodekategori) == 3){
-				$cekkode = $this->modelproduct->cekKategoriKode($kodekategori);
-				$cekkategori = $this->modelproduct->cekKategoriNama($kategori);
-				
-
-				if($cekkategori->num_rows() > 0){
-					$output = json_encode(array('type'=>'error', 'text' => 'Kategori yang dimasukkan sudah ada'));
-					die($output);
-				}
-				if($cekkode->num_rows() > 0){
-					$output = json_encode(array('type'=>'error', 'text' => 'Kode kategori yang dimasukkan sudah ada'));
-					die($output);
-				}
-				if(($cekkategori->num_rows()==0) && ($cekkode->num_rows()==0)){
-					$this->modelproduct->updateKategori($id, $kategori, $kodekategori);
-					$loadkategori = $this->modelproduct->loadKategoriNama($kategori);
-					$output = json_encode(array('type'=>'message', 'text' => 'Kategori yang diubah telah tersimpan.','datainsert' => array('id'=> $loadkategori->id ,'kategori' => $kategori, 'kode' => $kodekategori)));
-					die($output);
-				}
-			}
-		}
-	}
-*/
-	
-
 	public function test(){
 		// $data = array(
 			// 'loadAllBarang' => $this->modelproduct->loadAllBarang()
@@ -587,11 +522,12 @@ class Administrator extends CI_Controller {
 		$loadStatusBarang = $this->modelproduct->loadStatusBarang();
 		echo json_encode($loadStatusBarang);
 	}
-	
+	*/
+	/*
 	function tosha1(){
 		echo sha1('INERREInteriorBandung');
 	}
-
+	*/
 }
 
 /* End of file administrator.php */

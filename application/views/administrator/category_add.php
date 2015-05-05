@@ -29,13 +29,13 @@
                                 <div class="form-group">
                                     <label for="kategori" class="col-sm-2 col-sm-2 control-label">Kategori</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="kategori" class="form-control" id="kategori">
+                                        <input type="text" name="input_category" class="form-control" id="input_category">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="kodekategori" class="col-sm-2 col-sm-2 control-label">Kode Kategori</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="kodekategori" class="form-control" id="kodekategori">
+                                        <input type="text" name="input_categorycode" class="form-control" id="input_categorycode">
                                         <span class="help-block">Kode harus terdiri dari 3 huruf</span>
                                     </div>
                                 </div>
@@ -82,13 +82,13 @@
                                         <div class="form-group">
                                             <label class="col-sm-2 col-sm-2 control-label">Category</label>
                                               <div class="col-sm-10">
-                                                 <input type="text" name="kategori_edit" id="kategori_edit" class="form-control">
+                                                 <input type="text" name="input_category_edit" id="input_category_edit" class="form-control">
                                               </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-2 col-sm-2 control-label">Category Code</label>
                                             <div class="col-sm-10">
-                                                <input type="text" name="kode_edit" id="kode_edit" class="form-control">
+                                                <input type="text" name="input_categorycode_edit" id="input_categorycode_edit" class="form-control">
                                                 <span class="help-block">Kode harus terdiri dari 3 huruf</span>
                                             </div>
                                         </div>
@@ -133,18 +133,14 @@
         <script type="text/javascript">
         $(document).ready(function(){
             // load all category
-            
             loadCategory();
             submitCategory();
-            
         })
 
         /*
          * load all category
          */
         function loadCategory(){
-            
-            
             $.ajax({
                 type: "POST",
                 url:"loadcategory",
@@ -168,10 +164,10 @@
                                                 '<td>'+ value.kategori_kode +'</td>'+
                                                 '<td>'+
                                                     '<div class="btn-group">'+
-                                                    '<button class="btn btn-success" data-toggle="modal" data-target="#editcatModal" data-idcat="'+value.id+'" data-kategori="'+ value.barang_kategori +'" data-kode="'+ value.kategori_kode +'">'+
+                                                    '<button class="btn btn-success" data-toggle="modal" data-target="#editcatModal" data-idcat="'+value.id+'" data-category="'+ value.barang_kategori +'" data-categorycode="'+ value.kategori_kode +'">'+
                                                         '<i class="fa fa-edit"></i>'+
                                                     '</button>'+
-                                                    '<button class="btn btn-primary" data-toggle="modal" data-target="#deletecatModal" data-idcat="'+value.id+'" data-kategori="'+ value.barang_kategori +'" data-kode="'+ value.kategori_kode +'">'+
+                                                    '<button class="btn btn-primary" data-toggle="modal" data-target="#deletecatModal" data-idcat="'+value.id+'" data-category="'+ value.barang_kategori +'" data-categorycode="'+ value.kategori_kode +'">'+
                                                         '<i class="fa fa-trash-o"></i>'+
                                                     '</button>'+
                                                     '</div>'+
@@ -191,23 +187,23 @@
          */
         function submitCategory(){
             $("#submitcategory").click(function(){
-                var kategori = $('input[name=kategori]').val();
-                var kodekategori = $('input[name=kodekategori]').val();
+                var category = $('input[name=input_category]').val();
+                var categorycode = $('input[name=input_categorycode]').val();
 
                 var proceed = true;
-                if(kategori == ""){
-                    $('input[name=kategori]').css('border-color', '#e41919');
+                if(category == ""){
+                    $('input[name=input_category]').css('border-color', '#e41919');
                     proceed = false;
                 }
-                if(kodekategori == ""){
-                    $('input[name=kodekategori]').css('border-color', '#e41919');
+                if(categorycode == ""){
+                    $('input[name=input_categorycode]').css('border-color', '#e41919');
                     proceed = false;
                 }
                 if(proceed){
                     $.ajax({
                         type: "POST",
                         url:"categoryaddsubmit",
-                        data:{barang_kategori: kategori, kategori_kode: kodekategori},
+                        data:{category: category, categorycode: categorycode},
                         dataType: "json",
                         success:function(response){
                             //console.log(response.type);
@@ -215,16 +211,16 @@
                                 output = '<div class="alert alert-danger">' + response.text + '</div>';
                             }else{
                                 //reset values in all input fields
-                                $('input#kategori').val('');
-                                $('input#kodekategori').val('');
+                                $('input#input_category').val('');
+                                $('input#input_category').val('');
                                 //console.log(response);
                                 output = '<div class="alert alert-success">' + response.text + '</div>';
-                                tabledata = '<tr><td>'+ response.datainsert.kategori +'</td>'+
-                                            '<td>'+ response.datainsert.kode +'</td>'+
+                                tabledata = '<tr><td>'+ response.datainsert.category +'</td>'+
+                                            '<td>'+ response.datainsert.categorycode +'</td>'+
                                             '<td>'+
                                                 '<div class="btn-group">'+
-                                                '<button class="btn btn-success" data-toggle="modal" data-target="#editcatModal" data-idcat="'+response.datainsert.id+'" data-kategori="'+response.datainsert.kategori+'" data-kode="'+response.datainsert.kode+'"><i class="fa fa-edit"></i></button>'+
-                                                '<button class="btn btn-primary" data-toggle="modal" data-target="#deletecatModal" data-idcat="'+response.datainsert.id+'" data-kategori="'+response.datainsert.kategori+'" data-kode="'+response.datainsert.kode+'"><i class="fa fa-trash-o"></i></button></td>'
+                                                '<button class="btn btn-success" data-toggle="modal" data-target="#editcatModal" data-idcat="'+response.datainsert.id+'" data-category="'+response.datainsert.category+'" data-categorycode="'+response.datainsert.categorycode+'"><i class="fa fa-edit"></i></button>'+
+                                                '<button class="btn btn-primary" data-toggle="modal" data-target="#deletecatModal" data-idcat="'+response.datainsert.id+'" data-category="'+response.datainsert.category+'" data-categorycode="'+response.datainsert.categorycode+'"><i class="fa fa-trash-o"></i></button></td>'
                                                 '</div>'+
                                             '</td></tr>';
                                 $('#table-category tbody tr:first').before(tabledata);
@@ -237,8 +233,8 @@
                 return false;
             })
             //reset previously set border colors and hide all message on .keyup()
-            $("input#kategori, input#kodekategori").keyup(function(){
-                $("input#kategori, input#kodekategori").css('border-color', '');
+            $("input#category, input#categorycode").keyup(function(){
+                $("input#categroy, input#categorycode").css('border-color', '');
                 $("#message_result").slideUp();
             });
         }
@@ -247,26 +243,26 @@
          */
         $('#editcatModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget)// Button that triggered the modal
-            var kode = button.data('kode')
-            var kategori = button.data('kategori')
+            var categorycode = button.data('categorycode')
+            var category = button.data('category')
             var idcat = button.data('idcat')
             var modal = $(this)
-            modal.find('.modal-title').text('Edit ' + kode + ' - ' +kategori)
+            modal.find('.modal-title').text('Edit ' + categorycode + ' - ' +category)
             modal.find('.modal-body input#idcat').val(idcat)
-            modal.find('.modal-body div.form-group div input#kategori_edit').val(kategori)
-            modal.find('.modal-body div.form-group div input#kode_edit').val(kode)
+            modal.find('.modal-body div.form-group div input#input_category_edit').val(category)
+            modal.find('.modal-body div.form-group div input#input_categorycode_edit').val(categorycode)
         });
         /*
          * modal for delete category
          */
         $('#deletecatModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget)// Button that triggered the modal
-            var kode = button.data('kode')
-            var kategori = button.data('kategori')
+            var categorycode = button.data('categorycode')
+            var category = button.data('category')
             var idcat = button.data('idcat')
             var modal = $(this)
-            modal.find('.modal-title').text(kode + ' - ' +kategori)
-            modal.find('.modal-body h2#h2alert').text('Hapus ' +kategori+' ( kode: '+kode+' ) ?')
+            modal.find('.modal-title').text(categorycode + ' - ' +category)
+            modal.find('.modal-body h2#h2alert').text('Hapus ' +category+' ( kode: '+categorycode+' ) ?')
             modal.find('.modal-footer a#deletelink').attr("href", 'categorydelete/'+idcat)
         });
         
