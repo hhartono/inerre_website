@@ -6,8 +6,8 @@ class Contact extends CI_Controller {
 	{
 		parent::__construct();
         $this->load->database();
-        $this->load->library('input');
-        $this->load->helper(array('form','html','url'));
+        $this->load->helper(array('form','html','url','email'));
+        $this->load->library(array('input', 'email'));
         $this->load->model('modelcontact');
     }
 
@@ -85,6 +85,28 @@ class Contact extends CI_Controller {
 			
 			if((strlen($user_Name)>=4) && (filter_var($user_Email, FILTER_VALIDATE_EMAIL)) && (strlen($user_Message)>=5)){
 				$insertToDB = $this->modelcontact->insertContact($name, $email, $message);
+				// sending notification
+				$infoatinerre = 'info@inerre.com';
+				$subject = "INERRE WEBSITE Notification - New Message from ".ucwords($name)." (".$email.")";
+				$messagenotification = ucwords($name)." (".$email.") send a message from contact form <br> <blockquote>".$user_Message."</blockquote>";
+				$configmail = array(
+					'useragent' => 'inerre website',
+					'protocol' => 'sendmail',
+				 	'mailpath' => '/usr/sbin/sendmail',
+				 	'smtp_host' => 'localhost',
+				 	'smtp_port' => 25,
+				 	'charset' => 'utf-8',
+				 	'wordwrap' => TRUE,
+				 	'crlf' => '\r\n',
+				 	'newline' => '\r\n'
+				);
+				$this->email->initialize($configmail);
+				$this->email->from('info@inerre.com', 'INERRE Interior');
+				$this->email->to($infoatinerre);
+				$this->email->subject($subject);
+				$this->email->message($messagenotification);
+				$this->email->send();
+				// end sending notification
 				$output = json_encode(array('type'=>'message', 'text' => 'Hi '.$user_Name .'! Thank you for your email'));
 				die($output);
 			}
