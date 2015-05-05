@@ -717,6 +717,10 @@ function init_map(){
                             if (infowindow){
                               infowindow.close();
                             }
+                        },
+                        click: function(){
+                            //console.log("marker clicked!");
+                            window.open('https://www.google.co.id/maps/dir//INERRE+Interior,+Jl.+Pasteur+No.+11,+Bandung,+Jawa+Barat+40116/@-6.9003664,107.5663282,13z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x2e68e64383f4eda3:0x420267de73972b84!2m2!1d107.603322!2d-6.900453!3e0?hl=en');
                         }
                     }
                 },
