@@ -212,7 +212,7 @@
                             }else{
                                 //reset values in all input fields
                                 $('input#input_category').val('');
-                                $('input#input_category').val('');
+                                $('input#input_categorycode').val('');
                                 //console.log(response);
                                 output = '<div class="alert alert-success">' + response.text + '</div>';
                                 tabledata = '<tr><td>'+ response.datainsert.category +'</td>'+
@@ -233,8 +233,8 @@
                 return false;
             })
             //reset previously set border colors and hide all message on .keyup()
-            $("input#category, input#categorycode").keyup(function(){
-                $("input#categroy, input#categorycode").css('border-color', '');
+            $("input#input_category, input#input_categorycode").keyup(function(){
+                $("input#input_category, input#input_categorycode").css('border-color', '');
                 $("#message_result").slideUp();
             });
         }
