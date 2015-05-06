@@ -70,7 +70,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>I&nbsp;N&nbsp;E&nbsp;R&nbsp;R&nbsp;E</b></a>
+            <a href="/administrator" class="logo"><b>I&nbsp;N&nbsp;E&nbsp;R&nbsp;R&nbsp;E</b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
