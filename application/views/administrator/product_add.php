@@ -163,9 +163,29 @@
                         if(response.type=='error'){
                             //console.log(response.content_form);   
                             output = '<div class="alert alert-danger">' + response.content_form + '</div>';
+                            // BELUM SELESAI
+                            if(response.content_form.setvaluestock != ""){
+                                $('input[name=stock]').css('border-color', '#e41919').focus();
+                            }
+                            if(response.content_form.setvaluehargabeli != ""){
+                                $('input[name=harga_beli]').css('border-color', '#e41919').focus();
+                            }
+                             if(response.content_form.setvaluehargajual != ""){
+                                $('input[name=harga_jual]').css('border-color', '#e41919').focus();
+                            }
+
                         }else{
                             //console.log(response.text);
                             output = '<div class="alert alert-success">'+ response.text +' Lihat pada <a href="product">Table Product</a></div>';
+                            $('#nama').val('');
+                            $('#kode').val('');
+                            $('#stock').val('');
+                            $('#hargabeli').val('');
+                            $('#hargajual').val('');
+                            $('#kategori_formproduct_chosen a.chosen-single span').text('Pilih Kategori...');
+                            $('.chosen-result li').removeClass('result-selected');
+                            $('#idstatus').prop('selected', false);
+                            $('#nama').focus();
                         }
                         $("#message_result").hide().html(output).slideDown();
                     }

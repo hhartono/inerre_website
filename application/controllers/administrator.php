@@ -339,7 +339,12 @@ class Administrator extends CI_Controller {
 				'hargajual' => form_error('harga_jual'),
 				'idstatus' => form_error('id_status')
 				);
-			$output = json_encode(array('type'=>'error', 'content_form' => validation_errors()));
+			$output = json_encode(array('type'=>'error', 'content_form' => validation_errors(), 
+				'setvaluenama' => set_value('nama'),
+				'setvaluestok' => set_value('stock'),
+				'setvaluehargabeli' => set_value('hargabeli'),
+				'setvaluehargajual' => set_value('hargajual')
+				));
 			die($output);
 		}else{
 			$nama = $this->input->post('nama');
@@ -492,7 +497,8 @@ class Administrator extends CI_Controller {
 	public function categoryaddsubmit()
 	{
 		$category = $this->input->post('category');
-		$categorycode = $this->input->post('categorycode');
+		$categorycode = strtoupper($this->input->post('categorycode'));
+
 
 		if($_POST){
 			//check if its an ajax request, exit if not
@@ -544,7 +550,7 @@ class Administrator extends CI_Controller {
 		$idcat = $this->input->post('idcat');
 		$category = $this->input->post('category');
 		$categorycurrent = $this->input->post('categorycurrent');
-		$categorycode = $this->input->post('categorycode');
+		$categorycode = strtoupper($this->input->post('categorycode'));
 		$categorycodecurrent = $this->input->post('categorycodecurrent');
 
 		if($_POST){
