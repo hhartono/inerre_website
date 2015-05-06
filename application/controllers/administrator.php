@@ -542,11 +542,11 @@ class Administrator extends CI_Controller {
 		$category = $this->input->post('input_category_edit');
 		$categorycode = $this->input->post('input_categorycode_edit');
 		if($category=="" || $categorycode==""){
-			$this->session->set_flashdata('message', '<div class="alert alert-success">Tidak boleh kosong!</div>');
+			$this->session->set_flashdata('message', '<div class="alert alert-danger">Tidak boleh kosong!</div>');
 			redirect('administrator/categoryadd');
 		}
 		if(strlen($categorycode) != 3){
-			$this->session->set_flashdata('message', '<div class="alert alert-success">Kode kategori tidak boleh kurang atau lebih dari 3 huruf!</div>');
+			$this->session->set_flashdata('message', '<div class="alert alert-danger">Kode kategori tidak boleh kurang atau lebih dari 3 huruf!</div>');
 			redirect('administrator/categoryadd');
 		}
 		if(strlen($categorycode) == 3){

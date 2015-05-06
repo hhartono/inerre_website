@@ -158,7 +158,7 @@
                     }else{
                         var datatablecat;
                         $.each(response, function(key, value){
-                            console.log(value.barang_kategori);
+                            //console.log(value.barang_kategori);
                             datatablecat = '<tr>'+
                                                 '<td>'+ value.barang_kategori +'</td>'+
                                                 '<td>'+ value.kategori_kode +'</td>'+

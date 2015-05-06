@@ -6,7 +6,7 @@ RewriteRule .* index.php/$1 [PT,L]
 # Enable expirations
 ExpiresActive On
 # Default directives
-ExpiresDefault "access plus 1 month"
+# ExpiresDefault "access plus 1 month"
 # Favicon
 ExpiresByType image/x-icon "access plus 1 year"
 # Images
