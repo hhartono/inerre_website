@@ -180,6 +180,32 @@ class Modelproduct extends CI_Model {
 		return $query;
 	}
 
+	public function checkCategoryCodeExclude($code)
+	{
+		$query = $this->db->query("
+				SELECT bk.*
+				FROM barang_kategori bk
+				WHERE bk.kategori_kode <> '$code'
+		");
+		/*if($query->num_rows()>0){
+			$data = $query->row();
+		}*/
+		return $query;
+	}
+
+	public function checkCategoryNameExclude($category)
+	{
+		$query = $this->db->query("
+				SELECT bk.*
+				FROM barang_kategori bk
+				WHERE bk.barang_kategori <> '$category'
+		");
+		/*if($query->num_rows()>0){
+			$data = $query->row();
+		}*/
+		return $query;
+	}
+
 	public function loadCategoryName($category)
 	{
 		$query = $this->db->query("

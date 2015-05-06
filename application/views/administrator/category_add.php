@@ -75,7 +75,8 @@
                                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                   <h4 class="modal-title" id="editcatModalLabel">Modal title</h4>
                                 </div>
-                                <form action="/administrator/categoryupdatesubmit" method="POST" class="form-horizontal style-form">
+                                <!-- <form action="/administrator/categoryupdatesubmit" method="POST" class="form-horizontal style-form"> -->
+                                <form method="POST" class="form-horizontal style-form">
                                     <div class="modal-body">
                                         <div id="message_result_edit"></div>
                                         <input type="hidden" name="idcat" id="idcat" value="">
@@ -83,12 +84,14 @@
                                             <label class="col-sm-2 col-sm-2 control-label">Category</label>
                                               <div class="col-sm-10">
                                                  <input type="text" name="input_category_edit" id="input_category_edit" class="form-control">
+                                                 <input type="hidden" name="hidden_category_edit" id="hidden_category_edit" value="">
                                               </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-2 col-sm-2 control-label">Category Code</label>
                                             <div class="col-sm-10">
                                                 <input type="text" name="input_categorycode_edit" id="input_categorycode_edit" class="form-control">
+                                                <input type="hidden" name="hidden_categorycode_edit" id="hidden_categorycode_edit" value="">
                                                 <span class="help-block">Kode harus terdiri dari 3 huruf</span>
                                             </div>
                                         </div>
@@ -135,6 +138,7 @@
             // load all category
             loadCategory();
             submitCategory();
+            submitUpdateCategory();
         })
 
         /*
@@ -238,20 +242,75 @@
                 $("#message_result").slideUp();
             });
         }
+
+        /*
+         * submit update category
+         */
+        function submitUpdateCategory(){
+            $('#submitupdatecategory').click(function(){
+                var idcat = $('input[name=idcat]').val();
+                var category = $('input[name=input_category_edit]').val();
+                var categorycurrent = $('input[name=hidden_category_edit]').val();
+                var categorycode = $('input[name=input_categorycode_edit]').val();
+                var categorycodecurrent = $('input[name=hidden_categorycode_edit]').val();
+
+                var proceed = true;
+                if(category == ""){
+                    $('input[name=input_category_edit]').css('border-color', '#e41919');
+                    proceed = false;
+                }
+                if(categorycode == ""){
+                    $('input[name=input_categorycode_edit]').css('border-color', '#e41919');
+                    proceed = false;
+                }
+                if(proceed){
+                    $.ajax({
+                        type: "POST",
+                        url:"categoryupdatesubmit",
+                        data:{idcat: idcat,category: category, categorycurrent: categorycurrent, categorycode: categorycode, categorycodecurrent: categorycodecurrent},
+                        dataType: "json",
+                        success:function(response){
+                            console.log(response.type);
+                            if(response.type =='error'){
+                                output = '<div class="alert alert-danger">' + response.text + '</div>';
+                            }else{
+                                output = '<div class="alert alert-success">' + response.text + '</div>';
+                                $('#hidden_category_edit').val(response.dataupdate.category);
+                                $('#hidden_categorycode_edit').val(response.dataupdate.categorycode);
+                            }
+                            $("#message_result_edit").hide().html(output).slideDown();
+                        }
+                    });
+                }
+                return false;
+            })
+            //reset previously set border colors and hide all message on .keyup()
+            $("input#input_category_edit, input#input_categorycode_edit").keyup(function(){
+                $("input#input_category_edit, input#input_categorycode_edit").css('border-color', '');
+                $("#message_result_edit").slideUp();
+            });
+        }
+        
         /*
          * modals for edit category
          */
         $('#editcatModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget)// Button that triggered the modal
-            var categorycode = button.data('categorycode')
-            var category = button.data('category')
             var idcat = button.data('idcat')
+            var category = button.data('category')
+
+            var categorycode = button.data('categorycode')
             var modal = $(this)
             modal.find('.modal-title').text('Edit ' + categorycode + ' - ' +category)
             modal.find('.modal-body input#idcat').val(idcat)
             modal.find('.modal-body div.form-group div input#input_category_edit').val(category)
+            modal.find('.modal-body div.form-group div input#hidden_category_edit').val(category)
             modal.find('.modal-body div.form-group div input#input_categorycode_edit').val(categorycode)
+            modal.find('.modal-body div.form-group div input#hidden_categorycode_edit').val(categorycode)
         });
+        $('#editcatModal').on('hidden.bs.modal',function(){
+            location.reload();
+        })
         /*
          * modal for delete category
          */
@@ -265,10 +324,7 @@
             modal.find('.modal-body h2#h2alert').text('Hapus ' +category+' ( kode: '+categorycode+' ) ?')
             modal.find('.modal-footer a#deletelink').attr("href", 'categorydelete/'+idcat)
         });
-        
     </script>
-
-
 <?php
 	// load footer
 	$this->load->view('administrator/template/footer_new');

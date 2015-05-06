@@ -505,10 +505,12 @@ class Administrator extends CI_Controller {
 				));
 				die($output);
 		    } 
+		    /*
 		    if(!isset($category) || !isset($categorycode)){
 				$output = json_encode(array('type'=>'error', 'text' => 'Tidak boleh kosong'));
 				die($output);
 			}
+			*/
 			if(strlen($categorycode) != 3){
 				$output = json_encode(array('type'=>'error', 'text' => 'Kode kategori tidak boleh kurang atau lebih dari 3 huruf'));
 				die($output);
@@ -538,10 +540,76 @@ class Administrator extends CI_Controller {
 
 	public function categoryupdatesubmit()
 	{
+
 		$idcat = $this->input->post('idcat');
-		$category = $this->input->post('input_category_edit');
-		$categorycode = $this->input->post('input_categorycode_edit');
-		if($category=="" || $categorycode==""){
+		$category = $this->input->post('category');
+		$categorycurrent = $this->input->post('categorycurrent');
+		$categorycode = $this->input->post('categorycode');
+		$categorycodecurrent = $this->input->post('categorycodecurrent');
+
+		if($_POST){
+			//check if its an ajax request, exit if not
+		    if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest'){
+				//exit script outputting json data
+				$output = json_encode(
+				array(
+					'type'=> 'error', 
+					'text' => 'Request must come from Ajax'
+				));
+				die($output);
+		    } 
+		    /*
+		    if(!isset($category) || !isset($categorycode)){
+				$output = json_encode(array('type'=>'error', 'text' => 'Tidak boleh kosong'));
+				die($output);
+			}
+			*/
+			if(strlen($categorycode) != 3){
+				$output = json_encode(array('type'=>'error', 'text' => 'Kode kategori tidak boleh kurang atau lebih dari 3 huruf'));
+				die($output);
+			}
+			if(strlen($categorycode) == 3){
+				$categorycondition = false;
+				$codecondition = false;
+				
+				$checkCategoryExclude = $this->modelproduct->checkCategoryNameExclude($categorycurrent);
+				$checkCodeExclude = $this->modelproduct->checkCategoryCodeExclude($categorycodecurrent);
+
+				if($checkCategoryExclude->num_rows() > 0){
+					foreach ($checkCategoryExclude->result() as $row) {
+						if($category == $row->barang_kategori){
+							$output = json_encode(array('type'=>'error', 'text' => 'Kategori yang dimasukkan sudah ada'));
+							die($output);
+						}else{
+							$categorycondition = true;
+						}
+					}
+				}else{
+					$categorycondition = true;
+				}
+				if($checkCodeExclude->num_rows() > 0){
+					foreach ($checkCodeExclude->result() as $row) {
+						if($categorycode == $row->kategori_kode){
+							$output = json_encode(array('type'=>'error', 'text' => 'Kode kategori yang dimasukkan sudah ada'));
+							die($output);
+						}else{
+							$codecondition = true;
+						}
+					}
+				}else{
+					$codecondition = true;
+				}
+
+				if($categorycondition && $codecondition){
+					$this->modelproduct->updateCategory($idcat, $category, $categorycode);
+					$loadCategory = $this->modelproduct->loadCategoryName($category);
+					$output = json_encode(array('type'=>'message', 'text' => 'Kategori '.$category.' ('. $categorycode .') yang diubah telah tersimpan.','dataupdate' => array('id'=> $loadCategory->id ,'category' => $category, 'categorycode' => $categorycode)));
+					die($output);
+				}
+			}
+		}
+
+		/*if($category=="" || $categorycode==""){
 			$this->session->set_flashdata('message', '<div class="alert alert-danger">Tidak boleh kosong!</div>');
 			redirect('administrator/categoryadd');
 		}
@@ -554,7 +622,7 @@ class Administrator extends CI_Controller {
 			$this->session->set_flashdata('message', '<div class="alert alert-success">Kategori berhasil diubah dan disimpan!</div>');
 			redirect('administrator/categoryadd');
 			
-		}
+		}*/
 	}
 
 	public function categorydelete($id)
