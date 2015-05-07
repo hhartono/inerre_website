@@ -40,20 +40,8 @@
         .dataTables_messagefil, .dataTables_tgl{
             float:left;
         }
-        /*
-         * chosen drop list overwrite css 
-         */
-        .chosen-container{
-            font-size:14px !important;
-        }
         .chosen-container-single .chosen-single{
-            height:34px !important;
-            border-radius:4px !important;
-            border:1px solid #ccc !important;
-            line-height: 32px !important;
-        }
-        .chosen-container-single .chosen-single div{
-            top:6px !important;
+           border:1px solid #ccc;
         }
     </style>
   </head>

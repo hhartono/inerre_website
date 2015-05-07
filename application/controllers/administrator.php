@@ -339,12 +339,19 @@ class Administrator extends CI_Controller {
 				'hargajual' => form_error('harga_jual'),
 				'idstatus' => form_error('id_status')
 				);
-			$output = json_encode(array('type'=>'error', 'content_form' => validation_errors(), 
-				'setvaluenama' => set_value('nama'),
-				'setvaluestok' => set_value('stock'),
-				'setvaluehargabeli' => set_value('hargabeli'),
-				'setvaluehargajual' => set_value('hargajual')
-				));
+			$output = json_encode(
+						array(
+							'type'=>'error', 
+							'validation_errors' => validation_errors(), 
+							'setvaluenama' => set_value('nama'),
+							'setvaluekategori' => set_value('kategori'),
+							'setvaluekode' => set_value('kode'),
+							'setvaluestok' => set_value('stock'),
+							'setvaluehargabeli' => set_value('harga_beli'),
+							'setvaluehargajual' => set_value('harga_jual'),
+							'setvaluestatus' => set_value('idstatus')
+							)
+						);
 			die($output);
 		}else{
 			$nama = $this->input->post('nama');
