@@ -345,7 +345,7 @@
                         success: function(response){
                             if(response.type=='error'){
                                 //console.log(response.content_form); 
-                                output = '<div class="alert alert-danger">' + response.validation_errors + '</div>';  
+                                output = '<div class="alert alert-danger">' + response.validation_errors  + '</div>';  
                                 if(response.formerror.stock != ""){
                                     $('input[name=stock]').css('border-color', '#e41919').addClass('form-error-focus');
                                 }
@@ -398,6 +398,7 @@
 
         function submitUpdateStock(){
             $('#submitupdatestockproduct').click(function(){
+                var output = "";
                 var idproduct = $('input[name=hidden_idproduct_stock_update]').val();
                 var laststock = $('input[name=hidden_laststock_update]').val();
                 var stockadd = $('input[name=input_stock_update]').val();
@@ -405,7 +406,9 @@
                 if(stockadd == ""){
                     $('input[name=input_stock_update]').css('border-color', '#e41919');
                     proceed = false;
+                    output = '<div class="alert alert-danger">Harus diisi, tidak boleh kosong!</div>';
                 }
+                $("#message_result_updatestock").hide().html(output).slideDown();
                 if(proceed){
                     $.ajax({
                         type: "POST",
@@ -414,8 +417,12 @@
                         dataType: "json",
                         success: function(response){
                             if(response.type == "error"){
-                                //console.log(response.text);
-                                output = '<div class="alert alert-danger">' + response.text + '</div>';
+                                /*console.log(response.type);
+                                console.log(response.formerror.stockadd);*/
+                                output = '<div class="alert alert-danger">' + response.validation_errors + '</div>';
+                                if(response.formerror.stockadd != ""){
+                                    $('input[name=input_stock_update]').css('border-color', '#e41919');
+                                }
                             }else{
                                 $('input#input_stock_update').val('');
                                 //console.log(response.text);

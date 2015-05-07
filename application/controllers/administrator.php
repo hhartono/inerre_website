@@ -450,12 +450,18 @@ class Administrator extends CI_Controller {
 	public function productupdatestocksubmit()
 	{
 		$this->form_validation->set_rules('stockadd', 'Stock', 'numeric');
-		$this->form_validation->set_message('numeric', 'Input harus berupa angka');
+		$this->form_validation->set_message('numeric', 'harus berupa angka');
 		if($this->form_validation->run() == FALSE){
-			$value = array(
-				'stockadd' => form_error('input_stock_update')
+			$formerror = array(
+				'stockadd' => form_error('stockadd')
 			);
-			$output = json_encode(array('type'=>'error', 'text' => validation_errors()));
+			$output = json_encode(
+						array(
+							'type'=>'error', 
+							'validation_errors' => validation_errors(), 
+							'formerror' => $formerror
+							)
+						);
 			die($output);
 		}else{
 			$idproduct = $this->input->post('idproduct');
