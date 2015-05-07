@@ -167,7 +167,7 @@
             }
             $("input.form-error-focus:first").focus().removeClass('form-error-focus');
             $("#message_result").hide().html(output).slideDown();
-            
+
             if(proceed){
                 $.ajax({
                     type: "POST",
@@ -199,9 +199,9 @@
                             $('#stock').val('');
                             $('#hargabeli').val('');
                             $('#hargajual').val('');
-                            $('#kategori_formproduct_chosen a.chosen-single span').text('Pilih Kategori...');
-                            $('.chosen-result li').removeClass('result-selected');
-                            $('#idstatus').prop('selected', false);
+                            $('#kategori-formproduct').val('').trigger("chosen:updated");
+                            $('#status').val('').trigger("chosen:updated");
+                            $('div.chosen-drop ul.chosen-results li.active-result').removeClass('result-selected');
                             $('#nama').focus();
                         }
                         $("#message_result").hide().html(output).slideDown();
