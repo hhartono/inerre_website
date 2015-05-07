@@ -343,7 +343,7 @@ class Administrator extends CI_Controller {
 						array(
 							'type'=>'error', 
 							'validation_errors' => validation_errors(), 
-							'setvaluenama' => set_value('nama'),
+							//'setvaluenama' => set_value('nama'),
 							'setvaluekategori' => set_value('kategori'),
 							'setvaluekode' => set_value('kode'),
 							'setvaluestok' => set_value('stock'),

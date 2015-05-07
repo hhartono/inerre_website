@@ -191,18 +191,23 @@
          */
         function submitCategory(){
             $("#submitcategory").click(function(){
+                var output = "";
                 var category = $('input[name=input_category]').val();
                 var categorycode = $('input[name=input_categorycode]').val();
 
                 var proceed = true;
                 if(category == ""){
-                    $('input[name=input_category]').css('border-color', '#e41919');
+                    $('input[name=input_category]').css('border-color', '#e41919').addClass('form-error-focus');
                     proceed = false;
+                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
                 }
                 if(categorycode == ""){
-                    $('input[name=input_categorycode]').css('border-color', '#e41919');
+                    $('input[name=input_categorycode]').css('border-color', '#e41919').addClass('form-error-focus');
                     proceed = false;
+                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
                 }
+                $("input.form-error-focus:first").focus().removeClass('form-error-focus');
+                $("#message_result").hide().html(output).slideDown();
                 if(proceed){
                     $.ajax({
                         type: "POST",

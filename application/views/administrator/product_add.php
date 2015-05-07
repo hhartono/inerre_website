@@ -118,7 +118,6 @@
         $('#status').chosen({
             disable_search: true
         });
-
         submitProduct();
         
     });
@@ -137,52 +136,38 @@
             if(nama == ""){
                 $('input[name=nama]').css('border-color', '#e41919').addClass('form-error-focus');
                 proceed = false;
-                if(output != ""){
-                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
-                }
+                output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
             }
             if(kategori == ""){
                 $('#kategori_formproduct_chosen a.chosen-single').css('border-color', '#e41919').addClass('form-error-focus');
-                if(output != ""){
-                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
-                }
+                output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
             }
             if(kode == ""){
                 $('input[name=kode]').css('border-color', '#e41919').addClass('form-error-focus');
-                if(output != ""){
-                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
-                }
+                output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
             }
             if(stock == ""){
                 $('input[name=stock]').css('border-color', '#e41919').addClass('form-error-focus');
                 proceed = false;
-                if(output != ""){
-                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
-                }
+                output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
             }
             if(hargabeli == ""){
                 $('input[name=harga_beli]').css('border-color', '#e41919').addClass('form-error-focus');
                 proceed = false;
-                if(output != ""){
-                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
-                }
+                output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
             }
             if(hargajual == ""){
                 $('input[name=harga_jual]').css('border-color', '#e41919').addClass('form-error-focus');
                 proceed = false;
-                if(output != ""){
-                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
-                }
+                output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
             }
             if(idstatus == ""){
                 $('#status_chosen a.chosen-single').css('border-color', '#e41919').addClass('form-error-focus');
-                if(output != ""){
-                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
-                }
+                output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
             }
-             $("input.form-error-focus:first").focus().removeClass('form-error-focus');
-
+            $("input.form-error-focus:first").focus().removeClass('form-error-focus');
             $("#message_result").hide().html(output).slideDown();
+            
             if(proceed){
                 $.ajax({
                     type: "POST",
