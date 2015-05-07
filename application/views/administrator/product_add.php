@@ -140,6 +140,7 @@
             }
             if(kategori == ""){
                 $('#kategori_formproduct_chosen a.chosen-single').css('border-color', '#e41919').addClass('form-error-focus');
+                proceed = false;
                 output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
             }
             if(kode == ""){
@@ -163,6 +164,7 @@
             }
             if(idstatus == ""){
                 $('#status_chosen a.chosen-single').css('border-color', '#e41919').addClass('form-error-focus');
+                proceed = false;
                 output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
             }
             $("input.form-error-focus:first").focus().removeClass('form-error-focus');
@@ -179,17 +181,17 @@
                             //console.log(response.validation_errors);   
                             output = '<div class="alert alert-danger">' + response.validation_errors + '</div>';
                             
-                            if(response.setvaluestock != ""){
-                                //$('input[name=stock]').addClass('form-error-focus');
+                            if(response.formerror.stock != ""){
                                 $('input[name=stock]').css('border-color', '#e41919').addClass('form-error-focus');
                             }
-                            if(response.setvaluehargabeli != ""){
+                            if(response.formerror.hargabeli != ""){
                                 $('input[name=harga_beli]').css('border-color', '#e41919').addClass('form-error-focus');
                             }
-                            if(response.setvaluehargajual != ""){
+                            if(response.formerror.hargajual != ""){
                                 $('input[name=harga_jual]').css('border-color', '#e41919').addClass('form-error-focus');
                             }
-                            $("input.form-error-focus:first").focus().removeClass('form-error-focus');
+                            $("input.form-error-focus:first").focus();
+                            $("input.form-error-focus").removeClass('form-error-focus');
 
                         }else{
                             //console.log(response.text);
@@ -201,7 +203,6 @@
                             $('#hargajual').val('');
                             $('#kategori-formproduct').val('').trigger("chosen:updated");
                             $('#status').val('').trigger("chosen:updated");
-                            $('div.chosen-drop ul.chosen-results li.active-result').removeClass('result-selected');
                             $('#nama').focus();
                         }
                         $("#message_result").hide().html(output).slideDown();

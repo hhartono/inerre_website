@@ -289,6 +289,7 @@
 
         function submitUpdateProduct(){
             $('#submitupdateproduct').click(function(){
+                var output = "";
                 var idbarang = $('input[name=idbarang]').val();
                 var nama = $('input[name=nama]').val();
                 var kategori = $('select[name=kategori-edit]').val();
@@ -299,33 +300,42 @@
                 var idstatus = $('select[name=status]').val();
                 var proceed = true;
                 if(nama == ""){
-                    $('input[name=nama]').css('border-color', '#e41919');
+                    $('input[name=nama]').css('border-color', '#e41919').addClass('form-error-focus');
                     proceed = false;
+                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
                 }
                 if(kategori == ""){
-                    $('#kategori_formproduct_chosen .chosen_single').css('border-color', '#e41919 !important');
+                    $('#kategori_edit_chosen a.chosen-single').css('border-color', '#e41919').addClass('form-error-focus');
                     proceed = false;
+                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
                 }
                 if(kode == ""){
-                    $('input[name=kode]').css('border-color', '#e41919');
+                    $('input[name=kode]').css('border-color', '#e41919').addClass('form-error-focus');
                     proceed = false;
+                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
                 }
                 if(stock == ""){
-                    $('input[name=stock]').css('border-color', '#e41919');
+                    $('input[name=stock]').css('border-color', '#e41919').addClass('form-error-focus');
                     proceed = false;
+                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
                 }
                 if(hargabeli == ""){
-                    $('input[name=harga_beli]').css('border-color', '#e41919');
+                    $('input[name=harga_beli]').css('border-color', '#e41919').addClass('form-error-focus');
                     proceed = false;
+                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
                 }
                 if(hargajual == ""){
-                    $('input[name=harga_jual]').css('border-color', '#e41919');
+                    $('input[name=harga_jual]').css('border-color', '#e41919').addClass('form-error-focus');
                     proceed = false;
+                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
                 }
                 if(idstatus == ""){
-                    $('select#statusbarang-edit').css('border-color', '#e41919 !important');
+                    $('select#statusbarang-edit').css('border-color', '#e41919 !important').addClass('form-error-focus');
                     proceed = false;
+                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
                 }
+                $("input.form-error-focus:first").focus().removeClass('form-error-focus');
+                $("#message_result_edit").hide().html(output).slideDown();
                 if(proceed){
                     $.ajax({
                         type: "POST",
@@ -334,8 +344,20 @@
                         dataType: "json",
                         success: function(response){
                             if(response.type=='error'){
-                                //console.log(response.content_form);   
-                                output = '<div class="alert alert-danger">' + response.content_form + '</div>';
+                                //console.log(response.content_form); 
+                                output = '<div class="alert alert-danger">' + response.validation_errors + '</div>';  
+                                if(response.formerror.stock != ""){
+                                    $('input[name=stock]').css('border-color', '#e41919').addClass('form-error-focus');
+                                }
+                                if(response.formerror.hargabeli != ""){
+                                    $('input[name=harga_beli]').css('border-color', '#e41919').addClass('form-error-focus');
+                                }
+                                if(response.formerror.hargajual != ""){
+                                    $('input[name=harga_jual]').css('border-color', '#e41919').addClass('form-error-focus');
+                                }
+                                $("input.form-error-focus:first").focus();
+                                $("input.form-error-focus").removeClass('form-error-focus');
+                                
                             }else{
                                 //console.log(response.text);
                                 output = '<div class="alert alert-success">'+ response.text +'</div>';

@@ -329,8 +329,9 @@ class Administrator extends CI_Controller {
 		$this->form_validation->set_rules('harga_beli', 'Harga beli', 'numeric');
 		$this->form_validation->set_rules('harga_jual', 'Harga jual', 'numeric');
 		$this->form_validation->set_rules('id_status', 'Status barang', 'required');
+		$this->form_validation->set_message('numeric', '%s harus berupa angka');
 		if($this->form_validation->run() == FALSE){
-			$value = array(
+			$formerror = array(
 				'nama' => form_error('nama'),
 				'kategori' => form_error('kategori'),
 				'kode' => form_error('kode'),
@@ -338,18 +339,21 @@ class Administrator extends CI_Controller {
 				'hargabeli' => form_error('harga_beli'),
 				'hargajual' => form_error('harga_jual'),
 				'idstatus' => form_error('id_status')
-				);
+			);
+			/*$setvalueerror = array(
+				'setvaluenama' => set_value('nama'),
+				'setvaluekategori' => set_value('kategori'),
+				'setvaluekode' => set_value('kode'),
+				'setvaluestok' => set_value('stock'),
+				'setvaluehargabeli' => set_value('harga_beli'),
+				'setvaluehargajual' => set_value('harga_jual'),
+				'setvaluestatus' => set_value('idstatus')
+			);*/
 			$output = json_encode(
 						array(
 							'type'=>'error', 
 							'validation_errors' => validation_errors(), 
-							//'setvaluenama' => set_value('nama'),
-							'setvaluekategori' => set_value('kategori'),
-							'setvaluekode' => set_value('kode'),
-							'setvaluestok' => set_value('stock'),
-							'setvaluehargabeli' => set_value('harga_beli'),
-							'setvaluehargajual' => set_value('harga_jual'),
-							'setvaluestatus' => set_value('idstatus')
+							'formerror' => $formerror
 							)
 						);
 			die($output);
@@ -395,9 +399,10 @@ class Administrator extends CI_Controller {
 		$this->form_validation->set_rules('harga_beli', 'Harga beli', 'numeric');
 		$this->form_validation->set_rules('harga_jual', 'Harga jual', 'numeric');
 		$this->form_validation->set_rules('status', 'Status barang', 'required');
+		$this->form_validation->set_message('numeric', '%s harus berupa angka');
 		if($this->form_validation->run() == FALSE){
 			// form validation false
-			$value = array(
+			$formerror = array(
 				'nama' => form_error('nama'),
 				'kategori' => form_error('kategori'),
 				'kode' => form_error('kode'),
@@ -405,8 +410,23 @@ class Administrator extends CI_Controller {
 				'hargabeli' => form_error('harga_beli'),
 				'hargajual' => form_error('harga_jual'),
 				'idstatus' => form_error('status')
-				);
-			$output = json_encode(array('type'=>'error', 'content_form' => validation_errors()));
+			);
+			/*$setvalueerror = array(
+				'setvaluenama' => set_value('nama'),
+				'setvaluekategori' => set_value('kategori'),
+				'setvaluekode' => set_value('kode'),
+				'setvaluestok' => set_value('stock'),
+				'setvaluehargabeli' => set_value('harga_beli'),
+				'setvaluehargajual' => set_value('harga_jual'),
+				'setvaluestatus' => set_value('status')
+			);*/
+			$output = json_encode(
+							array(
+								'type'=>'error', 
+								'validation_errors' => validation_errors(),
+								'formerror' => $formerror
+								)
+							);
 			die($output);
 		}else{
 			$idbarang = $this->input->post('idbarang');
