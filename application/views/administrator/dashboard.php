@@ -16,7 +16,7 @@
                       	<a href="administrator/product">
                           	<div class="box1">
         					   <span class="li_clip"></span>
-        					   <h3>Products</h3>
+        					   <h3>All Products</h3>
                           	</div>
                             <p>Products of I&nbsp;N&nbsp;E&nbsp;R&nbsp;R&nbsp;E</p>
                       	</a>
@@ -43,7 +43,7 @@
                         <a href="administrator/messagecenter">
                             <div class="box1">
 					  		    <span class="li_mail"></span>
-					  		    <h3>Messages</h3>
+					  		    <h3>Message Center</h3>
                             </div>
 					  		<p>Message Center</p>
 				        </a>

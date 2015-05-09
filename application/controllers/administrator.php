@@ -513,7 +513,7 @@ class Administrator extends CI_Controller {
 	{
 		$data = array(
 			'title' => 'INERRE Interior - Administrator / Add Category',
-			'title_page' => 'Category',
+			'title_page' => 'Add Category',
 			'username' => $this->tank_auth->get_username(),
 			'productactive' => 'active'
 		);
