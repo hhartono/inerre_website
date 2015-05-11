@@ -2,6 +2,8 @@
 
 class Administrator extends CI_Controller {
 
+	//private $sessioninvoice;
+
 	function __construct()
 	{
 		parent::__construct();
@@ -505,6 +507,86 @@ class Administrator extends CI_Controller {
 			die($output);
 		}	
 	}
+
+	public function cartaddsubmit()
+	{
+		$idproduct = $this->input->post('idproduct');
+		$laststock = $this->input->post('laststock');
+		$amount = $this->input->post('amount');
+		$this->form_validation->set_rules('amount', 'Jumlah Barang', 'numeric');
+		$this->form_validation->set_message('numeric', '%s harus berupa angka');
+		if($this->form_validation->run() == FALSE){
+			$formerror = array(
+				'amount' => form_error('amount')
+			);
+			$output = json_encode(
+							array(
+								'type'=>'error', 
+								'validation_errors' => validation_errors(),
+								'formerror' => $formerror
+								)
+							);
+			die($output);
+		}else{
+			/*
+			 * BELUM SELESAI
+			 * - update stock jika batal ditambahkan / dihapus dari cart
+			 * - jika barang sama, belum bisa update stock barang yg sebelumnya
+			 * - add to cart belum mengurangi stok
+			 */
+			$iduser = $this->session->userdata('user_id');
+
+			$lastitemcart = $this->modelproduct->lastInsertCart($iduser);
+			
+			if($lastitemcart->num_rows()>0){
+				$itemcart = $lastitemcart->row();
+				$lastinvoice = $itemcart->no_invoice;
+				$this->modelproduct->insertCart($lastinvoice, $idproduct, $amount, $iduser);
+				$output = json_encode(
+								array(
+									'type' => 'message',
+									'text' => 'barang berhasil ditambahkan ke invoice '.$lastinvoice
+								)
+						);
+				die($output);
+			}else{
+				$invoice = '#'.$this->generateRandomChar().date('dmy');
+				$this->modelproduct->insertCart($invoice, $idproduct, $amount, $iduser);
+				$output = json_encode(
+								array(
+									'type' => 'message',
+									'text' => 'barang berhasil ditambahkan dengan No. invoice '.$invoice
+								)
+						);
+				die($output);
+			}
+		}
+	}
+
+	public function unsetadmininvoice()
+	{
+		$this->session->unset_userdata('adminInvoice');
+	}
+
+	public function gettime()
+	{
+		//echo date('dmy');
+		$invoice = '#'.$this->generateRandomChar().'-'.date('dmy');
+		echo $invoice;
+		echo '<br/>';
+		echo $this->session->userdata('user_id');
+	}
+
+	function generateRandomChar($length = 4) {
+	    $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	    $charactersLength = strlen($characters);
+	    $randomChar = '';
+	    for ($i = 0; $i < $length; $i++) {
+	        $randomChar .= $characters[rand(0, $charactersLength - 1)];
+	    }
+	    return $randomChar;
+	}
+	
 
 	/*
 	 * add category of product

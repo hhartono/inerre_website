@@ -51,10 +51,17 @@
                           ?>
                                     <tr>
                                         <!-- <td data-title="No"><?php// echo $no;?></td> -->
-                                        <td data-title="Kode"><?php echo $lab->kode_barang;?></td>
+                                        <td data-title="Kode">
+                                            <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#addToCartModal" data-idproduct="<?php echo $lab->idbarang;?>" data-categorycode="<?php echo $lab->kode_barang;?>" data-product="<?php echo $lab->nama_barang;?>" data-stock="<?php echo $lab->stock_barang;?>">
+                                                <i class="fa fa-plus"></i>
+                                            </button>&nbsp;
+                                            <?php echo $lab->kode_barang;?>
+                                        </td>
                                         <td data-title="Barang"><?php echo $lab->nama_barang;?></td>
                                         <td data-title="Kategori"><?php echo $lab->barang_kategori;?></td>
-                                        <td class="numeric" data-title="Stock"><?php echo $lab->stock_barang;?></td>
+                                        <td class="numeric" data-title="Stock"><?php echo $lab->stock_barang;?>
+
+                                        </td>
                                         <td class="numeric" data-title="Harga">Rp. <?php echo number_format($lab->harga_jual);?></td>
                                         <td data-title="Status">
                                             <label for="" class="label label-<?php echo ($lab->id_status==1)? 'primary' : 'warning';?>">
@@ -62,7 +69,7 @@
                                             </label>
                                         </td>
                                         <td data-title="Action">
-                                            <div class="btn-group">
+                                            <div class="btn-group btn-group-sm">
                                                 <button class="btn btn-primary" data-toggle="modal" data-target="#viewModal" data-kode="<?php echo $lab->kode_barang;?>" data-barang="<?php echo $lab->nama_barang;?>" data-kategori="<?php echo $lab->barang_kategori;?>" data-stock="<?php echo $lab->stock_barang;?>" data-hargabeli="<?php echo $lab->harga_beli;?>" data-hargajual="<?php echo $lab->harga_jual;?>" data-status="<?php echo $lab->barang_status;?>">
                                                     <i class="fa fa-search"></i>
                                                 </button>
@@ -73,7 +80,7 @@
                                                     <i class="fa fa-trash-o"></i>
                                                 </button>
                                             </div>
-                                            <button class="btn btn-danger" data-toggle="modal" data-target="#updateStockModal" data-idproduct="<?php echo $lab->idbarang;?>" data-categorycode="<?php echo $lab->kode_barang;?>" data-product="<?php echo $lab->nama_barang;?>" data-stock="<?php echo $lab->stock_barang;?>"><i class="fa fa-edit"></i> Update Stock</button>
+                                            <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#updateStockModal" data-idproduct="<?php echo $lab->idbarang;?>" data-categorycode="<?php echo $lab->kode_barang;?>" data-product="<?php echo $lab->nama_barang;?>" data-stock="<?php echo $lab->stock_barang;?>"><i class="fa fa-edit"></i> Update Stock</button>
                                         </td>
                                     </tr>
                           <?php
@@ -103,6 +110,38 @@
                             }
                           ?>
                           </section>
+
+                    <!-- MODAL FOR ADD TO CART -->
+                    <div class="modal fade" id="addToCartModal" tabindex="-1" role="dialog" aria-labelledby="addToCartModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="addToCartModalLabel">Add to Cart...</h4>
+                                </div>
+                                <form method="POST" class="form-horizontal style-form">
+                                <div class="modal-body">
+                                    <div id="message_result_cart"></div>
+                                    <input type="hidden" name="hidden_idproduct_cart" id="hidden_idproduct_cart" value="">
+                                    <input type="hidden" name="hidden_laststock_cart" id="hidden_laststock_cart" value="">
+                                    <div class="form-group">
+                                        <label for="" class="col-sm-2 col-sm-2 control-label">Jumlah</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="input_amount_cart" id="input_amount_cart" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="submit" id="submitaddtocart" class="btn btn-primary">Add to Cart</button>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div> 
+                    <!-- END MODAL FOR ADD TO CART -->
+                    
+
                     <!-- MODAL FOR VIEW DETAIL -->
                     <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -442,6 +481,50 @@
             })
         }
 
+        function submitAddToCart(){
+           $('#submitaddtocart').click(function(){
+                var output = '';
+                var idproduct = $('input[name=hidden_idproduct_cart]').val();
+                var laststock = $('input[name=hidden_laststock_cart]').val();
+                var amount = $('input[name=input_amount_cart]').val();
+
+                proceed = true;
+                if(amount == ''){
+                    $('input[name=input_amount_cart]').css('border-color', '#e41919');
+                    proceed = false;
+                    output = '<div class="alert alert-danger">Harus diisi, tidak boleh kosong! </div>';
+                }
+                if(parseInt(amount, 10) > parseInt(laststock,10)){
+                    $('input[name=input_amount_cart]').css('border-color', '#e41919');
+                    proceed = false;
+                    output = '<div class="alert alert-danger">Jumlah yang dimasukkan melebihi stock yang ada..</div>';
+                }
+                $('#message_result_cart').hide().html(output).slideDown();
+                
+                if(proceed){
+                    $.ajax({
+                        type: "POST",
+                        url: "cartaddsubmit",
+                        data: {idproduct: idproduct, laststock: laststock, amount: amount},
+                        dataType: "JSON",
+                        success: function(response){
+                            if(response.type=='error'){
+                                output = '<div class="alert alert-danger">' + response.validation_errors + '</div>';
+                            }else{
+                                output = '<div class="alert alert-success">'+ response.text +'</div>';
+                            }
+                            $('#message_result_cart').hide().html(output).slideDown();
+                        }
+                    });
+                }
+                return false;
+            })
+            $("input#input_amount_cart").keyup(function(){
+                $("input#input_amount_cart").css('border-color', '');
+                $("#message_result_cart").slideUp();
+            })
+        }
+
         /*
          * modal for view product
          */
@@ -551,6 +634,27 @@
         });
 
         $('#updateStockModal').on('hidden.bs.modal', function(){
+            location.reload();
+        });
+
+        /*
+         * modal for add to cart
+         */
+        $('#addToCartModal').on('show.bs.modal', function(event){
+            var button = $(event.relatedTarget)
+            var idproduct = button.data('idproduct')
+            var categorycode = button.data('categorycode')
+            var product = button.data('product')
+            var laststock = button.data('stock')
+            var modal = $(this)
+            modal.find('.modal-title').text('Tambahkan '+ product +' (' +categorycode+ ') ?')
+            modal.find('.modal-body input#hidden_idproduct_cart').val(idproduct)
+            modal.find('.modal-body input#hidden_laststock_cart').val(laststock)
+            modal.find('.modal-body input#input_amount_cart').val('1')
+            submitAddToCart();
+        });
+
+        $('#addToCartModal').on('hidden.bs.modal', function(){
             location.reload();
         });
         </script>

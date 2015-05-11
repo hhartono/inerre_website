@@ -105,6 +105,32 @@ class Modelproduct extends CI_Model {
 		$this->db->update('barang', $field);
 	}
 
+	public function insertCart($invoice, $idproduct, $amount, $iduser)
+	{
+		$field = array(
+			'no_invoice' => $invoice,
+			'id_product' => $idproduct,
+			'amount' => $amount,
+			'id_user' => $iduser
+		);
+		$this->db->insert('cart', $field);
+	}
+
+	public function lastInsertCart($iduser)
+	{
+		$query = $this->db->query("
+				SELECT c.*
+				FROM cart c
+				WHERE id_user = '$iduser'
+				ORDER BY c.id DESC
+			");
+		/*if($query->num_rows()>0){
+			$data = $query->row();
+			return $data;
+		}*/
+		return $query;
+	}
+
 	public function getCode($kategori)
 	{
 		$query = $this->db->query("
