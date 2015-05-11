@@ -7,7 +7,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="#"><img src="/assets_admin/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="#"><img src="/assets_admin/img/logo_inerre_admin.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered"><?php echo ucwords($username);?></h5>
               	  	
                   <li class="mt">
