@@ -105,6 +105,22 @@ class Modelproduct extends CI_Model {
 		$this->db->update('barang', $field);
 	}
 
+	public function loadCartbyUser($iduser)
+	{
+		$query = $this->db->query("
+				SELECT c.*, b.*
+				FROM cart c, barang b
+				WHERE c.id_user = '$iduser'
+				AND b.id = c.id_product
+			");
+		if($query->num_rows()>0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
 	public function insertCart($invoice, $idproduct, $amount, $iduser)
 	{
 		$field = array(

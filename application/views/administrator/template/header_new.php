@@ -43,6 +43,21 @@
         .chosen-container-single .chosen-single{
            border:1px solid #ccc;
         }
+        .cart-toggle{
+            margin-top:15px;
+        }
+        .cart-dropdown-list{
+            top:57px !important;
+            margin: 2px -180px 0px;
+        }
+        .cart-notify{
+            left: 197px;
+        }
+        .item-cart-nama{
+            margin:20px 10px 20px 10px;
+            font-weight: bold;
+            border-bottom:1px solid #ccc;
+        }
     </style>
   </head>
 
@@ -63,75 +78,7 @@
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
                 <ul class="nav top-menu">
-                    <!-- settings start -->
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-                            <i class="fa fa-tasks"></i>
-                            <span class="badge bg-theme">4</span>
-                        </a>
-                        <ul class="dropdown-menu extended tasks-bar">
-                            <div class="notify-arrow notify-arrow-green"></div>
-                            <li>
-                                <p class="green">You have 4 pending tasks</p>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <div class="task-info">
-                                        <div class="desc">DashGum Admin Panel</div>
-                                        <div class="percent">40%</div>
-                                    </div>
-                                    <div class="progress progress-striped">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only">40% Complete (success)</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <div class="task-info">
-                                        <div class="desc">Database Update</div>
-                                        <div class="percent">60%</div>
-                                    </div>
-                                    <div class="progress progress-striped">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                            <span class="sr-only">60% Complete (warning)</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <div class="task-info">
-                                        <div class="desc">Product Development</div>
-                                        <div class="percent">80%</div>
-                                    </div>
-                                    <div class="progress progress-striped">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                            <span class="sr-only">80% Complete</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <div class="task-info">
-                                        <div class="desc">Payments Sent</div>
-                                        <div class="percent">70%</div>
-                                    </div>
-                                    <div class="progress progress-striped">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-                                            <span class="sr-only">70% Complete (Important)</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="external">
-                                <a href="#">See All Tasks</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- settings end -->
+                    
                     <!-- inbox dropdown start-->
                     <li id="header_inbox_bar" class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
@@ -200,9 +147,67 @@
                 </ul>
                 <!--  notification end -->
             </div>
-            <div class="top-menu">
+            <div class="top-menu ">
             	<ul class="nav pull-right top-menu">
+
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle cart-toggle" href="#">
+                            <!-- <i class="fa fa-tasks"></i> -->
+                            cart
+                            <?php
+                            if(isset($loadCartbyUser)){
+                                $totalitem = '';
+                                foreach ($loadCartbyUser as $lcbu) {
+                                    $totalitem = $totalitem + $lcbu->amount;
+                                }
+                            ?>
+                                <span class="badge bg-theme"><?php echo $totalitem;?></span>
+                            <?php
+                            }else{
+                            ?>
+                                <span class="badge bg-theme">0</span>
+                            <?php    
+                            }
+                            ?>
+                            
+                        </a>
+                        <ul class="dropdown-menu extended tasks-bar cart-dropdown-list">
+                            <div class="notify-arrow notify-arrow-green cart-notify"></div>
+                            <li>
+                                <p class="green">Cart</p>
+                            </li>
+                            <?php
+                            if(isset($loadCartbyUser)){
+                                foreach ($loadCartbyUser as $row) {
+                            ?>
+                                <li>
+                                    <div style="padding: 15px 10px; border-bottom:1px solid #EBEBEB; font-size:12px;">
+                                        <span class="subject ">
+                                            <span class="from"><?php echo $row->nama_barang;?> </span>
+                                            <span class="time"><?php echo $row->amount;?></span>
+                                        </span>
+                                    </div>
+                                </li>
+                            <?php
+                                }
+                            
+                            }else{
+                            ?>
+
+                            <?php
+                            }
+                            ?>
+                            <li>
+                                
+                            </li>
+                            <li class="external">
+                                <a href="/administrator/cart">View Cart Detail</a>
+                            </li>
+                        </ul>
+                    </li>
+
                     <li><a class="logout" href="/auth/logout">Logout</a></li>
+
             	</ul>
             </div>
         </header>

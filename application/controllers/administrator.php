@@ -297,7 +297,8 @@ class Administrator extends CI_Controller {
 			'productactive' => 'active',
 			'loadAllBarang' => $this->modelproduct->loadAllBarang(),
 			'loadStatusBarang' => json_encode($this->modelproduct->loadStatusBarang()),
-			'loadCategory' => json_encode($this->modelproduct->loadAllCategory())
+			'loadCategory' => json_encode($this->modelproduct->loadAllCategory()),
+			'loadCartbyUser' => $this->modelproduct->loadCartbyUser($this->session->userdata('user_id'))
 		);
 		$this->load->view('administrator/product', $data);
 	}
@@ -508,6 +509,21 @@ class Administrator extends CI_Controller {
 		}	
 	}
 
+	/*
+	 * cart table page
+	 */
+	public function cart()
+	{
+		$data = array(
+			'title' => 'INERRE Interior - Administrator / Product',
+			'title_page' => 'Cart',
+			'username' => $this->tank_auth->get_username(),
+			'productactive' => 'active',
+			'loadCartbyUser' => $this->modelproduct->loadCartbyUser($this->session->userdata('user_id'))
+		);
+		$this->load->view('administrator/cart', $data);
+	}
+
 	public function cartaddsubmit()
 	{
 		$idproduct = $this->input->post('idproduct');
@@ -551,7 +567,6 @@ class Administrator extends CI_Controller {
 								)
 					);
 				die($output);
-				
 			}else{
 				// jika barang tidak sama
 				$iduser = $this->session->userdata('user_id');
