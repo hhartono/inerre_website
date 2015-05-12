@@ -51,7 +51,7 @@
             margin: 2px -180px 0px;
         }
         .cart-notify{
-            left: 197px;
+            left: 185px;
         }
         .cart-item{
             padding: 15px 10px; 
@@ -60,6 +60,12 @@
         }
         .cart-item-product .amount{
             float:right;
+        }
+        .top-menu-cart .badge{
+            position: absolute;
+            right:-10px;
+            top:-10px;
+            z-index: 100;
         }
     </style>
   </head>
@@ -150,7 +156,7 @@
                 </ul>
                 <!--  notification end -->
             </div>
-            <div class="top-menu ">
+            <div class="top-menu top-menu-cart ">
             	<ul class="nav pull-right top-menu">
 
                     <li class="dropdown">
