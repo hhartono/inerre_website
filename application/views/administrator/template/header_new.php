@@ -53,10 +53,10 @@
         .cart-notify{
             left: 197px;
         }
-        .item-cart-nama{
-            margin:20px 10px 20px 10px;
-            font-weight: bold;
-            border-bottom:1px solid #ccc;
+        .cart-item{
+            padding: 15px 10px; 
+            border-bottom:1px solid #EBEBEB; 
+            font-size:12px;
         }
     </style>
   </head>
@@ -152,8 +152,7 @@
 
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle cart-toggle" href="#">
-                            <!-- <i class="fa fa-tasks"></i> -->
-                            cart
+                            <i class="fa fa-shopping-cart"></i>
                             <?php
                             if(isset($loadCartbyUser)){
                                 $totalitem = '';
@@ -181,7 +180,7 @@
                                 foreach ($loadCartbyUser as $row) {
                             ?>
                                 <li>
-                                    <div style="padding: 15px 10px; border-bottom:1px solid #EBEBEB; font-size:12px;">
+                                    <div class="cart-item">
                                         <span class="subject ">
                                             <span class="from"><?php echo $row->nama_barang;?> </span>
                                             <span class="time"><?php echo $row->amount;?></span>
@@ -193,7 +192,13 @@
                             
                             }else{
                             ?>
-
+                                <li>
+                                    <div class="cart-item" >
+                                        <span class="subject ">
+                                            Cart Empty
+                                        </span>
+                                    </div>
+                                </li>
                             <?php
                             }
                             ?>
