@@ -131,6 +131,34 @@ class Modelproduct extends CI_Model {
 		return $query;
 	}
 
+	public function checkCart($idproduct)
+	{
+		$query = $this->db->query("
+				SELECT c.id_product, c.amount
+				FROM cart c
+				WHERE c.id_product = '$idproduct'
+			");
+		return $query;
+	}
+
+	public function updateAmountProduct($idproduct, $total)
+	{
+		$field = array(
+			'amount' => $total
+			);
+		$this->db->where('id_product', $idproduct);
+		$this->db->update('cart', $field);
+	}
+
+	public function updateStockbyCart($idproduct, $newstock)
+	{
+		$field = array(
+			'stock_barang' => $newstock
+			);
+		$this->db->where('id', $idproduct);
+		$this->db->update('barang', $field);
+	}
+
 	public function getCode($kategori)
 	{
 		$query = $this->db->query("

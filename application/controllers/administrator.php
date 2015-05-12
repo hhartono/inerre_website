@@ -531,34 +531,65 @@ class Administrator extends CI_Controller {
 			/*
 			 * BELUM SELESAI
 			 * - update stock jika batal ditambahkan / dihapus dari cart
-			 * - jika barang sama, belum bisa update stock barang yg sebelumnya
-			 * - add to cart belum mengurangi stok
+			 * - buat tampilan cart. -> bisa hapus barang
 			 */
-			$iduser = $this->session->userdata('user_id');
+			$checkcart = $this->modelproduct->checkCart($idproduct);
+			if($checkcart->num_rows()>0){
+				// jika ada barang yang sama
+				$lastamount = $checkcart->row()->amount;
+				$total = $lastamount + $amount;
+				$this->modelproduct->updateAmountProduct($idproduct, $total);
 
-			$lastitemcart = $this->modelproduct->lastInsertCart($iduser);
-			
-			if($lastitemcart->num_rows()>0){
-				$itemcart = $lastitemcart->row();
-				$lastinvoice = $itemcart->no_invoice;
-				$this->modelproduct->insertCart($lastinvoice, $idproduct, $amount, $iduser);
+				// update product stock
+				$newstock = $laststock - $amount;
+				$this->modelproduct->updateStockbyCart($idproduct, $newstock);
+
 				$output = json_encode(
 								array(
 									'type' => 'message',
-									'text' => 'barang berhasil ditambahkan ke invoice '.$lastinvoice
+									'text' => 'barang berhasil ditambahkan'
 								)
-						);
+					);
 				die($output);
+				
 			}else{
-				$invoice = '#'.$this->generateRandomChar().date('dmy');
-				$this->modelproduct->insertCart($invoice, $idproduct, $amount, $iduser);
-				$output = json_encode(
-								array(
-									'type' => 'message',
-									'text' => 'barang berhasil ditambahkan dengan No. invoice '.$invoice
-								)
-						);
-				die($output);
+				// jika barang tidak sama
+				$iduser = $this->session->userdata('user_id');
+
+				$lastitemcart = $this->modelproduct->lastInsertCart($iduser);
+				
+				if($lastitemcart->num_rows()>0){
+					$itemcart = $lastitemcart->row();
+					$lastinvoice = $itemcart->no_invoice;
+					$this->modelproduct->insertCart($lastinvoice, $idproduct, $amount, $iduser);
+
+					// update product stock
+					$newstock = $laststock - $amount;
+					$this->modelproduct->updateStockbyCart($idproduct, $newstock);
+
+					$output = json_encode(
+									array(
+										'type' => 'message',
+										'text' => 'barang berhasil ditambahkan ke invoice '.$lastinvoice
+									)
+							);
+					die($output);
+				}else{
+					$invoice = '#'.$this->generateRandomChar().date('dmy');
+					$this->modelproduct->insertCart($invoice, $idproduct, $amount, $iduser);
+					
+					// update product stock
+					$newstock = $laststock - $amount;
+					$this->modelproduct->updateStockbyCart($idproduct, $newstock);
+
+					$output = json_encode(
+									array(
+										'type' => 'message',
+										'text' => 'barang berhasil ditambahkan dengan No. invoice '.$invoice
+									)
+							);
+					die($output);
+				}
 			}
 		}
 	}

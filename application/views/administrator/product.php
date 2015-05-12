@@ -324,6 +324,7 @@
         $(document).ready(function(){
             // data table of products
             $('#tableproduct').DataTable();
+
         })
 
         function submitUpdateProduct(){
@@ -594,6 +595,10 @@
             $('#kategori-edit').chosen({
                 no_results_text: "Kategori yang dicari tidak ada",
                 width:"100%"
+            });
+            $('#statusbarang-edit').chosen({
+                disable_search: true,
+                width: "100%"
             });
             submitUpdateProduct();
         });
