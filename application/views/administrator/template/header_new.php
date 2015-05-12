@@ -58,6 +58,9 @@
             border-bottom:1px solid #EBEBEB; 
             font-size:12px;
         }
+        .cart-item-product .amount{
+            float:right;
+        }
     </style>
   </head>
 
@@ -181,9 +184,9 @@
                             ?>
                                 <li>
                                     <div class="cart-item">
-                                        <span class="subject ">
-                                            <span class="from"><?php echo $row->nama_barang;?> </span>
-                                            <span class="time"><?php echo $row->amount;?></span>
+                                        <span class="cart-item-product ">
+                                            <span class="product"><?php echo $row->nama_barang;?> </span>
+                                            <span class="amount"><?php echo $row->amount;?></span>
                                         </span>
                                     </div>
                                 </li>
@@ -194,7 +197,7 @@
                             ?>
                                 <li>
                                     <div class="cart-item" >
-                                        <span class="subject ">
+                                        <span class="cart-item-product  ">
                                             Cart Empty
                                         </span>
                                     </div>
