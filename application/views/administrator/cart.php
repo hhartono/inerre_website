@@ -10,7 +10,7 @@
       <!--main content start-->
       <section id="main-content">
           	<section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> All Products</h3>
+          	<h3><i class="fa fa-angle-right"></i> Cart</h3>
 		  		
 		  	<div class="row mt">
               <div class="col-lg-12">
@@ -37,6 +37,7 @@
                           ?>
                               <table id="tablecart" class="table table-striped cf display">
                                   <thead>
+                                    <th>Kode Barang</th>
                                     <th>Nama Barang</th>
                                     <th class="numeric">Jumlah</th>
                                     <th class="numeric">Harga Satuan</th>
@@ -49,11 +50,16 @@
 
                           ?>
                                     <tr>
+                                        <td data-title="Kode Barang">
+                                        <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#deleteFromCartModal">
+                                            <i class="fa fa-minus"></i>
+                                        </button>&nbsp;
+                                        <?php echo $lcu->kode_barang;?></td>
                                         <td data-title="Barang"><?php echo $lcu->nama_barang;?></td>
                                         <td class="numeric" data-title="Jumlah"><?php echo $lcu->amount;?>
                                         </td>
                                         <td class="numeric" data-title="Harga Satuan">Rp. <?php echo number_format($lcu->harga_jual);?></td>
-                                        <td data-title="Harga Subtotal"><?php echo number_format($lcu->amount*$lcu->harga_jual);?></td>
+                                        <td data-title="Harga Subtotal">Rp. <?php echo number_format($lcu->amount*$lcu->harga_jual);?></td>
                                     </tr>
                                     
                           <?php
@@ -62,12 +68,16 @@
                           ?>
                                   </tbody>
                               </table>
-                              <h1 style="float:right;">Total Harga: Rp. <?php echo number_format($totalprice);?></h1>
+                                <div class="">
+                                    <h3 style="float:right;">Total: Rp. <?php echo number_format($totalprice);?></h3>    
+                                </div>
+                              
                           <?php
                             }else{
                           ?>
                               <table id="tablecart" class="table table-striped cf display">
                                     <thead>
+                                        <th>Kode Barang</th>
                                         <th>Nama Barang</th>
                                         <th class="numeric">Jumlah</th>
                                         <th class="numeric">Harga Satuan</th>
@@ -97,7 +107,10 @@
             $('#tablecart').DataTable({
                 paging:false,
                 searching:false,
-                ordering:false
+                ordering:false,
+                "language":{
+                    "emptyTable": "Cart Empty"
+                }
             });
         })
 
