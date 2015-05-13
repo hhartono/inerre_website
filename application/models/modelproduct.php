@@ -108,7 +108,8 @@ class Modelproduct extends CI_Model {
 	public function loadCartbyUser($iduser)
 	{
 		$query = $this->db->query("
-				SELECT c.*, b.*
+				SELECT c.id AS idcart, c.no_invoice, c.id_product, c.amount, c.id_user, 
+				b.id AS idproduct, b.kode_barang, b.nama_barang, b.stock_barang, b.harga_jual
 				FROM cart c, barang b
 				WHERE c.id_user = '$iduser'
 				AND b.id = c.id_product
@@ -173,6 +174,24 @@ class Modelproduct extends CI_Model {
 			);
 		$this->db->where('id', $idproduct);
 		$this->db->update('barang', $field);
+	}
+
+	public function deleteProductCart($idcart)
+	{
+		return $this->db->delete('cart', array('id'=>$idcart));
+	}
+
+	public function truncateCart(){
+		return $this->db->truncate('cart');
+	}
+
+	public function updateProductStockBack($idproduct, $newstock)
+	{
+		$field = array(
+			'stock_barang' => $newstock
+			);
+		$this->db->where('id', $idproduct);
+		$htis->db->update('barang', $field);
 	}
 
 	public function getCode($kategori)

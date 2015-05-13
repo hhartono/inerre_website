@@ -67,6 +67,14 @@
             top:-10px;
             z-index: 100;
         }
+        #footer-table-cart{
+            margin:20px 0 10px 0;
+        }
+        #footer-table-cart p{
+            float:right;
+            margin:1px;
+            font-size:24px;
+        }
     </style>
   </head>
 
@@ -89,7 +97,7 @@
                 <ul class="nav top-menu">
                     
                     <!-- inbox dropdown start-->
-                    <li id="header_inbox_bar" class="dropdown">
+                    <!-- <li id="header_inbox_bar" class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
                             <i class="fa fa-envelope-o"></i>
                             <span class="badge bg-theme">5</span>
@@ -151,7 +159,7 @@
                                 <a href="index.html#">See all messages</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <!-- inbox dropdown end -->
                 </ul>
                 <!--  notification end -->

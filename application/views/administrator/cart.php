@@ -5,16 +5,15 @@
 	$this->load->view('administrator/template/menu_new');
 ?>	
 	<!-- **********************************************************************************************************************************************************
-      MAIN CONTENT
-      *********************************************************************************************************************************************************** -->
-      <!--main content start-->
-      <section id="main-content">
-          	<section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Cart</h3>
-		  		
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper">
+          	<h3><i class="fa fa-angle-right"></i> Cart <?php echo $loadInvoice;?></h3>
 		  	<div class="row mt">
-              <div class="col-lg-12">
-                  <div class="content-panel">
+                <div class="col-lg-12">
+                    <div class="content-panel">
                         <!-- <h4>
                             <i class="fa fa-angle-right"></i>Products
                         </h4> -->
@@ -29,179 +28,188 @@
                             echo '';
                         }
                         ?>
-                          <section id="no-more-tables">
+                        <section id="no-more-tables" style="padding-bottom:30px;">
                           <?php
                             if(isset($loadCartbyUser)){
-
-                            $totalprice = '';
+                                $totalprice = '';
                           ?>
-                              <table id="tablecart" class="table table-striped cf display">
-                                  <thead>
+                                <form method="POST" action="" >
+                                    <table id="tablecart" class="table table-striped cf display">
+                                        <thead>
+                                            <th>Kode Barang</th>
+                                            <th>Nama Barang</th>
+                                            <th class="numeric">Jumlah</th>
+                                            <th class="numeric">Harga Satuan</th>
+                                            <th class="numeric">Subtotal</th>
+                                        </thead>
+                                        <tbody>
+                                    <?php
+                                    // $no=1;
+                                    foreach ($loadCartbyUser as $lcu) {
+                                    ?>
+                                            <tr>
+                                                <td data-title="Kode Barang">
+                                                <button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#deleteFromCartModal" data-idcart="<?php echo $lcu->idcart;?>" data-invoice="<?php echo $lcu->no_invoice;?>" data-amount="<?php echo $lcu->amount;?>" data-idproduct="<?php echo $lcu->idproduct;?>" data-product="<?php echo $lcu->nama_barang;?>" data-laststock="<?php echo $lcu->stock_barang;?>">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>&nbsp;
+                                                <?php echo $lcu->kode_barang;?></td>
+                                                <td data-title="Barang"><?php echo $lcu->nama_barang;?></td>
+                                                <td class="numeric" data-title="Jumlah">
+                                                    <?php echo $lcu->amount;?>
+                                                    <input type="hidden" name="hidden-cart-amount" id="hidden-cart-amount" value="<?php echo $lcu->amount;?>">
+                                                </td>
+                                                <td class="numeric" data-title="Harga Satuan">Rp. <?php echo number_format($lcu->harga_jual);?></td>
+                                                <td data-title="Harga Subtotal">Rp. <?php echo number_format($lcu->amount*$lcu->harga_jual);?></td>
+                                            </tr>
+                                        
+                              <?php
+                                        $totalprice = $totalprice + ($lcu->amount*$lcu->harga_jual);
+                                    }
+                              ?>
+                                        </tbody>
+                                    </table>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                    </div>
+                                    <div id="footer-table-cart" class="col-md-6">
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#cancelCartModal" data-invoice="<?php echo $loadInvoice;?>">Batal</button>
+                                        <input type="submit" id="updatecart" value="Update Cart" class="btn btn-primary">
+                                        <p>Total: Rp. <?php echo number_format($totalprice);?></p>        
+                                    </div>
+                                </div>
+
+                                </form>
+                                <!-- END FORM -->
+
+
+                                <!-- MODAL FOR DELETE -->
+                                <div class="modal fade" id="deleteFromCartModal" tabindex="-1" role="dialog" aria-labelledby="deleteFromCartModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <form action="cartproductdelete" method="POST">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                    <h4 class="modal-title" id="deleteFromCartModalLabel">Delete...</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h3 id="h3alert"></h2>
+                                                    <input type="hidden" name="hidden-idcart" id="hidden-idcart">
+                                                    <input type="hidden" name="hidden-idproduct" id="hidden-idproduct">
+                                                    <input type="hidden" name="hidden-amount" id="hidden-amount">
+                                                    <input type="hidden" name="hidden-laststock" id="hidden-laststock">
+                                                    <input type="hidden" name="hidden-product" id="hidden-product">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    <input type="submit" id="submit-delete" class="btn btn-danger" value="Delete">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>  
+                                <!-- END MODAL FOR DELETE -->
+
+                                <!-- MODAL FOR CANCEL -->
+                                <div class="modal fade" id="cancelCartModal" tabindex="-1" role="dialog" aria-labelledby="cancelCartModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <form action="cartempty" method="POST">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                    <h4 class="modal-title" id="cancelCartModalLabel">Cancel...</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h3 id="h3alert"></h2>
+                                                    <input type="hidden" name="hidden-invoice" id="hidden-invoice">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    <input type="submit" id="submit-cancel" class="btn btn-danger" value="Empty Cart">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>  
+                                <!-- END MODAL FOR CANCEL -->
+                          <?php
+                            }else{
+                          ?>
+                            <table id="tablecart" class="table table-striped cf display" >
+                                <thead>
                                     <th>Kode Barang</th>
                                     <th>Nama Barang</th>
                                     <th class="numeric">Jumlah</th>
                                     <th class="numeric">Harga Satuan</th>
                                     <th class="numeric">Subtotal</th>
-                                  </thead>
-                                  <tbody>
-                          <?php
-                                // $no=1;
-                                foreach ($loadCartbyUser as $lcu) {
-
-                          ?>
-                                    <tr>
-                                        <td data-title="Kode Barang">
-                                        <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#deleteFromCartModal">
-                                            <i class="fa fa-minus"></i>
-                                        </button>&nbsp;
-                                        <?php echo $lcu->kode_barang;?></td>
-                                        <td data-title="Barang"><?php echo $lcu->nama_barang;?></td>
-                                        <td class="numeric" data-title="Jumlah"><?php echo $lcu->amount;?>
-                                        </td>
-                                        <td class="numeric" data-title="Harga Satuan">Rp. <?php echo number_format($lcu->harga_jual);?></td>
-                                        <td data-title="Harga Subtotal">Rp. <?php echo number_format($lcu->amount*$lcu->harga_jual);?></td>
-                                    </tr>
-                                    
-                          <?php
-                                    $totalprice = $totalprice + ($lcu->amount*$lcu->harga_jual);
-                                }
-                          ?>
-                                  </tbody>
-                              </table>
-                                <div class="">
-                                    <h3 style="float:right;">Total: Rp. <?php echo number_format($totalprice);?></h3>    
-                                </div>
-                              
-                          <?php
-                            }else{
-                          ?>
-                              <table id="tablecart" class="table table-striped cf display">
-                                    <thead>
-                                        <th>Kode Barang</th>
-                                        <th>Nama Barang</th>
-                                        <th class="numeric">Jumlah</th>
-                                        <th class="numeric">Harga Satuan</th>
-                                        <th class="numeric">Subtotal</th>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                              </table>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                                
                           <?php
                             }
                           ?>
-                          </section>
-                    
-
-                  </div><!-- /content-panel -->
+                        </section>
+                    </div><!-- /content-panel -->
                 </div><!-- /col-lg-12 -->
             </div><!-- /row -->
+		</section><! --/wrapper -->
+    </section><!-- /MAIN CONTENT -->
+    <!--main content end-->
 
-			</section><! --/wrapper -->
-        </section><!-- /MAIN CONTENT -->
-        <!--main content end-->
+    <script src="/assets_admin/js/jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        // data table of products
+        $('#tablecart').DataTable({
+            paging:false,
+            searching:false,
+            ordering:false,
+            "language":{
+                "emptyTable": "Cart Empty"
+            }/*,
+            bInfo:false*/
+        });
+    })
 
-        <script src="/assets_admin/js/jquery.js"></script>
-        <script type="text/javascript">
-        $(document).ready(function(){
-            // data table of products
-            $('#tablecart').DataTable({
-                paging:false,
-                searching:false,
-                ordering:false,
-                "language":{
-                    "emptyTable": "Cart Empty"
-                }
-            });
-        })
+    /*
+     * modal for delete product
+     */
+    $('#deleteFromCartModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget)// Button that triggered the modal
+        var idcart = button.data('idcart')
+        var product = button.data('product')
+        var idproduct = button.data('idproduct')
+        var invoice = button.data('invoice')
+        var amount = button.data('amount')
+        var laststock = button.data('laststock')
+        var modal = $(this)
+        modal.find('.modal-title').text(product)
+        modal.find('.modal-body h3#h3alert').text('Hapus  ' +product+' dari cart?')
+        modal.find('.modal-body input#hidden-idcart').val(idcart)
+        modal.find('.modal-body input#hidden-idproduct').val(idproduct)
+        modal.find('.modal-body input#hidden-amount').val(amount)
+        modal.find('.modal-body input#hidden-laststock').val(laststock)
+        modal.find('.modal-body input#hidden-product').val(product)
+    });
 
-        function submitUpdateProduct(){
-            $('#submitupdateproduct').click(function(){
-                var output = "";
-                var idbarang = $('input[name=idbarang]').val();
-                var nama = $('input[name=nama]').val();
-                var kategori = $('select[name=kategori-edit]').val();
-                var kode = $('input[name=kode-hidden]').val();
-                var stock = $('input[name=stock]').val();
-                var hargabeli = $('input[name=harga_beli]').val();
-                var hargajual = $('input[name=harga_jual]').val();
-                var idstatus = $('select[name=status]').val();
-                var proceed = true;
-                if(nama == ""){
-                    $('input[name=nama]').css('border-color', '#e41919').addClass('form-error-focus');
-                    proceed = false;
-                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
-                }
-                if(kategori == ""){
-                    $('#kategori_edit_chosen a.chosen-single').css('border-color', '#e41919').addClass('form-error-focus');
-                    proceed = false;
-                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
-                }
-                if(kode == ""){
-                    $('input[name=kode]').css('border-color', '#e41919').addClass('form-error-focus');
-                    proceed = false;
-                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
-                }
-                if(stock == ""){
-                    $('input[name=stock]').css('border-color', '#e41919').addClass('form-error-focus');
-                    proceed = false;
-                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
-                }
-                if(hargabeli == ""){
-                    $('input[name=harga_beli]').css('border-color', '#e41919').addClass('form-error-focus');
-                    proceed = false;
-                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
-                }
-                if(hargajual == ""){
-                    $('input[name=harga_jual]').css('border-color', '#e41919').addClass('form-error-focus');
-                    proceed = false;
-                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
-                }
-                if(idstatus == ""){
-                    $('select#statusbarang-edit').css('border-color', '#e41919 !important').addClass('form-error-focus');
-                    proceed = false;
-                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
-                }
-                $("input.form-error-focus:first").focus().removeClass('form-error-focus');
-                $("#message_result_edit").hide().html(output).slideDown();
-                if(proceed){
-                    $.ajax({
-                        type: "POST",
-                        url: "productupdatesubmit",
-                        data: {idbarang:idbarang, nama: nama, kategori: kategori, kode: kode, stock: stock, harga_beli: hargabeli, harga_jual: hargajual, status: idstatus},
-                        dataType: "json",
-                        success: function(response){
-                            if(response.type=='error'){
-                                //console.log(response.content_form); 
-                                output = '<div class="alert alert-danger">' + response.validation_errors  + '</div>';  
-                                if(response.formerror.stock != ""){
-                                    $('input[name=stock]').css('border-color', '#e41919').addClass('form-error-focus');
-                                }
-                                if(response.formerror.hargabeli != ""){
-                                    $('input[name=harga_beli]').css('border-color', '#e41919').addClass('form-error-focus');
-                                }
-                                if(response.formerror.hargajual != ""){
-                                    $('input[name=harga_jual]').css('border-color', '#e41919').addClass('form-error-focus');
-                                }
-                                $("input.form-error-focus:first").focus();
-                                $("input.form-error-focus").removeClass('form-error-focus');
-                                
-                            }else{
-                                //console.log(response.text);
-                                output = '<div class="alert alert-success">'+ response.text +'</div>';
-                            }
-                            $("#message_result_edit").hide().html(output).slideDown();
-                        }
-                    });        
-                }
-                return false;
-            })
-            $("input#nama, select#kategori-edit, input#kode, input#stock, input#hargabeli, input#hargajual, select#statusbarang-edit").keyup(function(){
-                $("input#nama, select#kategori-edit, input#kode, input#stock, input#hargabeli, input#hargajual, select#statusbarang-edit").css('border-color', '');
-                $("#message_result_edit").slideUp();
-            });
-        }
+    $('#deleteFromCartModal').on('hidden.bs.modal', function(){
+        location.reload();
+    });
 
-        </script>
+    $('#cancelCartModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget)// Button that triggered the modal
+        var invoice = button.data('invoice')
+        var modal = $(this)
+        modal.find('.modal-title').text(invoice)
+        modal.find('.modal-body h3#h3alert').text('Batalkan semua transaksi dengan No ' +invoice+' ?')
+        modal.find('.modal-body input#hidden-invoice').val(invoice)
+    });
+
+    $('#cancelCartModal').on('hidden.bs.modal', function(){
+        location.reload();
+    });
+    </script>
 
 <?php
 	// load footer

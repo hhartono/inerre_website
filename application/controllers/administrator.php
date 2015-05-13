@@ -514,12 +514,21 @@ class Administrator extends CI_Controller {
 	 */
 	public function cart()
 	{
+		$iduser = $this->session->userdata('user_id');
+		$lastitemcart = $this->modelproduct->lastInsertCart($iduser);
+		if($lastitemcart->num_rows()>0){
+			$itemcart = $lastitemcart->row();
+			$invoice = $itemcart->no_invoice;
+		}else{
+			$invoice = '';
+		}
 		$data = array(
 			'title' => 'INERRE Interior - Administrator / Product',
 			'title_page' => 'Cart',
 			'username' => $this->tank_auth->get_username(),
 			'productactive' => 'active',
-			'loadCartbyUser' => $this->modelproduct->loadCartbyUser($this->session->userdata('user_id'))
+			'loadCartbyUser' => $this->modelproduct->loadCartbyUser($this->session->userdata('user_id')),
+			'loadInvoice' => $invoice
 		);
 		$this->load->view('administrator/cart', $data);
 	}
@@ -609,6 +618,56 @@ class Administrator extends CI_Controller {
 		}
 	}
 
+	public function cartproductdelete()
+	{
+		$idcart = $this->input->post('hidden-idcart');
+		$idproduct = $this->input->post('hidden-idproduct');
+		$amount = $this->input->post('hidden-amount');
+		$laststock = $this->input->post('hidden-laststock');
+		$product = $this->input->post('hidden-product');
+
+		$querydeletecart = $this->modelproduct->deleteProductCart($idcart);
+		if($querydeletecart){
+			$newstock = $laststock+$amount;
+			$this->modelproduct->updateStockbyCart($idproduct, $newstock);
+			//$this->modelproduct->updateProductStockBack($idproduct, $newstock);
+			$this->session->set_flashdata('message', '<div class="alert alert-success">'.$product.' telah dihapus dari cart!</div>');
+			redirect('administrator/cart');
+		}
+	}
+
+	public function cartempty()
+	{
+		$invoice = $this->input->post('hidden-invoice');
+		$iduser = $this->session->userdata('user_id');
+		$loadCart = $this->modelproduct->loadCartbyUser($iduser);
+		foreach ($loadCart as $row) {
+			$idproduct = $row->idproduct;
+			$idcart = $row->idcart;
+			$amount = $row->amount;
+			$laststock = $row->stock_barang;
+			$newstock = $laststock + $amount;
+			$querydeletecart = $this->modelproduct->deleteProductCart($idcart);
+			if($querydeletecart){
+				$this->modelproduct->updateStockbyCart($idproduct, $newstock);	
+			}
+		}
+		$this->modelproduct->truncateCart(); // truncate cart table
+		$this->session->set_flashdata('message', '<div class="alert alert-success">Transaksi dengan No. '.$invoice.' telah dibatalkan.</div>');
+		redirect('administrator/cart');
+	}
+	
+	public function generateRandomChar($length = 4) {
+	    $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	    $charactersLength = strlen($characters);
+	    $randomChar = '';
+	    for ($i = 0; $i < $length; $i++) {
+	        $randomChar .= $characters[rand(0, $charactersLength - 1)];
+	    }
+	    return $randomChar;
+	}
+	/*
+
 	public function unsetadmininvoice()
 	{
 		$this->session->unset_userdata('adminInvoice');
@@ -622,17 +681,7 @@ class Administrator extends CI_Controller {
 		echo '<br/>';
 		echo $this->session->userdata('user_id');
 	}
-
-	function generateRandomChar($length = 4) {
-	    $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-	    $charactersLength = strlen($characters);
-	    $randomChar = '';
-	    for ($i = 0; $i < $length; $i++) {
-	        $randomChar .= $characters[rand(0, $charactersLength - 1)];
-	    }
-	    return $randomChar;
-	}
-	
+	*/
 
 	/*
 	 * add category of product

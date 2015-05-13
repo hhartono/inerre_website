@@ -1,4 +1,4 @@
-      <!--main content end-->
+     
       <!--footer start-->
       <!-- <footer class="site-footer" style="bottom:0px;">
           <div class="text-center">
@@ -9,7 +9,6 @@
           </div>
       </footer> -->
       <!--footer end-->
-  </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
     <!--script src="/assets_admin/js/jquery.js"></script-->
@@ -36,16 +35,14 @@
     <script type="text/javascript" src="/assets_admin/js/moment.js"></script>
     <script type="text/javascript" src="/assets_admin/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="/assets_admin/js/chosen.jquery.min.js"></script>
-    <script>
-        /*
+    <!--script>
+        
         //custom select box
         $(function(){
             $('select.styled').customSelect();
         });
-        */
-        $(document).ready(function(){
         
-        });
-    </script>
+        
+    </script-->
   </body>
 </html>
