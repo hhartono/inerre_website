@@ -32,8 +32,9 @@
                           <?php
                             if(isset($loadCartbyUser)){
                                 $totalprice = '';
+                                $idproduct = '';
                           ?>
-                                <form method="POST" action="" >
+                                <form method="POST" action="updatecart">
                                     <table id="tablecart" class="table table-striped cf display">
                                         <thead>
                                             <th>Kode Barang</th>
@@ -44,9 +45,12 @@
                                         </thead>
                                         <tbody>
                                     <?php
-                                    // $no=1;
+                                    $no=1;
                                     foreach ($loadCartbyUser as $lcu) {
+
+                                            $idproduct = $lcu->idproduct;
                                     ?>
+                                            
                                             <tr>
                                                 <td data-title="Kode Barang">
                                                 <button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#deleteFromCartModal" data-idcart="<?php echo $lcu->idcart;?>" data-invoice="<?php echo $lcu->no_invoice;?>" data-amount="<?php echo $lcu->amount;?>" data-idproduct="<?php echo $lcu->idproduct;?>" data-product="<?php echo $lcu->nama_barang;?>" data-laststock="<?php echo $lcu->stock_barang;?>">
@@ -55,15 +59,18 @@
                                                 <?php echo $lcu->kode_barang;?></td>
                                                 <td data-title="Barang"><?php echo $lcu->nama_barang;?></td>
                                                 <td class="numeric" data-title="Jumlah">
-                                                    <?php echo $lcu->amount;?>
-                                                    <input type="hidden" name="hidden-cart-amount" id="hidden-cart-amount" value="<?php echo $lcu->amount;?>">
+                                                    <input type="text" name="input-cart-amount[]" id="input-cart-amount-<?php echo $no;?>" value="<?php echo $lcu->amount;?>" class="">
+                                                    <input type="hidden" name="hidden-idcart[]" id="hidden-idcart-<?php echo $no;?>" value="<?php echo $lcu->idcart;?>">
+                                                    <input type="hidden" name="hidden-idproduct[]" id="hidden-idproduct-<?php echo $no;?>" value="<?php echo $idproduct;?>">
+                                                    <input type="hidden" name="hidden-laststock[]" id="hidden-laststock-<?php echo $no;?>" value="<?php echo $lcu->stock_barang;?>">
+                                                    <input type="hidden" name="hidden-cart-amount[]" id="hidden-cart-amount-<?php echo $no;?>" value="<?php echo $lcu->amount;?>">
                                                 </td>
                                                 <td class="numeric" data-title="Harga Satuan">Rp. <?php echo number_format($lcu->harga_jual);?></td>
-                                                <td data-title="Harga Subtotal">Rp. <?php echo number_format($lcu->amount*$lcu->harga_jual);?></td>
+                                                <td class="numeric" data-title="Harga Subtotal">Rp. <?php echo number_format($lcu->amount*$lcu->harga_jual);?></td>
                                             </tr>
-                                        
                               <?php
                                         $totalprice = $totalprice + ($lcu->amount*$lcu->harga_jual);
+                                        $no++;
                                     }
                               ?>
                                         </tbody>

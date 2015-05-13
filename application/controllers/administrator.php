@@ -657,6 +657,72 @@ class Administrator extends CI_Controller {
 		redirect('administrator/cart');
 	}
 	
+	public function updatecart()
+	{
+		$size = '';
+		if(is_array($this->input->post('hidden-idcart'))){
+			foreach ($this->input->post('hidden-idcart') as $value) {
+				$idcart[] = $value;
+			}
+			$size = count($idcart);
+		}
+		if(is_array($this->input->post('hidden-idproduct'))){
+			foreach ($this->input->post('hidden-idproduct') as $value) {
+				$idproduct[] = $value;
+			}
+		}
+		if(is_array($this->input->post('hidden-laststock'))){
+			foreach ($this->input->post('hidden-laststock') as $value) {
+				$laststock[] = $value;
+			}
+		}
+		if(is_array($this->input->post('input-cart-amount'))){
+			foreach ($this->input->post('input-cart-amount') as $value) {
+				$newamount[] = $value;
+			}
+		}
+		if(is_array($this->input->post('hidden-cart-amount'))){
+			foreach ($this->input->post('hidden-cart-amount') as $value) {
+				$lastamount[]= $value;
+			}
+		}
+
+		for($i=0; $i < $size; $i++){
+			$idc = $idcart[$i];
+			$idp = $idproduct[$i];
+			$ls = $laststock[$i];
+			$na = $newamount[$i];
+			$la = $lastamount[$i];
+
+			if($na < $la){
+				$new = $la - $na;
+				$ls = $ls + $new;
+				if($na == 0){
+					$this->modelproduct->deleteProductCart($idc);
+					$this->modelproduct->updateStockbyCart($idp, $ls);
+					$this->modelproduct->updateAmountProduct($idp, $na);
+				}else{
+					$this->modelproduct->updateStockbyCart($idp, $ls);
+					$this->modelproduct->updateAmountProduct($idp, $na);	
+				}
+			}
+			if($na > $la){
+				$new = $na - $la;
+				$ls = $ls - $new;
+				$this->modelproduct->updateStockbyCart($idp, $ls);
+				$this->modelproduct->updateAmountProduct($idp, $na);
+			}
+			if($na == $la){
+				// update tanpa mengubah data
+				$this->modelproduct->updateStockbyCart($idp, $ls);
+				$this->modelproduct->updateAmountProduct($idp, $ls);
+			}
+
+		}
+		$this->session->set_flashdata('message', '<div class="alert alert-success">Cart telah diperbarui.</div>');
+		redirect('administrator/cart');
+	}
+
 	public function generateRandomChar($length = 4) {
 	    $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	    $charactersLength = strlen($characters);
