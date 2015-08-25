@@ -22,7 +22,8 @@ class Administrator extends CI_Controller {
 		$data = array(
 			'title' => 'INERRE Interior - Administrator / Dashboard',
 			'dashboardactive' => 'active',
-			'username' => $this->tank_auth->get_username()
+			'username' => $this->tank_auth->get_username(),
+			'loadCartbyUser' => $this->modelproduct->loadCartbyUser($this->session->userdata('user_id'))
 		);
 		$this->load->view('administrator/dashboard', $data);
 	}
@@ -45,7 +46,8 @@ class Administrator extends CI_Controller {
 		$data = array(
 			'title' => 'INERRE Interior - Administrator / Message Center',
 			'messageactive' => 'active',
-			'username' => $this->tank_auth->get_username()
+			'username' => $this->tank_auth->get_username(),
+			'loadCartbyUser' => $this->modelproduct->loadCartbyUser($this->session->userdata('user_id'))
 		);
 		$this->load->view('administrator/message_center', $data);
 	}
@@ -314,7 +316,8 @@ class Administrator extends CI_Controller {
 			'username' => $this->tank_auth->get_username(),
 			'productaddactive' => 'active',
 			'loadStatusBarang' => $this->modelproduct->loadStatusBarang(),
-			'loadCategory' => $this->modelproduct->loadAllCategory()
+			'loadCategory' => $this->modelproduct->loadAllCategory(),
+			'loadCartbyUser' => $this->modelproduct->loadCartbyUser($this->session->userdata('user_id'))
 		);
 		$this->load->view('administrator/product_add', $data);
 	}
@@ -758,7 +761,8 @@ class Administrator extends CI_Controller {
 			'title' => 'INERRE Interior - Administrator / Add Category',
 			'title_page' => 'Add Category',
 			'username' => $this->tank_auth->get_username(),
-			'productactive' => 'active'
+			'productactive' => 'active',
+			'loadCartbyUser' => $this->modelproduct->loadCartbyUser($this->session->userdata('user_id'))
 		);
 		$this->load->view('administrator/category_add', $data);
 	}
