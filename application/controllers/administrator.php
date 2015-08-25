@@ -767,6 +767,9 @@ class Administrator extends CI_Controller {
 		$this->load->view('administrator/category_add', $data);
 	}
 
+	/*
+	 * load category json encode
+	 */
 	public function loadcategory()
 	{
 		$category = $this->modelproduct->loadAllCategory();
@@ -774,6 +777,9 @@ class Administrator extends CI_Controller {
 		die($output);
 	}
 
+	/*
+	 * category add process submit
+	 */
 	public function categoryaddsubmit()
 	{
 		$category = $this->input->post('category');
@@ -824,6 +830,9 @@ class Administrator extends CI_Controller {
 		}
 	}
 
+	/*
+	 * category update process submit
+	 */
 	public function categoryupdatesubmit()
 	{
 
@@ -911,6 +920,9 @@ class Administrator extends CI_Controller {
 		}*/
 	}
 
+	/*
+	 * category delete
+	 */
 	public function categorydelete($id)
 	{
 		$idcat = $id;
@@ -921,6 +933,36 @@ class Administrator extends CI_Controller {
 		$this->session->set_flashdata('message', '<div class="alert alert-success">'.ucwords($category).' ('. $categorycode .')'.' telah berhasil dihapus!</div>');
 		redirect('administrator/categoryadd');
 	}
+
+	/*
+	 * portfolio list controller
+	 */
+	public function portfolio()
+	{
+		$data = array(
+			'title' => 'INERRE Interior - Administrator / Portfolio',
+			'title_page' => 'All Portfolios',
+			'username' => $this->tank_auth->get_username(),
+			'portfolioactive' => 'active',
+			'loadAllBarang' => $this->modelproduct->loadAllBarang(),
+			'loadStatusBarang' => json_encode($this->modelproduct->loadStatusBarang()),
+			'loadCategory' => json_encode($this->modelproduct->loadAllCategory()),
+			'loadCartbyUser' => $this->modelproduct->loadCartbyUser($this->session->userdata('user_id'))
+		);
+		$this->load->view('administrator/portfolio', $data);
+	}
+
+	/*
+	 * add portfolio form & uploader
+	 */
+	public function portfolioadd()
+	{
+		echo "";
+	}
+
+
+
+
 	/*
 	public function test(){
 		// $data = array(

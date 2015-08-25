@@ -36,7 +36,7 @@
                 </li>
 
                 <li class="sub-menu">
-                    <a class="" href="javascript:;">
+                    <a class="<?php echo (isset($portfolioactive) || isset($portfolioaddactive))? 'active' : '';?>" href="javascript:;">
                         <i class="fa fa-th"></i>
                         <span>Portfolio</span>
                     </a>
