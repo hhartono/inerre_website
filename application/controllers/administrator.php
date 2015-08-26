@@ -957,8 +957,17 @@ class Administrator extends CI_Controller {
 	 */
 	public function portfolioadd()
 	{
-		echo "";
+		$data = array(
+			'title' => 'INERRE Interior - Administrator / Add Portfolio',
+			'title_page' => 'Add Portfolio',
+			'username' => $this->tank_auth->get_username(),
+			'portfolioactive' => 'active',
+		);
+		$this->load->view('administrator/portfolio_add', $data);
 	}
+
+	/*
+	 * /
 
 
 
