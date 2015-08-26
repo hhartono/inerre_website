@@ -962,15 +962,10 @@ class Administrator extends CI_Controller {
 			'title_page' => 'Add Portfolio',
 			'username' => $this->tank_auth->get_username(),
 			'portfolioactive' => 'active',
+			'loadCartbyUser' => $this->modelproduct->loadCartbyUser($this->session->userdata('user_id'))
 		);
 		$this->load->view('administrator/portfolio_add', $data);
 	}
-
-	/*
-	 * /
-
-
-
 
 	/*
 	public function test(){

@@ -33,6 +33,13 @@
 .dropzone.started .message {
   display: none;
 }
+/*
+.dropzone-previews{
+    background-image: url("../images/spritemap.png") !important;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+*/
 .dropzone .preview,
 .dropzone-previews .preview {
   background: rgba(255,255,255,0.8);
