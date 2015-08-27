@@ -967,6 +967,13 @@ class Administrator extends CI_Controller {
 		$this->load->view('administrator/portfolio_add', $data);
 	}
 
+	public function testupload()
+	{
+		$output = json_encode(array('text'=>'text response'));
+		die($output);
+	}
+
+
 	/*
 	public function test(){
 		// $data = array(

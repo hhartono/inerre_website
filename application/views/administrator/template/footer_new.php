@@ -35,46 +35,59 @@
     <script type="text/javascript" src="/assets_admin/js/moment.js"></script>
     <script type="text/javascript" src="/assets_admin/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="/assets_admin/js/chosen.jquery.min.js"></script>
-    
+
     <script type="text/javascript" src="/assets_admin/dropzone/dropzone.js"></script>
     <script>
-    var myDropzone = new Dropzone(document.body, {url: "/upload/portfolio/", previewsContainer: "#dropzonepreviews"});
-    Dropzone.options.myAwesomeDropzone = { // The camelized version of the ID of the form element
+    $(document).ready(function(){})
+    Dropzone.options.mydz = { // The camelized version of the ID of the form element
 
         // The configuration we've talked about above
+        url:"/administrator/testupload",
+        previewsContainer: "#dropzonepreviews",
         autoProcessQueue: false,
         uploadMultiple: true,
         parallelUploads: 100,
         maxFiles: 100,
+        addRemoveLinks:true,
+        forceFallback:true,
+        /*clickable: true,*/
 
         // The setting up of the dropzone
         init: function() {
-        var myDropzone = this;
+            var myDropzone = this;
+            console.log(init);
+            // First change the button to actually tell Dropzone to process the queue.
+            // this.element.querySelector("button[type=submit]").addEventListener("click", function(e) {
+            this.element.querySelector("input#submitportfolio").addEventListener("click", function(e){
+                // Make sure that the form isn't actually being sent.
+                e.preventDefault();
+                e.stopPropagation();
+                myDropzone.processQueue();
+            });
 
-        // First change the button to actually tell Dropzone to process the queue.
-        this.element.querySelector("button[type=submit]").addEventListener("click", function(e) {
-          // Make sure that the form isn't actually being sent.
-          e.preventDefault();
-          e.stopPropagation();
-          myDropzone.processQueue();
-        });
-
-        // Listen to the sendingmultiple event. In this case, it's the sendingmultiple event instead
-        // of the sending event because uploadMultiple is set to true.
-        this.on("sendingmultiple", function() {
-          // Gets triggered when the form is actually being sent.
-          // Hide the success button or the complete form.
-        });
-        this.on("successmultiple", function(files, response) {
-          // Gets triggered when the files have successfully been sent.
-          // Redirect user or notify of success.
-        });
-        this.on("errormultiple", function(files, response) {
-          // Gets triggered when there was an error sending the files.
-          // Maybe show form again, and notify user of error
-        });
+            // You might want to show the submit button only when 
+            // files are dropped here:
+            this.on("addedfile", function(response) {
+                // Show submit button here and/or inform user to click it.
+                console.log("file added");
+                console.log(response);
+            });
+            // Listen to the sendingmultiple event. In this case, it's the sendingmultiple event instead
+            // of the sending event because uploadMultiple is set to true.
+            this.on("sendingmultiple", function() {
+                // Gets triggered when the form is actually being sent.
+                // Hide the success button or the complete form.
+            });
+            this.on("successmultiple", function(files, response) {
+                // Gets triggered when the files have successfully been sent.
+                // Redirect user or notify of success.
+                console.log(response);
+            });
+            this.on("errormultiple", function(files, response) {
+                // Gets triggered when there was an error sending the files.
+                // Maybe show form again, and notify user of error
+            });
         }
-
     }
     </script>
   </body>

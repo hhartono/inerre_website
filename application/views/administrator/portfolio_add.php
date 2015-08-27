@@ -14,7 +14,7 @@
           		<div class="col-lg-12">
                     <div class="form-panel">
                         <!-- action="/administrator/productaddsubmit"-->
-                        <form class="form-horizontal style-form dropzone" id="my-awesome-dropzone">
+                        <form class="form-horizontal style-form dropzone" id="mydz" method="POST">
                         
                             <div id="message_result"></div>
 
@@ -31,11 +31,12 @@
                                 </div>
                             </div>
                             <!-- <input type="file" name="file" /> -->
-                            <div id="dropzonepreviews" class="dropzone-previews" style="min-height:200px; border:solid 1px #ccc;"></div>
+                            <div id="dropzonepreviews" class="dropzone-previews" style="min-height:200px; border:solid 1px #ccc; cursor:pointer;"></div>
 
                           	<div class="form-group">
                           		<div class="showback">
 								<input id="submitportfolio" type="submit" value="Add Portfolio" class="btn btn-primary">
+                                <!-- <button type="submit" id="button">Submit data and files!</button> -->
 								</div>
                           	</div>
                       </form>
