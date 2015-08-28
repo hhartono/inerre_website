@@ -32,14 +32,66 @@
   	<script type="text/javascript" src="/assets_admin/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
   	<script type="text/javascript" src="/assets_admin/js/jquery.dataTables.min.js"></script>
   	<script type="text/javascript" src="/assets_admin/js/form-component.js"></script>
+    <?php
+    if(isset($messageactive)){
+
+    ?>
     <script type="text/javascript" src="/assets_admin/js/moment.js"></script>
     <script type="text/javascript" src="/assets_admin/js/bootstrap-datetimepicker.min.js"></script>
+    <?php 
+     }
+    ?>
     <script type="text/javascript" src="/assets_admin/js/chosen.jquery.min.js"></script>
+    
+    <?php 
+    if(isset($portfolioactive)){
+    ?>
+    <!--script type="text/javascript" src="/assets_admin/dropzone/dropzone.js"></script-->
+    <script type="text/javascript" src="/assets_admin/js/dropzone.js"></script>
 
-    <script type="text/javascript" src="/assets_admin/dropzone/dropzone.js"></script>
-    <script>
-    $(document).ready(function(){})
-    Dropzone.options.mydz = { // The camelized version of the ID of the form element
+    <script type="text/javascript">
+    Dropzone.autoDiscover = false;
+    var portfolioDropzone = new Dropzone('#portfolioDropzone', {
+        url:"/administrator/testupload",
+        previewsContainer:".dropzone-previews",
+        uploadMultiple:true,
+        parallelUploads:100,
+        maxFiles:100,
+        autoProcessQueue:false,
+        addRemoveLinks: true
+    });
+
+    portfolioDropzone.on("addedfile", function(){
+        console.log("file added");
+    });
+
+    portfolioDropzone.on("success", function(file, responseText){
+        console.log(file.id);
+    });
+
+    portfolioDropzone.on("sendingmultiple", function() {
+        // Gets triggered when the form is actually being sent.
+        // Hide the success button or the complete form.
+    });
+
+    portfolioDropzone.on('sending', function(data, xhr, formData){
+        formData.append('title', $('#title').val());
+        formData.append('description', $('#description').val());
+        formData.append('photo', data.name);
+    });
+    
+    $('button#buttonportfolio').on('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        //if(portfolioDropzone.getQueuedFiles.length > 0){
+            portfolioDropzone.processQueue();  
+        //}
+        console.log("button click!");
+        console.log(portfolioDropzone.getQueuedFiles().length);
+        console.log(portfolioDropzone.getQueuedFiles());
+    });
+
+    /*Dropzone.options.portfolioDropzone = { // The camelized version of the ID of the form element
 
         // The configuration we've talked about above
         url:"/administrator/testupload",
@@ -49,20 +101,20 @@
         parallelUploads: 100,
         maxFiles: 100,
         addRemoveLinks:true,
-        forceFallback:true,
-        /*clickable: true,*/
+        clickable: true,
 
         // The setting up of the dropzone
         init: function() {
-            var myDropzone = this;
+            var dz = this;
             console.log(init);
             // First change the button to actually tell Dropzone to process the queue.
             // this.element.querySelector("button[type=submit]").addEventListener("click", function(e) {
-            this.element.querySelector("input#submitportfolio").addEventListener("click", function(e){
+            //this.element.querySelector("input#submitportfolio").addEventListener("click", function(e){
+            document.querySelector("button#buttonportfolio").addEventListener("click", function(e){
                 // Make sure that the form isn't actually being sent.
                 e.preventDefault();
                 e.stopPropagation();
-                myDropzone.processQueue();
+                dz.processQueue();
             });
 
             // You might want to show the submit button only when 
@@ -88,7 +140,13 @@
                 // Maybe show form again, and notify user of error
             });
         }
-    }
+    }*/
     </script>
+    <?php
+    }
+    ?>    
+    
+
+    
   </body>
 </html>

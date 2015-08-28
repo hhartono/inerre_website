@@ -24,7 +24,8 @@
     <link href="/assets_admin/css/jquery.dataTables.min.css" rel="stylesheet" >
     <link href="/assets_admin/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets_admin/css/chosen.min.css">
-    <link rel="stylesheet" href="/assets_admin/dropzone/css/dropzone.css">
+    <!-- <link rel="stylesheet" href="/assets_admin/dropzone/css/dropzone.css"> -->
+    <link rel="stylesheet" href="/assets_admin/css/dropzone.css">
 
     <!--script src="/assets_admin/js/chart-master/Chart.js"></script-->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

@@ -969,7 +969,10 @@ class Administrator extends CI_Controller {
 
 	public function testupload()
 	{
-		$output = json_encode(array('text'=>'text response'));
+		$title = $this->input->post('title');
+		$description = $this->input->post('description');
+		$photo = $this->input->post('photo');
+		$output = json_encode(array('title'=> $title, 'description' => $description, 'photo' => $photo));
 		die($output);
 	}
 
