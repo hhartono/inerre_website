@@ -11,7 +11,7 @@ class Administrator extends CI_Controller {
 		$this->load->helper(array('email', 'url'));
 		$this->load->library(array('form_validation','email', 'tank_auth', 'session'));
 		$this->is_logged_in();
-		$this->load->model(array('modelmessagecenter', 'modelproduct'));
+		$this->load->model(array('modelmessagecenter', 'modelproduct', 'modelportfolio'));
 	}
 
 	/*
@@ -969,13 +969,119 @@ class Administrator extends CI_Controller {
 
 	public function testupload()
 	{
+		//load library upload
+		$this->load->library('upload');
+
 		$title = $this->input->post('title');
 		$description = $this->input->post('description');
-		$photo = $this->input->post('photo');
-		$output = json_encode(array('title'=> $title, 'description' => $description, 'photo' => $photo));
+	
+		$this->form_validation->set_rules('title','Title','required');
+		$this->form_validation->set_rules('description','Description','required');
+		
+		if($this->form_validation->run() == FALSE){
+			$formerror = array(
+				'title' => form_error('title'),
+				'description' => form_error('description')
+			);
+			$output = json_encode(
+					array(
+						'type'=>'error', 
+						'validation_errors' => validation_errors(),
+						'formerror' => $formerror
+					)
+			);
+		}else{
+			if(!empty($_FILES)){
+				// insert portfolio to portfolio table
+				$this->modelportfolio->insertPortfolio($title, $description, $this->sluggify($title));
+				// get last portfolio insert id
+				$insertid = mysql_insert_id();
+				if(isset($insertid)){
+					// count uploaded file
+					$countUploaded = count($_FILES['file']['name']);
+
+					for($i=0; $i < $countUploaded; $i++){
+						$_FILES['userfile']['name'] = $_FILES['file']['name'][$i];
+						$_FILES['userfile']['type'] = $_FILES['file']['type'][$i];
+						$_FILES['userfile']['tmp_name'] = $_FILES['file']['tmp_name'][$i];
+						$_FILES['userfile']['error'] = $_FILES['file']['error'][$i];
+						$_FILES['userfile']['size'] = $_FILES['file']['size'][$i];
+
+						$config = array(
+							'upload_path' => 'upload/portfolio/',
+							'allowed_types' => 'jpg|jpeg|png',
+							'max_size' => '1024',
+							'encrypt_name' => true
+							/*'max_width' => '1920',
+							'max_height' => '1920'*/
+						);
+						$this->upload->initialize($config);
+
+						if( !$this->upload->do_upload() ){
+							$output = json_encode(
+								array(
+									'message' => 'error',
+									'error' => $this->upload->display_errors()
+								)
+							);
+						}else{
+							$upload_data = $this->upload->data();
+							// rename uploaded file
+							$newname = rename(
+								$upload_data['full_path'],
+								$upload_data['file_path'].'/inerre_interior_'.$upload_data['file_name']
+							);
+							
+							$newtitleinsert = 'inerre_interior_'.$upload_data['file_name'];
+							// upload success, insert to portfolio_album table
+							$this->modelportfolio->insertPortfolioAlbum($newtitleinsert, "1",  $insertid);
+
+							$output = json_encode(
+								array(
+									'message' => 'success',
+									'upload_data' => $this->upload->data()
+								)
+							);
+						}
+					}
+				}
+			}else{
+				$output = json_encode(
+						array(
+							'error' => $this->upload->display_errors(),
+							'tmp_name' => $file['tmp_name'][0],
+							'tmp_name_length' => sizeof($file['tmp_name']),
+							'tmp_name_isArray' => is_array($file['tmp_name'])
+						)
+				);
+			}
+		}
 		die($output);
 	}
 
+	/*
+	 * function sluggify
+	 * create URI slug
+	 */ 
+	public function sluggify($url){
+		# Prep string with some basic normalization
+		$url = strtolower($url);
+		$url = strip_tags($url);
+		$url = stripslashes($url);
+		$url = html_entity_decode($url);
+
+		# Remove quotes (can't, etc.)
+		$url = str_replace('\'', '', $url);
+
+		# Replace non-alpha numeric with hyphens
+		$match = '/[^a-z0-9]+/';
+		$replace = '-';
+		$url = preg_replace($match, $replace, $url);
+
+		$url = trim($url, '-');
+
+		return $url;
+	}
 
 	/*
 	public function test(){

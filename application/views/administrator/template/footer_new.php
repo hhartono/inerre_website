@@ -61,34 +61,65 @@
         addRemoveLinks: true
     });
 
+    // When a file is added to the list 
     portfolioDropzone.on("addedfile", function(){
         console.log("file added");
     });
 
-    portfolioDropzone.on("success", function(file, responseText){
-        console.log(file.id);
-    });
-
-    portfolioDropzone.on("sendingmultiple", function() {
-        // Gets triggered when the form is actually being sent.
-        // Hide the success button or the complete form.
-    });
-
+    // Called just before each file is sent
     portfolioDropzone.on('sending', function(data, xhr, formData){
         formData.append('title', $('#title').val());
         formData.append('description', $('#description').val());
-        formData.append('photo', data.name);
+    });
+
+    // portfolioDropzone.on("sendingmultiple", function() {
+    //     // Gets triggered when the form is actually being sent.
+    //     // Hide the success button or the complete form.
+    // });
+
+    // The file has been uploaded successfully. 
+    // Gets the server response as second argument. (called finished previously)
+    portfolioDropzone.on('success', function(data, xhr, formData){
+        console.log(data.name);
+    });
+
+    // Called when the upload was either successful or erroneous. 
+    portfolioDropzone.on('complete', function(data, xhr, formData){
+
+        console.log(data.xhr.response);
+        if(data.xhr.response.type == 'error'){
+
+        }else{
+             $('input#title, input#description').css('border-color', '');
+        }
     });
     
     $('button#buttonportfolio').on('click', function (e) {
+        console.log("button click!");
+        var proceed = true;
+        var title = $('input[name=title]').val();
+        var description = $('input[name=description]').val();
+        if(title == ''){
+            $('input[name=title]').css('border-color', '#FF0000').addClass('form-error-focus');
+            proceed = false;
+        }
+        if(description == ""){
+            $('input[name=description]').css('border-color', '#FF0000').addClass('form-error-focus');
+            proceed = false;
+        }
+        $("input.form-error-focus:first").focus();
+        $("input.form-error-focus").removeClass('form-error-focus');
+
+        if(proceed){
+            portfolioDropzone.processQueue(); 
+            console.log(portfolioDropzone.getQueuedFiles().length);
+            console.log(portfolioDropzone.getQueuedFiles()); 
+        }
+        
+        
+
         e.preventDefault();
         e.stopPropagation();
-        //if(portfolioDropzone.getQueuedFiles.length > 0){
-            portfolioDropzone.processQueue();  
-        //}
-        console.log("button click!");
-        console.log(portfolioDropzone.getQueuedFiles().length);
-        console.log(portfolioDropzone.getQueuedFiles());
     });
 
     /*Dropzone.options.portfolioDropzone = { // The camelized version of the ID of the form element
