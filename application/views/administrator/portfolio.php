@@ -31,60 +31,44 @@
                         ?>
                           <section id="no-more-tables">
                           <?php
-                            if(isset($loadAllBarang)){
+                            if(isset($loadAllPortfolio)){
                           ?>
                               <table id="tableproduct" class="table table-striped cf display">
                                   <thead>
                                     <!-- <th>No.</th> -->
-                                    <th>Kode</th>
-                                    <th>Barang</th>
-                                    <th>Kategori</th>
-                                    <th class="numeric">Stock</th>
-                                    <th class="numeric">Harga</th>
-                                    <th>Status</th>
+                                    <th>No</th>
+                                    <th>Project</th>
+                                    <th>Description</th>
                                     <th>Action</th>
                                   </thead>
                                   <tbody>
                           <?php
-                                // $no=1;
-                                foreach ($loadAllBarang as $lab) {
+                                $no=1;
+                                foreach ($loadAllPortfolio as $lap) {
                           ?>
                                     <tr>
                                         <!-- <td data-title="No"><?php// echo $no;?></td> -->
                                         <td data-title="Kode">
-                                            <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#addToCartModal" data-idproduct="<?php echo $lab->idbarang;?>" data-categorycode="<?php echo $lab->kode_barang;?>" data-product="<?php echo $lab->nama_barang;?>" data-stock="<?php echo $lab->stock_barang;?>">
-                                                <i class="fa fa-plus"></i>
-                                            </button>&nbsp;
-                                            <?php echo $lab->kode_barang;?>
+                                            <?php echo $no;?>
                                         </td>
-                                        <td data-title="Barang"><?php echo $lab->nama_barang;?></td>
-                                        <td data-title="Kategori"><?php echo $lab->barang_kategori;?></td>
-                                        <td class="numeric" data-title="Stock"><?php echo $lab->stock_barang;?>
-
-                                        </td>
-                                        <td class="numeric" data-title="Harga">Rp. <?php echo number_format($lab->harga_jual);?></td>
-                                        <td data-title="Status">
-                                            <label for="" class="label label-<?php echo ($lab->id_status==1)? 'primary' : 'warning';?>">
-                                              <?php echo $lab->barang_status;?>
-                                            </label>
-                                        </td>
+                                        <td data-title="Title"><?php echo $lap->portfolio_title;?></td>
+                                        <td data-title="Description"><?php echo $lap->portfolio_description;?></td>
                                         <td data-title="Action">
                                             <div class="btn-group btn-group-sm">
-                                                <button class="btn btn-primary" data-toggle="modal" data-target="#viewModal" data-kode="<?php echo $lab->kode_barang;?>" data-barang="<?php echo $lab->nama_barang;?>" data-kategori="<?php echo $lab->barang_kategori;?>" data-stock="<?php echo $lab->stock_barang;?>" data-hargabeli="<?php echo $lab->harga_beli;?>" data-hargajual="<?php echo $lab->harga_jual;?>" data-status="<?php echo $lab->barang_status;?>">
+                                                <button class="btn btn-primary" data-toggle="modal" >
                                                     <i class="fa fa-search"></i>
                                                 </button>
-                                                <button class="btn btn-success" data-toggle="modal" data-target="#editModal"  data-kode="<?php echo $lab->kode_barang;?>" data-barang="<?php echo $lab->nama_barang;?>" data-kategori="<?php echo $lab->barang_kategori;?>" data-stock="<?php echo $lab->stock_barang;?>" data-hargabeli="<?php echo $lab->harga_beli;?>" data-hargajual="<?php echo $lab->harga_jual;?>" data-status="<?php echo $lab->barang_status;?>" data-loadstatus='<?php echo $loadStatusBarang;?>' data-idbarang="<?php echo $lab->idbarang;?>" data-loadcategory='<?php echo $loadCategory;?>'>
+                                                <button class="btn btn-success" data-toggle="modal" >
                                                     <i class="fa fa-edit"></i>
                                                 </button>
-                                                <button class="btn btn-warning" data-toggle="modal" data-target="#deleteModal" data-kode="<?php echo $lab->kode_barang;?>" data-barang="<?php echo $lab->nama_barang;?>" data-idbarang="<?php echo $lab->idbarang;?>">
+                                                <button class="btn btn-warning" data-toggle="modal">
                                                     <i class="fa fa-trash-o"></i>
                                                 </button>
                                             </div>
-                                            <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#updateStockModal" data-idproduct="<?php echo $lab->idbarang;?>" data-categorycode="<?php echo $lab->kode_barang;?>" data-product="<?php echo $lab->nama_barang;?>" data-stock="<?php echo $lab->stock_barang;?>"><i class="fa fa-edit"></i> Update Stock</button>
                                         </td>
                                     </tr>
                           <?php
-                                    // $no++;
+                                    $no++;
                                 }
                           ?>
                                   </tbody>
@@ -95,12 +79,9 @@
                               <table id="tableproduct" class="table table-striped cf display">
                                     <thead>
                                         <!-- <th>No.</th> -->
-                                        <th>Kode</th>
-                                        <th>Barang</th>
-                                        <th>Kategori</th>
-                                        <th class="numeric">Stock</th>
-                                        <th class="numeric">Harga</th>
-                                        <th>Status</th>
+                                        <<th>No</th>
+                                        <th>Title</th>
+                                        <th>Description</th>
                                         <th>Action</th>
                                     </thead>
                                     <tbody>

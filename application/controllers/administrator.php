@@ -944,10 +944,8 @@ class Administrator extends CI_Controller {
 			'title_page' => 'All Portfolios',
 			'username' => $this->tank_auth->get_username(),
 			'portfolioactive' => 'active',
-			'loadAllBarang' => $this->modelproduct->loadAllBarang(),
-			'loadStatusBarang' => json_encode($this->modelproduct->loadStatusBarang()),
-			'loadCategory' => json_encode($this->modelproduct->loadAllCategory()),
-			'loadCartbyUser' => $this->modelproduct->loadCartbyUser($this->session->userdata('user_id'))
+			'loadCartbyUser' => $this->modelproduct->loadCartbyUser($this->session->userdata('user_id')),
+			'loadAllPortfolio' => $this->modelportfolio->loadAllPortfolio()
 		);
 		$this->load->view('administrator/portfolio', $data);
 	}
@@ -967,7 +965,7 @@ class Administrator extends CI_Controller {
 		$this->load->view('administrator/portfolio_add', $data);
 	}
 
-	public function testupload()
+	public function portfolioaddsubmit()
 	{
 		//load library upload
 		$this->load->library('upload');

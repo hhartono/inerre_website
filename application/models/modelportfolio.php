@@ -19,6 +19,21 @@ class Modelportfolio extends CI_Model {
 		}
 	}
 */
+	public function loadAllPortfolio()
+	{
+		$query = $this->db->query("
+				SELECT p.*
+				FROM portfolio p
+				ORDER BY p.id ASC
+			");
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
 	public function insertPortfolio($title, $description, $slugtitle)
 	{
 		$field = array(

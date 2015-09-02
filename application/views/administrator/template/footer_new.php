@@ -52,7 +52,7 @@
     <script type="text/javascript">
     Dropzone.autoDiscover = false;
     var portfolioDropzone = new Dropzone('#portfolioDropzone', {
-        url:"/administrator/testupload",
+        url:"/administrator/portfolioaddsubmit",
         previewsContainer:".dropzone-previews",
         uploadMultiple:true,
         parallelUploads:100,
