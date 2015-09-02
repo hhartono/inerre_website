@@ -49,6 +49,43 @@
             </section><! --/wrapper -->
         </section><!-- /MAIN CONTENT -->
 
+         <!-- Modal -->
+         <div class="modal fade" id="uploadSuccessModal" tabindex="-1" role="dialog" aria-labelledby="uploadSuccessModalLabel" aria-hidden="true">
+           <div class="modal-dialog">
+              <div class="modal-content">
+               <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="uploadSuccessModalLabel">Success</h4>
+               </div>
+               <div class="modal-body" id="uploadSuccess">
+                    <h2 id="h2alert">Portfolio telah tersimpan!</h2>
+               </div>
+               <div class="modal-footer">
+                   <a id="ok" href="/administrator/portfolio" class="btn btn-danger">Close</a>
+               </div>
+            </div>
+           </div>
+         </div>
+
+         <!-- MODAL FOR DELETE -->
+            <!-- <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="deleteModalLabel">Delete...</h4>
+                        </div>
+                        <div class="modal-body">
+                            <h2 id="h2alert"></h2>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <a id="deletelink" href="" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>   -->
+        <!-- END MODAL FOR DELETE -->
     <script src="/assets_admin/js/jquery.js"></script>
     
     <script type="text/javascript">

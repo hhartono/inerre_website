@@ -81,6 +81,12 @@
     // Gets the server response as second argument. (called finished previously)
     portfolioDropzone.on('success', function(data, xhr, formData){
         console.log(data.name);
+        // window.location.href = "/administrator/portfolio";
+         $("#uploadSuccessModal").modal('show', function(){
+            setTimeout(function() {
+                window.location.href = "thankyou.php";
+            }, 2000)
+         });
     });
 
     // Called when the upload was either successful or erroneous. 
