@@ -2,11 +2,19 @@
 
 class Portfolio extends CI_Controller {
 
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->database();
+		$this->load->model(array('modelportfolio'));
+	}
+
 	public function index()
 	{
 		$data = array(
 				'title' => '&mdash; Portfolio',
-				'portfolioactive' => 'active'
+				'portfolioactive' => 'active',
+				'loadportfolio' => $this->modelportfolio->loadPortfolioPublic()
 			);
 		$this->load->view('public/portfolio', $data);
 	}

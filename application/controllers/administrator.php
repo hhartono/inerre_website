@@ -1135,11 +1135,11 @@ class Administrator extends CI_Controller {
 			}
 			$this->modelportfolio->deletePortfolio($id);
 			$this->modelportfolio->deletePortfolioAlbum($id);
-			$this->session->set_flashdata('message', '<div class="alert alert-success">'. $thisPortfolio->portfolio_title .'telah berhasil dihapus!</div>');
+			$this->session->set_flashdata('message', '<div class="alert alert-success">'. $thisPortfolio->portfolio_title .' telah berhasil dihapus!</div>');
 			redirect('administrator/portfolio');
 		}else{
 			$this->modelportfolio->deletePortfolio($id);
-			$this->session->set_flashdata('message', '<div class="alert alert-success">'. $thisPortfolio->portfolio_title .'telah berhasil dihapus!</div>');
+			$this->session->set_flashdata('message', '<div class="alert alert-success">'. $thisPortfolio->portfolio_title .' telah berhasil dihapus!</div>');
 			redirect('administrator/portfolio');
 		}
 	}

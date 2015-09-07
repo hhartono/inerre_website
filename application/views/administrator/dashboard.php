@@ -42,12 +42,22 @@
                   	<div class="col-md-2 col-sm-2 box0">
                         <a href="administrator/messagecenter">
                             <div class="box1">
-					  		    <span class="li_mail"></span>
-					  		    <h3>Message Center</h3>
+                              <span class="li_mail"></span>
+                              <h3>Message Center</h3>
                             </div>
-					  		<p>Message Center</p>
-				        </a>
+    					  		     <p>Message Center</p>
+    				            </a>
                   	</div>
+
+                    <div class="col-md-2 col-sm-2 box0">
+                        <a href="administrator/portfolio">
+                            <div class="box1">
+                              <span class="li_display"></span>
+                              <h3>Portfolio</h3>
+                            </div>
+                         <p>Portfolio</p>
+                        </a>
+                    </div>
             </div><!-- /row mt -->	
             </section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->

@@ -7,7 +7,7 @@ class Modelportfolio extends CI_Model {
 		$query = $this->db->query("
 				SELECT p.*
 				FROM portfolio p
-				ORDER BY p.id ASC
+				ORDER BY p.id DESC
 			");
 		if($query->num_rows() > 0){
 			foreach ($query->result() as $row) {
@@ -46,6 +46,28 @@ class Modelportfolio extends CI_Model {
 		);
 		$this->db->where('id', $idportfolio);
 		$this->db->update('portfolio', $field);
+	}
+
+	public function loadPortfolioPublic()
+	{
+		$query = $this->db->query("
+			SELECT p.*, 
+				(
+					SELECT pa.photo
+					FROM portfolio_album pa
+					WHERE pa.id_portfolio = p.id
+					AND pa.status_cover_portfolio = '1'
+					LIMIT 0,1
+				) AS photo_portfolio
+			FROM portfolio p 
+			ORDER BY p.id DESC
+		");
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
 	}
 
 	public function loadOnePortfolio($idportfolio)

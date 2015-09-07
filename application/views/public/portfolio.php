@@ -26,76 +26,101 @@
                 <div class="container relative">
                     <!-- Photo Grid -->
                     <div class="row multi-columns-row mb-30 mb-xs-10">
-                        <!-- Photo Item -->
+                    <?php
+                    if(isset($loadportfolio)){
+                        foreach($loadportfolio as $lp){
+                    ?>
+                             <!-- Photo Item -->
+                            <div class="col-md-6 col-lg-6 mb-md-10">
+                                <div class="post-prev-img">
+                                    <a href="/upload/portfolio/<?php echo $lp->photo_portfolio;?>" class="lightbox-gallery-2 mfp-image">
+                                        <img src="/upload/portfolio/<?php echo $lp->photo_portfolio;?>" alt="INERRE BANDUNG portfolios" />
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- End Photo Item -->
+                    <?php
+                        }
+                    ?>
+
+                        <!-- Photo Item
                         <div class="col-md-6 col-lg-6 mb-md-10">
                             <div class="post-prev-img">
                                 <a href="/assets/images/portfolio-inerre/015532-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/015532-650.jpg" alt="" /></a>
                             </div>
                         </div>
-                        <!-- End Photo Item -->
-                        <!-- Photo Item -->
+                        End Photo Item
+                        
+                        Photo Item
                         <div class="col-md-6 col-lg-6 mb-md-10">
                             <div class="post-prev-img">
                                 <a href="/assets/images/portfolio-inerre/025053-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/025053-650.jpg" alt="" /></a>
                             </div>
                         </div>
-                        <!-- End Photo Item -->
-                        <!-- Photo Item -->
+                        End Photo Item
+                        Photo Item
                         <div class="col-md-6 col-lg-6 mb-md-10">
                             <div class="post-prev-img">
                                 <a href="/assets/images/portfolio-inerre/034836-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/034836-650.jpg" alt="" /></a>
                             </div>
                         </div>
-                        <!-- End Photo Item -->
-                        <!-- Photo Item -->
+                        End Photo Item
+                        Photo Item
                         <div class="col-md-6 col-lg-6 mb-md-10">
                             <div class="post-prev-img">
                                 <a href="/assets/images/portfolio-inerre/034909-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/034909-650.jpg" alt="" /></a>
                             </div>
                         </div>
-                        <!-- End Photo Item -->
-                        <!-- Photo Item -->
+                        End Photo Item
+                        Photo Item
                         <div class="col-md-6 col-lg-6 mb-md-10">
                             <div class="post-prev-img">
                                 <a href="/assets/images/portfolio-inerre/045216-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/045216-650.jpg" alt="" /></a>
                             </div>
                         </div>
-                        <!-- End Photo Item -->
-                        <!-- Photo Item -->
+                        End Photo Item
+                        Photo Item
                         <div class="col-md-6 col-lg-6 mb-md-10">
                             <div class="post-prev-img">
                                 <a href="/assets/images/portfolio-inerre/051453-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/051453-650.jpg" alt="" /></a>
                             </div>
                         </div>
-                        <!-- End Photo Item -->
-                        <!-- Photo Item -->
+                        End Photo Item
+                        Photo Item
                         <div class="col-md-6 col-lg-6 mb-md-10">
                             <div class="post-prev-img">
                                 <a href="/assets/images/portfolio-inerre/052712-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/052712-650.jpg" alt="" /></a>
                             </div>
                         </div>
-                        <!-- End Photo Item -->
-                        <!-- Photo Item -->
+                        End Photo Item
+                        Photo Item
                         <div class="col-md-6 col-lg-6 mb-md-10">
                             <div class="post-prev-img">
                                 <a href="/assets/images/portfolio-inerre/052786-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/052786-650.jpg" alt="" /></a>
                             </div>
                         </div>
-                        <!-- End Photo Item -->
-                        <!-- Photo Item -->
+                        End Photo Item
+                        Photo Item
                         <div class="col-md-6 col-lg-6 mb-md-10">
                             <div class="post-prev-img">
                                 <a href="/assets/images/portfolio-inerre/059594-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/059594-650.jpg" alt="" /></a>
                             </div>
                         </div>
-                        <!-- End Photo Item -->
-                        <!-- Photo Item -->
+                        End Photo Item
+                        Photo Item
                         <div class="col-md-6 col-lg-6 mb-md-10">
                             <div class="post-prev-img">
                                 <a href="/assets/images/portfolio-inerre/059982-1140.jpg" class="lightbox-gallery-2 mfp-image"><img src="/assets/images/portfolio-inerre/059982-650.jpg" alt="" /></a>
                             </div>
                         </div>
-                        <!-- End Photo Item -->
+                        End Photo Item -->
+                    <?php
+                    }else{
+                    ?>
+
+                    <?php
+                    }
+                    ?>
                     </div>
                     <!-- End Photo Grid -->
                 </div>
