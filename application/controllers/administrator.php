@@ -965,6 +965,9 @@ class Administrator extends CI_Controller {
 		$this->load->view('administrator/portfolio_add', $data);
 	}
 
+	/*
+	 * function portfolioaddsubmit
+	 */
 	public function portfolioaddsubmit()
 	{
 		//load library upload
@@ -1079,6 +1082,50 @@ class Administrator extends CI_Controller {
 		$url = trim($url, '-');
 
 		return $url;
+	}
+
+	/*
+	 * function portfolioupdatesubmit
+	 */
+	public function portfolioupdatesubmit()
+	{
+		// configuration form validation
+		$this->form_validation->set_rules('title', 'Title', 'required');
+		$this->form_validation->set_rules('description', 'Description', 'required');
+		if($this->form_validation->run() == FALSE){
+			// form validation false
+			$formerror = array(
+				'title' => form_error('title'),
+				'description' => form_error('description')
+			);
+			$output = json_encode(
+							array(
+								'type'=>'error', 
+								'validation_errors' => validation_errors(),
+								'formerror' => $formerror
+								)
+							);
+			die($output);
+		}else{
+			$idportfolio = $this->input->post('idportfolio');
+			$title = $this->input->post('title');
+			$description = $this->input->post('description');
+			$slugtitle = $this->sluggify($title);
+			$this->modelportfolio->updatePortfolio($idportfolio, $title, $description, $slugtitle);
+			$output = json_encode(array('type'=> 'message', 'text' => ucwords($title).' telah diubah dan tersimpan'));
+			die($output);
+		}
+	}
+
+	/* 
+	 * function portfoliodelete
+	 */
+	public function portfoliodelete($id)
+	{
+		$idportfolio = $id;
+		$this->modelportfolio->deletePortfolio($id);
+		$this->session->set_flashdata('message', '<div class="alert alert-success">'.ucwords($category).' ('. $categorycode .')'.' telah berhasil dihapus!</div>');
+		redirect('administrator/portfolio');
 	}
 
 	/*

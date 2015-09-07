@@ -143,11 +143,11 @@
                                 <form method="POST" class="form-horizontal style-form">
                                     <div class="modal-body">
                                     <div id="message_result_edit"></div>
-                                        <!-- <input type="hidden" name="idportfolio" id="idportfolio" value=""> -->
                                         <div class="form-group">
                                             <label class="col-sm-2 col-sm-2 control-label">Title</label>
                                               <div class="col-sm-10">
                                                  <input type="text" name="title" id="title" class="form-control">
+                                                 <input type="hidden" name="idportfolio" id="idportfolio" value="">
                                               </div>
                                         </div>
                                         <div class="form-group">
@@ -159,7 +159,7 @@
                                     </div>
                                     <div class="modal-footer">
                                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                      <button type="submit" id="submitupdateproduct" class="btn btn-primary">Save changes</button>
+                                      <button type="submit" id="submitupdateportfolio" class="btn btn-primary">Save changes</button>
                                     </div>
                                 </form>
                             </div>
@@ -205,7 +205,7 @@
         });
 
         /*
-         * modal for view product
+         * modal for view portfolio
          */
         $('#viewModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget)// Button that triggered the modal
@@ -218,7 +218,7 @@
         });
 
         /*
-         * modals for edit product
+         * modals for edit portfolio
          */
         $('#editModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget)// Button that triggered the modal
@@ -230,6 +230,7 @@
             modal.find('.modal-body div.form-group div input#title').val(title)
             modal.find('.modal-body div.form-group div input#description').val(description)
             modal.find('.modal-body div.form-group div input#idportfolio').val(idportfolio)
+            submitUpdatePortfolio();
         });
         
         $('#editModal').on('hidden.bs.modal',function(){
@@ -237,7 +238,7 @@
         })
       
         /*
-         * modal for delete product
+         * modal for delete portfolio
          */
         $('#deleteModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget)// Button that triggered the modal
@@ -250,6 +251,48 @@
         });
 
         
+        function submitUpdatePortfolio(){
+            $('#submitupdateportfolio').click(function(){
+                var output = "";
+                var idportfolio = $('input[name=idportfolio]').val();
+                var title = $('input[name=title]').val();
+                var description = $('input[name=description]').val();
+                var proceed = true;
+                if(title == ""){
+                    $('input[name=title]').css('border-color', '#e41919').addClass('form-error-focus');
+                    proceed = false;
+                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
+                }
+                if(description == ""){
+                    $('input[name=description]').css('border-color', '#e41919').addClass('form-error-focus');
+                    proceed = false;
+                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
+                }
+                $("input.form-error-focus:first").focus().removeClass('form-error-focus');
+                $("#message_result_edit").hide().html(output).slideDown();
+                if(proceed){
+                    $.ajax({
+                        type: "POST",
+                        url: "portfolioupdatesubmit",
+                        data: {idportfolio:idportfolio, title:title, description:description},
+                        dataType: "json",
+                        success: function(response){
+                            if(response.type=='error'){
+                                console.log("error");
+                                output = '<div class="alert alert-danger">' + response.validation_errors  + '</div>';  
+                                
+                                $("input.form-error-focus:first").focus();
+                                $("input.form-error-focus").removeClass('form-error-focus');
+                            }else{
+                                output = '<div class="aler alert-success">'+ response.text +'</div>';
+                            }
+                            $("#message_result_edit").hide().html(output).slideDown();
+                        }
+                    }); 
+                }
+                return false;
+            });
+        }
         </script>
 
 <?php

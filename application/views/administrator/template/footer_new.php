@@ -120,9 +120,6 @@
             console.log(portfolioDropzone.getQueuedFiles().length);
             console.log(portfolioDropzone.getQueuedFiles()); 
         }
-        
-        
-
         e.preventDefault();
         e.stopPropagation();
     });
