@@ -1123,9 +1123,25 @@ class Administrator extends CI_Controller {
 	public function portfoliodelete($id)
 	{
 		$idportfolio = $id;
-		$this->modelportfolio->deletePortfolio($id);
-		$this->session->set_flashdata('message', '<div class="alert alert-success">'.ucwords($category).' ('. $categorycode .')'.' telah berhasil dihapus!</div>');
-		redirect('administrator/portfolio');
+		$thisPortfolio = $this->modelportfolio->loadOnePortfolio($id);
+		$portfolioalbum = $this->modelportfolio->loadPortfolioAlbum($id);
+		if(isset($portfolioalbum)){
+			foreach ($portfolioalbum as $pa) {
+				if($pa->photo!="" || $pa->photo==NULL){
+					if(file_exists('./upload/portfolio/' . $pa->photo)){
+						$do = unlink('./upload/portfolio/' . $pa->photo);
+					}
+				}
+			}
+			$this->modelportfolio->deletePortfolio($id);
+			$this->modelportfolio->deletePortfolioAlbum($id);
+			$this->session->set_flashdata('message', '<div class="alert alert-success">'. $thisPortfolio->portfolio_title .'telah berhasil dihapus!</div>');
+			redirect('administrator/portfolio');
+		}else{
+			$this->modelportfolio->deletePortfolio($id);
+			$this->session->set_flashdata('message', '<div class="alert alert-success">'. $thisPortfolio->portfolio_title .'telah berhasil dihapus!</div>');
+			redirect('administrator/portfolio');
+		}
 	}
 
 	/*

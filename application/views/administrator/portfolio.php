@@ -284,7 +284,7 @@
                                 $("input.form-error-focus:first").focus();
                                 $("input.form-error-focus").removeClass('form-error-focus');
                             }else{
-                                output = '<div class="aler alert-success">'+ response.text +'</div>';
+                                output = '<div class="alert alert-success">'+ response.text +'</div>';
                             }
                             $("#message_result_edit").hide().html(output).slideDown();
                         }

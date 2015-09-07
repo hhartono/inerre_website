@@ -48,9 +48,42 @@ class Modelportfolio extends CI_Model {
 		$this->db->update('portfolio', $field);
 	}
 
+	public function loadOnePortfolio($idportfolio)
+	{
+		$query = $this->db->query("
+			SELECT p.*
+			FROM portfolio p
+			WHERE p.id = '$idportfolio'
+		");
+		if($query->num_rows() > 0){
+			$data = $query->row();
+			return $data;
+		}
+	}
+
+	public function loadPortfolioAlbum($idportfolio)
+	{
+		$query = $this->db->query("
+			SELECT pa.*
+			FROM portfolio_album pa
+			WHERE pa.id_portfolio = '$idportfolio'
+			");
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
 	public function deletePortfolio($idportfolio)
 	{
-		return $this->db->delete('portfolio', array('id'=>$idportfolio));
+		return $this->db->delete('portfolio', array('id' =>$idportfolio));
+	}
+
+	public function deletePortfolioAlbum($idportfolio)
+	{
+		return $this->db->delete('portfolio_album', array('id_portfolio' => $idportfolio));
 	}
 
 }
