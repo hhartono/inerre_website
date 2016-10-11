@@ -26,7 +26,7 @@
         .textshadowblack{text-shadow:-1px 1px 0px #000;}
         </style>
         <!-- Load Google Analytic Code -->
-        <?php //$this->load->view('public/public_template/analyticstracking');?>
+        <?php $this->load->view('public/public_template/analyticstracking');?>
     </head>
     <body class="appear-animate">
         <!-- Page Loader -->        
