@@ -11,7 +11,7 @@ class Administrator extends CI_Controller {
 		$this->load->helper(array('email', 'url'));
 		$this->load->library(array('form_validation','email', 'tank_auth', 'session'));
 		$this->is_logged_in();
-		$this->load->model(array('modelmessagecenter', 'modelproduct'));
+		$this->load->model(array('modelmessagecenter', 'modelproduct', 'modelportfolio'));
 	}
 
 	/*
@@ -22,7 +22,8 @@ class Administrator extends CI_Controller {
 		$data = array(
 			'title' => 'INERRE Interior - Administrator / Dashboard',
 			'dashboardactive' => 'active',
-			'username' => $this->tank_auth->get_username()
+			'username' => $this->tank_auth->get_username(),
+			'loadCartbyUser' => $this->modelproduct->loadCartbyUser($this->session->userdata('user_id'))
 		);
 		$this->load->view('administrator/dashboard', $data);
 	}
@@ -45,7 +46,8 @@ class Administrator extends CI_Controller {
 		$data = array(
 			'title' => 'INERRE Interior - Administrator / Message Center',
 			'messageactive' => 'active',
-			'username' => $this->tank_auth->get_username()
+			'username' => $this->tank_auth->get_username(),
+			'loadCartbyUser' => $this->modelproduct->loadCartbyUser($this->session->userdata('user_id'))
 		);
 		$this->load->view('administrator/message_center', $data);
 	}
@@ -314,7 +316,8 @@ class Administrator extends CI_Controller {
 			'username' => $this->tank_auth->get_username(),
 			'productaddactive' => 'active',
 			'loadStatusBarang' => $this->modelproduct->loadStatusBarang(),
-			'loadCategory' => $this->modelproduct->loadAllCategory()
+			'loadCategory' => $this->modelproduct->loadAllCategory(),
+			'loadCartbyUser' => $this->modelproduct->loadCartbyUser($this->session->userdata('user_id'))
 		);
 		$this->load->view('administrator/product_add', $data);
 	}
@@ -758,11 +761,15 @@ class Administrator extends CI_Controller {
 			'title' => 'INERRE Interior - Administrator / Add Category',
 			'title_page' => 'Add Category',
 			'username' => $this->tank_auth->get_username(),
-			'productactive' => 'active'
+			'productactive' => 'active',
+			'loadCartbyUser' => $this->modelproduct->loadCartbyUser($this->session->userdata('user_id'))
 		);
 		$this->load->view('administrator/category_add', $data);
 	}
 
+	/*
+	 * load category json encode
+	 */
 	public function loadcategory()
 	{
 		$category = $this->modelproduct->loadAllCategory();
@@ -770,6 +777,9 @@ class Administrator extends CI_Controller {
 		die($output);
 	}
 
+	/*
+	 * category add process submit
+	 */
 	public function categoryaddsubmit()
 	{
 		$category = $this->input->post('category');
@@ -820,6 +830,9 @@ class Administrator extends CI_Controller {
 		}
 	}
 
+	/*
+	 * category update process submit
+	 */
 	public function categoryupdatesubmit()
 	{
 
@@ -907,6 +920,9 @@ class Administrator extends CI_Controller {
 		}*/
 	}
 
+	/*
+	 * category delete
+	 */
 	public function categorydelete($id)
 	{
 		$idcat = $id;
@@ -917,6 +933,217 @@ class Administrator extends CI_Controller {
 		$this->session->set_flashdata('message', '<div class="alert alert-success">'.ucwords($category).' ('. $categorycode .')'.' telah berhasil dihapus!</div>');
 		redirect('administrator/categoryadd');
 	}
+
+	/*
+	 * portfolio list controller
+	 */
+	public function portfolio()
+	{
+		$data = array(
+			'title' => 'INERRE Interior - Administrator / Portfolio',
+			'title_page' => 'All Portfolios',
+			'username' => $this->tank_auth->get_username(),
+			'portfolioactive' => 'active',
+			'loadCartbyUser' => $this->modelproduct->loadCartbyUser($this->session->userdata('user_id')),
+			'loadAllPortfolio' => $this->modelportfolio->loadAllPortfolio()
+		);
+		$this->load->view('administrator/portfolio', $data);
+	}
+
+	/*
+	 * add portfolio form & uploader
+	 */
+	public function portfolioadd()
+	{
+		$data = array(
+			'title' => 'INERRE Interior - Administrator / Add Portfolio',
+			'title_page' => 'Add Portfolio',
+			'username' => $this->tank_auth->get_username(),
+			'portfolioactive' => 'active',
+			'loadCartbyUser' => $this->modelproduct->loadCartbyUser($this->session->userdata('user_id'))
+		);
+		$this->load->view('administrator/portfolio_add', $data);
+	}
+
+	/*
+	 * function portfolioaddsubmit
+	 */
+	public function portfolioaddsubmit()
+	{
+		//load library upload
+		$this->load->library('upload');
+
+		$title = $this->input->post('title');
+		$description = $this->input->post('description');
+	
+		$this->form_validation->set_rules('title','Title','required');
+		$this->form_validation->set_rules('description','Description','required');
+		
+		if($this->form_validation->run() == FALSE){
+			$formerror = array(
+				'title' => form_error('title'),
+				'description' => form_error('description')
+			);
+			$output = json_encode(
+					array(
+						'type'=>'error', 
+						'validation_errors' => validation_errors(),
+						'formerror' => $formerror
+					)
+			);
+		}else{
+			if(!empty($_FILES)){
+				// insert portfolio to portfolio table
+				$this->modelportfolio->insertPortfolio($title, $description, $this->sluggify($title));
+				// get last portfolio insert id
+				$insertid = mysql_insert_id();
+				if(isset($insertid)){
+					// count uploaded file
+					$countUploaded = count($_FILES['file']['name']);
+
+					for($i=0; $i < $countUploaded; $i++){
+						$_FILES['userfile']['name'] = $_FILES['file']['name'][$i];
+						$_FILES['userfile']['type'] = $_FILES['file']['type'][$i];
+						$_FILES['userfile']['tmp_name'] = $_FILES['file']['tmp_name'][$i];
+						$_FILES['userfile']['error'] = $_FILES['file']['error'][$i];
+						$_FILES['userfile']['size'] = $_FILES['file']['size'][$i];
+
+						$config = array(
+							'upload_path' => 'upload/portfolio/',
+							'allowed_types' => 'jpg|jpeg|png',
+							'max_size' => '1024',
+							'encrypt_name' => true
+							/*'max_width' => '1920',
+							'max_height' => '1920'*/
+						);
+						$this->upload->initialize($config);
+
+						if( !$this->upload->do_upload() ){
+							$output = json_encode(
+								array(
+									'message' => 'error',
+									'error' => $this->upload->display_errors()
+								)
+							);
+						}else{
+							$upload_data = $this->upload->data();
+							// rename uploaded file
+							$newname = rename(
+								$upload_data['full_path'],
+								$upload_data['file_path'].'/inerre_interior_'.$upload_data['file_name']
+							);
+							
+							$newtitleinsert = 'inerre_interior_'.$upload_data['file_name'];
+							// upload success, insert to portfolio_album table
+							$this->modelportfolio->insertPortfolioAlbum($newtitleinsert, "1",  $insertid);
+
+							$output = json_encode(
+								array(
+									'message' => 'success',
+									'upload_data' => $this->upload->data()
+								)
+							);
+						}
+					}
+				}
+			}else{
+				$output = json_encode(
+						array(
+							'error' => $this->upload->display_errors(),
+							'tmp_name' => $file['tmp_name'][0],
+							'tmp_name_length' => sizeof($file['tmp_name']),
+							'tmp_name_isArray' => is_array($file['tmp_name'])
+						)
+				);
+			}
+		}
+		die($output);
+	}
+
+	/*
+	 * function sluggify
+	 * create URI slug
+	 */ 
+	public function sluggify($url){
+		# Prep string with some basic normalization
+		$url = strtolower($url);
+		$url = strip_tags($url);
+		$url = stripslashes($url);
+		$url = html_entity_decode($url);
+
+		# Remove quotes (can't, etc.)
+		$url = str_replace('\'', '', $url);
+
+		# Replace non-alpha numeric with hyphens
+		$match = '/[^a-z0-9]+/';
+		$replace = '-';
+		$url = preg_replace($match, $replace, $url);
+
+		$url = trim($url, '-');
+
+		return $url;
+	}
+
+	/*
+	 * function portfolioupdatesubmit
+	 */
+	public function portfolioupdatesubmit()
+	{
+		// configuration form validation
+		$this->form_validation->set_rules('title', 'Title', 'required');
+		$this->form_validation->set_rules('description', 'Description', 'required');
+		if($this->form_validation->run() == FALSE){
+			// form validation false
+			$formerror = array(
+				'title' => form_error('title'),
+				'description' => form_error('description')
+			);
+			$output = json_encode(
+							array(
+								'type'=>'error', 
+								'validation_errors' => validation_errors(),
+								'formerror' => $formerror
+								)
+							);
+			die($output);
+		}else{
+			$idportfolio = $this->input->post('idportfolio');
+			$title = $this->input->post('title');
+			$description = $this->input->post('description');
+			$slugtitle = $this->sluggify($title);
+			$this->modelportfolio->updatePortfolio($idportfolio, $title, $description, $slugtitle);
+			$output = json_encode(array('type'=> 'message', 'text' => ucwords($title).' telah diubah dan tersimpan'));
+			die($output);
+		}
+	}
+
+	/* 
+	 * function portfoliodelete
+	 */
+	public function portfoliodelete($id)
+	{
+		$idportfolio = $id;
+		$thisPortfolio = $this->modelportfolio->loadOnePortfolio($id);
+		$portfolioalbum = $this->modelportfolio->loadPortfolioAlbum($id);
+		if(isset($portfolioalbum)){
+			foreach ($portfolioalbum as $pa) {
+				if($pa->photo!="" || $pa->photo==NULL){
+					if(file_exists('./upload/portfolio/' . $pa->photo)){
+						$do = unlink('./upload/portfolio/' . $pa->photo);
+					}
+				}
+			}
+			$this->modelportfolio->deletePortfolio($id);
+			$this->modelportfolio->deletePortfolioAlbum($id);
+			$this->session->set_flashdata('message', '<div class="alert alert-success">'. $thisPortfolio->portfolio_title .' telah berhasil dihapus!</div>');
+			redirect('administrator/portfolio');
+		}else{
+			$this->modelportfolio->deletePortfolio($id);
+			$this->session->set_flashdata('message', '<div class="alert alert-success">'. $thisPortfolio->portfolio_title .' telah berhasil dihapus!</div>');
+			redirect('administrator/portfolio');
+		}
+	}
+
 	/*
 	public function test(){
 		// $data = array(
