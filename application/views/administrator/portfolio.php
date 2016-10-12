@@ -38,6 +38,7 @@
                                     <!-- <th>No.</th> -->
                                     <th>No</th>
                                     <th>Project</th>
+                                    <th>Location</th>
                                     <th>Description</th>
                                     <th>Action</th>
                                   </thead>
@@ -52,20 +53,26 @@
                                             <?php echo $no;?>
                                         </td>
                                         <td data-title="Title"><?php echo $lap->portfolio_title;?></td>
+                                        <td data-title="Location"><?php echo $lap->portfolio_location;?></td>
                                         <td data-title="Description"><?php echo $lap->portfolio_description;?></td>
                                         <td data-title="Action">
                                             <div class="btn-group btn-group-sm">
                                                 <button class="btn btn-primary" data-toggle="modal" data-target="#viewModal" 
-                                                    data-title="<?php echo $lap->portfolio_title;?>" 
+                                                    data-title="<?php echo $lap->portfolio_title;?>"
+                                                    data-location="<?php echo $lap->portfolio_location;?>" 
                                                     data-description="<?php echo $lap->portfolio_description;?>" >
                                                     <i class="fa fa-search"></i>
                                                 </button>
                                                 <button class="btn btn-success" data-toggle="modal" data-target="#editModal"
                                                     data-edittitle="<?php echo $lap->portfolio_title;?>" 
+                                                    data-editlocation="<?php echo $lap->portfolio_location;?>" 
                                                     data-editdescription="<?php echo $lap->portfolio_description;?>" 
                                                     data-idportfolio="<?php echo $lap->id;?>"
                                                     >
                                                     <i class="fa fa-edit"></i>
+                                                </button>
+                                                <a href="/administrator/portfolioprojectadd/<?php echo $lap->id;?>" class="btn btn-info" role="button"><i class="fa fa-plus"></i></a>
+                                                    
                                                 </button>
                                                 <button class="btn btn-warning" data-toggle="modal" data-target="#deleteModal"
                                                     data-deletetitle="<?php echo $lap->portfolio_title;?>"
@@ -117,6 +124,10 @@
                                         <td id="title-table"></td>
                                     </tr>
                                     <tr>
+                                        <td class="bolder">Location</td>
+                                        <td id="location-table"></td>
+                                    </tr>
+                                    <tr>
                                         <td class="bolder">Description</td>
                                         <td id="description-table"></td>
                                     </tr>
@@ -149,6 +160,12 @@
                                                  <input type="text" name="title" id="title" class="form-control">
                                                  <input type="hidden" name="idportfolio" id="idportfolio" value="">
                                               </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Location</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="location" id="location" class="form-control">
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-2 col-sm-2 control-label">Description</label>
@@ -210,10 +227,12 @@
         $('#viewModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget)// Button that triggered the modal
             var title = button.data('title')
+            var location = button.data('location')
             var description = button.data('description')
             var modal = $(this)
             modal.find('.modal-title').text(title)
             modal.find('.modal-body table tr td#title-table').text(title)
+            modal.find('.modal-body table tr td#location-table').text(location)
             modal.find('.modal-body table tr td#description-table').text(description)
         });
 
@@ -223,11 +242,13 @@
         $('#editModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget)// Button that triggered the modal
             var title = button.data('edittitle')
+            var location = button.data('editlocation')
             var description = button.data('editdescription')
             var idportfolio = button.data('idportfolio')
             var modal = $(this)
             modal.find('.modal-title').text('Edit ' + title)
             modal.find('.modal-body div.form-group div input#title').val(title)
+            modal.find('.modal-body div.form-group div input#location').val(location)
             modal.find('.modal-body div.form-group div input#description').val(description)
             modal.find('.modal-body div.form-group div input#idportfolio').val(idportfolio)
             submitUpdatePortfolio();
@@ -256,10 +277,16 @@
                 var output = "";
                 var idportfolio = $('input[name=idportfolio]').val();
                 var title = $('input[name=title]').val();
+                var location = $('input[name=location]').val();
                 var description = $('input[name=description]').val();
                 var proceed = true;
                 if(title == ""){
                     $('input[name=title]').css('border-color', '#e41919').addClass('form-error-focus');
+                    proceed = false;
+                    output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
+                }
+                if(location == ""){
+                    $('input[name=location]').css('border-color', '#e41919').addClass('form-error-focus');
                     proceed = false;
                     output = '<div class="alert alert-danger">Form harus diisi, tidak boleh kosong!</div>';
                 }
@@ -274,7 +301,7 @@
                     $.ajax({
                         type: "POST",
                         url: "portfolioupdatesubmit",
-                        data: {idportfolio:idportfolio, title:title, description:description},
+                        data: {idportfolio:idportfolio, title:title, location:location, description:description},
                         dataType: "json",
                         success: function(response){
                             if(response.type=='error'){
