@@ -14,30 +14,63 @@
           		<div class="col-lg-12">
                     <div class="form-panel">
                         <!-- action="/administrator/productaddsubmit"-->
-                        <form class="form-horizontal style-form " id="portfolioform" >
-                        
                             <div id="message_result"></div>
 
                             <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Title</label>
-                                <div class="col-sm-10">
-                                    <input type="text" id="title" name="title" class="form-control">
-                                </div>
+                                <label class="col-sm-2 col-sm-2 control-label">Photo 1</label>
+                            </div>
+                            <fieldset title="Step: upload photos of project" class="step" id="default-step-0">
+                                <form action="/administrator/portfolioprojectphoto1submit" class="dropzone">
+                                    <input type="hidden" name="id" value="<?php echo $uri;?>">
+                                </form> 
+                            </fieldset>
+                            <div class="form-group"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Photo 2</label>
+                            </div>
+                            <fieldset title="Step: upload photos of project" class="step" id="default-step-0">
+                                <form action="/administrator/portfolioprojectphoto2submit" class="dropzone">
+                                    <input type="hidden" name="ids" value="<?php echo $uri;?>">
+                                </form> 
+                            </fieldset>
+                            <div class="form-group"></div>
+                      <form class="form-horizontal style-form " id="portfolioform" >
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Highlights Photo 1</label>
+                                <fieldset>    
+                                    <input type="text" id="highlights1" name="highlights1" class="form-control">
+                                </fieldset>   
+                            </div>                            
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Highlights Photo 2</label>
+                                <fieldset>
+                                    <input type="text" id="highlights2" name="highlights2" class="form-control">
+                                </fieldset>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Location</label>
-                                <div class="col-sm-10">
-                                    <input type="text" id="location" name="location" class="form-control">
-                                </div>
+                                <label class="col-sm-2 col-sm-2 control-label">Photo Carousel</label>
+                                <fieldset>
+                                    <div id="portfolioDropzone4" class="dropzone dropzone4-previews" style="min-height:200px; border:solid 1px #ccc; cursor:pointer;"></div>
+                                </fieldset>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Description</label>
-                                <div class="col-sm-10">
-                                    <input type="text" id="description" name="description" class="form-control">
-                                </div>
+                                <label class="col-sm-2 col-sm-2 control-label">Description Left</label>
+                                <fieldset>
+                                    <input type="text" id="description_left" name="description_left" class="form-control">
+                                </fieldset>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Description Right</label>
+                                <fieldset>
+                                    <input type="text" id="description_right" name="description_right" class="form-control">
+                                </fieldset>
+                            </div>
+                            <div class="form-group">
+                                <fieldset>
+                                    <input type="hidden" id="idportfolio" name="idportfolio" value="<?php echo $uri;?>" class="form-control">
+                                </fieldset>
                             </div>
                             <!-- <input type="file" name="file" /> -->
-                            <div id="portfolioDropzone" class="dropzone dropzone-previews" style="min-height:200px; border:solid 1px #ccc; cursor:pointer;"></div>
                             <div class="form-group">
                                 
                             </div>
@@ -45,8 +78,8 @@
                           	<div class="form-group">
                           		<div class="showback">
 								<!-- <input id="submitportfolio" type="submit" value="Add Portfolio" class="btn btn-primary"> -->
-                                <button type="submit" id="buttonportfolio" class="btn btn-primary">Submit data and files!</button>
-								</div>
+                                <button type="submit" id="buttonportfolioproject" class="btn btn-primary">Submit data and files!</button>
+								              </div>
                           	</div>
                       </form>
                   </div>
@@ -93,6 +126,7 @@
             </div>   -->
         <!-- END MODAL FOR DELETE -->
     <script src="/assets_admin/js/jquery.js"></script>
+    <script src="/assets_admin/js/dropzone.js"></script>
     
     <script type="text/javascript">
     $(document).ready(function(){

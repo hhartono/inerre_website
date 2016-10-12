@@ -975,6 +975,7 @@ class Administrator extends CI_Controller {
 
 		$title = $this->input->post('title');
 		$description = $this->input->post('description');
+		$location = $this->input->post('location');
 	
 		$this->form_validation->set_rules('title','Title','required');
 		$this->form_validation->set_rules('description','Description','required');
@@ -994,10 +995,11 @@ class Administrator extends CI_Controller {
 		}else{
 			if(!empty($_FILES)){
 				// insert portfolio to portfolio table
-				$this->modelportfolio->insertPortfolio($title, $description, $this->sluggify($title));
+				$this->modelportfolio->insertPortfolio($title, $description, $location, $this->sluggify($title));
 				// get last portfolio insert id
 				$insertid = mysql_insert_id();
 				if(isset($insertid)){
+					$this->modelportfolio->insertPortfolioId($insertid);
 					// count uploaded file
 					$countUploaded = count($_FILES['file']['name']);
 
@@ -1036,6 +1038,174 @@ class Administrator extends CI_Controller {
 							$newtitleinsert = 'inerre_interior_'.$upload_data['file_name'];
 							// upload success, insert to portfolio_album table
 							$this->modelportfolio->insertPortfolioAlbum($newtitleinsert, "1",  $insertid);
+
+							$output = json_encode(
+								array(
+									'message' => 'success',
+									'upload_data' => $this->upload->data()
+								)
+							);
+						}
+					}
+				}
+			}else{
+				$output = json_encode(
+						array(
+							'error' => $this->upload->display_errors(),
+							'tmp_name' => $file['tmp_name'][0],
+							'tmp_name_length' => sizeof($file['tmp_name']),
+							'tmp_name_isArray' => is_array($file['tmp_name'])
+						)
+				);
+			}
+		}
+		die($output);
+	}
+
+	/*
+	 * add portfolio project form & uploader
+	 */
+	public function portfolioprojectadd()
+	{
+		$uri3 = $this->uri->segment(3);
+		if($uri3 == ''){
+			redirect('administrator/portfolio');
+		}else{
+			$data = array(
+				'title' => 'INERRE Interior - Administrator / Add Portfolio Project',
+				'title_page' => 'Add Portfolio Project',
+				'username' => $this->tank_auth->get_username(),
+				'portfolioactive' => 'active',
+				'loadCartbyUser' => $this->modelproduct->loadCartbyUser($this->session->userdata('user_id')),
+				'uri' => $uri3
+			);
+			$this->load->view('administrator/portfolioproject_add', $data);
+		}
+	}
+
+	/*
+	 * function portfolioaddsubmit
+	 */
+
+	public function portfolioprojectphoto1submit()
+	{
+		$config = array(
+				'upload_path' => 'upload/portfolio/',
+				'allowed_types' => 'gif|jpg|jpeg|png',
+				'max_size' => '1024',
+				'max_width' => '1920',
+				'max_height' => '1920'
+			);
+		$this->load->library('upload', $config);
+		$id = $this->input->post('id');
+		$file = $this->input->post('file');
+		if(!$this->upload->do_upload('file')){
+			$output = json_encode(array('error' => $this->upload->display_errors(), 'file'=> $file));
+		}else{
+			$filename = $this->upload->data();
+			$this->modelportfolio->insertPortfolioProject($filename['file_name'], $id);
+			$output = json_encode(array('upload_data' => $this->upload->data()));
+		}
+		die($output);
+	}
+
+	public function portfolioprojectphoto2submit()
+	{
+		$config = array(
+				'upload_path' => 'upload/portfolio/',
+				'allowed_types' => 'gif|jpg|jpeg|png',
+				'max_size' => '1024',
+				'max_width' => '1920',
+				'max_height' => '1920'
+			);
+		$this->load->library('upload', $config);
+		$id = $this->input->post('ids');
+		$file = $this->input->post('file');
+		if(!$this->upload->do_upload('file')){
+			$output = json_encode(array('error' => $this->upload->display_errors(), 'file'=> $file));
+		}else{
+			$filename = $this->upload->data();
+			$this->modelportfolio->insertPortfolioProjectPhoto2($filename['file_name'], $id);
+			$output = json_encode(array('upload_data' => $this->upload->data()));
+		}
+		die($output);
+	}
+
+	public function portfolioprojectaddsubmit()
+	{
+		//load library upload
+		$this->load->library('upload');
+
+		$highlights1 = $this->input->post('highlights1');
+		$highlights2 = $this->input->post('highlights2');
+		$description_left = $this->input->post('description_left');
+		$description_right = $this->input->post('description_right');
+		$idportfolio = $this->input->post('idportfolio');
+	
+		$this->form_validation->set_rules('highlights1','Highlights1','required');
+		$this->form_validation->set_rules('highlights2','Highlights2','required');
+		$this->form_validation->set_rules('description_left','Description Left','required');
+		$this->form_validation->set_rules('description_right','Description Right','required');
+		
+		if($this->form_validation->run() == FALSE){
+			$formerror = array(
+				'highlights1' => form_error('highlights1'),
+				'highlights2' => form_error('highlights2'),
+				'description_left' => form_error('description_left'),
+				'description_left' => form_error('description_left')
+			);
+			$output = json_encode(
+					array(
+						'type'=>'error', 
+						'validation_errors' => validation_errors(),
+						'formerror' => $formerror
+					)
+			);
+		}else{
+			if(!empty($_FILES)){
+				// insert portfolio to portfolio table
+				$this->modelportfolio->insertPortfolioDescription($highlights1, $highlights2, $description_left, $description_right, $idportfolio);
+				// get last portfolio insert id
+				$insertid = mysql_insert_id();
+				if(isset($insertid)){
+					// count uploaded file
+					$countUploaded = count($_FILES['file']['name']);
+
+					for($i=0; $i < $countUploaded; $i++){
+						$_FILES['userfile']['name'] = $_FILES['file']['name'][$i];
+						$_FILES['userfile']['type'] = $_FILES['file']['type'][$i];
+						$_FILES['userfile']['tmp_name'] = $_FILES['file']['tmp_name'][$i];
+						$_FILES['userfile']['error'] = $_FILES['file']['error'][$i];
+						$_FILES['userfile']['size'] = $_FILES['file']['size'][$i];
+
+						$config = array(
+							'upload_path' => 'upload/portfolio/carousel/',
+							'allowed_types' => 'jpg|jpeg|png',
+							'max_size' => '1024',
+							'encrypt_name' => true
+							/*'max_width' => '1920',
+							'max_height' => '1920'*/
+						);
+						$this->upload->initialize($config);
+
+						if( !$this->upload->do_upload() ){
+							$output = json_encode(
+								array(
+									'message' => 'error',
+									'error' => $this->upload->display_errors()
+								)
+							);
+						}else{
+							$upload_data = $this->upload->data();
+							// rename uploaded file
+							$newname = rename(
+								$upload_data['full_path'],
+								$upload_data['file_path'].'/inerre_interior_'.$upload_data['file_name']
+							);
+							
+							$newtitleinsert = 'inerre_interior_'.$upload_data['file_name'];
+							// upload success, insert to portfolio_album table
+							$this->modelportfolio->insertPortfolioCarousel($newtitleinsert, $idportfolio);
 
 							$output = json_encode(
 								array(
@@ -1109,9 +1279,10 @@ class Administrator extends CI_Controller {
 		}else{
 			$idportfolio = $this->input->post('idportfolio');
 			$title = $this->input->post('title');
+			$location = $this->input->post('location');
 			$description = $this->input->post('description');
 			$slugtitle = $this->sluggify($title);
-			$this->modelportfolio->updatePortfolio($idportfolio, $title, $description, $slugtitle);
+			$this->modelportfolio->updatePortfolio($idportfolio, $title, $location, $description, $slugtitle);
 			$output = json_encode(array('type'=> 'message', 'text' => ucwords($title).' telah diubah dan tersimpan'));
 			die($output);
 		}
