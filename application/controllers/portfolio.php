@@ -18,6 +18,23 @@ class Portfolio extends CI_Controller {
 			);
 		$this->load->view('public/portfolio', $data);
 	}
+
+	public function project()
+	{
+		$uri = $this->uri->segment(3);
+		if($uri == ''){
+			redirect('public/portfolio');
+		}else{
+			$data = array(
+				'title' => '&mdash; Portfolio',
+				'portfolioactive' => 'active',
+				'loadportfolioproject' => $this->modelportfolio->loadPortfolioProject($uri),
+				'loadportfoliocarousel' => $this->modelportfolio->loadPortfolioCarousel($uri),
+				'loadportfoliodescription' => $this->modelportfolio->loadPortfolioDescription($uri)
+			);
+		$this->load->view('public/portfolioproject', $data);
+		}
+	}
 	
 }
 
