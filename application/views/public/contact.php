@@ -37,6 +37,9 @@
                                         <div class="ci-text">
                                             +62 22 423 2200
                                         </div>
+                                        <div class="ci-text">
+                                            +62 813 11234455 (WhatsApp)
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- End Phone -->
